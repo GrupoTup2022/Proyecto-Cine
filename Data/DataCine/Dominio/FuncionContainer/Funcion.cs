@@ -11,5 +11,6 @@ namespace APIRest_G9.Models.FuncionContainer
         public Audio Audio { get; set; }
         public SalaContainer.Sala Sala {get; set;}
         public double Precio { get; set; }
+        public DateTime fecha { get; set; }
     }
 }
