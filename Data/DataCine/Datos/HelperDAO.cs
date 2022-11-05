@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using APIRest_G9.Models.ComprobanteContainer;
 
 namespace DataCine.Datos
 {
@@ -39,7 +40,37 @@ namespace DataCine.Datos
             return tabla;
         }
 
-        
+        public bool altaTicket(Ticket ticket)
+        {
+            bool result = true;
+            SqlTransaction t = null;
+            
+            try
+            {
+                //Transaccion M/D Tickets
+                cnn.Open();
+                t = cnn.BeginTransaction();
+                SqlCommand cmmMaster = new SqlCommand("SP_INSERTAR_TICKETS", cnn, t);
+                cmmMaster.CommandType = CommandType.StoredProcedure;
+
+                //Agrego parametros
+                cmmMaster.Parameters.AddWithValue("@id_funcion",ticket.Funcion.Id);
+                cmmMaster.Parameters.AddWithValue("@id_butaca",ticket.Butaca.Id);
+                cmmMaster.Parameters.AddWithValue("@id_comprobante",ticket.Comprobante.Id);
+                cmmMaster.Parameters.AddWithValue("@id_promo",ticket.Promo.Id);
+
+                //Parametro de salida con numero
+                SqlParameter param = new SqlParameter();
+                param.ParameterName = "@nro_ticket";
+                param.Direction = ParameterDirection.Output;
+
+                cmmMaster.Parameters.Add(param);
+
+                cmmMaster.ExecuteNonQuery();
+                int num = (int)param.Value;
+
+            }
+        } 
 
     }
 }
