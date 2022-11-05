@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using DataCine.Dominio;
 using LibreriaTp;
+using APIRest_G9.Models.SalaContainer;
 
 namespace DataCine.Datos.Implementaciones
 {
@@ -29,6 +30,26 @@ namespace DataCine.Datos.Implementaciones
         {
             return 0;
 
+        }
+
+        public List<Audio> consultarAudios(Audio audio)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Pelicula> consultarPeliculas(Pelicula pelicula)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Sala> consultarSalas(Sala sala)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Horario> consutlarHorarios(Horario horario)
+        {
+            throw new NotImplementedException();
         }
     }
 }

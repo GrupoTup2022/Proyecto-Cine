@@ -68,7 +68,7 @@ namespace DataCine.Datos
 
                 cmmMaster.ExecuteNonQuery();
 
-                comprobante.Id = (int)param.Value;
+                int idComp = (int)param.Value;
 
                 for (int i = 0; i < comprobante.ltickets.Count; i++)
                 {
@@ -77,7 +77,7 @@ namespace DataCine.Datos
                     cmmTicket.CommandType = CommandType.StoredProcedure;
                     cmmTicket.Parameters.AddWithValue("@id_funcion", comprobante.ltickets[i].Funcion.Id);
                     cmmTicket.Parameters.AddWithValue("@id_butaca", comprobante.ltickets[i].Butaca.Id);
-                    cmmTicket.Parameters.AddWithValue("@id_comprobante", comprobante.Id);
+                    cmmTicket.Parameters.AddWithValue("@id_comprobante", idComp);
                     cmmTicket.Parameters.AddWithValue("@id_promo", comprobante.ltickets[i].Promo.Id);
 
                     SqlParameter Tparam = new SqlParameter();
@@ -98,6 +98,7 @@ namespace DataCine.Datos
 
                     cmmFPagos.CommandType = CommandType.StoredProcedure;
                     cmmFPagos.Parameters.AddWithValue("@id_formaPago", comprobante.ListaPagos[i].FormaPago.Id);
+                    cmmFPagos.Parameters.AddWithValue("id_comprobante", idComp);
                     cmmFPagos.Parameters.AddWithValue("@monto", comprobante.ListaPagos[i].Monto);
 
                     cmmFPagos.ExecuteNonQuery();
