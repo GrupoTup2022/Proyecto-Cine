@@ -60,8 +60,7 @@ namespace DataCine.Datos
                 cmmMaster.CommandType = CommandType.StoredProcedure;
 
                 //Agrego parametros
-                cmmMaster.Parameters.AddWithValue("@id_formaVenta",comprobante.FormaVenta);
-                cmmMaster.Parameters.AddWithValue("@fecha", comprobante.Fecha);
+                cmmMaster.Parameters.AddWithValue("@id_forma_venta",comprobante.FormaVenta.Id);
 
                 SqlParameter param = new SqlParameter("@nroComprobante", DbType.Int32);
                 param.Direction = ParameterDirection.Output;
@@ -92,21 +91,18 @@ namespace DataCine.Datos
 
                 }
 
-                /*
-                for (int i = 0; i < comprobante.FormaPagos.Count; i++)
+                
+                for (int i = 0; i < comprobante.ListaPagos.Count; i++)
                 {
                     SqlCommand cmmFPagos = new SqlCommand("SP_INSERTAR_FPAGO", cnn, t);
 
                     cmmFPagos.CommandType = CommandType.StoredProcedure;
-                    cmmFPagos.Parameters.AddWithValue("@id_formaPago", comprobante.FormaPagos[i].Id);
-                    cmmFPagos.Parameters.AddWithValue("@formaPago", comprobante.FormaPagos[i].Nombre);
+                    cmmFPagos.Parameters.AddWithValue("@id_formaPago", comprobante.ListaPagos[i].FormaPago.Id);
+                    cmmFPagos.Parameters.AddWithValue("@monto", comprobante.ListaPagos[i].Monto);
 
                     cmmFPagos.ExecuteNonQuery();
 
                 }
-                */
-
-
 
                 t.Commit();
             }
