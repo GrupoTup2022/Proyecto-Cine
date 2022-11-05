@@ -9,7 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using DataCine.Dominio;
 using LibreriaTp;
-using APIRest_G9.Models.SalaContainer;
+
 
 namespace DataCine.Datos.Implementaciones
 {
@@ -26,14 +26,27 @@ namespace DataCine.Datos.Implementaciones
             lista_parametros.Add(new Parametro("@fecha", funcion.fecha));
             return HelperDAO.getinstancia().UtilizarProcedimiento("SP_AGREGAR_FUNCION", lista_parametros);
         }
-
+        //ejecutar sp baja_funcion
         public int BajaLogicaFuncion(Funcion funcion)
         {
+            List<Parametro> lista_parametro = new List<Parametro>();
 
-           
+            lista_parametro.Add(new Parametro("@id_funcion", funcion.Id));
+
+
+
+
+          return  HelperDAO.getinstancia().UtilizarProcedimiento("SP_BAJA_FUNCION", lista_parametro);
+             
+
         }
 
         public List<Audio> consultarAudios(Audio audio)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Funcion> consultarFunciones()
         {
             throw new NotImplementedException();
         }
