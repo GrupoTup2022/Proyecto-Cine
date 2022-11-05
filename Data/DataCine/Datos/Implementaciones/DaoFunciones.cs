@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using DataCine.Dominio;
+using LibreriaTp;
 
 namespace DataCine.Datos.Implementaciones
 {
