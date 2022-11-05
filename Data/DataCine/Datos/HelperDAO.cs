@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using APIRest_G9.Models.ComprobanteContainer;
 using DataCine.Dominio;
+using LibreriaTp;
 
 namespace DataCine.Datos
 {
@@ -60,7 +60,7 @@ namespace DataCine.Datos
                 cmmMaster.CommandType = CommandType.StoredProcedure;
 
                 //Agrego parametros
-                cmmMaster.Parameters.AddWithValue("@formaVenta",comprobante.FormaVenta);
+                cmmMaster.Parameters.AddWithValue("@id_formaVenta",comprobante.FormaVenta);
                 cmmMaster.Parameters.AddWithValue("@fecha", comprobante.Fecha);
 
                 SqlParameter param = new SqlParameter("@nroComprobante", DbType.Int32);
@@ -70,18 +70,6 @@ namespace DataCine.Datos
                 cmmMaster.ExecuteNonQuery();
 
                 comprobante.Id = (int)param.Value;
-
-                for (int i = 0; i < comprobante.FormaPagos.Count; i++)
-                {
-                    SqlCommand cmmFPagos = new SqlCommand("SP_INSERTAR_FPAGO", cnn, t);
-
-                    cmmFPagos.CommandType = CommandType.StoredProcedure;
-                    cmmFPagos.Parameters.AddWithValue("@id_formaPago", comprobante.FormaPagos[i].Id);
-                    cmmFPagos.Parameters.AddWithValue("@formaPago", comprobante.FormaPagos[i].Nombre);
-
-                    cmmFPagos.ExecuteNonQuery();
-
-                }
 
                 for (int i = 0; i < comprobante.ltickets.Count; i++)
                 {
@@ -103,6 +91,22 @@ namespace DataCine.Datos
                     comprobante.ltickets[i].NroTicket = (int)Tparam.Value;
 
                 }
+
+                /*
+                for (int i = 0; i < comprobante.FormaPagos.Count; i++)
+                {
+                    SqlCommand cmmFPagos = new SqlCommand("SP_INSERTAR_FPAGO", cnn, t);
+
+                    cmmFPagos.CommandType = CommandType.StoredProcedure;
+                    cmmFPagos.Parameters.AddWithValue("@id_formaPago", comprobante.FormaPagos[i].Id);
+                    cmmFPagos.Parameters.AddWithValue("@formaPago", comprobante.FormaPagos[i].Nombre);
+
+                    cmmFPagos.ExecuteNonQuery();
+
+                }
+                */
+
+
 
                 t.Commit();
             }
