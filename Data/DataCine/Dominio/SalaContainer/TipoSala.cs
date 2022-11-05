@@ -1,6 +1,4 @@
-﻿using DataAPI.Models;
-
-namespace APIRest_G9.Models.SalaContainer
+﻿namespace LibreriaTp
 {
     public class TipoSala : ITipoGenerico
     {

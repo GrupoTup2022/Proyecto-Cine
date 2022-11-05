@@ -1,4 +1,4 @@
-﻿namespace APIRest_G9.Models.PeliculaContainer
+﻿namespace LibreriaTp
 {
     public class Clasificacion
     {

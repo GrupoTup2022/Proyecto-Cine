@@ -1,4 +1,4 @@
-﻿namespace APIRest_G9.Models.ComprobanteContainer
+﻿namespace LibreriaTp
 {
     public class Promo
     {

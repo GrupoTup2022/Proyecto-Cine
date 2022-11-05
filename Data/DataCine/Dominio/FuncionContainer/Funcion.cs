@@ -1,6 +1,4 @@
-﻿using APIRest_G9.Models.PeliculaConteiner;
-
-namespace APIRest_G9.Models.FuncionContainer
+﻿namespace LibreriaTp
 {
     public class Funcion
     {
@@ -9,7 +7,7 @@ namespace APIRest_G9.Models.FuncionContainer
         public Pelicula Pelicula { get; set; }
         public Horario Horario { get; set; }
         public Audio Audio { get; set; }
-        public SalaContainer.Sala Sala {get; set;}
+        public Sala Sala {get; set;}
         public double Precio { get; set; }
         public DateTime fecha { get; set; }
     }

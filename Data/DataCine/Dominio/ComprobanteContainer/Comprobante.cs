@@ -1,9 +1,9 @@
-﻿namespace APIRest_G9.Models.ComprobanteContainer
+﻿namespace LibreriaTp
 {
     public class Comprobante
     {
         public int Id { get; set; }
-        public List<FormaPago> FormaPagos { get; set; }
+        public List<Pagos> ListaPagos { get; set; }
         public FormaVenta FormaVenta { get; set; }
         public DateTime Fecha { get;set; }
     }
