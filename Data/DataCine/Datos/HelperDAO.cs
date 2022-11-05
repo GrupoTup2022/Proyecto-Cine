@@ -46,7 +46,7 @@ namespace DataCine.Datos
             return tabla;
         }
 
-        public bool altaTicket(Ticket ticket)
+        public bool altaTicket(Comprobante comprobante)
         {
             bool result = true;
             SqlTransaction t = null;
@@ -56,29 +56,72 @@ namespace DataCine.Datos
                 //Transaccion M/D Tickets
                 cnn.Open();
                 t = cnn.BeginTransaction();
-                SqlCommand cmmMaster = new SqlCommand("SP_INSERTAR_TICKETS", cnn, t);
+                SqlCommand cmmMaster = new SqlCommand("SP_INSERTAR_COMPROBANTE", cnn, t);
                 cmmMaster.CommandType = CommandType.StoredProcedure;
 
                 //Agrego parametros
-                cmmMaster.Parameters.AddWithValue("@id_funcion", ticket.Funcion.Id);
-                cmmMaster.Parameters.AddWithValue("@id_butaca", ticket.Butaca.Id);
-                cmmMaster.Parameters.AddWithValue("@id_comprobante", ticket.Comprobante.Id);
-                cmmMaster.Parameters.AddWithValue("@id_promo", ticket.Promo.Id);
+                cmmMaster.Parameters.AddWithValue("@formaVenta",comprobante.FormaVenta);
+                cmmMaster.Parameters.AddWithValue("@fecha", comprobante.Fecha);
 
-                //Parametro de salida con numero
-                SqlParameter param = new SqlParameter();
-                param.ParameterName = "@nro_ticket";
+                SqlParameter param = new SqlParameter("@nroComprobante", DbType.Int32);
                 param.Direction = ParameterDirection.Output;
-
                 cmmMaster.Parameters.Add(param);
 
                 cmmMaster.ExecuteNonQuery();
-                int num = (int)param.Value;
 
+                comprobante.Id = (int)param.Value;
+
+                for (int i = 0; i < comprobante.FormaPagos.Count; i++)
+                {
+                    SqlCommand cmmFPagos = new SqlCommand("SP_INSERTAR_FPAGO", cnn, t);
+
+                    cmmFPagos.CommandType = CommandType.StoredProcedure;
+                    cmmFPagos.Parameters.AddWithValue("@id_formaPago", comprobante.FormaPagos[i].Id);
+                    cmmFPagos.Parameters.AddWithValue("@formaPago", comprobante.FormaPagos[i].Nombre);
+
+                    cmmFPagos.ExecuteNonQuery();
+
+                }
+
+                for (int i = 0; i < comprobante.ltickets.Count; i++)
+                {
+                    SqlCommand cmmTicket = new SqlCommand("SP_INSERTAR_TICKET", cnn, t);
+
+                    cmmTicket.CommandType = CommandType.StoredProcedure;
+                    cmmTicket.Parameters.AddWithValue("@id_funcion", comprobante.ltickets[i].Funcion.Id);
+                    cmmTicket.Parameters.AddWithValue("@id_butaca", comprobante.ltickets[i].Butaca.Id);
+                    cmmTicket.Parameters.AddWithValue("@id_comprobante", comprobante.Id);
+                    cmmTicket.Parameters.AddWithValue("@id_promo", comprobante.ltickets[i].Promo.Id);
+
+                    SqlParameter Tparam = new SqlParameter();
+                    Tparam.ParameterName = "@nro_ticket";
+                    Tparam.Direction = ParameterDirection.Output;
+                    Tparam.DbType = DbType.Int32;
+                    cmmTicket.Parameters.Add(Tparam);
+                    cmmTicket.ExecuteNonQuery();
+
+                    comprobante.ltickets[i].NroTicket = (int)Tparam.Value;
+
+                }
+
+                t.Commit();
             }
 
+            catch (Exception ex)
+            {
+                t.Rollback();
+                result = false;
+                //throw ex;
+            }
 
-
+            finally 
+            {
+                if (cnn != null && cnn.State == ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
+            }
+            return result;
 
          }
 
