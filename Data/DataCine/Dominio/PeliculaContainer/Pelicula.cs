@@ -15,6 +15,8 @@ namespace APIRest_G9.Models.PeliculaConteiner
         public Distribuidora distribuidora { get; set; }
         public Genero genero { get; set; }
         public Director director { get; set; }
+        public DateTime fecha_baja { get; set; }
+        public int Baja { get; set; }
 
     }
 }
