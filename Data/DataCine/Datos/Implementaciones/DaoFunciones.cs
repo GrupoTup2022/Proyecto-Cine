@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+using DataCine.Dominio;
 
 namespace DataCine.Datos.Implementaciones
 {
@@ -12,12 +15,14 @@ namespace DataCine.Datos.Implementaciones
     {
         public int AltaFuncion(Funcion funcion)
         {
-            return HelperDAO.getinstancia().
+            List<Parametro> lista_parametros = new List<Parametro>();
+
+            
         }
 
         public int BajaLogicaFuncion(Funcion funcion)
         {
-           return HelperDAO
+           
         }
     }
 }

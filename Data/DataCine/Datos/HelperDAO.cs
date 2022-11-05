@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using APIRest_G9.Models.ComprobanteContainer;
+using DataCine.Dominio;
 
 namespace DataCine.Datos
 {
@@ -22,7 +23,7 @@ namespace DataCine.Datos
 
         public static HelperDAO getinstancia()
         {
-            if(instancia == null)
+            if (instancia == null)
                 instancia = new HelperDAO();
             return instancia;
         }
@@ -45,27 +46,24 @@ namespace DataCine.Datos
             return tabla;
         }
 
-        public bool altaTicket(Comprobante comprobante)
+        public bool altaTicket(Ticket ticket)
         {
             bool result = true;
             SqlTransaction t = null;
-            
+
             try
             {
                 //Transaccion M/D Tickets
                 cnn.Open();
                 t = cnn.BeginTransaction();
-                SqlCommand cmmMaster = new SqlCommand("SP_INSERTAR_COMPROBANTE", cnn, t);
+                SqlCommand cmmMaster = new SqlCommand("SP_INSERTAR_TICKETS", cnn, t);
                 cmmMaster.CommandType = CommandType.StoredProcedure;
 
-                
-
-
                 //Agrego parametros
-                cmmMaster.Parameters.AddWithValue("@id_funcion",comprobante.);
-                cmmMaster.Parameters.AddWithValue("@id_butaca",ticket.Butaca.Id);
-                cmmMaster.Parameters.AddWithValue("@id_comprobante",ticket.Comprobante.Id);
-                cmmMaster.Parameters.AddWithValue("@id_promo",ticket.Promo.Id);
+                cmmMaster.Parameters.AddWithValue("@id_funcion", ticket.Funcion.Id);
+                cmmMaster.Parameters.AddWithValue("@id_butaca", ticket.Butaca.Id);
+                cmmMaster.Parameters.AddWithValue("@id_comprobante", ticket.Comprobante.Id);
+                cmmMaster.Parameters.AddWithValue("@id_promo", ticket.Promo.Id);
 
                 //Parametro de salida con numero
                 SqlParameter param = new SqlParameter();
@@ -78,7 +76,41 @@ namespace DataCine.Datos
                 int num = (int)param.Value;
 
             }
-        } 
+
+
+
+
+         }
+
+        public int UtilizarProcedimiento(string SP, List<Parametro> lParametros)
+        {
+            SqlConnection cnn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            int filasAfectadas = 0;
+            try
+            {
+                cnn.ConnectionString = connection;
+                cnn.Open();
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = SP;
+                cmd.Parameters.Clear();
+                foreach (Parametro p in lParametros)
+                {
+                    cmd.Parameters.AddWithValue(p.Name, p.Value);
+                }
+                filasAfectadas = cmd.ExecuteNonQuery();
+                return filasAfectadas;
+            }
+            catch (SqlException ex)
+            {
+                throw (ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
+        }
 
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataCine.Dominio
 {
-    internal class Parametro
+    public class Parametro
     {
         public string Name { get; set; }
         public object Value { get; set; }
