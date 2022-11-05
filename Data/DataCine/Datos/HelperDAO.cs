@@ -25,6 +25,11 @@ namespace DataCine.Datos
                 instancia = new HelperDAO();
             return instancia;
         }
+        public SqlConnection ObtenerConexion()
+        {
+            return cnn;
+        }
+
         public DataTable traertablacomun(string consulta)
         {
             DataTable tabla = new DataTable();
