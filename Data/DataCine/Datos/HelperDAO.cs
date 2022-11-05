@@ -17,7 +17,7 @@ namespace DataCine.Datos
         private string connection = @"d29ya3N0YXRpb24gaWQ9REJUcExhYi5tc3NxbC5zb21lZS5jb207cGFja2V0IHNpemU9NDA5Njt1c2VyIGlkPUx1Y2FzMjQ4NjVfU1FMTG9naW5fMTtwd2Q9aHVldm9kdXJvMTM7ZGF0YSBzb3VyY2U9REJUcExhYi5tc3NxbC5zb21lZS5jb207cGVyc2lzdCBzZWN1cml0eSBpbmZvPUZhbHNlO2luaXRpYWwgY2F0YWxvZz1EQlRwTGFi";
 
         private HelperDAO()
-        {
+        { 
             cnn = new SqlConnection(System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(connection)));
         }
 
@@ -127,13 +127,11 @@ namespace DataCine.Datos
          }
 
         public int UtilizarProcedimiento(string SP, List<Parametro> lParametros)
-        {
-            SqlConnection cnn = new SqlConnection();
+        {          
             SqlCommand cmd = new SqlCommand();
             int filasAfectadas = 0;
             try
-            {
-                cnn.ConnectionString = connection;
+            {        
                 cnn.Open();
                 cmd.Connection = cnn;
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -158,12 +156,10 @@ namespace DataCine.Datos
 
         public DataTable ConsultarDB(string SP)
         {
-            SqlConnection cnn = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             DataTable tabla = new DataTable();
             try
             {
-                cnn.ConnectionString = connection;
                 cnn.Open();
                 cmd.Connection = cnn;
                 cmd.CommandType = CommandType.StoredProcedure;

@@ -1,6 +1,4 @@
-﻿using APIRest_G9.Models.PeliculaContainer;
-using APIRest_G9.Models.PeliculaConteiner;
-using DataCine.Datos.Interfaces;
+﻿using DataCine.Datos.Interfaces;
 using DataCine.Dominio;
 using LibreriaTp;
 using System;
