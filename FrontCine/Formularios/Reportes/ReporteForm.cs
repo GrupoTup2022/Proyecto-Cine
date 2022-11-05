@@ -30,24 +30,24 @@ namespace FrontCine.Formularios.Reportes
 
 
 
-            cargardatatable();
+            await cargardatatable();
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1",dt));
             reportViewer1.LocalReport.ReportEmbeddedResource = "FrontCine.Report1.rdlc";
             reportViewer1.RefreshReport();
         }
 
-        private async void cargarticketxsalasync()
+        private async Task cargarticketxsalasync()
         {
             string url = "https://localhost:7259/api/Cine/traerticketporsala";
             var resultado = await ClienteSingleton.getinstancia().GetAsync(url);
-            list = JsonConvert.DeserializeObject<List<TIcketxSala>>(resultado);
+            list = await Task.Run(() => JsonConvert.DeserializeObject<List<TIcketxSala>>(resultado));
          
         }
 
-        public async void cargardatatable()
+        public async Task cargardatatable()
         {
-            cargarticketxsalasync();
+            await cargarticketxsalasync();
             
             //dt = HelperDAO.getinstancia().traertablacomun("select * from v_cantidadentradathisyear");
             dt.Columns.Add("Tickets", typeof(Int32));
