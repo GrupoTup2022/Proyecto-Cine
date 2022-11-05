@@ -46,7 +46,7 @@ namespace DataCine.Datos
             return tabla;
         }
 
-        public bool altaTicket(Comprobante comprobante)
+        public bool altaComprobante(Comprobante comprobante)
         {
             bool result = true;
             SqlTransaction t = null;
