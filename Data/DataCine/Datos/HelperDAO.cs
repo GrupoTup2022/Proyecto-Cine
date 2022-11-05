@@ -45,7 +45,7 @@ namespace DataCine.Datos
             return tabla;
         }
 
-        public bool altaTicket(Ticket ticket)
+        public bool altaTicket(Comprobante comprobante)
         {
             bool result = true;
             SqlTransaction t = null;
@@ -55,11 +55,14 @@ namespace DataCine.Datos
                 //Transaccion M/D Tickets
                 cnn.Open();
                 t = cnn.BeginTransaction();
-                SqlCommand cmmMaster = new SqlCommand("SP_INSERTAR_TICKETS", cnn, t);
+                SqlCommand cmmMaster = new SqlCommand("SP_INSERTAR_COMPROBANTE", cnn, t);
                 cmmMaster.CommandType = CommandType.StoredProcedure;
 
+                
+
+
                 //Agrego parametros
-                cmmMaster.Parameters.AddWithValue("@id_funcion",ticket.Funcion.Id);
+                cmmMaster.Parameters.AddWithValue("@id_funcion",comprobante.);
                 cmmMaster.Parameters.AddWithValue("@id_butaca",ticket.Butaca.Id);
                 cmmMaster.Parameters.AddWithValue("@id_comprobante",ticket.Comprobante.Id);
                 cmmMaster.Parameters.AddWithValue("@id_promo",ticket.Promo.Id);
