@@ -1,5 +1,4 @@
-﻿using APIRest_G9.Models.FuncionContainer;
-using DataCine.Datos.Interfaces;
+﻿using DataCine.Datos.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,8 +27,8 @@ namespace DataCine.Datos.Implementaciones
 
         public int BajaLogicaFuncion(Funcion funcion)
         {
+            return 0;
 
-           
         }
     }
 }

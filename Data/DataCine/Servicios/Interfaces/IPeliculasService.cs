@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataCine.Datos.Interfaces
+namespace DataCine.Servicios.Interfaces
 {
-    public interface IDaoPeliculas
+    public interface IPeliculasService
     {
         List<Pais> ObtenerPaises();
         List<Clasificacion> ObtenerClasificaciones();
-        List<Distribuidora> CargarDistribuidora();
+        List<Distribuidora> ObtenerDistribuidora();
         List<Genero> ObtenerGeneros();
         List<Director> ObtenerDirectores();
-        bool CargarPelicula(Pelicula oPelicula); 
+        bool CargarPelicula(Pelicula oPelicula);
 
     }
 }
