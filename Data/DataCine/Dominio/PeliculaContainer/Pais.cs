@@ -1,6 +1,4 @@
-﻿using DataAPI.Models;
-
-namespace APIRest_G9.Models.PeliculaConteiner
+﻿namespace LibreriaTp
 {
     public class Pais : ITipoGenerico
     {
