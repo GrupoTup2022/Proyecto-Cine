@@ -1,4 +1,7 @@
-﻿namespace LibreriaTp
+﻿using APIRest_G9.Models.FuncionContainer;
+using APIRest_G9.Models.SalaContainer;
+
+namespace LibreriaTp
 {
     public class Funcion
     {
