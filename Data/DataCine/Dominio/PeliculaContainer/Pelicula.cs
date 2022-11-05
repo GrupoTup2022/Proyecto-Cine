@@ -1,4 +1,7 @@
-﻿namespace LibreriaTp
+﻿using APIRest_G9.Models.PeliculaContainer;
+using APIRest_G9.Models.PeliculaConteiner;
+
+namespace LibreriaTp
 {
     public class Pelicula
     {
