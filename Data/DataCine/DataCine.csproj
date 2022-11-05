@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Datos\Interfaces\" />
     <Folder Include="Datos\Implementaciones\" />
-    <Folder Include="Dominio\" />
     <Folder Include="Servicios\Interfaces\" />
     <Folder Include="Servicios\Implementacion\" />
   </ItemGroup>
