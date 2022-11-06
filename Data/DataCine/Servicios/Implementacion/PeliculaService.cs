@@ -44,6 +44,11 @@ namespace DataCine.Servicios.Implementacion
             return oDao.ObtenerPaises();
         }
 
+        public List<Pelicula> ObtenerPeliculas()
+        {
+            return oDao.ObtenerPeliculas();
+        }
+
         public bool CargarPelicula(Pelicula oPelicula)
         {
             return oDao.CargarPelicula(oPelicula);

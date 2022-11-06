@@ -34,6 +34,7 @@ namespace FrontCine.Formularios
             CargarCBO(cboGeneros, "Generos");
             CargarCBO(cboDistribuidoras, "Distribuidora");
             CargarCBO(cboPaises, "Paises");
+            CargarDGVAsync();
         }
 
         private async void CargarCBO(ComboBox cbo, string nombre)
@@ -50,17 +51,19 @@ namespace FrontCine.Formularios
         public async void ConfirmarPelicula()
         {
             nueva.Titulo_local = txtTitulo.Text;
-            nueva.Titulo_original = "''";
-            nueva.Descripcion = "''";
+            nueva.Titulo_original = string.Empty;
+            nueva.Descripcion = string.Empty;
             nueva.pais.Id = Convert.ToInt32(cboPaises.SelectedValue);
             nueva.clasificacion.Id = Convert.ToInt32(cboClasificaciones.SelectedValue);
-            nueva.Fecha_Estreno= Convert.ToDateTime(dtpEstreno.Value);
+            nueva.Fecha_Estreno= dtpEstreno.Value;
             nueva.duracion = Convert.ToInt32(txtDuracion.Text);            
             nueva.distribuidora.Id = Convert.ToInt32(cboDistribuidoras.SelectedValue);
             nueva.genero.Id = Convert.ToInt32(cboGeneros.SelectedValue);
             nueva.director.Id = Convert.ToInt32(cboDirectores.SelectedValue);
+            nueva.Baja = 0;
+            
 
-            if (await CargarPeliculaAsync(nueva))
+            if ( await CargarPeliculaAsync(nueva))
             {
                 MessageBox.Show("Se registro correctamente la pelicula");
             }
@@ -74,7 +77,7 @@ namespace FrontCine.Formularios
         public async Task<bool> CargarPeliculaAsync(Pelicula pelicula)
         {
             string url = "https://localhost:7259/pelicula";
-            string peliculaJason = JsonConvert.SerializeObject(nueva);
+            string peliculaJason = JsonConvert.SerializeObject(pelicula);            
             var data = await ClienteSingleton.getinstancia().PostAsync(url, peliculaJason);
             return data == "true";
         }
@@ -83,5 +86,7 @@ namespace FrontCine.Formularios
         {
             ConfirmarPelicula();
         }
+
+        
     }
 }

@@ -14,6 +14,7 @@ namespace DataCine.Servicios.Interfaces
         List<Distribuidora> ObtenerDistribuidora();
         List<Genero> ObtenerGeneros();
         List<Director> ObtenerDirectores();
+        List<Pelicula> ObtenerPeliculas();
         bool CargarPelicula(Pelicula oPelicula);
 
     }

@@ -53,6 +53,13 @@ namespace ApiCine.Controllers
             return Ok(service.ObtenerDistribuidora());
         }
 
+        [HttpGet]
+        [Route("Peliculas")]
+        public IActionResult GetPeliculas()
+        {
+            return Ok(service.ObtenerPeliculas());
+        }
+
 
         // GET api/<PeliculasController>/5
         [HttpGet("{id}")]

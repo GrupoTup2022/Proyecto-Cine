@@ -193,6 +193,7 @@ namespace DataCine.Datos
                 {
                     cmd.Parameters.AddWithValue(p.Name, p.Value);
                 }
+                cmd.Parameters.Clear();
                 tabla.Load(cmd.ExecuteReader());
                 return tabla;
             }

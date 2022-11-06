@@ -16,15 +16,14 @@ namespace DataCine.Datos.Implementaciones
 
         public bool CargarPelicula(Pelicula oPelicula)
         {
-            oPelicula = new Pelicula();
-
+ 
             List<Parametro> lParametros = new List<Parametro>();
             lParametros.Add(new Parametro("@titulo_local", oPelicula.Titulo_local));
             lParametros.Add(new Parametro("@titulo_original", oPelicula.Titulo_original));
             lParametros.Add(new Parametro("@descripcion", oPelicula.Descripcion));
             lParametros.Add(new Parametro("@id_pais", oPelicula.pais.Id));
             lParametros.Add(new Parametro("@id_clasificacion", oPelicula.clasificacion.Id));
-            lParametros.Add(new Parametro("@fecha_estreno", oPelicula.Fecha_Estreno));
+            lParametros.Add(new Parametro("@fecha_estreno", oPelicula.Fecha_Estreno.ToString("yyyy-MM-dd")));
             lParametros.Add(new Parametro("@duracion_min", oPelicula.duracion));
             lParametros.Add(new Parametro("@id_distibuidora", oPelicula.distribuidora.Id));
             lParametros.Add(new Parametro("@id_genero", oPelicula.genero.Id));
@@ -35,6 +34,24 @@ namespace DataCine.Datos.Implementaciones
             else
                 return false;
 
+        }
+
+        public List<Pelicula> ObtenerPeliculas()
+        {
+            List<Pelicula> lPeliculas = new List<Pelicula>();
+            DataTable dt = HelperDAO.getinstancia().ConsultarDB("SP_CONSULTA_PELICULAS_FILTRADO");
+
+            foreach (DataRow row in dt.Rows)
+            {
+                Pelicula p = new Pelicula();
+                p.Id = Convert.ToInt32(row[0].ToString());
+                p.Titulo_local = row[1].ToString();
+                p.duracion =Convert.ToInt32(row[2].ToString());
+                p.clasificacion.Nombre = row[3].ToString();
+                p.genero.Nombre = row[4].ToString();
+                lPeliculas.Add(p);
+            }
+            return lPeliculas;
         }
 
         public List<Distribuidora> CargarDistribuidora()
