@@ -36,6 +36,25 @@ namespace DataCine.Datos.Implementaciones
 
         }
 
+
+        public List<Pelicula> ObtenerPeliculas()
+        {
+            List<Pelicula> lPeliculas = new List<Pelicula>();
+            DataTable dt = HelperDAO.getinstancia().ConsultarDB("SP_CONSULTA_PELICULAS_FILTRADO");
+
+            foreach (DataRow row in dt.Rows)
+            {
+                Pelicula p = new Pelicula();
+                p.Id = Convert.ToInt32(row[0].ToString());
+                p.Titulo_local = row[1].ToString();
+                p.duracion = Convert.ToInt32(row[2].ToString());
+                p.clasificacion.Nombre = row[3].ToString();
+                p.genero.Nombre = row[4].ToString();
+                lPeliculas.Add(p);
+            }
+            return lPeliculas;
+        }
+
         public List<Distribuidora> CargarDistribuidora()
         {
             List<Distribuidora> distribuidoras = new List<Distribuidora>();
@@ -110,5 +129,6 @@ namespace DataCine.Datos.Implementaciones
             }
             return lPais;
         }
+
     }
 }

@@ -34,6 +34,7 @@ namespace FrontCine.Formularios
             CargarCBO(cboGeneros, "Generos");
             CargarCBO(cboDistribuidoras, "Distribuidora");
             CargarCBO(cboPaises, "Paises");
+            CargarDGVAsync();
         }
 
         private async void CargarCBO(ComboBox cbo, string nombre)
@@ -78,15 +79,13 @@ namespace FrontCine.Formularios
             nueva.Descripcion = " ";
 
             nueva.Fecha_Estreno= dtpEstreno.Value;
-            nueva.duracion = Convert.ToInt32(txtDuracion.Text);            
-
-
-            string peliculaJason = JsonConvert.SerializeObject(nueva);
-            MessageBox.Show(peliculaJason.ToString());
+            nueva.duracion = Convert.ToInt32(txtDuracion.Text);         
+                   
 
             if (await CargarPeliculaAsync(nueva))
             {
                 MessageBox.Show("Se registro correctamente la pelicula");
+                CargarDGVAsync();
             }
             else
             {
@@ -106,6 +105,20 @@ namespace FrontCine.Formularios
         private void button1_Click(object sender, EventArgs e)
         {
             ConfirmarPelicula();
+        }
+
+        public async Task CargarDGVAsync()
+        {
+            string url = "https://localhost:7259/api/Peliculas/Peliculas";
+            var data = await ClienteSingleton.getinstancia().GetAsync(url);
+            List<Pelicula> lst = JsonConvert.DeserializeObject<List<Pelicula>>(data);
+
+            dgvPeliculas.Rows.Clear();
+            foreach (Pelicula p in lst)
+            {
+                dgvPeliculas.Rows.Add(new object[] { p.Id, p.Titulo_local, p.duracion, p.clasificacion.Nombre, p.genero.Nombre });
+            }
+
         }
     }
 }
