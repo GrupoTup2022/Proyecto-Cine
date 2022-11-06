@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using FrontCine.Formularios.Reportes;
 using LibreriaTp;
+using FrontCine.Formularios;
 
 namespace ReportesCine.Formularios
 {
@@ -157,6 +158,11 @@ namespace ReportesCine.Formularios
         private void lblfecha_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            abrirformularios(new InsertarPeliculas());
         }
     }
 }
