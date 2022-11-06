@@ -1,14 +1,13 @@
-﻿
-using LibreriaTp;
+﻿using LibreriaTp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataCine.Datos.Interfaces
+namespace DataCine.Servicios.Interfaces
 {
-    public interface IDaoFunciones
+    public interface IFuncionService
     {
         int AltaFuncion(Funcion funcion);
         int BajaLogicaFuncion(Funcion funcion);
