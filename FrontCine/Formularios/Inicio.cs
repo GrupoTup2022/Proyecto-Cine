@@ -123,8 +123,8 @@ namespace ReportesCine.Formularios
         private void btnreportesala_Click(object sender, EventArgs e)
         {
             submenuestadisticas.Visible = false;
-            //ReporteForm reporteForm = new ReporteForm();
-            //reporteForm.Show();
+            ReporteComprobante formcompro = new ReporteComprobante();
+            formcompro.Show();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
