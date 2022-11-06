@@ -84,7 +84,7 @@
             this.Duracion,
             this.Clasificacion,
             this.Genero});
-            this.dgvPeliculas.Location = new System.Drawing.Point(285, 114);
+            this.dgvPeliculas.Location = new System.Drawing.Point(309, 114);
             this.dgvPeliculas.Name = "dgvPeliculas";
             this.dgvPeliculas.RowHeadersVisible = false;
             this.dgvPeliculas.RowHeadersWidth = 51;
@@ -208,7 +208,7 @@
             // 
             this.txtTitulo.Location = new System.Drawing.Point(35, 61);
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(151, 27);
+            this.txtTitulo.Size = new System.Drawing.Size(194, 27);
             this.txtTitulo.TabIndex = 5;
             // 
             // label6
@@ -299,7 +299,7 @@
             this.seleccion.Dock = System.Windows.Forms.DockStyle.Left;
             this.seleccion.Location = new System.Drawing.Point(0, 76);
             this.seleccion.Name = "seleccion";
-            this.seleccion.Size = new System.Drawing.Size(250, 622);
+            this.seleccion.Size = new System.Drawing.Size(273, 622);
             this.seleccion.TabIndex = 19;
             // 
             // InsertarPeliculas

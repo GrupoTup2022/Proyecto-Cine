@@ -116,7 +116,8 @@ namespace FrontCine.Formularios
             dgvPeliculas.Rows.Clear();
             foreach (Pelicula p in lst)
             {
-                dgvPeliculas.Rows.Add(new object[] { p.Id, p.Titulo_local, p.duracion, p.clasificacion.Nombre, p.genero.Nombre });
+                if(p.Baja == 0)
+                     dgvPeliculas.Rows.Add(new object[] { p.Id, p.Titulo_local, p.duracion, p.clasificacion.Nombre, p.genero.Nombre });
             }
 
         }

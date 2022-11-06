@@ -40,7 +40,7 @@ namespace DataCine.Datos.Implementaciones
         public List<Pelicula> ObtenerPeliculas()
         {
             List<Pelicula> lPeliculas = new List<Pelicula>();
-            DataTable dt = HelperDAO.getinstancia().ConsultarDB("SP_CONSULTA_PELICULAS_FILTRADO");
+            DataTable dt = HelperDAO.getinstancia().ConsultarDB("SP_CONSULTA_PELICULAS_TODO");
 
             foreach (DataRow row in dt.Rows)
             {
@@ -48,8 +48,13 @@ namespace DataCine.Datos.Implementaciones
                 p.Id = Convert.ToInt32(row[0].ToString());
                 p.Titulo_local = row[1].ToString();
                 p.duracion = Convert.ToInt32(row[2].ToString());
-                p.clasificacion.Nombre = row[3].ToString();
-                p.genero.Nombre = row[4].ToString();
+                p.Fecha_Estreno = Convert.ToDateTime(row[3].ToString());
+                p.pais.Nombre = row[4].ToString();
+                p.director.Nombre = row[5].ToString();
+                p.distribuidora.Nombre = row[6].ToString();
+                p.clasificacion.Nombre = row[7].ToString();
+                p.genero.Nombre = row[8].ToString();
+                p.Baja = Convert.ToInt32(row[9].ToString());
                 lPeliculas.Add(p);
             }
             return lPeliculas;
