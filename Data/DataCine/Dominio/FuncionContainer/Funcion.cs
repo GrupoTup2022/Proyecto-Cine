@@ -1,4 +1,5 @@
-﻿namespace LibreriaTp
+﻿
+namespace LibreriaTp
 {
     public class Funcion
     {
@@ -9,5 +10,6 @@
         public Audio Audio { get; set; }
         public Sala Sala {get; set;}
         public double Precio { get; set; }
+        public DateTime fecha { get; set; }
     }
 }

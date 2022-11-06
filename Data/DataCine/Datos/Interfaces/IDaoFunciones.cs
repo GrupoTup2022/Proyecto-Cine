@@ -1,4 +1,5 @@
-﻿using APIRest_G9.Models.FuncionContainer;
+﻿
+using LibreriaTp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,10 @@ namespace DataCine.Datos.Interfaces
     {
         int AltaFuncion(Funcion funcion);
         int BajaLogicaFuncion(Funcion funcion);
+        List<Pelicula> consultarPeliculas(Pelicula pelicula);
+        List<Horario> consutlarHorarios(Horario horario);
+        List<Audio> consultarAudios(Audio audio);
+        List<Sala> consultarSalas(Sala sala);
+        List<Funcion> consultarFunciones();
     }
 }

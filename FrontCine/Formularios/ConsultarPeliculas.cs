@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FrontCine.Formularios
 {
-    public partial class Peliculas : Form
+    public partial class ConsultarPeliculas : Form
     {
-        public Peliculas()
+        public ConsultarPeliculas()
         {
             InitializeComponent();
         }

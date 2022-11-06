@@ -1,6 +1,6 @@
 ﻿namespace FrontCine.Formularios
 {
-    partial class Peliculas
+    partial class ConsultarPeliculas
     {
         /// <summary>
         /// Required designer variable.

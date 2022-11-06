@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using APIRest_G9.Models.ComprobanteContainer;
 using DataCine.Dominio;
+using LibreriaTp;
 
 namespace DataCine.Datos
 {
@@ -17,7 +17,7 @@ namespace DataCine.Datos
         private string connection = @"d29ya3N0YXRpb24gaWQ9REJUcExhYi5tc3NxbC5zb21lZS5jb207cGFja2V0IHNpemU9NDA5Njt1c2VyIGlkPUx1Y2FzMjQ4NjVfU1FMTG9naW5fMTtwd2Q9aHVldm9kdXJvMTM7ZGF0YSBzb3VyY2U9REJUcExhYi5tc3NxbC5zb21lZS5jb207cGVyc2lzdCBzZWN1cml0eSBpbmZvPUZhbHNlO2luaXRpYWwgY2F0YWxvZz1EQlRwTGFi";
 
         private HelperDAO()
-        {
+        { 
             cnn = new SqlConnection(System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(connection)));
         }
 
@@ -60,8 +60,7 @@ namespace DataCine.Datos
                 cmmMaster.CommandType = CommandType.StoredProcedure;
 
                 //Agrego parametros
-                cmmMaster.Parameters.AddWithValue("@formaVenta",comprobante.FormaVenta);
-                cmmMaster.Parameters.AddWithValue("@fecha", comprobante.Fecha);
+                cmmMaster.Parameters.AddWithValue("@id_forma_venta",comprobante.FormaVenta.Id);
 
                 SqlParameter param = new SqlParameter("@nroComprobante", DbType.Int32);
                 param.Direction = ParameterDirection.Output;
@@ -69,19 +68,7 @@ namespace DataCine.Datos
 
                 cmmMaster.ExecuteNonQuery();
 
-                comprobante.Id = (int)param.Value;
-
-                for (int i = 0; i < comprobante.FormaPagos.Count; i++)
-                {
-                    SqlCommand cmmFPagos = new SqlCommand("SP_INSERTAR_FPAGO", cnn, t);
-
-                    cmmFPagos.CommandType = CommandType.StoredProcedure;
-                    cmmFPagos.Parameters.AddWithValue("@id_formaPago", comprobante.FormaPagos[i].Id);
-                    cmmFPagos.Parameters.AddWithValue("@formaPago", comprobante.FormaPagos[i].Nombre);
-
-                    cmmFPagos.ExecuteNonQuery();
-
-                }
+                int idComp = (int)param.Value;
 
                 for (int i = 0; i < comprobante.ltickets.Count; i++)
                 {
@@ -90,7 +77,7 @@ namespace DataCine.Datos
                     cmmTicket.CommandType = CommandType.StoredProcedure;
                     cmmTicket.Parameters.AddWithValue("@id_funcion", comprobante.ltickets[i].Funcion.Id);
                     cmmTicket.Parameters.AddWithValue("@id_butaca", comprobante.ltickets[i].Butaca.Id);
-                    cmmTicket.Parameters.AddWithValue("@id_comprobante", comprobante.Id);
+                    cmmTicket.Parameters.AddWithValue("@id_comprobante", idComp);
                     cmmTicket.Parameters.AddWithValue("@id_promo", comprobante.ltickets[i].Promo.Id);
 
                     SqlParameter Tparam = new SqlParameter();
@@ -101,6 +88,20 @@ namespace DataCine.Datos
                     cmmTicket.ExecuteNonQuery();
 
                     comprobante.ltickets[i].NroTicket = (int)Tparam.Value;
+
+                }
+
+                
+                for (int i = 0; i < comprobante.ListaPagos.Count; i++)
+                {
+                    SqlCommand cmmFPagos = new SqlCommand("SP_INSERTAR_FPAGO", cnn, t);
+
+                    cmmFPagos.CommandType = CommandType.StoredProcedure;
+                    cmmFPagos.Parameters.AddWithValue("@id_formaPago", comprobante.ListaPagos[i].FormaPago.Id);
+                    cmmFPagos.Parameters.AddWithValue("id_comprobante", idComp);
+                    cmmFPagos.Parameters.AddWithValue("@monto", comprobante.ListaPagos[i].Monto);
+
+                    cmmFPagos.ExecuteNonQuery();
 
                 }
 
@@ -126,13 +127,11 @@ namespace DataCine.Datos
          }
 
         public int UtilizarProcedimiento(string SP, List<Parametro> lParametros)
-        {
-            SqlConnection cnn = new SqlConnection();
+        {          
             SqlCommand cmd = new SqlCommand();
             int filasAfectadas = 0;
             try
-            {
-                cnn.ConnectionString = connection;
+            {        
                 cnn.Open();
                 cmd.Connection = cnn;
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -144,6 +143,29 @@ namespace DataCine.Datos
                 }
                 filasAfectadas = cmd.ExecuteNonQuery();
                 return filasAfectadas;
+            }
+            catch (SqlException ex)
+            {
+                throw (ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
+        }
+
+        public DataTable ConsultarDB(string SP)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataTable tabla = new DataTable();
+            try
+            {
+                cnn.Open();
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = SP;
+                tabla.Load(cmd.ExecuteReader());
+                return tabla;
             }
             catch (SqlException ex)
             {
