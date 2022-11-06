@@ -178,5 +178,33 @@ namespace DataCine.Datos
             }
         }
 
+        public DataTable ConsultarDB(string SP, List<Parametro> lParametros)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataTable tabla = new DataTable();
+            try
+            {
+                cnn.Open();
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = SP;
+                cmd.Parameters.Clear();
+                foreach (Parametro p in lParametros)
+                {
+                    cmd.Parameters.AddWithValue(p.Name, p.Value);
+                }
+                tabla.Load(cmd.ExecuteReader());
+                return tabla;
+            }
+            catch (SqlException ex)
+            {
+                throw (ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
+        }
+
     }
 }
