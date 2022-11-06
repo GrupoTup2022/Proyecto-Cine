@@ -120,5 +120,10 @@ namespace FrontCine.Formularios
             }
 
         }
+
+        private void barrasuperior_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
