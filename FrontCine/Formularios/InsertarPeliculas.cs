@@ -90,7 +90,7 @@ namespace FrontCine.Formularios
             }
             else
             {
-                MessageBox.Show("Ah ocrrido un error");
+                MessageBox.Show("Ha ocrrido un error");
             }
 
         }
