@@ -164,5 +164,21 @@ namespace ReportesCine.Formularios
         {
             abrirformularios(new InsertarPeliculas());
         }
+
+        private DialogResult GetDialogResult()
+        {
+            return DialogResult;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("¿Desea cerrar sesion?","Salida",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                Close();
+                Login login = new Login();
+                login.Show();
+                }
+            
+        }
     }
 }
