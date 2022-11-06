@@ -17,6 +17,7 @@ namespace LibreriaTp
         public Director director { get; set; }
         public DateTime fecha_baja { get; set; }
         public int Baja { get; set; }
+
         public Pelicula()
         {
             clasificacion = new Clasificacion();
@@ -24,8 +25,8 @@ namespace LibreriaTp
             distribuidora = new Distribuidora();
             genero = new Genero();
             director = new Director();
-
         }
+
 
     }
 }

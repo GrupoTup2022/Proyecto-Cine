@@ -68,7 +68,7 @@ namespace ApiCine.Controllers
             try
             {
                 if (pelicula == null)
-                    BadRequest("Datos de la pelicula Incorrectos");
+                    return BadRequest("Datos de la pelicula Incorrectos");
 
                 return Ok(service.CargarPelicula(pelicula));
             }
