@@ -34,7 +34,7 @@
             this.cboDirectores = new System.Windows.Forms.ComboBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.cboGeneros = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpEstreno = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.txtDuracion = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -86,13 +86,13 @@
             this.cboGeneros.Size = new System.Drawing.Size(151, 28);
             this.cboGeneros.TabIndex = 0;
             // 
-            // dateTimePicker1
+            // dtpEstreno
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(284, 109);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(250, 27);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dtpEstreno.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEstreno.Location = new System.Drawing.Point(284, 109);
+            this.dtpEstreno.Name = "dtpEstreno";
+            this.dtpEstreno.Size = new System.Drawing.Size(250, 27);
+            this.dtpEstreno.TabIndex = 6;
             // 
             // button1
             // 
@@ -102,6 +102,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtDuracion
             // 
@@ -117,7 +118,7 @@
             this.ClientSize = new System.Drawing.Size(999, 590);
             this.Controls.Add(this.txtDuracion);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpEstreno);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.cboDirectores);
             this.Controls.Add(this.cboDistribuidoras);
@@ -139,7 +140,7 @@
         private ComboBox cboDirectores;
         private TextBox txtTitulo;
         private ComboBox cboGeneros;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpEstreno;
         private Button button1;
         private TextBox txtDuracion;
     }

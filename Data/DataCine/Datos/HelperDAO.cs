@@ -165,6 +165,7 @@ namespace DataCine.Datos
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = SP;
                 tabla.Load(cmd.ExecuteReader());
+                cnn.Close();
                 return tabla;
             }
             catch (SqlException ex)

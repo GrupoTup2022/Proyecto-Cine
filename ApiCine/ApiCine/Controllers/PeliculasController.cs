@@ -1,5 +1,6 @@
 ﻿using DataCine.Servicios.Implementacion;
 using DataCine.Servicios.Interfaces;
+using LibreriaTp;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -39,8 +40,8 @@ namespace ApiCine.Controllers
         }
 
         [HttpGet]
-        [Route("Clasificaciones")]
-        public IActionResult GetClasificaciones()
+        [Route("Clasificacion")]
+        public IActionResult GetClasificacion()
         {
             return Ok(service.ObtenerClasificaciones());
         }
@@ -61,9 +62,22 @@ namespace ApiCine.Controllers
         }
 
         // POST api/<PeliculasController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("/pelicula")]
+        public IActionResult PostPeliculas(Pelicula pelicula)
         {
+            try
+            {
+                if (pelicula == null)
+                    BadRequest("Datos de la pelicula Incorrectos");
+
+                return Ok(service.CargarPelicula(pelicula));
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+
         }
 
         // PUT api/<PeliculasController>/5
