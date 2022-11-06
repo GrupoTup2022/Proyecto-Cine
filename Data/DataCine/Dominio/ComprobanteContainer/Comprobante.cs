@@ -24,6 +24,9 @@
         {
             ltickets.RemoveAt(pos);
         }
-
+        public void AgregarPago(Pagos pago)
+        {
+            ListaPagos.Add(pago);
+        }
     }
 }

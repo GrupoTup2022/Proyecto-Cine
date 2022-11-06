@@ -234,7 +234,7 @@
             this.btnreportesala.Name = "btnreportesala";
             this.btnreportesala.Size = new System.Drawing.Size(198, 46);
             this.btnreportesala.TabIndex = 10;
-            this.btnreportesala.Text = "REPORTE SALA";
+            this.btnreportesala.Text = "ULTIMA FACTURA";
             this.btnreportesala.UseVisualStyleBackColor = true;
             this.btnreportesala.Click += new System.EventHandler(this.btnreportesala_Click);
             // 
