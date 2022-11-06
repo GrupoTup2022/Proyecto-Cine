@@ -41,13 +41,16 @@
             this.reportViewercompro.ServerReport.BearerToken = null;
             this.reportViewercompro.Size = new System.Drawing.Size(800, 400);
             this.reportViewercompro.TabIndex = 0;
+            this.reportViewercompro.Load += new System.EventHandler(this.reportViewercompro_Load);
             // 
             // ReporteComprobante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewercompro);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReporteComprobante";
             this.Text = "ReporteComprobante";
             this.Load += new System.EventHandler(this.ReporteComprobante_Load);

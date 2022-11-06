@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using FrontCine.Formularios.Reportes;
+using LibreriaTp;
 
 namespace ReportesCine.Formularios
 {
@@ -122,9 +123,29 @@ namespace ReportesCine.Formularios
 
         private void btnreportesala_Click(object sender, EventArgs e)
         {
+            Pagos pago = new Pagos();
+            pago.Monto = 50;
+            FormaPago formaPago = new FormaPago();
+            formaPago.Id = 1;
+            formaPago.Nombre = "Efectivo";
+            pago.FormaPago = formaPago;
+            FormaVenta formaven = new FormaVenta();
+            formaven.Id = 2;
+            formaven.Nombre = "TARJETA DE CREDITO";
+            Comprobante compro = new Comprobante();
+            compro.Id = 1;
+            compro.AgregarPago(pago);
+            compro.FormaVenta = formaven;
+            compro.Fecha = DateTime.Today;
+            Ticket ticket = new Ticket();
+
+
             submenuestadisticas.Visible = false;
-            ReporteComprobante formcompro = new ReporteComprobante(new LibreriaTp.Comprobante());
-            formcompro.Show();
+            //ReporteComprobante formcompro = new ReporteComprobante(new LibreriaTp.Comprobante());
+            //formcompro.Show();
+
+            abrirformularios(new ReporteComprobante(compro));
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
