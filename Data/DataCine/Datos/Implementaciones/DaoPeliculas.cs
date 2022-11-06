@@ -16,7 +16,6 @@ namespace DataCine.Datos.Implementaciones
 
         public bool CargarPelicula(Pelicula oPelicula)
         {
-            oPelicula = new Pelicula();
 
             List<Parametro> lParametros = new List<Parametro>();
             lParametros.Add(new Parametro("@titulo_local", oPelicula.Titulo_local));

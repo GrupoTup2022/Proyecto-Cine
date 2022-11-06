@@ -18,7 +18,7 @@ namespace FrontCine.Formularios
     public partial class InsertarPeliculas : Form
     {
         private IPeliculasService service;
-        private Pelicula nueva;
+        Pelicula nueva;
 
         public InsertarPeliculas()
         {
@@ -49,16 +49,40 @@ namespace FrontCine.Formularios
               
         public async void ConfirmarPelicula()
         {
+
+            Pais p = new Pais();
+            p.Id = Convert.ToInt32(cboPaises.SelectedValue);
+            p.Nombre = cboPaises.SelectedText;
+            Clasificacion c = new Clasificacion();
+            c.Id = Convert.ToInt32(cboClasificaciones.SelectedValue);
+            c.Nombre = cboClasificaciones.SelectedText;
+            Genero g = new Genero();
+            g.Id = Convert.ToInt32(cboGeneros.SelectedValue);
+            g.Nombre = cboGeneros.SelectedText;
+            Distribuidora dis = new Distribuidora();
+            dis.Id = Convert.ToInt32(cboDistribuidoras.SelectedValue);
+            dis.Nombre = cboDistribuidoras.SelectedText;
+            Director dir = new Director();
+            dir.Id = Convert.ToInt32(cboDirectores.SelectedValue);
+            dir.Nombre = cboDirectores.SelectedText;
+
+            nueva.pais = p;
+            nueva.clasificacion = c;
+            nueva.genero = g;
+            nueva.distribuidora = dis;
+            nueva.director = dir;
+
+
             nueva.Titulo_local = txtTitulo.Text;
-            nueva.Titulo_original = "''";
-            nueva.Descripcion = "''";
-            nueva.pais.Id = Convert.ToInt32(cboPaises.SelectedValue);
-            nueva.clasificacion.Id = Convert.ToInt32(cboClasificaciones.SelectedValue);
-            nueva.Fecha_Estreno= Convert.ToDateTime(dtpEstreno.Value);
+            nueva.Titulo_original = " ";
+            nueva.Descripcion = " ";
+
+            nueva.Fecha_Estreno= dtpEstreno.Value;
             nueva.duracion = Convert.ToInt32(txtDuracion.Text);            
-            nueva.distribuidora.Id = Convert.ToInt32(cboDistribuidoras.SelectedValue);
-            nueva.genero.Id = Convert.ToInt32(cboGeneros.SelectedValue);
-            nueva.director.Id = Convert.ToInt32(cboDirectores.SelectedValue);
+
+
+            string peliculaJason = JsonConvert.SerializeObject(nueva);
+            MessageBox.Show(peliculaJason.ToString());
 
             if (await CargarPeliculaAsync(nueva))
             {
@@ -74,7 +98,7 @@ namespace FrontCine.Formularios
         public async Task<bool> CargarPeliculaAsync(Pelicula pelicula)
         {
             string url = "https://localhost:7259/pelicula";
-            string peliculaJason = JsonConvert.SerializeObject(nueva);
+            string peliculaJason = JsonConvert.SerializeObject(pelicula);
             var data = await ClienteSingleton.getinstancia().PostAsync(url, peliculaJason);
             return data == "true";
         }
