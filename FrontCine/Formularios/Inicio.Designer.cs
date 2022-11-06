@@ -55,6 +55,8 @@
             this.btnConsulta = new System.Windows.Forms.Button();
             this.panelprincipal = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -139,6 +141,8 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.White;
+            this.MenuVertical.Controls.Add(this.panel5);
+            this.MenuVertical.Controls.Add(this.button2);
             this.MenuVertical.Controls.Add(this.lblfecha);
             this.MenuVertical.Controls.Add(this.pictureBox1);
             this.MenuVertical.Controls.Add(this.lblhora);
@@ -155,7 +159,7 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 37);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(253, 566);
+            this.MenuVertical.Size = new System.Drawing.Size(253, 863);
             this.MenuVertical.TabIndex = 1;
             // 
             // lblfecha
@@ -163,7 +167,7 @@
             this.lblfecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblfecha.AutoSize = true;
             this.lblfecha.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblfecha.Location = new System.Drawing.Point(69, 533);
+            this.lblfecha.Location = new System.Drawing.Point(69, 830);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(50, 21);
             this.lblfecha.TabIndex = 1;
@@ -185,7 +189,7 @@
             this.lblhora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblhora.AutoSize = true;
             this.lblhora.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblhora.Location = new System.Drawing.Point(69, 495);
+            this.lblhora.Location = new System.Drawing.Point(69, 792);
             this.lblhora.Name = "lblhora";
             this.lblhora.Size = new System.Drawing.Size(73, 34);
             this.lblhora.TabIndex = 0;
@@ -195,7 +199,7 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 505);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 802);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(41, 49);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -365,7 +369,7 @@
             this.panelprincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelprincipal.Location = new System.Drawing.Point(253, 37);
             this.panelprincipal.Name = "panelprincipal";
-            this.panelprincipal.Size = new System.Drawing.Size(1029, 566);
+            this.panelprincipal.Size = new System.Drawing.Size(1029, 863);
             this.panelprincipal.TabIndex = 2;
             this.panelprincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContenedor_Paint);
             // 
@@ -374,11 +378,36 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Maroon;
+            this.panel5.Location = new System.Drawing.Point(3, 434);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(5, 46);
+            this.panel5.TabIndex = 11;
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(6, 434);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(244, 46);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "EDICION";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1282, 603);
+            this.ClientSize = new System.Drawing.Size(1282, 900);
             this.Controls.Add(this.panelprincipal);
             this.Controls.Add(this.MenuVertical);
             this.Controls.Add(this.BarraTitulo);
@@ -427,5 +456,7 @@
         private Label lblfecha;
         private Label lblhora;
         private System.Windows.Forms.Timer timer1;
+        private Panel panel5;
+        private Button button2;
     }
 }
