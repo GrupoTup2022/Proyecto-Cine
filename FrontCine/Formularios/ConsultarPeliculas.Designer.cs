@@ -51,7 +51,7 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculasActivas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculasBajas)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +60,6 @@
             // 
             this.dgvPeliculasActivas.AllowUserToAddRows = false;
             this.dgvPeliculasActivas.AllowUserToDeleteRows = false;
-            this.dgvPeliculasActivas.AllowUserToOrderColumns = true;
             this.dgvPeliculasActivas.AllowUserToResizeColumns = false;
             this.dgvPeliculasActivas.AllowUserToResizeRows = false;
             this.dgvPeliculasActivas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -182,7 +181,6 @@
             // 
             this.dgvPeliculasBajas.AllowUserToAddRows = false;
             this.dgvPeliculasBajas.AllowUserToDeleteRows = false;
-            this.dgvPeliculasBajas.AllowUserToOrderColumns = true;
             this.dgvPeliculasBajas.AllowUserToResizeColumns = false;
             this.dgvPeliculasBajas.AllowUserToResizeRows = false;
             this.dgvPeliculasBajas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -197,8 +195,7 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
-            this.dataGridViewButtonColumn2,
-            this.dataGridViewButtonColumn1});
+            this.dataGridViewButtonColumn2});
             this.dgvPeliculasBajas.Location = new System.Drawing.Point(49, 216);
             this.dgvPeliculasBajas.Name = "dgvPeliculasBajas";
             this.dgvPeliculasBajas.ReadOnly = true;
@@ -208,6 +205,7 @@
             this.dgvPeliculasBajas.Size = new System.Drawing.Size(1283, 411);
             this.dgvPeliculasBajas.TabIndex = 19;
             this.dgvPeliculasBajas.Visible = false;
+            this.dgvPeliculasBajas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPeliculasBajas_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -288,23 +286,26 @@
             this.dataGridViewButtonColumn2.MinimumWidth = 6;
             this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
             this.dataGridViewButtonColumn2.ReadOnly = true;
-            this.dataGridViewButtonColumn2.Text = "Desabilitar";
+            this.dataGridViewButtonColumn2.Text = "Habilitar";
             this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
             // 
-            // dataGridViewButtonColumn1
+            // checkBox1
             // 
-            this.dataGridViewButtonColumn1.HeaderText = "Editar";
-            this.dataGridViewButtonColumn1.MinimumWidth = 6;
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.ReadOnly = true;
-            this.dataGridViewButtonColumn1.Text = "Editar";
-            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(1096, 175);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(236, 24);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.Text = "Mostrar Peliculas Desabilitadas";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // ConsultarPeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1377, 710);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dgvPeliculasBajas);
             this.Controls.Add(this.dgvPeliculasActivas);
             this.Name = "ConsultarPeliculas";
@@ -313,6 +314,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculasActivas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculasBajas)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -331,6 +333,7 @@
         private DataGridViewTextBoxColumn Genero;
         private DataGridViewButtonColumn Column1;
         private DataGridViewButtonColumn Editar;
+        private CheckBox checkBox1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -341,6 +344,5 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private DataGridViewButtonColumn dataGridViewButtonColumn2;
-        private DataGridViewButtonColumn dataGridViewButtonColumn1;
     }
 }

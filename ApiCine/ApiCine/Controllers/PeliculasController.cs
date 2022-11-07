@@ -61,13 +61,6 @@ namespace ApiCine.Controllers
         }
 
 
-        // GET api/<PeliculasController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         // POST api/<PeliculasController>
         [HttpPost("/pelicula")]
         public IActionResult PostPeliculas(Pelicula pelicula)
@@ -91,6 +84,7 @@ namespace ApiCine.Controllers
         [HttpPut("/oPelicula")]
         public IActionResult PutPelicula(Pelicula oPelicula)
         {
+
             try
             {
                 if (oPelicula == null)
@@ -101,24 +95,27 @@ namespace ApiCine.Controllers
             {
                 throw e;
             }
+
         }
 
         // DELETE api/<PeliculasController>/5
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        [HttpDelete("{id}, {baja}")]
+        public IActionResult AccionesPeliculas(int id, int baja)
         {
             try
             {
                 if (id == null)
                     return BadRequest("Datos de la pelicula Incorrectos");
 
-                return Ok(service.BajaPelicula(id));
+                return Ok(service.AccionesPeliculas(id, baja));
             }
             catch (Exception e)
             {
                 throw e;
             }
         }
+
+       
 
     }
 }

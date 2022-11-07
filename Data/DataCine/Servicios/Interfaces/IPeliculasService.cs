@@ -16,8 +16,7 @@ namespace DataCine.Servicios.Interfaces
         List<Director> ObtenerDirectores();
         List<Pelicula> ObtenerPeliculas();
         bool CargarPelicula(Pelicula oPelicula);
-        bool BajaPelicula(int id);
-        bool ModificarPelicula(Pelicula oPelicula);
+        bool AccionesPeliculas(int id,int baja);
         
 
 
