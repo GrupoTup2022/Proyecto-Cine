@@ -36,13 +36,12 @@
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.lblfecha = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblhora = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.submenuestadisticas = new System.Windows.Forms.Panel();
+            this.panelmenuestadisticas = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnreportesala = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -50,11 +49,9 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.btnestadisticas = new System.Windows.Forms.Button();
-            this.btnConsulta = new System.Windows.Forms.Button();
+            this.panellogo = new System.Windows.Forms.Panel();
             this.panelprincipal = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.BarraTitulo.SuspendLayout();
@@ -65,7 +62,7 @@
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.submenuestadisticas.SuspendLayout();
+            this.panelmenuestadisticas.SuspendLayout();
             this.SuspendLayout();
             // 
             // BarraTitulo
@@ -140,38 +137,29 @@
             // 
             // MenuVertical
             // 
+            this.MenuVertical.AutoScroll = true;
             this.MenuVertical.BackColor = System.Drawing.Color.White;
-            this.MenuVertical.Controls.Add(this.panel5);
             this.MenuVertical.Controls.Add(this.button2);
             this.MenuVertical.Controls.Add(this.lblfecha);
             this.MenuVertical.Controls.Add(this.pictureBox1);
             this.MenuVertical.Controls.Add(this.lblhora);
             this.MenuVertical.Controls.Add(this.pictureBox2);
-            this.MenuVertical.Controls.Add(this.submenuestadisticas);
+            this.MenuVertical.Controls.Add(this.panelmenuestadisticas);
             this.MenuVertical.Controls.Add(this.panel4);
             this.MenuVertical.Controls.Add(this.button1);
             this.MenuVertical.Controls.Add(this.panel3);
-            this.MenuVertical.Controls.Add(this.panel2);
-            this.MenuVertical.Controls.Add(this.panel1);
             this.MenuVertical.Controls.Add(this.button3);
             this.MenuVertical.Controls.Add(this.btnestadisticas);
-            this.MenuVertical.Controls.Add(this.btnConsulta);
+            this.MenuVertical.Controls.Add(this.panellogo);
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 37);
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(253, 863);
             this.MenuVertical.TabIndex = 1;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Maroon;
-            this.panel5.Location = new System.Drawing.Point(3, 434);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(5, 46);
-            this.panel5.TabIndex = 11;
-            // 
             // button2
             // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
@@ -179,9 +167,9 @@
             this.button2.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(6, 434);
+            this.button2.Location = new System.Drawing.Point(0, 269);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(244, 46);
+            this.button2.Size = new System.Drawing.Size(253, 46);
             this.button2.TabIndex = 10;
             this.button2.Text = "EDICION";
             this.button2.UseVisualStyleBackColor = true;
@@ -232,17 +220,18 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // submenuestadisticas
+            // panelmenuestadisticas
             // 
-            this.submenuestadisticas.Controls.Add(this.panel7);
-            this.submenuestadisticas.Controls.Add(this.btnreportesala);
-            this.submenuestadisticas.Controls.Add(this.panel6);
-            this.submenuestadisticas.Controls.Add(this.btnreporteventa);
-            this.submenuestadisticas.Location = new System.Drawing.Point(54, 334);
-            this.submenuestadisticas.Name = "submenuestadisticas";
-            this.submenuestadisticas.Size = new System.Drawing.Size(198, 98);
-            this.submenuestadisticas.TabIndex = 8;
-            this.submenuestadisticas.Visible = false;
+            this.panelmenuestadisticas.Controls.Add(this.panel7);
+            this.panelmenuestadisticas.Controls.Add(this.btnreportesala);
+            this.panelmenuestadisticas.Controls.Add(this.panel6);
+            this.panelmenuestadisticas.Controls.Add(this.btnreporteventa);
+            this.panelmenuestadisticas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelmenuestadisticas.Location = new System.Drawing.Point(0, 171);
+            this.panelmenuestadisticas.Name = "panelmenuestadisticas";
+            this.panelmenuestadisticas.Size = new System.Drawing.Size(253, 98);
+            this.panelmenuestadisticas.TabIndex = 8;
+            this.panelmenuestadisticas.Visible = false;
             // 
             // panel7
             // 
@@ -262,9 +251,11 @@
             this.btnreportesala.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnreportesala.Location = new System.Drawing.Point(6, 49);
             this.btnreportesala.Name = "btnreportesala";
-            this.btnreportesala.Size = new System.Drawing.Size(198, 46);
+            this.btnreportesala.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnreportesala.Size = new System.Drawing.Size(247, 46);
             this.btnreportesala.TabIndex = 10;
             this.btnreportesala.Text = "ULTIMA FACTURA";
+            this.btnreportesala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnreportesala.UseVisualStyleBackColor = true;
             this.btnreportesala.Click += new System.EventHandler(this.btnreportesala_Click);
             // 
@@ -286,16 +277,18 @@
             this.btnreporteventa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnreporteventa.Location = new System.Drawing.Point(6, 3);
             this.btnreporteventa.Name = "btnreporteventa";
-            this.btnreporteventa.Size = new System.Drawing.Size(198, 46);
+            this.btnreporteventa.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnreporteventa.Size = new System.Drawing.Size(247, 46);
             this.btnreporteventa.TabIndex = 9;
             this.btnreporteventa.Text = "REPORTE VENTA";
+            this.btnreporteventa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnreporteventa.UseVisualStyleBackColor = true;
             this.btnreporteventa.Click += new System.EventHandler(this.btnreporteventa_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Maroon;
-            this.panel4.Location = new System.Drawing.Point(-1, 178);
+            this.panel4.Location = new System.Drawing.Point(3, 338);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(5, 46);
             this.panel4.TabIndex = 7;
@@ -309,7 +302,7 @@
             this.button1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(2, 178);
+            this.button1.Location = new System.Drawing.Point(6, 338);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(244, 46);
             this.button1.TabIndex = 6;
@@ -319,26 +312,10 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Maroon;
-            this.panel3.Location = new System.Drawing.Point(0, 230);
+            this.panel3.Location = new System.Drawing.Point(4, 390);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(5, 46);
             this.panel3.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Maroon;
-            this.panel2.Location = new System.Drawing.Point(-1, 282);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 46);
-            this.panel2.TabIndex = 5;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Maroon;
-            this.panel1.Location = new System.Drawing.Point(0, 126);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 46);
-            this.panel1.TabIndex = 4;
             // 
             // button3
             // 
@@ -349,7 +326,7 @@
             this.button3.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(3, 230);
+            this.button3.Location = new System.Drawing.Point(7, 390);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(244, 46);
             this.button3.TabIndex = 3;
@@ -358,6 +335,7 @@
             // 
             // btnestadisticas
             // 
+            this.btnestadisticas.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnestadisticas.FlatAppearance.BorderSize = 0;
             this.btnestadisticas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnestadisticas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
@@ -365,29 +343,22 @@
             this.btnestadisticas.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnestadisticas.Image = ((System.Drawing.Image)(resources.GetObject("btnestadisticas.Image")));
             this.btnestadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnestadisticas.Location = new System.Drawing.Point(2, 282);
+            this.btnestadisticas.Location = new System.Drawing.Point(0, 125);
             this.btnestadisticas.Name = "btnestadisticas";
-            this.btnestadisticas.Size = new System.Drawing.Size(244, 46);
+            this.btnestadisticas.Size = new System.Drawing.Size(253, 46);
             this.btnestadisticas.TabIndex = 2;
             this.btnestadisticas.Text = "ESTADISTICAS";
             this.btnestadisticas.UseVisualStyleBackColor = true;
             this.btnestadisticas.Click += new System.EventHandler(this.btnestadisticas_Click);
             // 
-            // btnConsulta
+            // panellogo
             // 
-            this.btnConsulta.FlatAppearance.BorderSize = 0;
-            this.btnConsulta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnConsulta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsulta.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnConsulta.Image = ((System.Drawing.Image)(resources.GetObject("btnConsulta.Image")));
-            this.btnConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsulta.Location = new System.Drawing.Point(3, 126);
-            this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(244, 46);
-            this.btnConsulta.TabIndex = 1;
-            this.btnConsulta.Text = "USUARIOS";
-            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.panellogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panellogo.Location = new System.Drawing.Point(0, 0);
+            this.panellogo.Name = "panellogo";
+            this.panellogo.Size = new System.Drawing.Size(253, 125);
+            this.panellogo.TabIndex = 12;
+            this.panellogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panellogo_Paint);
             // 
             // panelprincipal
             // 
@@ -425,7 +396,7 @@
             this.MenuVertical.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.submenuestadisticas.ResumeLayout(false);
+            this.panelmenuestadisticas.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -440,15 +411,12 @@
         private Panel panelprincipal;
         private PictureBox btnrestaurar;
         private PictureBox pictureBox1;
-        private Button btnConsulta;
         private Button button3;
         private Button btnestadisticas;
         private Panel panel3;
-        private Panel panel2;
-        private Panel panel1;
         private Panel panel7;
         private Panel panel6;
-        private Panel submenuestadisticas;
+        private Panel panelmenuestadisticas;
         private Button btnreportesala;
         private Button btnreporteventa;
         private Panel panel4;
@@ -457,7 +425,7 @@
         private Label lblfecha;
         private Label lblhora;
         private System.Windows.Forms.Timer timer1;
-        private Panel panel5;
         private Button button2;
+        private Panel panellogo;
     }
 }

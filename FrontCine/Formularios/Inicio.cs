@@ -19,6 +19,7 @@ namespace ReportesCine.Formularios
         public Inicio()
         {
             InitializeComponent();
+            ocultarpaneles();
         }
         /// <summary>
         /// Evento mouse para poder mover la ventana que viene fijo por defecto al quitar border style
@@ -70,6 +71,33 @@ namespace ReportesCine.Formularios
         }
         /// FINALIZA CODIGO PARA ABRIR FORM HIJAS DE LOS BOTONES DE INICIO
         ///
+        
+        ////INICIA CODIGO DE PANELES
+        
+        private void ocultarpaneles()
+        {
+            panelmenuestadisticas.Visible = false;
+        }
+
+        private void ocultarsubmenus()
+        {
+            if(panelmenuestadisticas.Visible==true)
+                panelmenuestadisticas.Visible = false;
+        }
+
+        private void mostrarsubmenu(Panel submenu)
+        {
+            if (submenu.Visible == false)
+            {
+                ocultarsubmenus();
+                submenu.Visible = true;
+                
+            }
+            else
+            
+                submenu.Visible = false;
+            
+        }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -111,12 +139,12 @@ namespace ReportesCine.Formularios
 
         private void btnestadisticas_Click(object sender, EventArgs e)
         {
-            submenuestadisticas.Visible = true;
+            mostrarsubmenu(panelmenuestadisticas);
         }
 
         private void btnreporteventa_Click(object sender, EventArgs e)
         {
-            submenuestadisticas.Visible=false;
+            panelmenuestadisticas.Visible=false;
             abrirformularios(new ReporteForm());
 
             
@@ -141,7 +169,7 @@ namespace ReportesCine.Formularios
             Ticket ticket = new Ticket();
 
 
-            submenuestadisticas.Visible = false;
+            panelmenuestadisticas.Visible = false;
             //ReporteComprobante formcompro = new ReporteComprobante(new LibreriaTp.Comprobante());
             //formcompro.Show();
 
@@ -179,6 +207,11 @@ namespace ReportesCine.Formularios
                 login.Show();
                 }
             
+        }
+
+        private void panellogo_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
