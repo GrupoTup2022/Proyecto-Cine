@@ -44,6 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.BtnGuardar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cboGeneros
@@ -180,11 +181,22 @@
             this.label2.TabIndex = 26;
             this.label2.Text = "Pais";
             // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.Location = new System.Drawing.Point(271, 343);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(121, 51);
+            this.BtnGuardar.TabIndex = 33;
+            this.BtnGuardar.Text = "Guardar Cambios";
+            this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
             // EditarPeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 472);
+            this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.cboGeneros);
             this.Controls.Add(this.cboClasificaciones);
             this.Controls.Add(this.cboPaises);
@@ -227,5 +239,6 @@
         private Label label3;
         private Label label1;
         private Label label2;
+        private Button BtnGuardar;
     }
 }
