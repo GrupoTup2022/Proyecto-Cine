@@ -232,5 +232,10 @@ namespace ReportesCine.Formularios
         {
             this.WindowState = FormWindowState.Maximized;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            abrirformularios(new ComprobanteVenta());
+        }
     }
 }
