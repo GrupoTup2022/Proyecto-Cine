@@ -20,9 +20,9 @@ namespace FrontCine.Formularios
             InitializeComponent();
         }
 
-        private void ConsultarPeliculas_Load(object sender, EventArgs e)
+        private async void ConsultarPeliculas_Load(object sender, EventArgs e)
         {
-            CargarDGVAsync();
+            await CargarDGVAsync();
         }
 
         public async Task CargarDGVAsync()
