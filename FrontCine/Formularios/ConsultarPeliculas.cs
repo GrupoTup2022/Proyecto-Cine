@@ -110,10 +110,7 @@ namespace FrontCine.Formularios
 
         private void dgvPeliculasBajas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvPeliculasActivas.CurrentCell.ColumnIndex == 10)
-            {
-                MessageBox.Show("No se puede editar una pelicula desabilitada, Habilite para continuar","ATENCION", MessageBoxButtons.OK,MessageBoxIcon.Warning,MessageBoxDefaultButton.Button1);
-            }
+          
 
         }
     }
