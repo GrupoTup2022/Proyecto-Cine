@@ -44,5 +44,19 @@ namespace ApiCine.Controllers
             return cs.ConsultarButacas(ID);
         }
 
+        [HttpGet]
+        [Route("FormasVenta")]
+        public List<FormaVenta> ObtenerFormasVenta()
+        {
+            return cs.ConsultarFormasVenta();
+        }
+
+        [HttpGet]
+        [Route("FormasPago")]
+        public List<FormaPago> ObtenerFormasPago()
+        {
+            return cs.ConsultarFormasPago();
+        }
+
     }
 }
