@@ -23,15 +23,15 @@ namespace FrontCine.Formularios
             this.id = id;
         }
 
-        private void EditarPeliculas_Load(object sender, EventArgs e)
+        private async void EditarPeliculas_Load(object sender, EventArgs e)
         {       
-            CargarCampos();
-            CargarCombos(cboPaises,"paises");
+            await CargarCampos();
+            await CargarCombos(cboPaises,"paises");
         }
 
         
 
-        public async void CargarCampos()
+        public async Task CargarCampos()
         {
             string url = "https://localhost:7259/api/Peliculas/Peliculas";
             var data = await ClienteSingleton.getinstancia().GetAsync(url);
@@ -48,8 +48,9 @@ namespace FrontCine.Formularios
 
         }
         
+
         //Carga de combos
-        public async void CargarCombos(ComboBox cbo, string nombre)
+        public async Task CargarCombos(ComboBox cbo, string nombre)
         {
             string url = "https://localhost:7259/api/Peliculas/" + nombre;
             var data = await ClienteSingleton.getinstancia().GetAsync(url);
@@ -59,6 +60,5 @@ namespace FrontCine.Formularios
             cbo.ValueMember = "Id";
             cbo.DisplayMember = "Nombre";
         }
-
     }
 }
