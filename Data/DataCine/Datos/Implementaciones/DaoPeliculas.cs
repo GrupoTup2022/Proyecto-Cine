@@ -61,12 +61,17 @@ namespace DataCine.Datos.Implementaciones
                 p.Titulo_local = row[1].ToString();
                 p.duracion = Convert.ToInt32(row[2].ToString());
                 p.Fecha_Estreno = Convert.ToDateTime(row[3].ToString());
-                p.pais.Nombre = row[4].ToString();
-                p.director.Nombre = row[5].ToString();
-                p.distribuidora.Nombre = row[6].ToString();
-                p.clasificacion.Nombre = row[7].ToString();
-                p.genero.Nombre = row[8].ToString();
-                p.Baja = Convert.ToInt32(row[9].ToString());
+                p.pais.Id = Convert.ToInt32(row[4].ToString());
+                p.pais.Nombre = row[5].ToString();
+                p.director.Id = Convert.ToInt32(row[6].ToString());
+                p.director.Nombre = row[7].ToString();
+                p.distribuidora.Id = Convert.ToInt32(row[8].ToString());
+                p.distribuidora.Nombre = row[9].ToString();
+                p.clasificacion.Id = Convert.ToInt32(row[10].ToString());
+                p.clasificacion.Nombre = row[11].ToString();
+                p.genero.Id = Convert.ToInt32(row[12].ToString());
+                p.genero.Nombre = row[13].ToString();
+                p.Baja = Convert.ToInt32(row[14].ToString());
                 lPeliculas.Add(p);
             }
             return lPeliculas;
