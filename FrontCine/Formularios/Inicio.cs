@@ -227,5 +227,10 @@ namespace ReportesCine.Formularios
         {
             ocultarsubmenus();
         }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }
