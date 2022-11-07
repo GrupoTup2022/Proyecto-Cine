@@ -40,6 +40,36 @@ namespace ReportesCine.Cliente
                 response = await result.Content.ReadAsStringAsync();
             return response;
         }
+
+        public async Task<string> PutAsync(string url, string data)
+        {
+            StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
+            var result = await client.PutAsync(url, content);
+            var response = "";
+            if (result.IsSuccessStatusCode)
+                response = await result.Content.ReadAsStringAsync();
+            return response;
+        }
+
+        public async Task<string> DeleteAsync(string url)
+        {           
+            var result = await client.DeleteAsync(url);
+            var response = "";
+            if (result.IsSuccessStatusCode)
+                response = await result.Content.ReadAsStringAsync();
+            return response;
+        }
+
+        public async Task<string> PatchAsync(string url, string data)
+        {
+            StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
+            var result = await client.PatchAsync(url, content);
+            var response = "";
+            if (result.IsSuccessStatusCode)
+                response = await result.Content.ReadAsStringAsync();
+            return response;
+        }
+
     }
 
 

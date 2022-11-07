@@ -27,17 +27,17 @@ namespace FrontCine.Formularios
             nueva = new Pelicula();
         }
 
-        private void InsertarPeliculas_Load(object sender, EventArgs e)
+        private async void InsertarPeliculas_Load(object sender, EventArgs e)
         {
-            CargarCBO(cboClasificaciones, "Clasificacion");
-            CargarCBO(cboDirectores, "Directores");
-            CargarCBO(cboGeneros, "Generos");
-            CargarCBO(cboDistribuidoras, "Distribuidora");
-            CargarCBO(cboPaises, "Paises");
-            CargarDGVAsync();
+            await CargarCBO(cboClasificaciones, "Clasificacion");
+            await CargarCBO(cboDirectores, "Directores");
+            await CargarCBO(cboGeneros, "Generos");
+            await CargarCBO(cboDistribuidoras, "Distribuidora");
+            await CargarCBO(cboPaises, "Paises");
+            await CargarDGVAsync();
         }
 
-        private async void CargarCBO(ComboBox cbo, string nombre)
+        private async Task CargarCBO(ComboBox cbo, string nombre)
         {
             string url = "https://localhost:7259/api/Peliculas/" + nombre;
             var data = await ClienteSingleton.getinstancia().GetAsync(url);
@@ -123,6 +123,11 @@ namespace FrontCine.Formularios
         }
 
         private void barrasuperior_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void seleccion_Paint(object sender, PaintEventArgs e)
         {
 
         }

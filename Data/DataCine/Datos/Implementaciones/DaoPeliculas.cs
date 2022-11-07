@@ -36,11 +36,11 @@ namespace DataCine.Datos.Implementaciones
 
         }
 
-        public bool Baja(Pelicula oPelicula)
+        public bool Acciones(int id, int baja)
         {
             List<Parametro> lParametros = new List<Parametro>();
-            lParametros.Add(new Parametro("@id", oPelicula.Id));
-            lParametros.Add(new Parametro("@baja", oPelicula.Baja));
+            lParametros.Add(new Parametro("@id", id));
+            lParametros.Add(new Parametro("@baja", baja));
 
             if (HelperDAO.getinstancia().UtilizarProcedimiento("SP_BAJA_PELICULAS", lParametros) > 0)
                 return true;
@@ -61,12 +61,17 @@ namespace DataCine.Datos.Implementaciones
                 p.Titulo_local = row[1].ToString();
                 p.duracion = Convert.ToInt32(row[2].ToString());
                 p.Fecha_Estreno = Convert.ToDateTime(row[3].ToString());
-                p.pais.Nombre = row[4].ToString();
-                p.director.Nombre = row[5].ToString();
-                p.distribuidora.Nombre = row[6].ToString();
-                p.clasificacion.Nombre = row[7].ToString();
-                p.genero.Nombre = row[8].ToString();
-                p.Baja = Convert.ToInt32(row[9].ToString());
+                p.pais.Id = Convert.ToInt32(row[4].ToString());
+                p.pais.Nombre = row[5].ToString();
+                p.director.Id = Convert.ToInt32(row[6].ToString());
+                p.director.Nombre = row[7].ToString();
+                p.distribuidora.Id = Convert.ToInt32(row[8].ToString());
+                p.distribuidora.Nombre = row[9].ToString();
+                p.clasificacion.Id = Convert.ToInt32(row[10].ToString());
+                p.clasificacion.Nombre = row[11].ToString();
+                p.genero.Id = Convert.ToInt32(row[12].ToString());
+                p.genero.Nombre = row[13].ToString();
+                p.Baja = Convert.ToInt32(row[14].ToString());
                 lPeliculas.Add(p);
             }
             return lPeliculas;
@@ -147,5 +152,25 @@ namespace DataCine.Datos.Implementaciones
             return lPais;
         }
 
+        public bool ModificarPelicula(Pelicula oPelicula)
+        {
+            List<Parametro> lParametros = new List<Parametro>();
+            lParametros.Add(new Parametro("@titulo_local", oPelicula.Titulo_local));
+            lParametros.Add(new Parametro("@titulo_original", oPelicula.Titulo_original));
+            lParametros.Add(new Parametro("@descripcion", oPelicula.Descripcion));
+            lParametros.Add(new Parametro("@id_pais", oPelicula.pais.Id));
+            lParametros.Add(new Parametro("@id_clasificacion", oPelicula.clasificacion.Id));
+            lParametros.Add(new Parametro("@fecha_estreno", oPelicula.Fecha_Estreno));
+            lParametros.Add(new Parametro("@duracion_min", oPelicula.duracion));
+            lParametros.Add(new Parametro("@id_distibuidora", oPelicula.distribuidora.Id));
+            lParametros.Add(new Parametro("@id_genero", oPelicula.genero.Id));
+            lParametros.Add(new Parametro("@id_directores", oPelicula.director.Id));
+            lParametros.Add(new Parametro("@idPel", oPelicula.Id));
+
+            if (HelperDAO.getinstancia().UtilizarProcedimiento("SP_update_peliculas", lParametros) > 0)
+                return true;
+            else
+                return false;
+        }
     }
 }
