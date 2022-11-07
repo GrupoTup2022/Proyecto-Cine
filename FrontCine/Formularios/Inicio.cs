@@ -77,12 +77,15 @@ namespace ReportesCine.Formularios
         private void ocultarpaneles()
         {
             panelmenuestadisticas.Visible = false;
+            paneledicion.Visible = false;
         }
 
         private void ocultarsubmenus()
         {
             if(panelmenuestadisticas.Visible==true)
                 panelmenuestadisticas.Visible = false;
+            if(paneledicion.Visible==true)
+                paneledicion.Visible=false;
         }
 
         private void mostrarsubmenu(Panel submenu)
@@ -144,7 +147,7 @@ namespace ReportesCine.Formularios
 
         private void btnreporteventa_Click(object sender, EventArgs e)
         {
-            panelmenuestadisticas.Visible=false;
+            ocultarsubmenus();
             abrirformularios(new ReporteForm());
 
             
@@ -169,7 +172,7 @@ namespace ReportesCine.Formularios
             Ticket ticket = new Ticket();
 
 
-            panelmenuestadisticas.Visible = false;
+            ocultarsubmenus();
             //ReporteComprobante formcompro = new ReporteComprobante(new LibreriaTp.Comprobante());
             //formcompro.Show();
 
@@ -190,7 +193,7 @@ namespace ReportesCine.Formularios
 
         private void button2_Click(object sender, EventArgs e)
         {
-            abrirformularios(new InsertarPeliculas());
+            mostrarsubmenu(paneledicion);
         }
 
         private DialogResult GetDialogResult()
@@ -212,6 +215,17 @@ namespace ReportesCine.Formularios
         private void panellogo_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnpeliculas_Click(object sender, EventArgs e)
+        {
+            ocultarsubmenus();
+            abrirformularios(new InsertarPeliculas());
+        }
+
+        private void btnusuarios_Click(object sender, EventArgs e)
+        {
+            ocultarsubmenus();
         }
     }
 }
