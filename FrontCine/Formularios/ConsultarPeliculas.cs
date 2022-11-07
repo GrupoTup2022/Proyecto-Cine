@@ -49,8 +49,10 @@ namespace FrontCine.Formularios
         public async Task<bool> DesabilitarPeliculaAsync(int id, int baja)
         {
             string url = "https://localhost:7259/api/Peliculas/" + id.ToString() + ", " + baja;
-            var data = await ClienteSingleton.getinstancia().DeleteAsync(url);
+            string peliculaJason = JsonConvert.SerializeObject(id);
+            var data = await ClienteSingleton.getinstancia().PatchAsync(url,peliculaJason);
             return data == "true";
+
         }
 
         private async void dgvPeliculasActivas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -72,7 +74,7 @@ namespace FrontCine.Formularios
                     {  
                         MessageBox.Show("Se desabilito correctamente");
                         dgvPeliculasActivas.Rows.Clear();
-                        CargarDGVAsync();
+                        await CargarDGVAsync();
                     }
                     else
                     {
@@ -90,28 +92,56 @@ namespace FrontCine.Formularios
             return id;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        public int idPeliculaDesavilitado()
         {
-            if (checkBox1.Checked == true)
+            int id = 0;
+            id = Convert.ToInt32(dgvPeliculasBajas.CurrentRow.Cells[0].Value.ToString());
+            return id;
+        }
+
+
+        private async void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if ( checkBox1.Checked == true)
             {
+          
                 dgvPeliculasBajas.Visible = true;
                 dgvPeliculasActivas.Visible = false;
                 dgvPeliculasBajas.Rows.Clear();
-                CargarDGVAsync();
+                await CargarDGVAsync();
+
             }
             else
             {
+             
                 dgvPeliculasBajas.Visible = false;
                 dgvPeliculasActivas.Visible = true;
                 dgvPeliculasActivas.Rows.Clear();
-                CargarDGVAsync();
+                await CargarDGVAsync();
+
             }
         }
 
-        private void dgvPeliculasBajas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private async void dgvPeliculasBajas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-          
 
+            if (dgvPeliculasActivas.CurrentCell.ColumnIndex == 9)
+            {
+                if (MessageBox.Show("¿Estas seguro que quieres habilitar esta pelicula?", "Desabilitar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+
+                    if (await DesabilitarPeliculaAsync(idPeliculaDesavilitado(), 0) != null)
+                    {
+                        MessageBox.Show("Se habilito correctamente");
+                        dgvPeliculasBajas.Rows.Clear();
+                        await CargarDGVAsync();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ah ocurrido un error");
+                    }
+                }
+            }
         }
     }
 }

@@ -48,11 +48,22 @@ namespace DataCine.Datos.Implementaciones
                 return false;
         }
 
+        public string Sentencia(DateTime desde, DateTime hasta, string genero)
+        {
+            string sentencia = "  select id_pelicula as 'ID', titulo_local 'Titulo',duracion_min 'Duracion',fecha_estreno 'Fecha de Estreno',p.id_pais, pais,p.id_director, director,p.id_distribuidora, distribuidora,p.id_calificacion, calificacion 'Calificacion',p.id_genero,genero 'Genero\r\n', baja, fecha_baja  \r\n from Peliculas p join Calificaciones c on p.id_calificacion = c.id_calificacion  \r\n join generos g on p.id_genero = g.id_genero  \r\n join Paises pa on p.id_pais = pa.id_pais  \r\n join distribuidoras d on p.id_distribuidora = d.id_distribuidora  \r\n join directores di on p.id_director = di.id_director " +
+                "Where fecha_estreno between " + desde + " and " + hasta;
 
-        public List<Pelicula> ObtenerPeliculas()
+            if(genero != "Todos")
+            {
+                sentencia += " and genero = " + genero;
+            }
+            return sentencia;
+        }
+
+        public List<Pelicula> ObtenerPeliculas(string Sp)
         {
             List<Pelicula> lPeliculas = new List<Pelicula>();
-            DataTable dt = HelperDAO.getinstancia().ConsultarDB("SP_CONSULTA_PELICULAS_TODO");
+            DataTable dt = HelperDAO.getinstancia().ConsultarDB(SP);
 
             foreach (DataRow row in dt.Rows)
             {
