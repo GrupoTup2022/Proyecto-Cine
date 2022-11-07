@@ -26,10 +26,16 @@ namespace FrontCine.Formularios
         private async void EditarPeliculas_Load(object sender, EventArgs e)
         {       
             await CargarCampos();
-            await CargarCombos(cboPaises,"paises");
+            
+            
+            await CargarCombos(cboDistribuidoras, "distribuidora");
+            await CargarCombos(cboPaises, "paises");
+            await CargarCombos(cboDirectores, "directores");
+            await CargarCombos(cboClasificaciones, "clasificacion");
+            await CargarCombos(cboGeneros, "generos");
         }
 
-        
+
 
         public async Task CargarCampos()
         {
@@ -43,6 +49,11 @@ namespace FrontCine.Formularios
                 {
                     txtTitulo.Text = p.Titulo_local.ToString();
                     cboDistribuidoras.SelectedValue = p.distribuidora.Id;
+                    cboClasificaciones.SelectedValue = p.clasificacion.Id;
+                    cboDirectores.SelectedValue = p.director.Id;
+                    cboGeneros.SelectedValue = p.genero.Id;
+                    cboClasificaciones.SelectedValue = p.clasificacion.Id;
+                   
                 }
             }
 
