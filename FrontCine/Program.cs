@@ -1,3 +1,4 @@
+using FrontCine.Formularios;
 using FrontCine.Formularios.Reportes;
 using ReportesCine.Formularios;
 

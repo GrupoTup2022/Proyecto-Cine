@@ -31,6 +31,7 @@ namespace FrontCine.Formularios
             var data = await ClienteSingleton.getinstancia().GetAsync(url);
             List<Pelicula> lst = JsonConvert.DeserializeObject<List<Pelicula>>(data);
 
+
             dgvPeliculasActivas.Rows.Clear();
             dgvPeliculasBajas.Rows.Clear();
             foreach (Pelicula p in lst)
@@ -55,17 +56,30 @@ namespace FrontCine.Formularios
 
         private async void dgvPeliculasActivas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Pelicula pelicula = new Pelicula();
-            pelicula.Id = idPelicula();
-            pelicula.Baja = 0;
+ 
 
             if (dgvPeliculasActivas.CurrentCell.ColumnIndex == 9)
             {
                 if (MessageBox.Show("¿Estas seguro que quieres desabilitar esta pelicula?", "Desabilitar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
-                    pelicula.Baja = 1;  
-                    if (await DesabilitarPeliculaAsync(pelicula) != null)
+                    //Obtener pelicula seleccionada
+                    string url = "https://localhost:7259/api/Peliculas/Peliculas";
+                    var data = await ClienteSingleton.getinstancia().GetAsync(url);
+                    List<Pelicula> lst = JsonConvert.DeserializeObject<List<Pelicula>>(data);
+
+                    Pelicula selected = new Pelicula();
+                    foreach (Pelicula p in lst)
                     {
+                        {
+                            selected = p;
+                        }
+                    }
+                     
+                    selected.Baja = 1;
+
+                    if (await DesabilitarPeliculaAsync(selected) != null)
+                    {
+                        MessageBox.Show("AAAAA");
                         MessageBox.Show("Se desabilito correctamente");
                         dgvPeliculasActivas.Rows.Clear();
                         CargarDGVAsync();
