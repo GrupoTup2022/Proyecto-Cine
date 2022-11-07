@@ -91,23 +91,36 @@ namespace ApiCine.Controllers
         [HttpPut("/oPelicula")]
         public IActionResult PutAcciones(Pelicula oPelicula)
         {
-            try
-            {
-                if (oPelicula == null)
-                    BadRequest("Ha ocurrido un error");
-                return Ok(service.AccionesPelicula(oPelicula));
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            //try
+            //{
+            //    if (oPelicula == null)
+            //        BadRequest("Ha ocurrido un error");
+            //    return Ok(service.AccionesPelicula(oPelicula));
+            //}
+            //catch (Exception e)
+            //{
+            //    throw e;
+            //}
+            return Ok();
            
         }
 
         // DELETE api/<PeliculasController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            try
+            {
+                if (id == null)
+                    return BadRequest("Datos de la pelicula Incorrectos");
+
+                return Ok(service.BajaPelicula(id));
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
         }
     }
 }

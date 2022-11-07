@@ -46,40 +46,31 @@ namespace FrontCine.Formularios
 
         }
 
-        public async Task<bool> DesabilitarPeliculaAsync(Pelicula oPelicula)
+        public async Task<bool> DesabilitarPeliculaAsync(int id)
         {
-            string url = "https://localhost:7259/pelicula";
-            string peliculaJason = JsonConvert.SerializeObject(oPelicula);
-            var data = await ClienteSingleton.getinstancia().PostAsync(url, peliculaJason);
+            string url = "https://localhost:7259/api/Peliculas/" + id.ToString();
+            var data = await ClienteSingleton.getinstancia().DeleteAsync(url);
             return data == "true";
         }
 
         private async void dgvPeliculasActivas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
- 
+            if(dgvPeliculasActivas.CurrentCell.ColumnIndex == 10)
+            {
+                EditarPeliculas form = new EditarPeliculas(idPelicula());
+                form.Show();
+            }
+
+
 
             if (dgvPeliculasActivas.CurrentCell.ColumnIndex == 9)
             {
                 if (MessageBox.Show("¿Estas seguro que quieres desabilitar esta pelicula?", "Desabilitar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
-                    //Obtener pelicula seleccionada
-                    string url = "https://localhost:7259/api/Peliculas/Peliculas";
-                    var data = await ClienteSingleton.getinstancia().GetAsync(url);
-                    List<Pelicula> lst = JsonConvert.DeserializeObject<List<Pelicula>>(data);
+                                             
 
-                    Pelicula selected = new Pelicula();
-                    foreach (Pelicula p in lst)
-                    {
-                        {
-                            selected = p;
-                        }
-                    }
-                     
-                    selected.Baja = 1;
-
-                    if (await DesabilitarPeliculaAsync(selected) != null)
-                    {
-                        MessageBox.Show("AAAAA");
+                    if (await DesabilitarPeliculaAsync(idPelicula()) != null)
+                    {  
                         MessageBox.Show("Se desabilito correctamente");
                         dgvPeliculasActivas.Rows.Clear();
                         CargarDGVAsync();

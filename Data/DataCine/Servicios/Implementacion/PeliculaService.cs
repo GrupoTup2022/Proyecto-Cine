@@ -54,9 +54,9 @@ namespace DataCine.Servicios.Implementacion
             return oDao.CargarPelicula(oPelicula);
         }
 
-        public bool AccionesPelicula(Pelicula oPelicula)
+        public bool BajaPelicula(int id)
         {
-            return oDao.Baja(oPelicula);
+            return oDao.Baja(id);
         }
 
        

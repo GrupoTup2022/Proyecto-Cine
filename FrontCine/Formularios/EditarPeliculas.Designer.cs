@@ -203,6 +203,7 @@
             this.Controls.Add(this.label2);
             this.Name = "EditarPeliculas";
             this.Text = "EditarPeliculas";
+            this.Load += new System.EventHandler(this.EditarPeliculas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

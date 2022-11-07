@@ -36,11 +36,11 @@ namespace DataCine.Datos.Implementaciones
 
         }
 
-        public bool Baja(Pelicula oPelicula)
+        public bool Baja(int id)
         {
             List<Parametro> lParametros = new List<Parametro>();
-            lParametros.Add(new Parametro("@id", oPelicula.Id));
-            lParametros.Add(new Parametro("@baja", oPelicula.Baja));
+            lParametros.Add(new Parametro("@id", id));
+            lParametros.Add(new Parametro("@baja", 1));
 
             if (HelperDAO.getinstancia().UtilizarProcedimiento("SP_BAJA_PELICULAS", lParametros) > 0)
                 return true;
