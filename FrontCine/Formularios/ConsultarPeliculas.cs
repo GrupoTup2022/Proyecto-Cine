@@ -66,8 +66,7 @@ namespace FrontCine.Formularios
             if (dgvPeliculasActivas.CurrentCell.ColumnIndex == 9)
             {
                 if (MessageBox.Show("¿Estas seguro que quieres desabilitar esta pelicula?", "Desabilitar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-                {
-                                             
+                {    
 
                     if (await DesabilitarPeliculaAsync(idPelicula(), 1) != null)
                     {  
@@ -78,9 +77,7 @@ namespace FrontCine.Formularios
                     else
                     {
                         MessageBox.Show("Ah ocurrido un error");
-                    }                                  
-                                  
-                 
+                    }                                                   
                 }
             }
 

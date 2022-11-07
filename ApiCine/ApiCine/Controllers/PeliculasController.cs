@@ -82,8 +82,9 @@ namespace ApiCine.Controllers
 
         // PUT api/<PeliculasController>/5
         [HttpPut("/oPelicula")]
-        public IActionResult PutAcciones(Pelicula oPelicula)
+        public IActionResult PutPelicula(Pelicula oPelicula)
         {
+<<<<<<< HEAD
             //try
             //{
             //    if (oPelicula == null)
@@ -96,6 +97,18 @@ namespace ApiCine.Controllers
             //}
             return Ok();
 
+=======
+            try
+            {
+                if (oPelicula == null)
+                    BadRequest("Ha ocurrido un error");
+                return Ok(service.ModificarPelicula(oPelicula));
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+>>>>>>> 03270bebec3c9b772c6f63b8bde1a9d559bc1b38
         }
 
         // DELETE api/<PeliculasController>/5

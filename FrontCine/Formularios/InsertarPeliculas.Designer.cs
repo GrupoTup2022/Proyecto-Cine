@@ -301,6 +301,7 @@
             this.seleccion.Name = "seleccion";
             this.seleccion.Size = new System.Drawing.Size(273, 622);
             this.seleccion.TabIndex = 19;
+            this.seleccion.Paint += new System.Windows.Forms.PaintEventHandler(this.seleccion_Paint);
             // 
             // InsertarPeliculas
             // 

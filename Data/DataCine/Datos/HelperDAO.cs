@@ -175,7 +175,10 @@ namespace DataCine.Datos
             }
             finally
             {
-                cnn.Close();
+                if (cnn.State == ConnectionState.Open && cnn!= null)
+                {
+                    cnn.Close();
+                }
             }
         }
 
