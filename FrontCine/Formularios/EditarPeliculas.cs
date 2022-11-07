@@ -26,6 +26,7 @@ namespace FrontCine.Formularios
         private void EditarPeliculas_Load(object sender, EventArgs e)
         {       
             CargarCampos();
+            CargarCombos(cboPaises,"paises");
         }
 
         
@@ -46,8 +47,18 @@ namespace FrontCine.Formularios
             }
 
         }
+        
+        //Carga de combos
+        public async void CargarCombos(ComboBox cbo, string nombre)
+        {
+            string url = "https://localhost:7259/api/Peliculas/" + nombre;
+            var data = await ClienteSingleton.getinstancia().GetAsync(url);
+            List<object> lst = JsonConvert.DeserializeObject<List<object>>(data);
 
-       
+            cbo.DataSource = lst;
+            cbo.ValueMember = "Id";
+            cbo.DisplayMember = "Nombre";
+        }
 
     }
 }

@@ -126,5 +126,10 @@ namespace FrontCine.Formularios
         {
 
         }
+
+        private void seleccion_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

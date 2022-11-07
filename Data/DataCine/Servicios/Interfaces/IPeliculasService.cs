@@ -17,6 +17,7 @@ namespace DataCine.Servicios.Interfaces
         List<Pelicula> ObtenerPeliculas();
         bool CargarPelicula(Pelicula oPelicula);
         bool BajaPelicula(int id);
+        bool ModificarPelicula(Pelicula oPelicula);
         
 
 
