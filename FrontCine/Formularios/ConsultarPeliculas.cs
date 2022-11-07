@@ -46,9 +46,9 @@ namespace FrontCine.Formularios
 
         }
 
-        public async Task<bool> DesabilitarPeliculaAsync(int id)
+        public async Task<bool> DesabilitarPeliculaAsync(int id, int baja)
         {
-            string url = "https://localhost:7259/api/Peliculas/" + id.ToString();
+            string url = "https://localhost:7259/api/Peliculas/" + id.ToString() + ", " + baja;
             var data = await ClienteSingleton.getinstancia().DeleteAsync(url);
             return data == "true";
         }
@@ -69,7 +69,7 @@ namespace FrontCine.Formularios
                 {
                                              
 
-                    if (await DesabilitarPeliculaAsync(idPelicula()) != null)
+                    if (await DesabilitarPeliculaAsync(idPelicula(), 1) != null)
                     {  
                         MessageBox.Show("Se desabilito correctamente");
                         dgvPeliculasActivas.Rows.Clear();
@@ -93,6 +93,31 @@ namespace FrontCine.Formularios
             return id;
         }
 
-        
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                dgvPeliculasBajas.Visible = true;
+                dgvPeliculasActivas.Visible = false;
+                dgvPeliculasBajas.Rows.Clear();
+                CargarDGVAsync();
+            }
+            else
+            {
+                dgvPeliculasBajas.Visible = false;
+                dgvPeliculasActivas.Visible = true;
+                dgvPeliculasActivas.Rows.Clear();
+                CargarDGVAsync();
+            }
+        }
+
+        private void dgvPeliculasBajas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvPeliculasActivas.CurrentCell.ColumnIndex == 10)
+            {
+                MessageBox.Show("No se puede editar una pelicula desabilitada, Habilite para continuar","ATENCION", MessageBoxButtons.OK,MessageBoxIcon.Warning,MessageBoxDefaultButton.Button1);
+            }
+
+        }
     }
 }
