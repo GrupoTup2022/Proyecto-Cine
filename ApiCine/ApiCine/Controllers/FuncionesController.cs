@@ -31,5 +31,23 @@ namespace ApiCine.Controllers
             return Ok(fs.consultarFunciones());
         }
 
+        [HttpGet]
+        [Route("Horarios")]
+        public IActionResult GetHorarios()
+        {
+            return Ok(fs.consutlarHorarios());
+        }
+        [HttpGet]
+        [Route("Audios")]
+        public IActionResult GetAudios()
+        {
+            return Ok(fs.consultarAudios());
+        }
+        [HttpGet]
+        [Route("Salas")]
+        public IActionResult GetSalas()
+        {
+            return Ok(fs.consultarSalas());
+        }
     }
 }

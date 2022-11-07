@@ -24,7 +24,7 @@ namespace DataCine.Datos.Implementaciones
             lista_parametros.Add(new Parametro("@id_sala", funcion.Sala.Id));
             lista_parametros.Add(new Parametro("@precio", funcion.Precio));
             lista_parametros.Add(new Parametro("@fecha", funcion.fecha));
-            return HelperDAO.getinstancia().UtilizarProcedimiento("SP_AGREGAR_FUNCION", lista_parametros);
+            return HelperDAO.getinstancia().UtilizarProcedimiento("SP_DELETE_FUNCION", lista_parametros);
         }
         //ejecutar sp baja_funcion
         public int BajaLogicaFuncion(Funcion funcion)
