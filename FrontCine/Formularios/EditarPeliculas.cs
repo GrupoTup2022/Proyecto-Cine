@@ -25,11 +25,18 @@ namespace FrontCine.Formularios
 
         private async void EditarPeliculas_Load(object sender, EventArgs e)
         {       
+            
+            await CargarCombos(cboDistribuidoras, "distribuidora");
+            await CargarCombos(cboPaises, "paises");
+            await CargarCombos(cboDirectores, "directores");
+            await CargarCombos(cboClasificaciones, "clasificacion");
+            await CargarCombos(cboGeneros, "generos");
+
             await CargarCampos();
-            await CargarCombos(cboPaises,"paises");
+
         }
 
-        
+
 
         public async Task CargarCampos()
         {
@@ -41,9 +48,20 @@ namespace FrontCine.Formularios
             {
                 if(p.Id == id)
                 {
+                    txtDuracion.Text = p.duracion.ToString();
                     txtTitulo.Text = p.Titulo_local.ToString();
-                    cboDistribuidoras.SelectedValue = p.distribuidora.Id;
-                }
+                    int index = cboDistribuidoras.FindString(p.distribuidora.Nombre);
+                    cboDistribuidoras.SelectedIndex = index;
+                    index = cboClasificaciones.FindString(p.clasificacion.Nombre);
+                    cboClasificaciones.SelectedIndex = index;
+                    index = cboDirectores.FindString(p.director.Nombre);
+                    cboDirectores.SelectedIndex = index;
+                    index = cboGeneros.FindString(p.genero.Nombre);
+                    cboGeneros.SelectedIndex = index;
+                    index = cboPaises.FindString(p.pais.Nombre);
+                    cboPaises.SelectedIndex = index;
+                    dtpEstreno.Value = p.Fecha_Estreno;
+                }    
             }
 
         }
@@ -59,6 +77,43 @@ namespace FrontCine.Formularios
             cbo.DataSource = lst;
             cbo.ValueMember = "Id";
             cbo.DisplayMember = "Nombre";
+        }
+
+        public async Task<bool> ModificarPelicula()
+        {
+            bool result = true;
+            string url = "https://localhost:7259/api/Peliculas/Peliculas";
+            var data = await ClienteSingleton.getinstancia().GetAsync(url);
+            List<Pelicula> lst = JsonConvert.DeserializeObject<List<Pelicula>>(data);
+
+            foreach (Pelicula p in lst)
+            {
+                if (p.Id == id)
+                {
+                    p.clasificacion.Id = Convert.ToInt32( cboClasificaciones.SelectedValue);
+                    p.clasificacion.Nombre = cboClasificaciones.SelectedText;
+
+                    p.Titulo_local = txtTitulo.Text;
+
+
+                    string url2 = "https://localhost:7259/pelicula";
+                    string peliculaJason = JsonConvert.SerializeObject(p);
+                    var data2 = await ClienteSingleton.getinstancia().PutAsync(url2, peliculaJason);
+
+                }
+                else result = false;
+            }
+
+            return result;
+        }
+
+        private async void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            if (await ModificarPelicula()==true)
+            {
+                MessageBox.Show("SI");
+            }
+            else MessageBox.Show("ERROR");
         }
     }
 }

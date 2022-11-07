@@ -33,6 +33,34 @@ namespace DataCine.Datos.Implementaciones
             return butacasOcupadas;
         }
 
+        List<FormaPago> IDaoComprobantes.ConsultarFormasPago()
+        {
+            List<FormaPago> formaPagos = new List<FormaPago>();
+            DataTable dt = HelperDAO.getinstancia().ConsultarDB("SP_FORMAS_PAGO");
+            foreach (DataRow row in dt.Rows)
+            {
+                FormaPago formaPago = new FormaPago();
+                formaPago.Id=Convert.ToInt32(row["id_forma_pago"]);
+                formaPago.Nombre = row["descripcion"].ToString();
+                formaPagos.Add(formaPago);
+            }
+                return formaPagos;
+        }
+
+        List<FormaVenta> IDaoComprobantes.ConsultarFormasVenta()
+        {
+            List<FormaVenta> formaVentas = new List<FormaVenta>();
+            DataTable dt = HelperDAO.getinstancia().ConsultarDB("SP_FORMAS_VENTA");
+            foreach (DataRow row in dt.Rows)
+            {
+                FormaVenta formaVenta = new FormaVenta();
+                formaVenta.Id = Convert.ToInt32(row["id_forma_venta"]);
+                formaVenta.Nombre = row["descripcion"].ToString();
+                formaVentas.Add(formaVenta);
+            }
+            return formaVentas;
+        }
+
         List<Funcion> IDaoComprobantes.ConsultarFunciones(DateTime fecha)
         {
             List<Funcion> funciones = new List<Funcion>();

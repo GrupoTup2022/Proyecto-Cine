@@ -17,6 +17,7 @@ namespace DataCine.Datos.Interfaces
         List<Pelicula> ObtenerPeliculas(string SP); 
         bool CargarPelicula(Pelicula oPelicula);
         bool Acciones(int id, int baja);
+        bool ModificarPelicula(Pelicula oPelicula);
 
     }
 }

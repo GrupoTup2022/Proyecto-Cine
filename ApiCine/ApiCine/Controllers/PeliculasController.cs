@@ -81,7 +81,7 @@ namespace ApiCine.Controllers
         }
 
         // PUT api/<PeliculasController>/5
-        [HttpPut("/oPelicula")]
+        [HttpPut("/pelicula")]
         public IActionResult PutPelicula(Pelicula oPelicula)
         {
 
