@@ -15,7 +15,8 @@ namespace DataCine.Datos.Interfaces
         List<Genero> ObtenerGeneros();
         List<Director> ObtenerDirectores();
         List<Pelicula> ObtenerPeliculas();
-        bool CargarPelicula(Pelicula oPelicula); 
+        bool CargarPelicula(Pelicula oPelicula);
+        bool Baja(Pelicula oPelicula);
 
     }
 }

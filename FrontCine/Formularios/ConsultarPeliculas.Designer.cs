@@ -39,6 +39,7 @@
             this.Clasificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dgvPeliculasBajas = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +50,7 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculasActivas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculasBajas)).BeginInit();
@@ -73,15 +75,17 @@
             this.distribuidora,
             this.Clasificacion,
             this.Genero,
-            this.Column1});
+            this.Column1,
+            this.Editar});
             this.dgvPeliculasActivas.Location = new System.Drawing.Point(49, 216);
             this.dgvPeliculasActivas.Name = "dgvPeliculasActivas";
             this.dgvPeliculasActivas.ReadOnly = true;
             this.dgvPeliculasActivas.RowHeadersVisible = false;
             this.dgvPeliculasActivas.RowHeadersWidth = 51;
             this.dgvPeliculasActivas.RowTemplate.Height = 29;
-            this.dgvPeliculasActivas.Size = new System.Drawing.Size(1163, 411);
+            this.dgvPeliculasActivas.Size = new System.Drawing.Size(1283, 411);
             this.dgvPeliculasActivas.TabIndex = 18;
+            this.dgvPeliculasActivas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPeliculasActivas_CellContentClick);
             // 
             // Id
             // 
@@ -165,6 +169,15 @@
             this.Column1.Text = "Desabilitar";
             this.Column1.UseColumnTextForButtonValue = true;
             // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.MinimumWidth = 6;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Text = "Editar";
+            this.Editar.UseColumnTextForButtonValue = true;
+            // 
             // dgvPeliculasBajas
             // 
             this.dgvPeliculasBajas.AllowUserToAddRows = false;
@@ -184,6 +197,7 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
+            this.dataGridViewButtonColumn2,
             this.dataGridViewButtonColumn1});
             this.dgvPeliculasBajas.Location = new System.Drawing.Point(49, 216);
             this.dgvPeliculasBajas.Name = "dgvPeliculasBajas";
@@ -191,7 +205,7 @@
             this.dgvPeliculasBajas.RowHeadersVisible = false;
             this.dgvPeliculasBajas.RowHeadersWidth = 51;
             this.dgvPeliculasBajas.RowTemplate.Height = 29;
-            this.dgvPeliculasBajas.Size = new System.Drawing.Size(1163, 411);
+            this.dgvPeliculasBajas.Size = new System.Drawing.Size(1283, 411);
             this.dgvPeliculasBajas.TabIndex = 19;
             this.dgvPeliculasBajas.Visible = false;
             // 
@@ -267,21 +281,30 @@
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
+            // dataGridViewButtonColumn2
+            // 
+            this.dataGridViewButtonColumn2.FillWeight = 99.22757F;
+            this.dataGridViewButtonColumn2.HeaderText = "Acciones";
+            this.dataGridViewButtonColumn2.MinimumWidth = 6;
+            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
+            this.dataGridViewButtonColumn2.ReadOnly = true;
+            this.dataGridViewButtonColumn2.Text = "Desabilitar";
+            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
+            // 
             // dataGridViewButtonColumn1
             // 
-            this.dataGridViewButtonColumn1.FillWeight = 99.22757F;
-            this.dataGridViewButtonColumn1.HeaderText = "Acciones";
+            this.dataGridViewButtonColumn1.HeaderText = "Editar";
             this.dataGridViewButtonColumn1.MinimumWidth = 6;
             this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
             this.dataGridViewButtonColumn1.ReadOnly = true;
-            this.dataGridViewButtonColumn1.Text = "Desabilitar";
+            this.dataGridViewButtonColumn1.Text = "Editar";
             this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
             // 
             // ConsultarPeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1252, 710);
+            this.ClientSize = new System.Drawing.Size(1377, 710);
             this.Controls.Add(this.dgvPeliculasBajas);
             this.Controls.Add(this.dgvPeliculasActivas);
             this.Name = "ConsultarPeliculas";
@@ -296,6 +319,7 @@
         #endregion
 
         private DataGridView dgvPeliculasActivas;
+        private DataGridView dgvPeliculasBajas;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Titulo;
         private DataGridViewTextBoxColumn Duracion;
@@ -306,7 +330,7 @@
         private DataGridViewTextBoxColumn Clasificacion;
         private DataGridViewTextBoxColumn Genero;
         private DataGridViewButtonColumn Column1;
-        private DataGridView dgvPeliculasBajas;
+        private DataGridViewButtonColumn Editar;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -316,6 +340,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridViewButtonColumn dataGridViewButtonColumn2;
         private DataGridViewButtonColumn dataGridViewButtonColumn1;
     }
 }

@@ -142,6 +142,7 @@ namespace DataCine.Datos
                     cmd.Parameters.AddWithValue(p.Name, p.Value);
                 }
                 filasAfectadas = cmd.ExecuteNonQuery();
+                cnn.Close();
                 return filasAfectadas;
             }
             catch (SqlException ex)
@@ -195,6 +196,7 @@ namespace DataCine.Datos
                 }
                 cmd.Parameters.Clear();
                 tabla.Load(cmd.ExecuteReader());
+                cnn.Close();
                 return tabla;
             }
             catch (SqlException ex)

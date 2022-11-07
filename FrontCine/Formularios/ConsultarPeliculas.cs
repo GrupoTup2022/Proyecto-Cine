@@ -44,5 +44,50 @@ namespace FrontCine.Formularios
             }
 
         }
+
+        public async Task<bool> DesabilitarPeliculaAsync(Pelicula oPelicula)
+        {
+            string url = "https://localhost:7259/pelicula";
+            string peliculaJason = JsonConvert.SerializeObject(oPelicula);
+            var data = await ClienteSingleton.getinstancia().PostAsync(url, peliculaJason);
+            return data == "true";
+        }
+
+        private async void dgvPeliculasActivas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Pelicula pelicula = new Pelicula();
+            pelicula.Id = idPelicula();
+            pelicula.Baja = 0;
+
+            if (dgvPeliculasActivas.CurrentCell.ColumnIndex == 9)
+            {
+                if (MessageBox.Show("¿Estas seguro que quieres desabilitar esta pelicula?", "Desabilitar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+                    pelicula.Baja = 1;  
+                    if (await DesabilitarPeliculaAsync(pelicula) != null)
+                    {
+                        MessageBox.Show("Se desabilito correctamente");
+                        dgvPeliculasActivas.Rows.Clear();
+                        CargarDGVAsync();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ah ocurrido un error");
+                    }                                  
+                                  
+                 
+                }
+            }
+
+        }
+
+        public int idPelicula()
+        {
+            int id = 0;
+            id = Convert.ToInt32(dgvPeliculasActivas.CurrentRow.Cells[0].Value.ToString());
+            return id;
+        }
+
+        
     }
 }

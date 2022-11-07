@@ -88,9 +88,20 @@ namespace ApiCine.Controllers
         }
 
         // PUT api/<PeliculasController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("/oPelicula")]
+        public IActionResult PutAcciones(Pelicula oPelicula)
         {
+            try
+            {
+                if (oPelicula == null)
+                    BadRequest("Ah ocurrido un error");
+                return Ok(service.AccionesPelicula(oPelicula));
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+           
         }
 
         // DELETE api/<PeliculasController>/5
