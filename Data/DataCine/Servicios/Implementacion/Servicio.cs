@@ -1,6 +1,10 @@
 ﻿using DataCine.ClasesGenericas;
 using DataCine.Datos;
+using DataCine.Datos.Implementaciones;
+using DataCine.Datos.Interfaces;
+using DataCine.Dominio;
 using DataCine.Servicios.Interfaces;
+using LibreriaTp;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,6 +16,23 @@ namespace DataCine.Servicios.Implementacion
 {
     public class Servicio : IService
     {
+        IDaobill odaobill;
+
+        public Servicio()
+        {
+            odaobill = new DaoBill();
+        }
+
+        public List<FormaPago> traerformaspago()
+        {
+            return odaobill.;
+        }
+
+        public List<facturabill> traertablabill(List<Parametro> lpara)
+        {
+            return odaobill.consultarfacturas(lpara);
+        }
+
         public List<TIcketxSala> traerticketsxsala()
         {
             DataTable dt = new DataTable();
