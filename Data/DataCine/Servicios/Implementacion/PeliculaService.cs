@@ -49,6 +49,11 @@ namespace DataCine.Servicios.Implementacion
             return oDao.ObtenerPeliculas("SP_CONSULTA_PELICULAS_TODO");
         }
 
+        public List<Pelicula> FiltrarPeliculas(DateTime desde, DateTime hasta, string titulo)
+        {
+            return oDao.FiltrarPeliculas(desde, hasta, titulo);
+        }
+
         public bool CargarPelicula(Pelicula oPelicula)
         {
             return oDao.CargarPelicula(oPelicula);
@@ -63,5 +68,7 @@ namespace DataCine.Servicios.Implementacion
         {
             return oDao.ModificarPelicula(oPelicula);
         }
+
+
     }
 }

@@ -208,8 +208,7 @@ namespace DataCine.Datos
                 foreach (Parametro p in lParametros)
                 {
                     cmd.Parameters.AddWithValue(p.Name, p.Value);
-                }
-                cmd.Parameters.Clear();
+                }           
                 tabla.Load(cmd.ExecuteReader());
                 cnn.Close();
                 return tabla;
