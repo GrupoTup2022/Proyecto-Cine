@@ -40,6 +40,10 @@ namespace DataCine.Servicios.Implementacion
         {
             return dao.ConsultarFormasVenta();
         }
+        List<Promo> IComprobanteService.ConsultarPromos()
+        {
+            return dao.ConsultarPromos();
+        }
 
     }
 }

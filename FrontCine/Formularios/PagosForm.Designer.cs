@@ -52,6 +52,7 @@
             this.btn_terminar.TabIndex = 21;
             this.btn_terminar.Text = "Terminar";
             this.btn_terminar.UseVisualStyleBackColor = true;
+            this.btn_terminar.Click += new System.EventHandler(this.btn_terminar_Click);
             // 
             // btn_agregar
             // 
@@ -61,6 +62,7 @@
             this.btn_agregar.TabIndex = 20;
             this.btn_agregar.Text = "Agregar";
             this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // lbl_total
             // 

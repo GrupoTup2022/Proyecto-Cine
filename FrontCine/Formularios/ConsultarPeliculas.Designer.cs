@@ -52,6 +52,13 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculasActivas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculasBajas)).BeginInit();
             this.SuspendLayout();
@@ -79,13 +86,13 @@
             this.Genero,
             this.Column1,
             this.Editar});
-            this.dgvPeliculasActivas.Location = new System.Drawing.Point(68, 231);
+            this.dgvPeliculasActivas.Location = new System.Drawing.Point(32, 224);
             this.dgvPeliculasActivas.Name = "dgvPeliculasActivas";
             this.dgvPeliculasActivas.ReadOnly = true;
             this.dgvPeliculasActivas.RowHeadersVisible = false;
             this.dgvPeliculasActivas.RowHeadersWidth = 51;
             this.dgvPeliculasActivas.RowTemplate.Height = 29;
-            this.dgvPeliculasActivas.Size = new System.Drawing.Size(1117, 347);
+            this.dgvPeliculasActivas.Size = new System.Drawing.Size(1185, 347);
             this.dgvPeliculasActivas.TabIndex = 18;
             this.dgvPeliculasActivas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPeliculasActivas_CellContentClick);
             // 
@@ -202,7 +209,7 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewButtonColumn2});
-            this.dgvPeliculasBajas.Location = new System.Drawing.Point(34, 231);
+            this.dgvPeliculasBajas.Location = new System.Drawing.Point(32, 224);
             this.dgvPeliculasBajas.Name = "dgvPeliculasBajas";
             this.dgvPeliculasBajas.ReadOnly = true;
             this.dgvPeliculasBajas.RowHeadersVisible = false;
@@ -300,7 +307,7 @@
             this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(983, 173);
+            this.checkBox1.Location = new System.Drawing.Point(981, 171);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(236, 24);
             this.checkBox1.TabIndex = 20;
@@ -308,11 +315,78 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // dtpDesde
+            // 
+            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDesde.Location = new System.Drawing.Point(59, 75);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(127, 27);
+            this.dtpDesde.TabIndex = 21;
+            // 
+            // dtpHasta
+            // 
+            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpHasta.Location = new System.Drawing.Point(255, 75);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(129, 27);
+            this.dtpHasta.TabIndex = 22;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(177, 142);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(319, 27);
+            this.textBox1.TabIndex = 23;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(59, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 20);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Fecha Desde";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(255, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 20);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Fecha Hasta";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(63, 145);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 20);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Buscar Titulo";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(602, 142);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Consultar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ConsultarPeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dtpHasta);
+            this.Controls.Add(this.dtpDesde);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dgvPeliculasBajas);
             this.Controls.Add(this.dgvPeliculasActivas);
@@ -352,5 +426,12 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private DataGridViewButtonColumn dataGridViewButtonColumn2;
+        private DateTimePicker dtpDesde;
+        private DateTimePicker dtpHasta;
+        private TextBox textBox1;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Button button1;
     }
 }

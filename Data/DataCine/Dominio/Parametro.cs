@@ -22,5 +22,7 @@ namespace DataCine.Dominio
             this.Value = value;
             this.Name = nombre;
         }
+
+       
     }
 }

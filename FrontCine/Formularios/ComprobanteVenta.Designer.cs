@@ -52,6 +52,7 @@
             this.PrecioTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_comprobante = new System.Windows.Forms.Button();
             this.btn_pagos = new System.Windows.Forms.Button();
+            this.btn_butacas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tickets)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,6 +72,7 @@
             this.cbo_promos.Name = "cbo_promos";
             this.cbo_promos.Size = new System.Drawing.Size(121, 23);
             this.cbo_promos.TabIndex = 39;
+            this.cbo_promos.SelectedIndexChanged += new System.EventHandler(this.cbo_promos_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -96,6 +98,7 @@
             this.dtp_fecha.Name = "dtp_fecha";
             this.dtp_fecha.Size = new System.Drawing.Size(121, 23);
             this.dtp_fecha.TabIndex = 36;
+            this.dtp_fecha.ValueChanged += new System.EventHandler(this.dtp_fecha_ValueChangedAsync);
             // 
             // label4
             // 
@@ -140,6 +143,7 @@
             this.cbo_audio.Name = "cbo_audio";
             this.cbo_audio.Size = new System.Drawing.Size(121, 23);
             this.cbo_audio.TabIndex = 31;
+            this.cbo_audio.SelectedIndexChanged += new System.EventHandler(this.cbo_audio_SelectedIndexChanged_1);
             // 
             // cbo_horario
             // 
@@ -148,6 +152,7 @@
             this.cbo_horario.Name = "cbo_horario";
             this.cbo_horario.Size = new System.Drawing.Size(121, 23);
             this.cbo_horario.TabIndex = 30;
+            this.cbo_horario.SelectedIndexChanged += new System.EventHandler(this.cbo_horario_SelectedIndexChanged_1);
             // 
             // cbo_sala
             // 
@@ -156,6 +161,7 @@
             this.cbo_sala.Name = "cbo_sala";
             this.cbo_sala.Size = new System.Drawing.Size(121, 23);
             this.cbo_sala.TabIndex = 29;
+            this.cbo_sala.SelectedIndexChanged += new System.EventHandler(this.cbo_sala_SelectedIndexChanged_1);
             // 
             // cbo_peli
             // 
@@ -164,6 +170,7 @@
             this.cbo_peli.Name = "cbo_peli";
             this.cbo_peli.Size = new System.Drawing.Size(121, 23);
             this.cbo_peli.TabIndex = 28;
+            this.cbo_peli.SelectedIndexChanged += new System.EventHandler(this.cbo_peli_SelectedIndexChanged_1);
             // 
             // dgv_tickets
             // 
@@ -245,7 +252,7 @@
             // 
             // btn_pagos
             // 
-            this.btn_pagos.Location = new System.Drawing.Point(671, 91);
+            this.btn_pagos.Location = new System.Drawing.Point(671, 122);
             this.btn_pagos.Name = "btn_pagos";
             this.btn_pagos.Size = new System.Drawing.Size(85, 41);
             this.btn_pagos.TabIndex = 42;
@@ -253,11 +260,22 @@
             this.btn_pagos.UseVisualStyleBackColor = true;
             this.btn_pagos.Click += new System.EventHandler(this.btn_pagos_Click);
             // 
+            // btn_butacas
+            // 
+            this.btn_butacas.Location = new System.Drawing.Point(549, 71);
+            this.btn_butacas.Name = "btn_butacas";
+            this.btn_butacas.Size = new System.Drawing.Size(85, 41);
+            this.btn_butacas.TabIndex = 43;
+            this.btn_butacas.Text = "Elegir butacas";
+            this.btn_butacas.UseVisualStyleBackColor = true;
+            this.btn_butacas.Click += new System.EventHandler(this.btn_butacas_Click);
+            // 
             // ComprobanteVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_butacas);
             this.Controls.Add(this.btn_pagos);
             this.Controls.Add(this.btn_comprobante);
             this.Controls.Add(this.label10);
@@ -308,5 +326,6 @@
         private DataGridViewTextBoxColumn PrecioTicket;
         private Button btn_comprobante;
         private Button btn_pagos;
+        private Button btn_butacas;
     }
 }
