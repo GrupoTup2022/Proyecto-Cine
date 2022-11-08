@@ -13,7 +13,7 @@ namespace FrontCine.Formularios
 {
     public partial class ButacasForm : Form
     {
-        public ButacasForm(Ticket ticket, Funcion funcion)
+        public ButacasForm(List<Ticket> ticket, Funcion funcion)
         {
             InitializeComponent();
         }
