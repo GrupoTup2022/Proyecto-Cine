@@ -14,5 +14,6 @@ namespace DataCine.Datos.Interfaces
         List<TipoGenerico> ConsultarButacas(int funcion);
         List<FormaPago> ConsultarFormasPago();
         List<FormaVenta> ConsultarFormasVenta();
+        List<Promo> ConsultarPromos();
     }
 }

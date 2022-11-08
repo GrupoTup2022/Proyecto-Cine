@@ -208,13 +208,17 @@ namespace DataCine.Datos
                 foreach (Parametro p in lParametros)
                 {
                     cmd.Parameters.AddWithValue(p.Name, p.Value);
-                }           
+                }
                 tabla.Load(cmd.ExecuteReader());
                 cnn.Close();
                 return tabla;
             }
             catch (SqlException ex)
             {
+                if (cnn.State == ConnectionState.Open && cnn != null)
+                {
+                    cnn.Close();
+                }
                 throw (ex);
             }
             finally

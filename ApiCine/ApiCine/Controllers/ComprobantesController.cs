@@ -27,23 +27,23 @@ namespace ApiCine.Controllers
             return cs.CargarComprobante(comprobante);
         }
 
-        // Get api/<ComprobanteController>/Funciones/2022-10-23
-        [HttpPost]
+        // Get api/<ComprobanteController>/Funciones?Fecha=2022-10-23
+        [HttpGet]
         [Route("Funciones")]
-        public List<Funcion> ConsultarFunciones([FromBody] string Fecha)
+        public List<Funcion> ConsultarFunciones(string Fecha)
         {
             DateTime fecha = Convert.ToDateTime(Fecha);
             return cs.ConsultarFunciones(fecha);
         }
 
-        // Get api/<ComprobanteController>/Butacas/1
-        [HttpPost]
-        [Route("Butacas")]
-        public List<TipoGenerico> ConsultarButacas([FromBody] int ID)
+        // Get api/<ComprobanteController>/Butacas?ID=1
+        [HttpGet("Butacas")]
+        public List<TipoGenerico> ConsultarButacas(int ID)
         {
             return cs.ConsultarButacas(ID);
         }
 
+        // Get api/<ComprobanteController>/FormasVenta
         [HttpGet]
         [Route("FormasVenta")]
         public List<FormaVenta> ObtenerFormasVenta()
@@ -51,11 +51,20 @@ namespace ApiCine.Controllers
             return cs.ConsultarFormasVenta();
         }
 
+        // Get api/<ComprobanteController>/FormasPago
         [HttpGet]
         [Route("FormasPago")]
         public List<FormaPago> ObtenerFormasPago()
         {
             return cs.ConsultarFormasPago();
+        }
+
+        // Get api/<ComprobanteController>/Promos
+        [HttpGet]
+        [Route("Promos")]
+        public List<Promo> ObtenerPromos()
+        {
+            return cs.ConsultarPromos();
         }
 
     }

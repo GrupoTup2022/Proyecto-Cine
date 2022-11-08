@@ -1,4 +1,6 @@
 ﻿using DataCine.ClasesGenericas;
+using DataCine.Dominio;
+using LibreriaTp;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,5 +13,8 @@ namespace DataCine.Servicios.Interfaces
     public interface IService
     {
         List<TIcketxSala> traerticketsxsala();
+        List<facturabill> traertablabill(List<Parametro> lpara);
+
+        List<FormaPago> traerformaspago();
     }
 }
