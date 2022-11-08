@@ -9,7 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using DataCine.Dominio;
 using LibreriaTp;
-
+using System.ComponentModel;
 
 namespace DataCine.Datos.Implementaciones
 {
@@ -27,16 +27,16 @@ namespace DataCine.Datos.Implementaciones
             return HelperDAO.getinstancia().UtilizarProcedimiento("SP_DELETE_FUNCION", lista_parametros);
         }
         //ejecutar sp baja_funcion
-        public int BajaLogicaFuncion(Funcion funcion)
+        public int BajaLogicaFuncion(int id_funcion)
         {
             List<Parametro> lista_parametro = new List<Parametro>();
 
-            lista_parametro.Add(new Parametro("@id_funcion", funcion.Id));
+            lista_parametro.Add(new Parametro("@id_funcion", id_funcion));
 
 
 
 
-          return  HelperDAO.getinstancia().UtilizarProcedimiento("SP_BAJA_FUNCION", lista_parametro);
+          return  HelperDAO.getinstancia().UtilizarProcedimiento("SP_DELETE_FUNCION", lista_parametro);
              
 
         }
@@ -75,6 +75,49 @@ namespace DataCine.Datos.Implementaciones
                 lista_funciones.Add(funcion_nueva);
             }
             return lista_funciones;
+        }
+
+        public List<Funcion> consultarFuncionesParametros(ParametroFuncion parametroFuncion)
+        {
+            List<Funcion> lista_funciones = new List<Funcion>();
+            DataTable tabla = new DataTable();
+
+            SqlConnection cnn = HelperDAO.getinstancia().ObtenerConexion();
+
+            cnn.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = cnn;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "CONSULTAR_FUNCION_PARAMETROS";
+            comando.Parameters.AddWithValue("@id_pelicula", parametroFuncion.id_pelicula);
+            comando.Parameters.AddWithValue("@id_horario", parametroFuncion.id_horario);
+            comando.Parameters.AddWithValue("@id_audio", parametroFuncion.id_audio);
+            comando.Parameters.AddWithValue("@id_sala", parametroFuncion.id_sala);
+            comando.Parameters.AddWithValue("@precio", parametroFuncion.precio);
+            comando.Parameters.AddWithValue("@fecha", parametroFuncion.fecha.ToString("yyyy/M/dd"));
+            tabla.Load(comando.ExecuteReader());
+            cnn.Close();
+
+            foreach(DataRow row in tabla.Rows)
+            {
+                Funcion funcion = new Funcion();
+                funcion.Id = Convert.ToInt32(row["id_funcion"]);
+                funcion.Pelicula.Titulo_local = row["titulo_local"].ToString();
+                funcion.Horario.Nombre = row["horario"].ToString();
+                funcion.Audio.Nombre = row["audio"].ToString();
+                funcion.Sala.Nombre = row["sala"].ToString();
+                funcion.Precio = Convert.ToInt32(row["precio"]);
+                funcion.fecha = Convert.ToDateTime(row["fecha"]);
+                lista_funciones.Add(funcion);
+
+
+            }
+
+            return lista_funciones;
+
+
+
+
         }
 
         public List<Pelicula> consultarPeliculas()
