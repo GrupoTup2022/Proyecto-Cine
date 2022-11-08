@@ -46,7 +46,7 @@ namespace DataCine.Servicios.Implementacion
 
         public List<Pelicula> ObtenerPeliculas()
         {
-            return oDao.ObtenerPeliculas();
+            return oDao.ObtenerPeliculas("SP_CONSULTA_PELICULAS_TODO");
         }
 
         public bool CargarPelicula(Pelicula oPelicula)

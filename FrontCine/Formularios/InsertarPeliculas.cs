@@ -85,7 +85,7 @@ namespace FrontCine.Formularios
             if (await CargarPeliculaAsync(nueva))
             {
                 MessageBox.Show("Se registro correctamente la pelicula");
-                CargarDGVAsync();
+                await CargarDGVAsync();
             }
             else
             {

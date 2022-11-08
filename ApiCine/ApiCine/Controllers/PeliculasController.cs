@@ -81,10 +81,9 @@ namespace ApiCine.Controllers
         }
 
         // PUT api/<PeliculasController>/5
-        [HttpPut("/oPelicula")]
+        [HttpPut("/pelicula")]
         public IActionResult PutPelicula(Pelicula oPelicula)
         {
-
             try
             {
                 if (oPelicula == null)
@@ -99,7 +98,7 @@ namespace ApiCine.Controllers
         }
 
         // DELETE api/<PeliculasController>/5
-        [HttpDelete("{id}, {baja}")]
+        [HttpPatch("{id}, {baja}")]
         public IActionResult AccionesPeliculas(int id, int baja)
         {
             try

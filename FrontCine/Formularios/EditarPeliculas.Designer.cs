@@ -44,6 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.BtnGuardar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cboGeneros
@@ -73,7 +74,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(292, 98);
+            this.label8.Location = new System.Drawing.Point(328, 98);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 20);
             this.label8.TabIndex = 32;
@@ -90,7 +91,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(292, 7);
+            this.label7.Location = new System.Drawing.Point(328, 7);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(121, 20);
             this.label7.TabIndex = 31;
@@ -109,9 +110,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(32, 7);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 20);
+            this.label6.Size = new System.Drawing.Size(86, 20);
             this.label6.TabIndex = 30;
-            this.label6.Text = "Titulo ";
+            this.label6.Text = "Titulo Local";
             // 
             // txtTitulo
             // 
@@ -132,7 +133,7 @@
             // dtpEstreno
             // 
             this.dtpEstreno.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEstreno.Location = new System.Drawing.Point(292, 30);
+            this.dtpEstreno.Location = new System.Drawing.Point(328, 30);
             this.dtpEstreno.Name = "dtpEstreno";
             this.dtpEstreno.Size = new System.Drawing.Size(121, 27);
             this.dtpEstreno.TabIndex = 23;
@@ -148,7 +149,7 @@
             // 
             // txtDuracion
             // 
-            this.txtDuracion.Location = new System.Drawing.Point(292, 121);
+            this.txtDuracion.Location = new System.Drawing.Point(328, 121);
             this.txtDuracion.Name = "txtDuracion";
             this.txtDuracion.Size = new System.Drawing.Size(80, 27);
             this.txtDuracion.TabIndex = 24;
@@ -180,11 +181,22 @@
             this.label2.TabIndex = 26;
             this.label2.Text = "Pais";
             // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.Location = new System.Drawing.Point(328, 343);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(121, 51);
+            this.BtnGuardar.TabIndex = 33;
+            this.BtnGuardar.Text = "Guardar Cambios";
+            this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
             // EditarPeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 472);
+            this.ClientSize = new System.Drawing.Size(524, 509);
+            this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.cboGeneros);
             this.Controls.Add(this.cboClasificaciones);
             this.Controls.Add(this.cboPaises);
@@ -227,5 +239,6 @@
         private Label label3;
         private Label label1;
         private Label label2;
+        private Button BtnGuardar;
     }
 }

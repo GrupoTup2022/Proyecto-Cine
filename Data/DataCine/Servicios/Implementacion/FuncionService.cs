@@ -1,5 +1,6 @@
 ﻿using DataCine.Datos.Implementaciones;
 using DataCine.Datos.Interfaces;
+using DataCine.Dominio;
 using DataCine.Servicios.Interfaces;
 using LibreriaTp;
 using System;
@@ -24,9 +25,9 @@ namespace DataCine.Servicios.Implementacion
             return dao.AltaFuncion(funcion);
         }
 
-        public int BajaLogicaFuncion(Funcion funcion)
+        public int BajaLogicaFuncion(int id_funcion)
         {
-            return dao.BajaLogicaFuncion(funcion);
+            return dao.BajaLogicaFuncion(id_funcion);
         }
 
         public List<Audio> consultarAudios()
@@ -37,6 +38,11 @@ namespace DataCine.Servicios.Implementacion
         public List<Funcion> consultarFunciones()
         {
             return dao.consultarFunciones();
+        }
+
+        public List<Funcion> consultarFuncionesParametros(ParametroFuncion parametroFuncion)
+        {
+            return dao.consultarFuncionesParametros(parametroFuncion);
         }
 
         public List<Pelicula> consultarPeliculas()
