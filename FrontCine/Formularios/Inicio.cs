@@ -257,7 +257,13 @@ namespace ReportesCine.Formularios
         private void btnagregfuncion_Click(object sender, EventArgs e)
         {
             ocultarsubmenus();
-            
+            abrirformularios(new AgregarFuncion());
+        }
+
+        private void btnfuncion_Click(object sender, EventArgs e)
+        {
+            ocultarsubmenus();
+            abrirformularios(new Funciones());
         }
     }
 }
