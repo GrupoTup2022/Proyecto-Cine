@@ -61,7 +61,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(844, 648);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(868, 636);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 38);
             this.button1.TabIndex = 7;
@@ -76,6 +77,9 @@
             this.dgvPeliculas.AllowUserToOrderColumns = true;
             this.dgvPeliculas.AllowUserToResizeColumns = false;
             this.dgvPeliculas.AllowUserToResizeRows = false;
+            this.dgvPeliculas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPeliculas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPeliculas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPeliculas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

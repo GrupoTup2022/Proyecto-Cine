@@ -1,5 +1,6 @@
 ﻿
 using DataCine.Dominio;
+using DataCine.Dominio.FuncionContainer;
 using LibreriaTp;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace DataCine.Datos.Interfaces
 {
     public interface IDaoFunciones
     {
-        int AltaFuncion(Funcion funcion);
+        int AltaFuncion(FuncionResumida fr);
         int BajaLogicaFuncion(int id_funcion);
         List<Pelicula> consultarPeliculas();
         List<Horario> consutlarHorarios();
@@ -19,5 +20,6 @@ namespace DataCine.Datos.Interfaces
         List<Sala> consultarSalas();
         List<Funcion> consultarFunciones();
         List<Funcion> consultarFuncionesParametros(ParametroFuncion parametroFuncion);
+        
     }
 }

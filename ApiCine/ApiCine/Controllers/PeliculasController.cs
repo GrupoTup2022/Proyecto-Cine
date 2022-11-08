@@ -60,6 +60,12 @@ namespace ApiCine.Controllers
             return Ok(service.ObtenerPeliculas());
         }
 
+        [HttpGet("{desde},{hasta},{titulo}")]   
+        public IActionResult GerPeliculasFiltradas(DateTime desde, DateTime hasta, string titulo)
+        {
+            return Ok(service.FiltrarPeliculas(desde,hasta,titulo));
+        }
+
 
         // POST api/<PeliculasController>
         [HttpPost("/pelicula")]

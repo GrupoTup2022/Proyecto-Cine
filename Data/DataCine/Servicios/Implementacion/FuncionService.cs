@@ -1,6 +1,7 @@
 ﻿using DataCine.Datos.Implementaciones;
 using DataCine.Datos.Interfaces;
 using DataCine.Dominio;
+using DataCine.Dominio.FuncionContainer;
 using DataCine.Servicios.Interfaces;
 using LibreriaTp;
 using System;
@@ -20,9 +21,9 @@ namespace DataCine.Servicios.Implementacion
             dao = new DaoFunciones();
         }
 
-        public int AltaFuncion(Funcion funcion)
+        public int AltaFuncion(FuncionResumida fr)
         {
-            return dao.AltaFuncion(funcion);
+            return dao.AltaFuncion(fr);
         }
 
         public int BajaLogicaFuncion(int id_funcion)

@@ -3,6 +3,7 @@ using LibreriaTp;
 
 using Newtonsoft.Json;
 using ReportesCine.Cliente;
+using ReportesCine.Formularios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
 
 namespace FrontCine.Formularios
 {
@@ -64,10 +66,10 @@ namespace FrontCine.Formularios
             tabla = JsonConvert.DeserializeObject<List<Horario>>(respuesta);
 
 
-            CBhorarios.DataSource = tabla;
-            CBhorarios.DisplayMember = "Nombre";
-            CBhorarios.ValueMember = "Id";
-            CBhorarios.DropDownStyle = ComboBoxStyle.DropDownList;
+            //CBhorarios.DataSource = tabla;
+            //CBhorarios.DisplayMember = "Nombre";
+            //CBhorarios.ValueMember = "Id";
+            //CBhorarios.DropDownStyle = ComboBoxStyle.DropDownList;
 
         }
         private async Task cargarAudios()
@@ -79,10 +81,10 @@ namespace FrontCine.Formularios
             tabla = JsonConvert.DeserializeObject<List<Audio>>(respuesta);
 
 
-            CBaudios.DataSource = tabla;
-            CBaudios.DisplayMember = "Nombre";
-            CBaudios.ValueMember = "Id";
-            CBaudios.DropDownStyle = ComboBoxStyle.DropDownList;
+            //CBaudios.DataSource = tabla;
+            //CBaudios.DisplayMember = "Nombre";
+            //CBaudios.ValueMember = "Id";
+            //CBaudios.DropDownStyle = ComboBoxStyle.DropDownList;
 
         }
         private async Task cargarSalas()
@@ -94,10 +96,10 @@ namespace FrontCine.Formularios
             tabla = JsonConvert.DeserializeObject<List<Sala>>(respuesta);
 
 
-            CBsalas.DataSource = tabla;
-            CBsalas.DisplayMember = "Nombre";
-            CBsalas.ValueMember = "Id";
-            CBsalas.DropDownStyle = ComboBoxStyle.DropDownList;
+            //CBsalas.DataSource = tabla;
+            //CBsalas.DisplayMember = "Nombre";
+            //CBsalas.ValueMember = "Id";
+            //CBsalas.DropDownStyle = ComboBoxStyle.DropDownList;
 
         }
 
@@ -139,20 +141,20 @@ namespace FrontCine.Formularios
         private async Task ConsultarFuncionFiltro()
         {
             int id_pelicula = (int)CBpeliculas.SelectedValue;
-            int id_horario = (int)CBhorarios.SelectedValue;
-            int id_audio = (int)CBaudios.SelectedValue;
-            int id_sala = (int)CBsalas.SelectedValue;
-            int precio = Convert.ToInt32(TXTprecio.Text);
+            //int id_horario = (int)CBhorarios.SelectedValue;
+            //int id_audio = (int)CBaudios.SelectedValue;
+            //int id_sala = (int)CBsalas.SelectedValue;
+            //int precio = Convert.ToInt32(TXTprecio.Text);
             DateTime fecha = DTPfecha.Value;
 
 
             List<Funcion> lista = new List<Funcion>();
             ParametroFuncion parametro = new ParametroFuncion();
             parametro.id_pelicula = id_pelicula;
-            parametro.id_horario = id_horario;
-            parametro.id_audio = id_audio;
-            parametro.id_sala = id_sala;
-            parametro.precio = precio;
+            //parametro.id_horario = id_horario;
+            //parametro.id_audio = id_audio;
+            //parametro.id_sala = id_sala;
+            //parametro.precio = precio;
             parametro.fecha = fecha;
 
             string url = "https://localhost:7259/api/Funciones/FuncionesFiltro";
@@ -162,28 +164,47 @@ namespace FrontCine.Formularios
             List<Funcion> lst = JsonConvert.DeserializeObject<List<Funcion>>(data);
             dataGridView1.Rows.Clear();
 
-            foreach (Funcion f in lst)
+
+            if(lst.Count > 0)
             {
-                string id_funcion_ = f.Id.ToString();
-                string nombre_pelicula_ = f.Pelicula.Titulo_local;
-                string horario_funcion_ = f.Horario.Nombre.ToString();
-                string audio_ = f.Audio.Nombre.ToString();
-                string sala_ = f.Sala.Nombre.ToString();
-                string precio_ = f.Precio.ToString();
-                string fecha_ = f.fecha.ToString();
-                dataGridView1.Rows.Add(id_funcion_, nombre_pelicula_, horario_funcion_, audio_, sala_, precio_, fecha_);
+
+                foreach (Funcion f in lst)
+                {
+                    string id_funcion_ = f.Id.ToString();
+                    string nombre_pelicula_ = f.Pelicula.Titulo_local;
+                    string horario_funcion_ = f.Horario.Nombre.ToString();
+                    string audio_ = f.Audio.Nombre.ToString();
+                    string sala_ = f.Sala.Nombre.ToString();
+                    string precio_ = f.Precio.ToString();
+                    string fecha_ = f.fecha.ToString();
+                    dataGridView1.Rows.Add(id_funcion_, nombre_pelicula_, horario_funcion_, audio_, sala_, precio_, fecha_);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No existen funciones con esos parametros");
             }
 
         }
 
         private void BTNsalir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("desea salir?", "saliendo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("desea salir?", "saliendo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
+                Inicio inicio = new Inicio();
+                inicio.Show();
             }
         }
-        private async Task BajaCuenta()
+        public async Task<bool> bajaFuncion(int id_funcion)
+        {
+            string url = "https://localhost:7259/api/Funciones/" + id_funcion;
+            string funcionJSON = JsonConvert.SerializeObject(id_funcion);
+            var data = await ClienteSingleton.getinstancia().PatchAsync(url, funcionJSON);
+            return data == "true";
+
+        }
+        public async Task DesabilitarFuncion()
         {
             //https://localhost:7259/api/Funciones/BajaLogica?id_funcion=2
             if (dataGridView1.CurrentCell.ColumnIndex == 7)
@@ -196,26 +217,40 @@ namespace FrontCine.Formularios
                 {
 
 
-                    //try
-                    //{
-                    //    string url = "https://localhost:7259/api/Funciones/BajaLogica?id_funcion="+id_funcion.ToString();
-                    //    string funcionJSON = JsonConvert.SerializeObject(parametro);
-                    //    var data = await ClienteSingleton.getinstancia().PostAsync(url, funcionJSON);
-
-                    //}
-                    //catch (Exception)
-                    //{
-
-                    //    MessageBox.Show("Error al deshabilitar la cuenta");
-                    //}
-
+                    if (await bajaFuncion(id_funcion) != null)
+                    {
+                        MessageBox.Show("Funcion dada de baja correctamente");
+                        dataGridView1.Rows.Clear();
+                        await cargarFunciones();
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR AL DAR DE BAJA LA FUNCION");
+                    }
                 }
             }
         }
 
         private async void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-          
+            await DesabilitarFuncion();
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            await cargarFunciones();
+        }
+
+        private void BTNagregarFuncion_Click(object sender, EventArgs e)
+        {
+           
+            AgregarFuncion agregarFuncion = new AgregarFuncion();
+            
+            agregarFuncion.ShowDialog();
+            
+           
+
         }
     }
 }

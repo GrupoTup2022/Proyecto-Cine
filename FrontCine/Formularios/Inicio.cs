@@ -237,5 +237,21 @@ namespace ReportesCine.Formularios
         {
             abrirformularios(new ComprobanteVenta());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            abrirformularios(new ReporteBillHistory());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ocultarsubmenus();
+            abrirformularios(new ConsultarPeliculas());
+        }
     }
 }

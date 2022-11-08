@@ -1,5 +1,6 @@
 ﻿using DataCine.ClasesGenericas;
 using DataCine.Dominio;
+using Microsoft.Reporting.WinForms;
 using Newtonsoft.Json;
 using ReportesCine.Cliente;
 using System;
@@ -23,6 +24,8 @@ namespace FrontCine.Formularios.Reportes
 
         private async void btnconsultar_Click(object sender, EventArgs e)
         {
+            
+            //CREO LISTA DE PARAMETROS
             List<Parametro> parametros = new List<Parametro>();
             
             Parametro inicio = new Parametro();
@@ -41,31 +44,51 @@ namespace FrontCine.Formularios.Reportes
             parametros.Add(fin);
             parametros.Add(nombreforma);
 
+            //PRUEBA CON PARAMETROS EN UN OBJETO
+
+            ParametroConsultaBill paraPrueba = new ParametroConsultaBill(dtpinicio.Value.ToShortDateString(), dtpfin.Value.ToShortDateString(), cboformaspago.Text);
+
             List<facturabill> tablaBills = null;
 
-            string filtrosfechajason = JsonConvert.SerializeObject(parametros);
-            string url = "";
+            string filtrosfechajason = JsonConvert.SerializeObject(paraPrueba);
+            string url = "https://localhost:7259/api/ReporteBill/bills";
 
             var resultado = await ClienteSingleton.getinstancia().PostAsync(url,filtrosfechajason);
 
             tablaBills = JsonConvert.DeserializeObject<List<facturabill>>(resultado);
 
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("NRO", typeof(Int32));
+            dataTable.Columns.Add("Fecha", typeof(DateTime));
+            dataTable.Columns.Add("Nombre", typeof(string));
+            dataTable.Columns.Add("Precio", typeof(Int32));
+            foreach(facturabill f in tablaBills)
+            {
+                dataTable.Rows.Add(f.NRO,f.Fecha,f.Nombre,f.Precio);
+            }
 
 
-
-
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", dataTable));
+            reportViewer1.LocalReport.ReportEmbeddedResource = "FrontCine.ReporteBill.rdlc";
+            reportViewer1.RefreshReport();
 
         }
 
-        private void ReporteBillHistory_Load(object sender, EventArgs e)
+        private async void ReporteBillHistory_Load(object sender, EventArgs e)
         {
-            cargarcomboformaspago();
+            await CargarCBO(cboformaspago);
         }
 
-        private void cargarcomboformaspago()
+        private async Task CargarCBO(ComboBox cbo)
         {
+            string url = "https://localhost:7259/api/ReporteBill/formadepagos";
+            var data = await ClienteSingleton.getinstancia().GetAsync(url);
+            List<object> lst = JsonConvert.DeserializeObject<List<object>>(data);
 
-            cboformaspago.DataSource=;
+            cbo.DataSource = lst;
+            cbo.ValueMember = "Id";
+            cbo.DisplayMember = "Nombre";
         }
     }
 }

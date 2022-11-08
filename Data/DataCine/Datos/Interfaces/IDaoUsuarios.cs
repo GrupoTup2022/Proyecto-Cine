@@ -2,7 +2,7 @@
 
 namespace DataCine.Datos.Interfaces
 {
-    public interface IDaoUsuario
+    public interface IDaoUsuarios
     {
         bool getUsers(string username, string pass); 
     }

@@ -4,6 +4,7 @@ using ReportesCine.Cliente;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -26,14 +27,15 @@ namespace FrontCine.Formularios
         }
 
         public async Task CargarDGVAsync()
-        {
+        {         
             string url = "https://localhost:7259/api/Peliculas/Peliculas";
             var data = await ClienteSingleton.getinstancia().GetAsync(url);
-            List<Pelicula> lst = JsonConvert.DeserializeObject<List<Pelicula>>(data);
-
+            List<Pelicula> lst = JsonConvert.DeserializeObject<List<Pelicula>>(data);          
+            
 
             dgvPeliculasActivas.Rows.Clear();
             dgvPeliculasBajas.Rows.Clear();
+
             foreach (Pelicula p in lst)
             {
                 if (p.Baja == 0)
@@ -44,6 +46,30 @@ namespace FrontCine.Formularios
 
             }
 
+        }
+
+        public async Task CargarDGVFiltrada()
+        {
+            DateTime desde = dtpDesde.Value;
+            DateTime hasta = dtpHasta.Value;
+            string titulo = textBox1.Text;
+            string url = "https://localhost:7259/api/Peliculas/" + desde.ToString("dd-MM-yyyy") + "," + hasta.ToString("dd-MM-yyyy") + "," + titulo;
+            var data = await ClienteSingleton.getinstancia().GetAsync(url);
+            List<Pelicula> lst = JsonConvert.DeserializeObject<List<Pelicula>>(data);
+
+
+            dgvPeliculasActivas.Rows.Clear();
+            dgvPeliculasBajas.Rows.Clear();
+
+            foreach (Pelicula p in lst)
+            {
+                if (p.Baja == 0)
+                    dgvPeliculasActivas.Rows.Add(new object[] { p.Id, p.Titulo_local, p.duracion, p.Fecha_Estreno, p.pais.Nombre, p.director.Nombre, p.distribuidora.Nombre, p.clasificacion.Nombre, p.genero.Nombre });
+                if (p.Baja == 1)
+                    dgvPeliculasBajas.Rows.Add(new object[] { p.Id, p.Titulo_local, p.duracion, p.Fecha_Estreno, p.pais.Nombre, p.director.Nombre, p.distribuidora.Nombre, p.clasificacion.Nombre, p.genero.Nombre });
+
+
+            }
         }
 
         public async Task<bool> DesabilitarPeliculaAsync(int id, int baja)
@@ -132,9 +158,9 @@ namespace FrontCine.Formularios
         private async void dgvPeliculasBajas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (dgvPeliculasActivas.CurrentCell.ColumnIndex == 9)
+            if (dgvPeliculasBajas.CurrentCell.ColumnIndex == 9)
             {
-                if (MessageBox.Show("¿Estas seguro que quieres habilitar esta pelicula?", "Desabilitar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                if (MessageBox.Show("¿Estas seguro que quieres habilitar esta pelicula?", "Habilitar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
 
                     if (await DesabilitarPeliculaAsync(idPeliculaDesavilitado(), 0) != null)
@@ -149,6 +175,14 @@ namespace FrontCine.Formularios
                     }
                 }
             }
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            await CargarDGVFiltrada();
+            textBox1.Text = "";
+            dtpDesde.Value = DateTime.Today;
+            dtpHasta.Value = DateTime.Today;
         }
     }
 }
