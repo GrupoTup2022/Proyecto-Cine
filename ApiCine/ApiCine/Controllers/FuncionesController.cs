@@ -59,11 +59,20 @@ namespace ApiCine.Controllers
 
 
         }
-        [HttpDelete("{id}")]
-        [Route("DeleteFuncion")]
-        public IActionResult Delete(int id_funcion)
+        [HttpPatch("{id_funcion}")]
+        public IActionResult bajafuncion(int id_funcion)
         {
-            return Ok(fs.BajaLogicaFuncion(id_funcion));
+            try
+            {
+                if (id_funcion == null)
+                    return BadRequest("error al deshabilitar la funcion");
+
+                return Ok(fs.BajaLogicaFuncion(id_funcion));
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

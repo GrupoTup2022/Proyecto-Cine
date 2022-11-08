@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
 
 namespace FrontCine.Formularios
 {
@@ -183,7 +184,15 @@ namespace FrontCine.Formularios
                 this.Close();
             }
         }
-        private async Task BajaCuenta()
+        public async Task<bool> bajaFuncion(int id_funcion)
+        {
+            string url = "https://localhost:7259/api/Funciones/" + id_funcion;
+            string funcionJSON = JsonConvert.SerializeObject(id_funcion);
+            var data = await ClienteSingleton.getinstancia().PatchAsync(url, funcionJSON);
+            return data == "true";
+
+        }
+        public async Task DesabilitarFuncion()
         {
             //https://localhost:7259/api/Funciones/BajaLogica?id_funcion=2
             if (dataGridView1.CurrentCell.ColumnIndex == 7)
@@ -196,26 +205,23 @@ namespace FrontCine.Formularios
                 {
 
 
-                    //try
-                    //{
-                    //    string url = "https://localhost:7259/api/Funciones/BajaLogica?id_funcion="+id_funcion.ToString();
-                    //    string funcionJSON = JsonConvert.SerializeObject(parametro);
-                    //    var data = await ClienteSingleton.getinstancia().PostAsync(url, funcionJSON);
-
-                    //}
-                    //catch (Exception)
-                    //{
-
-                    //    MessageBox.Show("Error al deshabilitar la cuenta");
-                    //}
-
+                    if (await bajaFuncion(id_funcion) != null)
+                    {
+                        MessageBox.Show("Funcion dada de baja correctamente");
+                        dataGridView1.Rows.Clear();
+                        await cargarFunciones();
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR AL DAR DE BAJA LA FUNCION");
+                    }
                 }
             }
         }
 
         private async void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-          
+            await DesabilitarFuncion();
         }
     }
 }
