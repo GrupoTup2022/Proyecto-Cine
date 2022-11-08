@@ -10,10 +10,7 @@ namespace DataCine.Dominio
     {
         
        public int id_pelicula { get; set; }
-        public   int id_horario { get; set; }
-       public int id_audio { get; set; }
-       public int id_sala { get; set; }
-       public int precio { get; set; }
+       
        public DateTime fecha { get; set; }
 
         public ParametroFuncion()

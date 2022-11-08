@@ -10,21 +10,22 @@ using System.Data.SqlClient;
 using DataCine.Dominio;
 using LibreriaTp;
 using System.ComponentModel;
+using DataCine.Dominio.FuncionContainer;
 
 namespace DataCine.Datos.Implementaciones
 {
     public class DaoFunciones : IDaoFunciones
     {
-        public int AltaFuncion(Funcion funcion)
+        public int AltaFuncion(FuncionResumida fr)
         {
             List<Parametro> lista_parametros = new List<Parametro>();
-            lista_parametros.Add(new Parametro("@id_pelicula", funcion.Pelicula.Id));
-            lista_parametros.Add(new Parametro("@id_horario", funcion.Horario));
-            lista_parametros.Add(new Parametro("@id_audio", funcion.Audio.Id));
-            lista_parametros.Add(new Parametro("@id_sala", funcion.Sala.Id));
-            lista_parametros.Add(new Parametro("@precio", funcion.Precio));
-            lista_parametros.Add(new Parametro("@fecha", funcion.fecha));
-            return HelperDAO.getinstancia().UtilizarProcedimiento("SP_DELETE_FUNCION", lista_parametros);
+            lista_parametros.Add(new Parametro("@id_pelicula", fr.id_pelicula));
+            lista_parametros.Add(new Parametro("@id_horario", fr.id_horario));
+            lista_parametros.Add(new Parametro("@id_audio", fr.id_audio));
+            lista_parametros.Add(new Parametro("@id_sala", fr.id_sala));
+            lista_parametros.Add(new Parametro("@precio", fr.precio));
+            lista_parametros.Add(new Parametro("@fecha", fr.fecha.ToString("yyyy/M/dd")));
+            return HelperDAO.getinstancia().UtilizarProcedimiento("SP_CREAR_FUNCION", lista_parametros);
         }
         //ejecutar sp baja_funcion
         public int BajaLogicaFuncion(int id_funcion)
@@ -84,19 +85,31 @@ namespace DataCine.Datos.Implementaciones
 
             SqlConnection cnn = HelperDAO.getinstancia().ObtenerConexion();
 
-            cnn.Open();
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = cnn;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = "CONSULTAR_FUNCION_PARAMETROS";
-            comando.Parameters.AddWithValue("@id_pelicula", parametroFuncion.id_pelicula);
-            comando.Parameters.AddWithValue("@id_horario", parametroFuncion.id_horario);
-            comando.Parameters.AddWithValue("@id_audio", parametroFuncion.id_audio);
-            comando.Parameters.AddWithValue("@id_sala", parametroFuncion.id_sala);
-            comando.Parameters.AddWithValue("@precio", parametroFuncion.precio);
-            comando.Parameters.AddWithValue("@fecha", parametroFuncion.fecha.ToString("yyyy/M/dd"));
-            tabla.Load(comando.ExecuteReader());
-            cnn.Close();
+            try
+            {
+                cnn.Open();
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = cnn;
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "CONSULTAR_FUNCION_PARAMETROS";
+                comando.Parameters.AddWithValue("@id_pelicula", parametroFuncion.id_pelicula);
+                
+                comando.Parameters.AddWithValue("@fecha", parametroFuncion.fecha.ToString("yyyy/M/dd"));
+                tabla.Load(comando.ExecuteReader());
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+            finally
+            {
+                if(cnn != null || cnn.State == ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
+            }
+            
 
             foreach(DataRow row in tabla.Rows)
             {
@@ -119,6 +132,8 @@ namespace DataCine.Datos.Implementaciones
 
 
         }
+
+
 
         public List<Pelicula> consultarPeliculas()
         {
@@ -178,5 +193,43 @@ namespace DataCine.Datos.Implementaciones
             }
             return lista_horarios;
         }
+
+        //public Pelicula obtenerPelicula(int id_pelicula)
+        //{
+        //    SqlConnection cnn = HelperDAO.getinstancia().ObtenerConexion();
+        //    DataTable tabla = new DataTable();
+
+        //    try
+        //    {
+        //        cnn.Open();
+        //        SqlCommand comando = new SqlCommand();
+        //        comando.Connection = cnn;
+        //        comando.CommandType = CommandType.StoredProcedure;
+        //        comando.CommandText = "CONSULTAR_PELICULA";
+        //        comando.Parameters.AddWithValue("@id_pelicula",id_pelicula);
+
+                
+        //        tabla.Load(comando.ExecuteReader());
+
+        //        Pelicula p = new Pelicula();
+        //        p.Id = id_pelicula;
+        //        p.Titulo_local = tabla.Columns["titulo_local"].ToString();
+        //        p.Titulo_original = tabla.Columns["titulo_original"].ToString();
+        //        p.Descripcion = tabla.Columns["descripcion"].ToString();
+        //        p.pais.Id = 
+        //    }
+        //    catch (Exception e)
+        //    {
+
+        //        throw e;
+        //    }
+        //    finally
+        //    {
+        //        if (cnn != null || cnn.State == ConnectionState.Open)
+        //        {
+        //            cnn.Close();
+        //        }
+        //    }
+        //}
     }
 }
