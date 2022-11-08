@@ -59,13 +59,18 @@ namespace FrontCine.Formularios.Reportes
 
         private void ReporteBillHistory_Load(object sender, EventArgs e)
         {
-            cargarcomboformaspago();
+            CargarCBO(cboformaspago);
         }
 
-        private void cargarcomboformaspago()
+        private async Task CargarCBO(ComboBox cbo)
         {
+            string url = "https://localhost:7259/api/formadepagos/";
+            var data = await ClienteSingleton.getinstancia().GetAsync(url);
+            List<object> lst = JsonConvert.DeserializeObject<List<object>>(data);
 
-            cboformaspago.DataSource=;
+            cbo.DataSource = lst;
+            cbo.ValueMember = "Id";
+            cbo.DisplayMember = "Nombre";
         }
     }
 }
