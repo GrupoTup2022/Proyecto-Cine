@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ReportesCine.Properties {
+namespace FrontCine.Properties {
     using System;
     
     
@@ -57,6 +57,36 @@ namespace ReportesCine.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap asiento {
+            get {
+                object obj = ResourceManager.GetObject("asiento", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap asientoblanco {
+            get {
+                object obj = ResourceManager.GetObject("asientoblanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap asientoRojo {
+            get {
+                object obj = ResourceManager.GetObject("asientoRojo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

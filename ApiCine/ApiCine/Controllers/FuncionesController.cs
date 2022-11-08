@@ -1,6 +1,8 @@
 ﻿using DataCine.Dominio;
+using DataCine.Dominio.FuncionContainer;
 using DataCine.Servicios.Implementacion;
 using DataCine.Servicios.Interfaces;
+using LibreriaTp;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -68,6 +70,22 @@ namespace ApiCine.Controllers
                     return BadRequest("error al deshabilitar la funcion");
 
                 return Ok(fs.BajaLogicaFuncion(id_funcion));
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        
+        [HttpPut("funcion")]
+        public IActionResult PostFuncion( FuncionResumida funcion)
+        {
+            try
+            {
+                if (funcion == null)
+                    return BadRequest("error al dar de alta  la funcion");
+
+                return Ok(fs.AltaFuncion(funcion));
             }
             catch (Exception e)
             {

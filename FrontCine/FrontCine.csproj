@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="Comprobante.rdlc" />
+    <None Remove="Formularios\AgregarFuncion.Designer.cs~RF8e456adf.TMP" />
     <None Remove="Formularios\Reportes\Report1.rdlc" />
     <None Remove="ReporteBill.rdlc" />
   </ItemGroup>
