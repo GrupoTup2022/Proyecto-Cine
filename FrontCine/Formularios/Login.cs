@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataCine.Servicios.Implementacion;
+using DataCine.Servicios.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,13 @@ namespace ReportesCine.Formularios
 {
     public partial class Login : Form
     {
+        IUsuarioService servicio;
+
         public Login()
         {
             InitializeComponent();
+            servicio = new UsuarioService();
+
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -51,10 +57,19 @@ namespace ReportesCine.Formularios
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
+            /*
+            if (servicio.getUsers(txtusuario.Text, txtcontrase.Text))
+            {
+                this.Hide();
+                Inicio inicio = new Inicio();
+                inicio.Show();
+            }
+            else MessageBox.Show("Usuario o contraseña incorrectos, por favor revise sus credenciales");
+            */
             this.Hide();
             Inicio inicio = new Inicio();
             inicio.Show();
-            
+
         }
     }
 }

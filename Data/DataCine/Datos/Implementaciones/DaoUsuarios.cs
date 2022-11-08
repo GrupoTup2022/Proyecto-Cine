@@ -9,18 +9,20 @@ using System.Threading.Tasks;
 
 namespace DataCine.Datos.Implementaciones
 {
-    public class DaoUsuarios : IDaoUsuario
+    public class DaoUsuarios : IDaoUsuarios
     {
         public bool getUsers(string username, string pass)
         {
             List<Parametro> lparam = new List<Parametro>();
-            lparam.Add(new Parametro("@user",username));
-            lparam.Add(new Parametro("@pass", pass));
+            lparam.Add(new Parametro("@nombre",username));
+            lparam.Add(new Parametro("@contra", pass));
 
-            if (HelperDAO.getinstancia().UtilizarProcedimiento("SP_COMPARAR_USUARIO", lparam) > 0)
+            if (HelperDAO.getinstancia().ConsultarDB("SP_CONSULTAR_USUARIO", lparam).Rows.Count > 0)
             {
+
                 return true;
-            } 
+            }
+            //int a = (HelperDAO.getinstancia().ConsultarDB("SP_CONSULTAR_USUARIO", lparam).Rows.Count);
             return false;
         }
     }
