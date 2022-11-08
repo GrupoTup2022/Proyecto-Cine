@@ -11,7 +11,7 @@ namespace DataCine.Datos.Interfaces
 {
     internal interface IDaobill
     {
-        List<facturabill> consultarfacturas(List<Parametro> lparametros);
+        List<facturabill> consultarfacturas(ParametroConsultaBill parametro);
         List<FormaPago> traerformaPagos();
     }
 }

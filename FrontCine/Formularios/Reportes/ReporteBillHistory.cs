@@ -1,5 +1,6 @@
 ﻿using DataCine.ClasesGenericas;
 using DataCine.Dominio;
+using Microsoft.Reporting.WinForms;
 using Newtonsoft.Json;
 using ReportesCine.Cliente;
 using System;
@@ -23,6 +24,8 @@ namespace FrontCine.Formularios.Reportes
 
         private async void btnconsultar_Click(object sender, EventArgs e)
         {
+            
+            //CREO LISTA DE PARAMETROS
             List<Parametro> parametros = new List<Parametro>();
             
             Parametro inicio = new Parametro();
@@ -41,9 +44,13 @@ namespace FrontCine.Formularios.Reportes
             parametros.Add(fin);
             parametros.Add(nombreforma);
 
+            //PRUEBA CON PARAMETROS EN UN OBJETO
+
+            ParametroConsultaBill paraPrueba = new ParametroConsultaBill(dtpinicio.Value.ToShortDateString(), dtpfin.Value.ToShortDateString(), cboformaspago.Text);
+
             List<facturabill> tablaBills = null;
 
-            string filtrosfechajason = JsonConvert.SerializeObject(parametros);
+            string filtrosfechajason = JsonConvert.SerializeObject(paraPrueba);
             string url = "https://localhost:7259/api/ReporteBill/bills";
 
             var resultado = await ClienteSingleton.getinstancia().PostAsync(url,filtrosfechajason);
@@ -60,10 +67,11 @@ namespace FrontCine.Formularios.Reportes
                 dataTable.Rows.Add(f.NRO,f.Fecha,f.Nombre,f.Precio);
             }
 
-            dataGridView1.DataSource = dataTable;
 
-
-
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", dataTable));
+            reportViewer1.LocalReport.ReportEmbeddedResource = "FrontCine.ReporteBill.rdlc";
+            reportViewer1.RefreshReport();
 
         }
 

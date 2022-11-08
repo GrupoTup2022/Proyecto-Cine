@@ -33,15 +33,19 @@
             this.dtpinicio = new System.Windows.Forms.DateTimePicker();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.cboformaspago = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnconsultar
             // 
-            this.btnconsultar.Location = new System.Drawing.Point(673, 23);
+            this.btnconsultar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnconsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btnconsultar.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnconsultar.Location = new System.Drawing.Point(589, 33);
             this.btnconsultar.Name = "btnconsultar";
-            this.btnconsultar.Size = new System.Drawing.Size(115, 29);
+            this.btnconsultar.Size = new System.Drawing.Size(143, 41);
             this.btnconsultar.TabIndex = 0;
             this.btnconsultar.Text = "CONSULTAR";
             this.btnconsultar.UseVisualStyleBackColor = true;
@@ -49,61 +53,87 @@
             // 
             // dtpfin
             // 
-            this.dtpfin.Location = new System.Drawing.Point(231, 25);
+            this.dtpfin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpfin.Location = new System.Drawing.Point(203, 47);
             this.dtpfin.Name = "dtpfin";
-            this.dtpfin.Size = new System.Drawing.Size(183, 27);
+            this.dtpfin.Size = new System.Drawing.Size(110, 27);
             this.dtpfin.TabIndex = 1;
             // 
             // dtpinicio
             // 
-            this.dtpinicio.Location = new System.Drawing.Point(22, 25);
+            this.dtpinicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpinicio.Location = new System.Drawing.Point(26, 47);
             this.dtpinicio.Name = "dtpinicio";
-            this.dtpinicio.Size = new System.Drawing.Size(183, 27);
+            this.dtpinicio.Size = new System.Drawing.Size(109, 27);
             this.dtpinicio.TabIndex = 2;
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.reportViewer1.Location = new System.Drawing.Point(0, 361);
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reportViewer1.AutoSize = true;
+            this.reportViewer1.Location = new System.Drawing.Point(0, 100);
             this.reportViewer1.Name = "ReportViewer";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(812, 246);
+            this.reportViewer1.Size = new System.Drawing.Size(812, 418);
             this.reportViewer1.TabIndex = 0;
             // 
             // cboformaspago
             // 
             this.cboformaspago.FormattingEnabled = true;
-            this.cboformaspago.Location = new System.Drawing.Point(467, 23);
+            this.cboformaspago.Location = new System.Drawing.Point(387, 46);
             this.cboformaspago.Name = "cboformaspago";
             this.cboformaspago.Size = new System.Drawing.Size(151, 28);
             this.cboformaspago.TabIndex = 3;
             // 
-            // dataGridView1
+            // label1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 72);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(760, 215);
-            this.dataGridView1.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Fecha de inicio";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(203, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Fecha Fin";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(387, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(99, 20);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Tipo de pago";
             // 
             // ReporteBillHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 607);
-            this.Controls.Add(this.dataGridView1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(812, 522);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cboformaspago);
             this.Controls.Add(this.dtpinicio);
             this.Controls.Add(this.dtpfin);
             this.Controls.Add(this.btnconsultar);
             this.Controls.Add(this.reportViewer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReporteBillHistory";
             this.Text = "ReporteBillHistory";
             this.Load += new System.EventHandler(this.ReporteBillHistory_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -114,6 +144,8 @@
         private DateTimePicker dtpinicio;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private ComboBox cboformaspago;
-        private DataGridView dataGridView1;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }

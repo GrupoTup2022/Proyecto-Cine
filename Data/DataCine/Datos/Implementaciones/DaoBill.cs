@@ -13,13 +13,29 @@ namespace DataCine.Datos.Implementaciones
 {
     internal class DaoBill : IDaobill
     {
-        public List<facturabill> consultarfacturas(List<Parametro> lparam)
+        public List<facturabill> consultarfacturas(ParametroConsultaBill parame)
         {
             List<facturabill> facturas = new List<facturabill>();
-            
+            List<Parametro> parametros = new List<Parametro>();
+
+            Parametro inicio = new Parametro();
+            inicio.Name = "@fechainicio";
+            inicio.Value = parame.fechainicio;
+
+            Parametro fin = new Parametro();
+            fin.Name = "@fechafin";
+            fin.Value = parame.fechafin;
+
+            Parametro nombreforma = new Parametro();
+            nombreforma.Name = "@nombreforma";
+            nombreforma.Value = parame.tipo;
+
+            parametros.Add(inicio);
+            parametros.Add(fin);
+            parametros.Add(nombreforma);
 
             DataTable consulta = new DataTable();
-            consulta = HelperDAO.getinstancia().ConsultarDB("sp_consultarimportes", lparam);
+            consulta = HelperDAO.getinstancia().ConsultarDB("sp_consultarimportes", parametros);
 
             foreach (DataRow fila in consulta.Rows)
             {

@@ -59,8 +59,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.barrasuperior = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculasActivas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculasBajas)).BeginInit();
+            this.barrasuperior.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvPeliculasActivas
@@ -304,8 +307,7 @@
             // 
             // checkBox1
             // 
-            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(981, 171);
             this.checkBox1.Name = "checkBox1";
@@ -318,7 +320,7 @@
             // dtpDesde
             // 
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(59, 75);
+            this.dtpDesde.Location = new System.Drawing.Point(32, 121);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(127, 27);
             this.dtpDesde.TabIndex = 21;
@@ -326,14 +328,14 @@
             // dtpHasta
             // 
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(255, 75);
+            this.dtpHasta.Location = new System.Drawing.Point(228, 121);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(129, 27);
             this.dtpHasta.TabIndex = 22;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(177, 142);
+            this.textBox1.Location = new System.Drawing.Point(146, 169);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(319, 27);
             this.textBox1.TabIndex = 23;
@@ -341,7 +343,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 34);
+            this.label1.Location = new System.Drawing.Point(32, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 20);
             this.label1.TabIndex = 24;
@@ -350,7 +352,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(255, 34);
+            this.label2.Location = new System.Drawing.Point(228, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 25;
@@ -359,7 +361,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(63, 145);
+            this.label3.Location = new System.Drawing.Point(32, 172);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 20);
             this.label3.TabIndex = 26;
@@ -367,7 +369,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(602, 142);
+            this.button1.Location = new System.Drawing.Point(500, 169);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 29);
             this.button1.TabIndex = 27;
@@ -375,11 +377,34 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // barrasuperior
+            // 
+            this.barrasuperior.BackColor = System.Drawing.Color.Maroon;
+            this.barrasuperior.Controls.Add(this.label9);
+            this.barrasuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barrasuperior.Location = new System.Drawing.Point(0, 0);
+            this.barrasuperior.Name = "barrasuperior";
+            this.barrasuperior.Size = new System.Drawing.Size(1262, 76);
+            this.barrasuperior.TabIndex = 35;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(35, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(278, 36);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Consultar peliculas";
+            // 
             // ConsultarPeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.barrasuperior);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -390,11 +415,14 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dgvPeliculasBajas);
             this.Controls.Add(this.dgvPeliculasActivas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConsultarPeliculas";
             this.Text = "Peliculas";
             this.Load += new System.EventHandler(this.ConsultarPeliculas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculasActivas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculasBajas)).EndInit();
+            this.barrasuperior.ResumeLayout(false);
+            this.barrasuperior.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,5 +461,7 @@
         private Label label2;
         private Label label3;
         private Button button1;
+        private Panel barrasuperior;
+        private Label label9;
     }
 }
