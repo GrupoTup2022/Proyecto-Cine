@@ -45,12 +45,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.BtnGuardar = new System.Windows.Forms.Button();
+            this.barrasuperior = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.barrasuperior.SuspendLayout();
             this.SuspendLayout();
             // 
             // cboGeneros
             // 
             this.cboGeneros.FormattingEnabled = true;
-            this.cboGeneros.Location = new System.Drawing.Point(32, 301);
+            this.cboGeneros.Location = new System.Drawing.Point(35, 384);
             this.cboGeneros.Name = "cboGeneros";
             this.cboGeneros.Size = new System.Drawing.Size(151, 28);
             this.cboGeneros.TabIndex = 17;
@@ -58,7 +61,7 @@
             // cboClasificaciones
             // 
             this.cboClasificaciones.FormattingEnabled = true;
-            this.cboClasificaciones.Location = new System.Drawing.Point(32, 366);
+            this.cboClasificaciones.Location = new System.Drawing.Point(35, 449);
             this.cboClasificaciones.Name = "cboClasificaciones";
             this.cboClasificaciones.Size = new System.Drawing.Size(151, 28);
             this.cboClasificaciones.TabIndex = 19;
@@ -66,15 +69,16 @@
             // cboPaises
             // 
             this.cboPaises.FormattingEnabled = true;
-            this.cboPaises.Location = new System.Drawing.Point(32, 181);
+            this.cboPaises.Location = new System.Drawing.Point(35, 264);
             this.cboPaises.Name = "cboPaises";
             this.cboPaises.Size = new System.Drawing.Size(151, 28);
             this.cboPaises.TabIndex = 18;
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(328, 98);
+            this.label8.Location = new System.Drawing.Point(338, 192);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 20);
             this.label8.TabIndex = 32;
@@ -83,15 +87,16 @@
             // cboDistribuidoras
             // 
             this.cboDistribuidoras.FormattingEnabled = true;
-            this.cboDistribuidoras.Location = new System.Drawing.Point(32, 121);
+            this.cboDistribuidoras.Location = new System.Drawing.Point(35, 204);
             this.cboDistribuidoras.Name = "cboDistribuidoras";
             this.cboDistribuidoras.Size = new System.Drawing.Size(151, 28);
             this.cboDistribuidoras.TabIndex = 20;
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(328, 7);
+            this.label7.Location = new System.Drawing.Point(338, 101);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(121, 20);
             this.label7.TabIndex = 31;
@@ -100,7 +105,7 @@
             // cboDirectores
             // 
             this.cboDirectores.FormattingEnabled = true;
-            this.cboDirectores.Location = new System.Drawing.Point(32, 238);
+            this.cboDirectores.Location = new System.Drawing.Point(35, 321);
             this.cboDirectores.Name = "cboDirectores";
             this.cboDirectores.Size = new System.Drawing.Size(151, 28);
             this.cboDirectores.TabIndex = 21;
@@ -108,7 +113,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 7);
+            this.label6.Location = new System.Drawing.Point(35, 101);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 20);
             this.label6.TabIndex = 30;
@@ -116,7 +121,7 @@
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Location = new System.Drawing.Point(32, 30);
+            this.txtTitulo.Location = new System.Drawing.Point(35, 124);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(194, 27);
             this.txtTitulo.TabIndex = 22;
@@ -124,7 +129,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(32, 343);
+            this.label5.Location = new System.Drawing.Point(35, 426);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 20);
             this.label5.TabIndex = 29;
@@ -132,8 +137,9 @@
             // 
             // dtpEstreno
             // 
+            this.dtpEstreno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpEstreno.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEstreno.Location = new System.Drawing.Point(328, 30);
+            this.dtpEstreno.Location = new System.Drawing.Point(338, 124);
             this.dtpEstreno.Name = "dtpEstreno";
             this.dtpEstreno.Size = new System.Drawing.Size(121, 27);
             this.dtpEstreno.TabIndex = 23;
@@ -141,7 +147,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 275);
+            this.label4.Location = new System.Drawing.Point(35, 358);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 20);
             this.label4.TabIndex = 28;
@@ -149,7 +155,8 @@
             // 
             // txtDuracion
             // 
-            this.txtDuracion.Location = new System.Drawing.Point(328, 121);
+            this.txtDuracion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDuracion.Location = new System.Drawing.Point(338, 215);
             this.txtDuracion.Name = "txtDuracion";
             this.txtDuracion.Size = new System.Drawing.Size(80, 27);
             this.txtDuracion.TabIndex = 24;
@@ -157,7 +164,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 212);
+            this.label3.Location = new System.Drawing.Point(35, 295);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 20);
             this.label3.TabIndex = 27;
@@ -166,7 +173,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 98);
+            this.label1.Location = new System.Drawing.Point(35, 181);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 25;
@@ -175,7 +182,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 161);
+            this.label2.Location = new System.Drawing.Point(35, 244);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 20);
             this.label2.TabIndex = 26;
@@ -183,19 +190,44 @@
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.Location = new System.Drawing.Point(328, 343);
+            this.BtnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnGuardar.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnGuardar.Location = new System.Drawing.Point(338, 405);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(121, 51);
+            this.BtnGuardar.Size = new System.Drawing.Size(121, 72);
             this.BtnGuardar.TabIndex = 33;
             this.BtnGuardar.Text = "Guardar Cambios";
             this.BtnGuardar.UseVisualStyleBackColor = true;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
+            // barrasuperior
+            // 
+            this.barrasuperior.BackColor = System.Drawing.Color.Maroon;
+            this.barrasuperior.Controls.Add(this.label9);
+            this.barrasuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barrasuperior.Location = new System.Drawing.Point(0, 0);
+            this.barrasuperior.Name = "barrasuperior";
+            this.barrasuperior.Size = new System.Drawing.Size(524, 76);
+            this.barrasuperior.TabIndex = 34;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(35, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(226, 36);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Editar peliculas";
+            // 
             // EditarPeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(524, 509);
+            this.Controls.Add(this.barrasuperior);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.cboGeneros);
             this.Controls.Add(this.cboClasificaciones);
@@ -213,9 +245,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditarPeliculas";
             this.Text = "EditarPeliculas";
             this.Load += new System.EventHandler(this.EditarPeliculas_Load);
+            this.barrasuperior.ResumeLayout(false);
+            this.barrasuperior.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +275,7 @@
         private Label label1;
         private Label label2;
         private Button BtnGuardar;
+        private Panel barrasuperior;
+        private Label label9;
     }
 }
