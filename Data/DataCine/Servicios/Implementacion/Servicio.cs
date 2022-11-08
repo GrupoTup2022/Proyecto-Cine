@@ -25,7 +25,7 @@ namespace DataCine.Servicios.Implementacion
 
         public List<FormaPago> traerformaspago()
         {
-            return odaobill.;
+            return odaobill.traerformaPagos();
         }
 
         public List<facturabill> traertablabill(List<Parametro> lpara)
