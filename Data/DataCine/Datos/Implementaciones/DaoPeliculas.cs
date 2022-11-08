@@ -208,15 +208,14 @@ namespace DataCine.Datos.Implementaciones
         {
             List<Parametro> lParametros = new List<Parametro>();
             lParametros.Add(new Parametro("@titulo_local", oPelicula.Titulo_local));
-            lParametros.Add(new Parametro("@titulo_original", oPelicula.Titulo_original));
             lParametros.Add(new Parametro("@descripcion", oPelicula.Descripcion));
             lParametros.Add(new Parametro("@id_pais", oPelicula.pais.Id));
-            lParametros.Add(new Parametro("@id_clasificacion", oPelicula.clasificacion.Id));
-            lParametros.Add(new Parametro("@fecha_estreno", oPelicula.Fecha_Estreno));
-            lParametros.Add(new Parametro("@duracion_min", oPelicula.duracion));
-            lParametros.Add(new Parametro("@id_distibuidora", oPelicula.distribuidora.Id));
+            lParametros.Add(new Parametro("@id_calificacion", oPelicula.clasificacion.Id));
+            lParametros.Add(new Parametro("@fecha_est", oPelicula.Fecha_Estreno));
+            lParametros.Add(new Parametro("@duracion", oPelicula.duracion));
+            lParametros.Add(new Parametro("@id_dist", oPelicula.distribuidora.Id));
             lParametros.Add(new Parametro("@id_genero", oPelicula.genero.Id));
-            lParametros.Add(new Parametro("@id_directores", oPelicula.director.Id));
+            lParametros.Add(new Parametro("@id_director", oPelicula.director.Id));
             lParametros.Add(new Parametro("@idPel", oPelicula.Id));
 
             if (HelperDAO.getinstancia().UtilizarProcedimiento("SP_update_peliculas", lParametros) > 0)

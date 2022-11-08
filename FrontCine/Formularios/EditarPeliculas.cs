@@ -48,6 +48,7 @@ namespace FrontCine.Formularios
             {
                 if(p.Id == id)
                 {
+                    MessageBox.Show(p.Titulo_original.ToString());
                     txtDuracion.Text = p.duracion.ToString();
                     txtTitulo.Text = p.Titulo_local.ToString();
                     int index = cboDistribuidoras.FindString(p.distribuidora.Nombre);
@@ -61,6 +62,7 @@ namespace FrontCine.Formularios
                     index = cboPaises.FindString(p.pais.Nombre);
                     cboPaises.SelectedIndex = index;
                     dtpEstreno.Value = p.Fecha_Estreno;
+                    
                 }    
             }
 
@@ -92,9 +94,19 @@ namespace FrontCine.Formularios
                 {
                     p.clasificacion.Id = Convert.ToInt32( cboClasificaciones.SelectedValue);
                     p.clasificacion.Nombre = cboClasificaciones.SelectedText;
-
+                    p.director.Id = Convert.ToInt32(cboDirectores.SelectedValue);
+                    p.director.Nombre = p.director.Nombre;
+                    p.pais.Id = Convert.ToInt32(cboPaises.SelectedValue);
+                    p.pais.Nombre = cboPaises.SelectedText;
                     p.Titulo_local = txtTitulo.Text;
-
+                    p.Fecha_Estreno = dtpEstreno.Value;
+                    p.duracion = Convert.ToInt32(txtDuracion.Text);
+                    p.distribuidora.Id = Convert.ToInt32(cboDistribuidoras.SelectedValue);
+                    p.distribuidora.Nombre = cboDistribuidoras.SelectedText;
+                    p.genero.Nombre= cboGeneros.SelectedText;
+                    p.genero.Id = Convert.ToInt32(cboGeneros.SelectedValue);
+                    p.Titulo_local = txtTitulo.Text;
+                    p.Descripcion = "-";
 
                     string url2 = "https://localhost:7259/pelicula";
                     string peliculaJason = JsonConvert.SerializeObject(p);
@@ -109,11 +121,17 @@ namespace FrontCine.Formularios
 
         private async void BtnGuardar_Click(object sender, EventArgs e)
         {
-            if (await ModificarPelicula()==true)
+            try
             {
-                MessageBox.Show("SI");
+                await ModificarPelicula();
+                MessageBox.Show("Pelicula modificada con exito");
+                this.Close();
             }
-            else MessageBox.Show("ERROR");
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }
