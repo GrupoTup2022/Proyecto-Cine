@@ -63,7 +63,7 @@ namespace DataCine.Datos.Implementaciones
         public List<Pelicula> ObtenerPeliculas(string Sp)
         {
             List<Pelicula> lPeliculas = new List<Pelicula>();
-            DataTable dt = HelperDAO.getinstancia().ConsultarDB(SP);
+            DataTable dt = HelperDAO.getinstancia().ConsultarDB(Sp);
 
             foreach (DataRow row in dt.Rows)
             {
