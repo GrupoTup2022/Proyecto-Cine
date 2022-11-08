@@ -61,6 +61,8 @@ namespace FrontCine.Formularios
             {
                 EditarPeliculas form = new EditarPeliculas(idPelicula());
                 form.Show();
+
+               
             }
 
 

@@ -82,9 +82,8 @@ namespace FrontCine.Formularios
             cbo.DisplayMember = "Nombre";
         }
 
-        public async Task<bool> ModificarPelicula()
+        public async Task ModificarPelicula()
         {
-            bool result = true;
             string url = "https://localhost:7259/api/Peliculas/Peliculas";
             var data = await ClienteSingleton.getinstancia().GetAsync(url);
             List<Pelicula> lst = JsonConvert.DeserializeObject<List<Pelicula>>(data);
@@ -114,10 +113,8 @@ namespace FrontCine.Formularios
                     var data2 = await ClienteSingleton.getinstancia().PutAsync(url2, peliculaJason);
 
                 }
-                else result = false;
             }
 
-            return result;
         }
 
         private async void BtnGuardar_Click(object sender, EventArgs e)
