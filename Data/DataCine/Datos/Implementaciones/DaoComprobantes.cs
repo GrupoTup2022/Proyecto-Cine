@@ -86,5 +86,20 @@ namespace DataCine.Datos.Implementaciones
             }
             return funciones;
         }
+
+        List<Promo> IDaoComprobantes.ConsultarPromos()
+        {
+            List<Promo> promoList = new List<Promo>();
+            DataTable dt = HelperDAO.getinstancia().ConsultarDB("SP_PROMOS");
+            foreach (DataRow row in dt.Rows)
+            {
+                Promo promo = new Promo();
+                promo.Id = Convert.ToInt32(row["id_promo"]);
+                promo.Descripcion = row["descripcion"].ToString();
+                promo.Porcentaje = Convert.ToInt32(row["porcentaje"]);
+                promoList.Add(promo);
+            }
+            return promoList;
+        }
     }
 }

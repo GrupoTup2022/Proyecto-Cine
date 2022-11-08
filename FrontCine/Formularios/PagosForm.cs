@@ -25,8 +25,6 @@ namespace FrontCine.Formularios
             this.PagosList = PagosList;
             InitializeComponent();
             CargarFormasPago();
-            cb_fp.SelectedIndex = 0;
-            PagosList = new List<Pagos>();
             cargarDGV();
             lbl_total.Text = monto.ToString();
             restante = Restante();
@@ -51,32 +49,24 @@ namespace FrontCine.Formularios
             return resta;
         }
 
-        private void CargarFormasPago()
+        private async void CargarFormasPago()
         {
-            cb_fp.DataSource = recuperarFormasPago();
-            cb_fp.ValueMember = "id_forma_pago";
-            cb_fp.DisplayMember = "descripcion";
+            cb_fp.DataSource = await recuperarFormasPago();
+            cb_fp.ValueMember = "Id";
+            cb_fp.DisplayMember = "Nombre";
         }
 
-        public async Task<List<FormaVenta>> recuperarFormasPago()
+        public async Task<List<FormaPago>> recuperarFormasPago()
         {
             string url = "https://localhost:7259/api/Comprobantes/FormasPago";
             var data = await ClienteSingleton.getinstancia().GetAsync(url);
-            List<FormaVenta> lst = JsonConvert.DeserializeObject<List<FormaVenta>>(data);
+            List<FormaPago> lst = JsonConvert.DeserializeObject<List<FormaPago>>(data);
             return lst;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_agregar_Click(object sender, EventArgs e)
         {
             FormaPago fp = new FormaPago();
             fp.Id = Convert.ToInt32(cb_fp.SelectedValue);
@@ -99,11 +89,6 @@ namespace FrontCine.Formularios
             }
             else
                 MessageBox.Show("No se completó el monto");
-        }
-
-        private void lbl_restante_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
