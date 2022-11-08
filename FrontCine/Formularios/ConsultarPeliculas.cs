@@ -184,5 +184,10 @@ namespace FrontCine.Formularios
             dtpDesde.Value = DateTime.Today;
             dtpHasta.Value = DateTime.Today;
         }
+
+        private async void button2_Click(object sender, EventArgs e)
+        {
+            await CargarDGVAsync();
+        }
     }
 }
