@@ -89,7 +89,7 @@ namespace ApiCine.Controllers
             {
                 if (oPelicula == null)
                     BadRequest("Ha ocurrido un error");
-                return Ok(service.ModificarPelicula(oPelicula));
+                return Ok(/*service.ModificarPelicula(oPelicula)*/);
             }
             catch (Exception e)
             {
@@ -99,7 +99,7 @@ namespace ApiCine.Controllers
         }
 
         // DELETE api/<PeliculasController>/5
-        [HttpDelete("{id}, {baja}")]
+        [HttpPatch("{id}, {baja}")]
         public IActionResult AccionesPeliculas(int id, int baja)
         {
             try

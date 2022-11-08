@@ -62,6 +62,9 @@
             this.dgvPeliculasActivas.AllowUserToDeleteRows = false;
             this.dgvPeliculasActivas.AllowUserToResizeColumns = false;
             this.dgvPeliculasActivas.AllowUserToResizeRows = false;
+            this.dgvPeliculasActivas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPeliculasActivas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPeliculasActivas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPeliculasActivas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -76,13 +79,13 @@
             this.Genero,
             this.Column1,
             this.Editar});
-            this.dgvPeliculasActivas.Location = new System.Drawing.Point(49, 216);
+            this.dgvPeliculasActivas.Location = new System.Drawing.Point(68, 231);
             this.dgvPeliculasActivas.Name = "dgvPeliculasActivas";
             this.dgvPeliculasActivas.ReadOnly = true;
             this.dgvPeliculasActivas.RowHeadersVisible = false;
             this.dgvPeliculasActivas.RowHeadersWidth = 51;
             this.dgvPeliculasActivas.RowTemplate.Height = 29;
-            this.dgvPeliculasActivas.Size = new System.Drawing.Size(1283, 411);
+            this.dgvPeliculasActivas.Size = new System.Drawing.Size(1117, 347);
             this.dgvPeliculasActivas.TabIndex = 18;
             this.dgvPeliculasActivas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPeliculasActivas_CellContentClick);
             // 
@@ -183,6 +186,9 @@
             this.dgvPeliculasBajas.AllowUserToDeleteRows = false;
             this.dgvPeliculasBajas.AllowUserToResizeColumns = false;
             this.dgvPeliculasBajas.AllowUserToResizeRows = false;
+            this.dgvPeliculasBajas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPeliculasBajas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPeliculasBajas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPeliculasBajas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -196,13 +202,13 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewButtonColumn2});
-            this.dgvPeliculasBajas.Location = new System.Drawing.Point(49, 216);
+            this.dgvPeliculasBajas.Location = new System.Drawing.Point(34, 231);
             this.dgvPeliculasBajas.Name = "dgvPeliculasBajas";
             this.dgvPeliculasBajas.ReadOnly = true;
             this.dgvPeliculasBajas.RowHeadersVisible = false;
             this.dgvPeliculasBajas.RowHeadersWidth = 51;
             this.dgvPeliculasBajas.RowTemplate.Height = 29;
-            this.dgvPeliculasBajas.Size = new System.Drawing.Size(1283, 411);
+            this.dgvPeliculasBajas.Size = new System.Drawing.Size(1185, 380);
             this.dgvPeliculasBajas.TabIndex = 19;
             this.dgvPeliculasBajas.Visible = false;
             this.dgvPeliculasBajas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPeliculasBajas_CellContentClick);
@@ -291,8 +297,10 @@
             // 
             // checkBox1
             // 
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(1096, 175);
+            this.checkBox1.Location = new System.Drawing.Point(983, 173);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(236, 24);
             this.checkBox1.TabIndex = 20;
@@ -304,7 +312,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1377, 710);
+            this.ClientSize = new System.Drawing.Size(1262, 673);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dgvPeliculasBajas);
             this.Controls.Add(this.dgvPeliculasActivas);
