@@ -79,9 +79,8 @@
             this.BarraTitulo.Controls.Add(this.btnCerrar);
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.BarraTitulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(1122, 28);
+            this.BarraTitulo.Size = new System.Drawing.Size(1282, 37);
             this.BarraTitulo.TabIndex = 0;
             this.BarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTitulo_Paint);
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
@@ -92,10 +91,9 @@
             this.btnrestaurar.BackColor = System.Drawing.Color.Maroon;
             this.btnrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnrestaurar.Image")));
-            this.btnrestaurar.Location = new System.Drawing.Point(1061, 3);
-            this.btnrestaurar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnrestaurar.Location = new System.Drawing.Point(1213, 4);
             this.btnrestaurar.Name = "btnrestaurar";
-            this.btnrestaurar.Size = new System.Drawing.Size(26, 22);
+            this.btnrestaurar.Size = new System.Drawing.Size(30, 29);
             this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnrestaurar.TabIndex = 4;
             this.btnrestaurar.TabStop = false;
@@ -107,10 +105,9 @@
             this.btnMaximizar.BackColor = System.Drawing.Color.Maroon;
             this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(1061, 2);
-            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMaximizar.Location = new System.Drawing.Point(1213, 3);
             this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(26, 22);
+            this.btnMaximizar.Size = new System.Drawing.Size(30, 29);
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMaximizar.TabIndex = 3;
             this.btnMaximizar.TabStop = false;
@@ -122,10 +119,9 @@
             this.btnMinimizar.BackColor = System.Drawing.Color.Maroon;
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1030, 2);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMinimizar.Location = new System.Drawing.Point(1177, 3);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(26, 22);
+            this.btnMinimizar.Size = new System.Drawing.Size(30, 29);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 2;
             this.btnMinimizar.TabStop = false;
@@ -137,10 +133,9 @@
             this.btnCerrar.BackColor = System.Drawing.Color.Maroon;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1093, 2);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCerrar.Location = new System.Drawing.Point(1249, 3);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(26, 22);
+            this.btnCerrar.Size = new System.Drawing.Size(30, 29);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 1;
             this.btnCerrar.TabStop = false;
@@ -161,10 +156,9 @@
             this.MenuVertical.Controls.Add(this.btnestadisticas);
             this.MenuVertical.Controls.Add(this.panellogo);
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MenuVertical.Location = new System.Drawing.Point(0, 28);
-            this.MenuVertical.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MenuVertical.Location = new System.Drawing.Point(0, 37);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(221, 647);
+            this.MenuVertical.Size = new System.Drawing.Size(262, 863);
             this.MenuVertical.TabIndex = 1;
             // 
             // paneledicion
@@ -174,20 +168,18 @@
             this.paneledicion.Controls.Add(this.panel5);
             this.paneledicion.Controls.Add(this.btnpeliculas);
             this.paneledicion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.paneledicion.Location = new System.Drawing.Point(0, 236);
-            this.paneledicion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.paneledicion.Location = new System.Drawing.Point(0, 314);
             this.paneledicion.Name = "paneledicion";
-            this.paneledicion.Size = new System.Drawing.Size(222, 74);
+            this.paneledicion.Size = new System.Drawing.Size(262, 99);
             this.paneledicion.TabIndex = 14;
             this.paneledicion.Visible = false;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Maroon;
-            this.panel2.Location = new System.Drawing.Point(3, 37);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(3, 49);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(4, 34);
+            this.panel2.Size = new System.Drawing.Size(5, 45);
             this.panel2.TabIndex = 10;
             // 
             // btnusuarios
@@ -199,11 +191,10 @@
             this.btnusuarios.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnusuarios.ForeColor = System.Drawing.Color.White;
             this.btnusuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnusuarios.Location = new System.Drawing.Point(5, 37);
-            this.btnusuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnusuarios.Location = new System.Drawing.Point(6, 49);
             this.btnusuarios.Name = "btnusuarios";
-            this.btnusuarios.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnusuarios.Size = new System.Drawing.Size(216, 34);
+            this.btnusuarios.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnusuarios.Size = new System.Drawing.Size(247, 45);
             this.btnusuarios.TabIndex = 10;
             this.btnusuarios.Text = "USUARIOS";
             this.btnusuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -213,10 +204,9 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Maroon;
-            this.panel5.Location = new System.Drawing.Point(3, 2);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(4, 34);
+            this.panel5.Size = new System.Drawing.Size(5, 45);
             this.panel5.TabIndex = 9;
             // 
             // btnpeliculas
@@ -228,11 +218,10 @@
             this.btnpeliculas.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnpeliculas.ForeColor = System.Drawing.Color.White;
             this.btnpeliculas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnpeliculas.Location = new System.Drawing.Point(5, 2);
-            this.btnpeliculas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnpeliculas.Location = new System.Drawing.Point(6, 3);
             this.btnpeliculas.Name = "btnpeliculas";
-            this.btnpeliculas.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnpeliculas.Size = new System.Drawing.Size(216, 34);
+            this.btnpeliculas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnpeliculas.Size = new System.Drawing.Size(247, 45);
             this.btnpeliculas.TabIndex = 9;
             this.btnpeliculas.Text = "PELICULAS";
             this.btnpeliculas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -250,10 +239,9 @@
             this.btnedicion.ForeColor = System.Drawing.Color.White;
             this.btnedicion.Image = ((System.Drawing.Image)(resources.GetObject("btnedicion.Image")));
             this.btnedicion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnedicion.Location = new System.Drawing.Point(0, 202);
-            this.btnedicion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnedicion.Location = new System.Drawing.Point(0, 269);
             this.btnedicion.Name = "btnedicion";
-            this.btnedicion.Size = new System.Drawing.Size(222, 34);
+            this.btnedicion.Size = new System.Drawing.Size(262, 45);
             this.btnedicion.TabIndex = 10;
             this.btnedicion.Text = "EDICION";
             this.btnedicion.UseVisualStyleBackColor = true;
@@ -265,9 +253,9 @@
             this.lblfecha.AutoSize = true;
             this.lblfecha.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblfecha.ForeColor = System.Drawing.Color.White;
-            this.lblfecha.Location = new System.Drawing.Point(60, 605);
+            this.lblfecha.Location = new System.Drawing.Point(69, 828);
             this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(42, 17);
+            this.lblfecha.Size = new System.Drawing.Size(50, 21);
             this.lblfecha.TabIndex = 1;
             this.lblfecha.Text = "fecha";
             this.lblfecha.Click += new System.EventHandler(this.lblfecha_Click);
@@ -278,9 +266,9 @@
             this.lblhora.AutoSize = true;
             this.lblhora.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblhora.ForeColor = System.Drawing.Color.White;
-            this.lblhora.Location = new System.Drawing.Point(60, 577);
+            this.lblhora.Location = new System.Drawing.Point(69, 790);
             this.lblhora.Name = "lblhora";
-            this.lblhora.Size = new System.Drawing.Size(57, 27);
+            this.lblhora.Size = new System.Drawing.Size(73, 34);
             this.lblhora.TabIndex = 0;
             this.lblhora.Text = "hora";
             // 
@@ -288,10 +276,9 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(10, 585);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(11, 801);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(36, 37);
+            this.pictureBox2.Size = new System.Drawing.Size(41, 49);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
@@ -304,20 +291,18 @@
             this.panelmenuestadisticas.Controls.Add(this.panel6);
             this.panelmenuestadisticas.Controls.Add(this.btnreporteventa);
             this.panelmenuestadisticas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelmenuestadisticas.Location = new System.Drawing.Point(0, 128);
-            this.panelmenuestadisticas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelmenuestadisticas.Location = new System.Drawing.Point(0, 170);
             this.panelmenuestadisticas.Name = "panelmenuestadisticas";
-            this.panelmenuestadisticas.Size = new System.Drawing.Size(222, 74);
+            this.panelmenuestadisticas.Size = new System.Drawing.Size(262, 99);
             this.panelmenuestadisticas.TabIndex = 8;
             this.panelmenuestadisticas.Visible = false;
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Maroon;
-            this.panel7.Location = new System.Drawing.Point(3, 37);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel7.Location = new System.Drawing.Point(3, 49);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(4, 34);
+            this.panel7.Size = new System.Drawing.Size(5, 45);
             this.panel7.TabIndex = 10;
             // 
             // btnreportesala
@@ -329,11 +314,10 @@
             this.btnreportesala.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnreportesala.ForeColor = System.Drawing.Color.White;
             this.btnreportesala.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnreportesala.Location = new System.Drawing.Point(5, 37);
-            this.btnreportesala.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnreportesala.Location = new System.Drawing.Point(6, 49);
             this.btnreportesala.Name = "btnreportesala";
-            this.btnreportesala.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnreportesala.Size = new System.Drawing.Size(216, 34);
+            this.btnreportesala.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnreportesala.Size = new System.Drawing.Size(247, 45);
             this.btnreportesala.TabIndex = 10;
             this.btnreportesala.Text = "ULTIMA FACTURA";
             this.btnreportesala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -343,10 +327,9 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Maroon;
-            this.panel6.Location = new System.Drawing.Point(3, 2);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(4, 34);
+            this.panel6.Size = new System.Drawing.Size(5, 45);
             this.panel6.TabIndex = 9;
             // 
             // btnreporteventa
@@ -358,11 +341,10 @@
             this.btnreporteventa.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnreporteventa.ForeColor = System.Drawing.Color.White;
             this.btnreporteventa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnreporteventa.Location = new System.Drawing.Point(5, 2);
-            this.btnreporteventa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnreporteventa.Location = new System.Drawing.Point(6, 3);
             this.btnreporteventa.Name = "btnreporteventa";
-            this.btnreporteventa.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnreporteventa.Size = new System.Drawing.Size(216, 34);
+            this.btnreporteventa.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnreporteventa.Size = new System.Drawing.Size(247, 45);
             this.btnreporteventa.TabIndex = 9;
             this.btnreporteventa.Text = "REPORTE VENTA";
             this.btnreporteventa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -379,13 +361,13 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(8, 399);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(9, 532);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(214, 34);
+            this.button1.Size = new System.Drawing.Size(245, 45);
             this.button1.TabIndex = 6;
             this.button1.Text = "CONSULTAS";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -397,10 +379,9 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(5, 360);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Location = new System.Drawing.Point(6, 480);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(214, 34);
+            this.button3.Size = new System.Drawing.Size(245, 45);
             this.button3.TabIndex = 3;
             this.button3.Text = "VENTA";
             this.button3.UseVisualStyleBackColor = true;
@@ -417,10 +398,9 @@
             this.btnestadisticas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnestadisticas.Image = ((System.Drawing.Image)(resources.GetObject("btnestadisticas.Image")));
             this.btnestadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnestadisticas.Location = new System.Drawing.Point(0, 94);
-            this.btnestadisticas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnestadisticas.Location = new System.Drawing.Point(0, 125);
             this.btnestadisticas.Name = "btnestadisticas";
-            this.btnestadisticas.Size = new System.Drawing.Size(222, 34);
+            this.btnestadisticas.Size = new System.Drawing.Size(262, 45);
             this.btnestadisticas.TabIndex = 2;
             this.btnestadisticas.Text = "ESTADISTICAS";
             this.btnestadisticas.UseVisualStyleBackColor = true;
@@ -432,9 +412,8 @@
             this.panellogo.Controls.Add(this.pictureBox1);
             this.panellogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panellogo.Location = new System.Drawing.Point(0, 0);
-            this.panellogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panellogo.Name = "panellogo";
-            this.panellogo.Size = new System.Drawing.Size(222, 94);
+            this.panellogo.Size = new System.Drawing.Size(262, 125);
             this.panellogo.TabIndex = 12;
             this.panellogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panellogo_Paint);
             // 
@@ -442,10 +421,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(74, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(85, 15);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 71);
+            this.pictureBox1.Size = new System.Drawing.Size(73, 95);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -454,10 +432,9 @@
             // 
             this.panelprincipal.BackColor = System.Drawing.Color.White;
             this.panelprincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelprincipal.Location = new System.Drawing.Point(221, 28);
-            this.panelprincipal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelprincipal.Location = new System.Drawing.Point(262, 37);
             this.panelprincipal.Name = "panelprincipal";
-            this.panelprincipal.Size = new System.Drawing.Size(901, 647);
+            this.panelprincipal.Size = new System.Drawing.Size(1020, 863);
             this.panelprincipal.TabIndex = 2;
             this.panelprincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContenedor_Paint);
             // 
@@ -468,14 +445,13 @@
             // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1122, 675);
+            this.ClientSize = new System.Drawing.Size(1282, 900);
             this.Controls.Add(this.panelprincipal);
             this.Controls.Add(this.MenuVertical);
             this.Controls.Add(this.BarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";

@@ -44,7 +44,7 @@ namespace FrontCine.Formularios.Reportes
             List<facturabill> tablaBills = null;
 
             string filtrosfechajason = JsonConvert.SerializeObject(parametros);
-            string url = "";
+            string url = "https://localhost:7259/api/ReporteBill/bills";
 
             var resultado = await ClienteSingleton.getinstancia().PostAsync(url,filtrosfechajason);
 
@@ -57,14 +57,14 @@ namespace FrontCine.Formularios.Reportes
 
         }
 
-        private void ReporteBillHistory_Load(object sender, EventArgs e)
+        private async void ReporteBillHistory_Load(object sender, EventArgs e)
         {
-            CargarCBO(cboformaspago);
+            await CargarCBO(cboformaspago);
         }
 
         private async Task CargarCBO(ComboBox cbo)
         {
-            string url = "https://localhost:7259/api/formadepagos/";
+            string url = "https://localhost:7259/api/ReporteBill/formadepagos";
             var data = await ClienteSingleton.getinstancia().GetAsync(url);
             List<object> lst = JsonConvert.DeserializeObject<List<object>>(data);
 
