@@ -62,7 +62,7 @@ namespace FrontCine.Formularios
                 EditarPeliculas form = new EditarPeliculas(idPelicula());
                 form.Show();
 
-               
+                form.FormClosed += F2_FormClosed;
             }
 
 
@@ -122,6 +122,11 @@ namespace FrontCine.Formularios
                 await CargarDGVAsync();
 
             }
+        }
+
+        private async void F2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            await CargarDGVAsync();
         }
 
         private async void dgvPeliculasBajas_CellContentClick(object sender, DataGridViewCellEventArgs e)
