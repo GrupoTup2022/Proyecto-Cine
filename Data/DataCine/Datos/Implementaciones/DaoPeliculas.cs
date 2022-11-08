@@ -63,7 +63,7 @@ namespace DataCine.Datos.Implementaciones
         public List<Pelicula> ObtenerPeliculas(string Sp)
         {
             List<Pelicula> lPeliculas = new List<Pelicula>();
-            DataTable dt = HelperDAO.getinstancia().ConsultarDB(SP);
+            DataTable dt = HelperDAO.getinstancia().ConsultarDB(Sp);
 
             foreach (DataRow row in dt.Rows)
             {
@@ -86,6 +86,47 @@ namespace DataCine.Datos.Implementaciones
                 lPeliculas.Add(p);
             }
             return lPeliculas;
+        }
+
+        public List<Pelicula> ConsultarPeliculasConSentencia()
+        {
+            List<Pelicula> lPeliculas = new List<Pelicula>();
+            DataTable dt = HelperDAO.getinstancia().EjecutarSentencia(SentenciaPeliculas());
+
+            foreach (DataRow row in dt.Rows)
+            {
+                Pelicula p = new Pelicula();
+                p.Id = Convert.ToInt32(row[0].ToString());
+                p.Titulo_local = row[1].ToString();
+                p.duracion = Convert.ToInt32(row[2].ToString());
+                p.Fecha_Estreno = Convert.ToDateTime(row[3].ToString());
+                p.pais.Id = Convert.ToInt32(row[4].ToString());
+                p.pais.Nombre = row[5].ToString();
+                p.director.Id = Convert.ToInt32(row[6].ToString());
+                p.director.Nombre = row[7].ToString();
+                p.distribuidora.Id = Convert.ToInt32(row[8].ToString());
+                p.distribuidora.Nombre = row[9].ToString();
+                p.clasificacion.Id = Convert.ToInt32(row[10].ToString());
+                p.clasificacion.Nombre = row[11].ToString();
+                p.genero.Id = Convert.ToInt32(row[12].ToString());
+                p.genero.Nombre = row[13].ToString();
+                p.Baja = Convert.ToInt32(row[14].ToString());
+                lPeliculas.Add(p);
+            }
+            return lPeliculas;
+        }
+
+        public string SentenciaPeliculas()
+        {
+            string Sentencia = " select id_pelicula as 'ID', titulo_local 'Titulo',duracion_min 'Duracion',fecha_estreno 'Fecha de Estreno'," +
+                " p.id_pais, pais,p.id_director, director,p.id_distribuidora, distribuidora,p.id_calificacion," +
+                " calificacion ,p.id_genero, genero, baja, fecha_baja " +
+                " from Peliculas p join Calificaciones c on p.id_calificacion = c.id_calificacion " +
+                " join generos g on p.id_genero = g.id_genero  \r\n join Paises pa on p.id_pais = pa.id_pais " +
+                " join distribuidoras d on p.id_distribuidora = d.id_distribuidora " +
+                "join directores di on p.id_director = di.id_director";
+
+            return Sentencia;
         }
 
         public List<Distribuidora> CargarDistribuidora()
