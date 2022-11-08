@@ -32,5 +32,18 @@ namespace DataCine.Servicios.Implementacion
         {
             return dao.ConsultarFunciones(fecha);
         }
+        List<FormaPago> IComprobanteService.ConsultarFormasPago()
+        {
+            return dao.ConsultarFormasPago();
+        }
+        List<FormaVenta> IComprobanteService.ConsultarFormasVenta()
+        {
+            return dao.ConsultarFormasVenta();
+        }
+        List<Promo> IComprobanteService.ConsultarPromos()
+        {
+            return dao.ConsultarPromos();
+        }
+
     }
 }

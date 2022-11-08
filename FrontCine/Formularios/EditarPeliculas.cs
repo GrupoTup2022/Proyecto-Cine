@@ -15,6 +15,7 @@ namespace FrontCine.Formularios
 {
     public partial class EditarPeliculas : Form
     {
+        ConsultarPeliculas form = new ConsultarPeliculas();
         private int id;
 
         public EditarPeliculas(int id)
@@ -25,14 +26,15 @@ namespace FrontCine.Formularios
 
         private async void EditarPeliculas_Load(object sender, EventArgs e)
         {       
-            await CargarCampos();
-            
             
             await CargarCombos(cboDistribuidoras, "distribuidora");
             await CargarCombos(cboPaises, "paises");
             await CargarCombos(cboDirectores, "directores");
             await CargarCombos(cboClasificaciones, "clasificacion");
             await CargarCombos(cboGeneros, "generos");
+
+            await CargarCampos();
+
         }
 
 
@@ -47,14 +49,22 @@ namespace FrontCine.Formularios
             {
                 if(p.Id == id)
                 {
+                    txtTitulo.Text = p.Titulo_original.ToString();
+                    txtDuracion.Text = p.duracion.ToString();
                     txtTitulo.Text = p.Titulo_local.ToString();
-                    cboDistribuidoras.SelectedValue = p.distribuidora.Id;
-                    cboClasificaciones.SelectedValue = p.clasificacion.Id;
-                    cboDirectores.SelectedValue = p.director.Id;
-                    cboGeneros.SelectedValue = p.genero.Id;
-                    cboClasificaciones.SelectedValue = p.clasificacion.Id;
-                   
-                }
+                    int index = cboDistribuidoras.FindString(p.distribuidora.Nombre);
+                    cboDistribuidoras.SelectedIndex = index;
+                    index = cboClasificaciones.FindString(p.clasificacion.Nombre);
+                    cboClasificaciones.SelectedIndex = index;
+                    index = cboDirectores.FindString(p.director.Nombre);
+                    cboDirectores.SelectedIndex = index;
+                    index = cboGeneros.FindString(p.genero.Nombre);
+                    cboGeneros.SelectedIndex = index;
+                    index = cboPaises.FindString(p.pais.Nombre);
+                    cboPaises.SelectedIndex = index;
+                    dtpEstreno.Value = p.Fecha_Estreno;
+                    
+                }    
             }
 
         }
@@ -70,6 +80,57 @@ namespace FrontCine.Formularios
             cbo.DataSource = lst;
             cbo.ValueMember = "Id";
             cbo.DisplayMember = "Nombre";
+        }
+
+        public async Task ModificarPelicula()
+        {
+            string url = "https://localhost:7259/api/Peliculas/Peliculas";
+            var data = await ClienteSingleton.getinstancia().GetAsync(url);
+            List<Pelicula> lst = JsonConvert.DeserializeObject<List<Pelicula>>(data);
+
+            foreach (Pelicula p in lst)
+            {
+                if (p.Id == id)
+                {
+                    p.clasificacion.Id = Convert.ToInt32( cboClasificaciones.SelectedValue);
+                    p.clasificacion.Nombre = cboClasificaciones.SelectedText;
+                    p.director.Id = Convert.ToInt32(cboDirectores.SelectedValue);
+                    p.director.Nombre = p.director.Nombre;
+                    p.pais.Id = Convert.ToInt32(cboPaises.SelectedValue);
+                    p.pais.Nombre = cboPaises.SelectedText;
+                    p.Titulo_local = txtTitulo.Text;
+                    p.Fecha_Estreno = dtpEstreno.Value;
+                    p.duracion = Convert.ToInt32(txtDuracion.Text);
+                    p.distribuidora.Id = Convert.ToInt32(cboDistribuidoras.SelectedValue);
+                    p.distribuidora.Nombre = cboDistribuidoras.SelectedText;
+                    p.genero.Nombre= cboGeneros.SelectedText;
+                    p.genero.Id = Convert.ToInt32(cboGeneros.SelectedValue);
+                    p.Titulo_local = txtTitulo.Text;
+                    p.Descripcion = "-";
+
+                    string url2 = "https://localhost:7259/pelicula";
+                    string peliculaJason = JsonConvert.SerializeObject(p);
+                    var data2 = await ClienteSingleton.getinstancia().PutAsync(url2, peliculaJason);
+
+                }
+            }
+
+        }
+
+        private async void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                await ModificarPelicula();
+                await form.CargarDGVAsync();
+                MessageBox.Show("Pelicula modificada con exito");        
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

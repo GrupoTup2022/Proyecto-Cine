@@ -1,4 +1,5 @@
-﻿using DataCine.Servicios.Implementacion;
+﻿using DataCine.Dominio;
+using DataCine.Servicios.Implementacion;
 using DataCine.Servicios.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -48,6 +49,21 @@ namespace ApiCine.Controllers
         public IActionResult GetSalas()
         {
             return Ok(fs.consultarSalas());
+        }
+
+        [HttpPost]
+        [Route("FuncionesFiltro")]
+        public IActionResult getFuncionesFiltro([FromBody] ParametroFuncion parametroFuncion)
+        {
+            return Ok(fs.consultarFuncionesParametros(parametroFuncion));
+
+
+        }
+        [HttpDelete("{id}")]
+        [Route("DeleteFuncion")]
+        public IActionResult Delete(int id_funcion)
+        {
+            return Ok(fs.BajaLogicaFuncion(id_funcion));
         }
     }
 }

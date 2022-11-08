@@ -12,6 +12,8 @@ namespace DataCine.Datos.Interfaces
         List<Funcion> ConsultarFunciones(DateTime fecha);
         bool CargarComprobante(Comprobante comprobante);
         List<TipoGenerico> ConsultarButacas(int funcion);
-
+        List<FormaPago> ConsultarFormasPago();
+        List<FormaVenta> ConsultarFormasVenta();
+        List<Promo> ConsultarPromos();
     }
 }

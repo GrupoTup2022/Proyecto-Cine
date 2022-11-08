@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibreriaTp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace FrontCine.Formularios
 {
     public partial class ButacasForm : Form
     {
-        public ButacasForm()
+        public ButacasForm(Ticket ticket, Funcion funcion)
         {
             InitializeComponent();
         }

@@ -5,5 +5,10 @@
         public int Id { get; set; }
         public string Nombre { get; set; }
         public TipoSala TipoSala { get; set; }
+
+        public Sala()
+        {
+            TipoSala = new TipoSala();
+        }
     }
 }

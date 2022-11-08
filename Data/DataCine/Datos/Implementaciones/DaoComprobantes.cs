@@ -33,6 +33,34 @@ namespace DataCine.Datos.Implementaciones
             return butacasOcupadas;
         }
 
+        List<FormaPago> IDaoComprobantes.ConsultarFormasPago()
+        {
+            List<FormaPago> formaPagos = new List<FormaPago>();
+            DataTable dt = HelperDAO.getinstancia().ConsultarDB("SP_FORMAS_PAGO");
+            foreach (DataRow row in dt.Rows)
+            {
+                FormaPago formaPago = new FormaPago();
+                formaPago.Id=Convert.ToInt32(row["id_forma_pago"]);
+                formaPago.Nombre = row["descripcion"].ToString();
+                formaPagos.Add(formaPago);
+            }
+                return formaPagos;
+        }
+
+        List<FormaVenta> IDaoComprobantes.ConsultarFormasVenta()
+        {
+            List<FormaVenta> formaVentas = new List<FormaVenta>();
+            DataTable dt = HelperDAO.getinstancia().ConsultarDB("SP_FORMAS_VENTA");
+            foreach (DataRow row in dt.Rows)
+            {
+                FormaVenta formaVenta = new FormaVenta();
+                formaVenta.Id = Convert.ToInt32(row["id_forma_venta"]);
+                formaVenta.Nombre = row["descripcion"].ToString();
+                formaVentas.Add(formaVenta);
+            }
+            return formaVentas;
+        }
+
         List<Funcion> IDaoComprobantes.ConsultarFunciones(DateTime fecha)
         {
             List<Funcion> funciones = new List<Funcion>();
@@ -57,6 +85,21 @@ namespace DataCine.Datos.Implementaciones
                 funciones.Add(funcion_nueva);
             }
             return funciones;
+        }
+
+        List<Promo> IDaoComprobantes.ConsultarPromos()
+        {
+            List<Promo> promoList = new List<Promo>();
+            DataTable dt = HelperDAO.getinstancia().ConsultarDB("SP_PROMOS");
+            foreach (DataRow row in dt.Rows)
+            {
+                Promo promo = new Promo();
+                promo.Id = Convert.ToInt32(row["id_promo"]);
+                promo.Descripcion = row["descripcion"].ToString();
+                promo.Porcentaje = Convert.ToInt32(row["porcentaje"]);
+                promoList.Add(promo);
+            }
+            return promoList;
         }
     }
 }

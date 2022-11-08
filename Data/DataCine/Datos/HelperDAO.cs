@@ -182,6 +182,18 @@ namespace DataCine.Datos
             }
         }
 
+        public DataTable EjecutarSentencia(string comm)
+        {
+            DataTable tabla = new DataTable();
+            cnn.Open();
+            SqlCommand cmd = new SqlCommand(comm, cnn);
+            cmd.CommandType = CommandType.Text;
+            tabla.Load(cmd.ExecuteReader());
+            cnn.Close();
+
+            return tabla;
+        }
+
         public DataTable ConsultarDB(string SP, List<Parametro> lParametros)
         {
             SqlCommand cmd = new SqlCommand();
@@ -197,13 +209,16 @@ namespace DataCine.Datos
                 {
                     cmd.Parameters.AddWithValue(p.Name, p.Value);
                 }
-                cmd.Parameters.Clear();
                 tabla.Load(cmd.ExecuteReader());
                 cnn.Close();
                 return tabla;
             }
             catch (SqlException ex)
             {
+                if (cnn.State == ConnectionState.Open && cnn != null)
+                {
+                    cnn.Close();
+                }
                 throw (ex);
             }
             finally
