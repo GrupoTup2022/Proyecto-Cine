@@ -84,12 +84,11 @@ namespace ApiCine.Controllers
         [HttpPut("/pelicula")]
         public IActionResult PutPelicula(Pelicula oPelicula)
         {
-
             try
             {
                 if (oPelicula == null)
                     BadRequest("Ha ocurrido un error");
-                return Ok(/*service.ModificarPelicula(oPelicula)*/);
+                return Ok(service.ModificarPelicula(oPelicula));
             }
             catch (Exception e)
             {

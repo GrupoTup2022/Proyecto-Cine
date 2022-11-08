@@ -88,7 +88,7 @@ namespace DataCine.Datos.Implementaciones
             return lPeliculas;
         }
 
-        public List<Pelicula> ConsultarPeliculasConSentencia()
+        public List<Pelicula> ConsultarPeliculasConSentencias()
         {
             List<Pelicula> lPeliculas = new List<Pelicula>();
             DataTable dt = HelperDAO.getinstancia().EjecutarSentencia(SentenciaPeliculas());

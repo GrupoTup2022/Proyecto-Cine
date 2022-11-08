@@ -15,6 +15,7 @@ namespace FrontCine.Formularios
 {
     public partial class EditarPeliculas : Form
     {
+        ConsultarPeliculas form = new ConsultarPeliculas();
         private int id;
 
         public EditarPeliculas(int id)
@@ -48,7 +49,7 @@ namespace FrontCine.Formularios
             {
                 if(p.Id == id)
                 {
-                    MessageBox.Show(p.Titulo_original.ToString());
+                    txtTitulo.Text = p.Titulo_original.ToString();
                     txtDuracion.Text = p.duracion.ToString();
                     txtTitulo.Text = p.Titulo_local.ToString();
                     int index = cboDistribuidoras.FindString(p.distribuidora.Nombre);
@@ -124,7 +125,8 @@ namespace FrontCine.Formularios
             try
             {
                 await ModificarPelicula();
-                MessageBox.Show("Pelicula modificada con exito");
+                await form.CargarDGVAsync();
+                MessageBox.Show("Pelicula modificada con exito");        
                 this.Close();
             }
             catch (Exception ex)
