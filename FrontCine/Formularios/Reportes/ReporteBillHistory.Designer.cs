@@ -33,6 +33,8 @@
             this.dtpinicio = new System.Windows.Forms.DateTimePicker();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.cboformaspago = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnconsultar
@@ -62,10 +64,10 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.reportViewer1.Location = new System.Drawing.Point(0, 119);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 361);
             this.reportViewer1.Name = "ReportViewer";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 246);
+            this.reportViewer1.Size = new System.Drawing.Size(812, 246);
             this.reportViewer1.TabIndex = 0;
             // 
             // cboformaspago
@@ -76,11 +78,22 @@
             this.cboformaspago.Size = new System.Drawing.Size(151, 28);
             this.cboformaspago.TabIndex = 3;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(28, 72);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(760, 215);
+            this.dataGridView1.TabIndex = 4;
+            // 
             // ReporteBillHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 365);
+            this.ClientSize = new System.Drawing.Size(812, 607);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cboformaspago);
             this.Controls.Add(this.dtpinicio);
             this.Controls.Add(this.dtpfin);
@@ -89,6 +102,7 @@
             this.Name = "ReporteBillHistory";
             this.Text = "ReporteBillHistory";
             this.Load += new System.EventHandler(this.ReporteBillHistory_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -100,5 +114,6 @@
         private DateTimePicker dtpinicio;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private ComboBox cboformaspago;
+        private DataGridView dataGridView1;
     }
 }

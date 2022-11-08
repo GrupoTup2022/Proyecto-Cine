@@ -50,7 +50,17 @@ namespace FrontCine.Formularios.Reportes
 
             tablaBills = JsonConvert.DeserializeObject<List<facturabill>>(resultado);
 
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("NRO", typeof(Int32));
+            dataTable.Columns.Add("Fecha", typeof(DateTime));
+            dataTable.Columns.Add("Nombre", typeof(string));
+            dataTable.Columns.Add("Precio", typeof(Int32));
+            foreach(facturabill f in tablaBills)
+            {
+                dataTable.Rows.Add(f.NRO,f.Fecha,f.Nombre,f.Precio);
+            }
 
+            dataGridView1.DataSource = dataTable;
 
 
 
