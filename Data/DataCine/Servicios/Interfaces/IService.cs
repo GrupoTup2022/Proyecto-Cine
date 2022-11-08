@@ -13,7 +13,7 @@ namespace DataCine.Servicios.Interfaces
     public interface IService
     {
         List<TIcketxSala> traerticketsxsala();
-        List<facturabill> traertablabill(List<Parametro> lpara);
+        List<facturabill> traertablabill(ParametroConsultaBill lpara);
 
         List<FormaPago> traerformaspago();
     }

@@ -18,13 +18,20 @@ namespace ApiCine.Controllers
         {
             oservicio = new FactoryImplement().crearservicio();
         }
-        // GET: api/<ReporteBillController>
+        //// GET: api/<ReporteBillController>
+        //[HttpPost("bills")]
+        //public IActionResult Postfacturas([FromBody]List<Parametro> param)
+        //{
+        //    if (param == null)
+        //        return BadRequest("Ingrese fechas o forma venta");
+        //    return Ok(oservicio.traertablabill(param));
+        //}
         [HttpPost("bills")]
-        public IActionResult Postfacturas(List<Parametro> param)
+        public IActionResult Postfacturasprueba([FromBody] ParametroConsultaBill parame)
         {
-            if (param == null)
+            if (parame == null)
                 return BadRequest("Ingrese fechas o forma venta");
-            return Ok(oservicio.traertablabill(param));
+            return Ok(oservicio.traertablabill(parame));
         }
 
         // GET api/<ReporteBillController>/5
