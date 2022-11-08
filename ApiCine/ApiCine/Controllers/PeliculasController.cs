@@ -89,7 +89,7 @@ namespace ApiCine.Controllers
             {
                 if (oPelicula == null)
                     BadRequest("Ha ocurrido un error");
-                return Ok(/*service.ModificarPelicula(oPelicula)*/);
+                return Ok(service.ModificarPelicula(oPelicula));
             }
             catch (Exception e)
             {
