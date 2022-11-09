@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagosForm));
             this.btn_terminar = new System.Windows.Forms.Button();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.lbl_total = new System.Windows.Forms.Label();
@@ -43,8 +44,10 @@
             this.cb_fp = new System.Windows.Forms.ComboBox();
             this.barrasuperior = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lista)).BeginInit();
             this.barrasuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_terminar
@@ -186,6 +189,7 @@
             // barrasuperior
             // 
             this.barrasuperior.BackColor = System.Drawing.Color.Maroon;
+            this.barrasuperior.Controls.Add(this.btnCerrar);
             this.barrasuperior.Controls.Add(this.label9);
             this.barrasuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.barrasuperior.Location = new System.Drawing.Point(0, 0);
@@ -203,6 +207,20 @@
             this.label9.Size = new System.Drawing.Size(88, 36);
             this.label9.TabIndex = 20;
             this.label9.Text = "PAGO";
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.BackColor = System.Drawing.Color.Maroon;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(505, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(30, 29);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 21;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // PagosForm
             // 
@@ -230,6 +248,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lista)).EndInit();
             this.barrasuperior.ResumeLayout(false);
             this.barrasuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,5 +271,6 @@
         private ComboBox cb_fp;
         private Panel barrasuperior;
         private Label label9;
+        private PictureBox btnCerrar;
     }
 }
