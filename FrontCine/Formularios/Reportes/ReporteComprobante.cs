@@ -70,5 +70,10 @@ namespace FrontCine.Formularios.Reportes
         {
 
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

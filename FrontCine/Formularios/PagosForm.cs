@@ -97,5 +97,10 @@ namespace FrontCine.Formularios
             else
                 MessageBox.Show("No se completó el monto");
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

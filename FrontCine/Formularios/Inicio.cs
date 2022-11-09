@@ -322,7 +322,8 @@ namespace ReportesCine.Formularios
             compro.FormaVenta = formaven;
             compro.Fecha = DateTime.Today;
             Ticket ticket = new Ticket();
-            abrirformularios(new ReporteComprobante(compro));
+            ReporteComprobante ventana = new ReporteComprobante(compro);
+            ventana.Show();
         }
 
         private void button4_Click_1(object sender, EventArgs e)
