@@ -236,6 +236,7 @@ namespace FrontCine.Formularios
                 DeshabilitarTodo();
                 CargarComboIdioma();
                 cbo_peli.Enabled = true;
+                cbo_audio.SelectedIndex = -1;
                 cbo_audio.Enabled = true;
             }
         }
@@ -248,6 +249,7 @@ namespace FrontCine.Formularios
                 CargarComboHorario();
                 cbo_peli.Enabled = true;
                 cbo_audio.Enabled = true;
+                cbo_horario.SelectedIndex = -1;
                 cbo_horario.Enabled = true;
             }
         }
@@ -257,12 +259,14 @@ namespace FrontCine.Formularios
             if (cbo_horario.Enabled)
             {
                 CargarComboSala();
+                cbo_sala.SelectedIndex = -1;
                 cbo_sala.Enabled = true;
             }
         }
 
         private void cbo_sala_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            if(cbo_sala.Enabled)
             btn_butacas.Enabled = true;
         }
 
