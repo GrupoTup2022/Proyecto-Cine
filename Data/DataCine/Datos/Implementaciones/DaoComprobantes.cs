@@ -26,7 +26,7 @@ namespace DataCine.Datos.Implementaciones
             foreach (DataRow row in dt.Rows)
             {
                 TipoGenerico tipoGenerico = new TipoGenerico();
-                tipoGenerico.ID = Convert.ToInt32(row["nro_butaca"]).ToString();
+                tipoGenerico.ID = Convert.ToInt32(row["id_butaca"]).ToString();
                 tipoGenerico.Nombre = row["nro_ticket"].ToString();
                 butacasOcupadas.Add(tipoGenerico);
             }

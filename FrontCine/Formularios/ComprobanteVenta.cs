@@ -17,6 +17,7 @@ namespace FrontCine.Formularios
     {
         List<Ticket> tickets = new List<Ticket>();
         List<Funcion> funciones = new List<Funcion>();
+        List<Funcion> funciones3 = new List<Funcion>();
         List<Funcion> funciones2 = new List<Funcion>();
         List<Pelicula> pelis = new List<Pelicula>();
         List<Audio> audios = new List<Audio>();
@@ -24,25 +25,30 @@ namespace FrontCine.Formularios
         List<Sala> salas = new List<Sala>();
         List<Promo> promos = new List<Promo>();
         Funcion funcion = new Funcion();
-
+        double restante;
         Funcion f = new Funcion();
         public List<Pagos> PagosList { get; set; }
         double monto;
         public ComprobanteVenta()
         {
             InitializeComponent();
-            CargarComboPromosAsync();
             DeshabilitarTodo();
+            CargarComboPromosAsync();
+
             PagosList = new List<Pagos>();
         }
 
         private void btn_pagos_Click(object sender, EventArgs e)
         {
+            monto = 0;
             foreach (Ticket t in tickets)
             {
                 monto = (t.Funcion.Precio * t.Promo.Porcentaje / 100) + monto;
             }
+            restante = monto;
             PagosForm pagos = new PagosForm(monto, PagosList);
+            pagos.restante = restante;
+            pagos.comprobanteVenta = this;
             pagos.Show();
         }
         public async Task recuperarFunciones(string date)
@@ -61,21 +67,25 @@ namespace FrontCine.Formularios
         }
         private async Task CargarComboPromosAsync()
         {
+            dtp_fecha.Enabled = false;
             await recuperarPromos();
             cbo_promos.DataSource = promos;
             cbo_promos.DisplayMember = "Descripcion";
             cbo_promos.ValueMember = "Id";
+            dtp_fecha.Enabled = true;
         }
         private async void dtp_fecha_ValueChangedAsync(object sender, EventArgs e)
         {
+            dtp_fecha.Enabled = false;
+            DeshabilitarTodo();
             await recuperarFunciones(dtp_fecha.Value.ToString("yyyy-MM-dd"));
             CargarComboPeli();
-            DeshabilitarTodo();
             cbo_peli.SelectedIndex = -1;
             cbo_peli.Enabled = true;
             cbo_audio.SelectedIndex = -1;
             cbo_horario.SelectedIndex = -1;
             cbo_sala.SelectedIndex = -1;
+            dtp_fecha.Enabled = true;
         }
         private void DeshabilitarTodo()
         {
@@ -83,8 +93,17 @@ namespace FrontCine.Formularios
             cbo_audio.Enabled = false;
             cbo_horario.Enabled = false;
             cbo_sala.Enabled = false;
+            btn_butacas.Enabled = false;
+            btn_comprobante.Enabled = false;
         }
-
+        public void habilitarTerminar()
+        {
+            btn_comprobante.Enabled = true;
+        }
+        public void desHabilitarTerminar()
+        {
+            btn_comprobante.Enabled = false;
+        }
         private void CargarComboPeli()
         {
             if (funciones.Count > 0)
@@ -142,12 +161,13 @@ namespace FrontCine.Formularios
         private void CargarComboHorario()
         {
             bool flag;
-            funciones.Clear();
+            horarios.Clear();
+            funciones3.Clear();
             foreach (Funcion f in funciones2)
             {
                 if (f.Audio.Id == (int)cbo_audio.SelectedValue)
                 {
-                    funciones.Add(f);
+                    funciones3.Add(f);
                     flag = true;
                     foreach (Horario horario in horarios)
                     {
@@ -170,8 +190,9 @@ namespace FrontCine.Formularios
         private void CargarComboSala()
         {
             bool flag;
+            salas.Clear();
             funciones2.Clear();
-            foreach (Funcion f in funciones)
+            foreach (Funcion f in funciones3)
             {
                 if (f.Horario.Id == (int)cbo_horario.SelectedValue)
                 {
@@ -199,13 +220,10 @@ namespace FrontCine.Formularios
         {
             if (cbo_peli.Enabled)
             {
-                CargarComboIdioma();
                 DeshabilitarTodo();
+                CargarComboIdioma();
                 cbo_peli.Enabled = true;
-                cbo_audio.SelectedIndex = -1;
                 cbo_audio.Enabled = true;
-                cbo_horario.SelectedIndex = -1;
-                cbo_sala.SelectedIndex = -1;
             }
         }
 
@@ -213,13 +231,11 @@ namespace FrontCine.Formularios
         {
             if (cbo_audio.Enabled)
             {
-                CargarComboHorario();
                 DeshabilitarTodo();
+                CargarComboHorario();
                 cbo_peli.Enabled = true;
                 cbo_audio.Enabled = true;
-                cbo_horario.SelectedIndex = -1;
                 cbo_horario.Enabled = true;
-                cbo_sala.SelectedIndex = -1;
             }
         }
 
@@ -229,18 +245,27 @@ namespace FrontCine.Formularios
             {
                 CargarComboSala();
                 cbo_sala.Enabled = true;
-                cbo_sala.SelectedIndex = -1;
             }
         }
 
         private void cbo_sala_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
+            btn_butacas.Enabled = true;
         }
 
         private void cbo_promos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        public void recargarTickets()
+        {
+            dgv_tickets.Rows.Clear();
+            foreach (Ticket ticket in tickets)
+            {
+                dgv_tickets.Rows.Add(ticket.Butaca.NroButaca,ticket.Funcion.Sala.Nombre,ticket.Funcion.Horario.Nombre,ticket.Funcion.Pelicula.Titulo_local,ticket.Funcion.Precio,
+                    (100-ticket.Promo.Porcentaje).ToString()+"%",ticket.Promo.Descripcion, ticket.Promo.Porcentaje* ticket.Funcion.Precio/100);
+            }
+            desHabilitarTerminar();
         }
 
         private void btn_butacas_Click(object sender, EventArgs e)
@@ -254,7 +279,8 @@ namespace FrontCine.Formularios
                 }
             }
 
-            ButacasForm pagos = new ButacasForm(tickets, funcion);
+            ButacasForm pagos = new ButacasForm(tickets, funcion,promos[cbo_promos.SelectedIndex]);
+            pagos.comprobanteVenta = this;
             pagos.Show();
         }
     }

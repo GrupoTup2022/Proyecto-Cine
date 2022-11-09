@@ -64,7 +64,7 @@
             this.blanco33 = new System.Windows.Forms.PictureBox();
             this.blanco34 = new System.Windows.Forms.PictureBox();
             this.blanco35 = new System.Windows.Forms.PictureBox();
-            this.btnpagar = new System.Windows.Forms.Button();
+            this.btnterminar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.blanco1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blanco2)).BeginInit();
@@ -113,6 +113,7 @@
             this.blanco1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco1.TabIndex = 2;
             this.blanco1.TabStop = false;
+            this.blanco1.Click += new System.EventHandler(this.blanco1_Click);
             // 
             // blanco2
             // 
@@ -124,6 +125,7 @@
             this.blanco2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco2.TabIndex = 3;
             this.blanco2.TabStop = false;
+            this.blanco2.Click += new System.EventHandler(this.blanco2_Click);
             // 
             // blanco8
             // 
@@ -135,6 +137,7 @@
             this.blanco8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco8.TabIndex = 6;
             this.blanco8.TabStop = false;
+            this.blanco8.Click += new System.EventHandler(this.blanco8_Click);
             // 
             // blanco7
             // 
@@ -146,6 +149,7 @@
             this.blanco7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco7.TabIndex = 5;
             this.blanco7.TabStop = false;
+            this.blanco7.Click += new System.EventHandler(this.blanco7_Click);
             // 
             // blanco14
             // 
@@ -157,6 +161,7 @@
             this.blanco14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco14.TabIndex = 9;
             this.blanco14.TabStop = false;
+            this.blanco14.Click += new System.EventHandler(this.blanco14_Click);
             // 
             // blanco13
             // 
@@ -168,6 +173,7 @@
             this.blanco13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco13.TabIndex = 8;
             this.blanco13.TabStop = false;
+            this.blanco13.Click += new System.EventHandler(this.blanco13_Click);
             // 
             // blanco26
             // 
@@ -179,6 +185,7 @@
             this.blanco26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco26.TabIndex = 14;
             this.blanco26.TabStop = false;
+            this.blanco26.Click += new System.EventHandler(this.blanco26_Click);
             // 
             // blanco25
             // 
@@ -190,6 +197,7 @@
             this.blanco25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco25.TabIndex = 13;
             this.blanco25.TabStop = false;
+            this.blanco25.Click += new System.EventHandler(this.blanco25_Click);
             // 
             // blanco20
             // 
@@ -201,6 +209,7 @@
             this.blanco20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco20.TabIndex = 12;
             this.blanco20.TabStop = false;
+            this.blanco20.Click += new System.EventHandler(this.blanco20_Click);
             // 
             // blanco19
             // 
@@ -212,6 +221,7 @@
             this.blanco19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco19.TabIndex = 11;
             this.blanco19.TabStop = false;
+            this.blanco19.Click += new System.EventHandler(this.blanco19_Click);
             // 
             // blanco28
             // 
@@ -223,6 +233,7 @@
             this.blanco28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco28.TabIndex = 24;
             this.blanco28.TabStop = false;
+            this.blanco28.Click += new System.EventHandler(this.blanco28_Click);
             // 
             // blanco27
             // 
@@ -234,6 +245,7 @@
             this.blanco27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco27.TabIndex = 23;
             this.blanco27.TabStop = false;
+            this.blanco27.Click += new System.EventHandler(this.blanco27_Click);
             // 
             // blanco22
             // 
@@ -245,6 +257,7 @@
             this.blanco22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco22.TabIndex = 22;
             this.blanco22.TabStop = false;
+            this.blanco22.Click += new System.EventHandler(this.blanco22_Click);
             // 
             // blanco21
             // 
@@ -256,6 +269,7 @@
             this.blanco21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco21.TabIndex = 21;
             this.blanco21.TabStop = false;
+            this.blanco21.Click += new System.EventHandler(this.blanco21_Click);
             // 
             // blanco16
             // 
@@ -267,6 +281,7 @@
             this.blanco16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco16.TabIndex = 20;
             this.blanco16.TabStop = false;
+            this.blanco16.Click += new System.EventHandler(this.blanco16_Click);
             // 
             // blanco15
             // 
@@ -278,6 +293,7 @@
             this.blanco15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco15.TabIndex = 19;
             this.blanco15.TabStop = false;
+            this.blanco15.Click += new System.EventHandler(this.blanco15_Click);
             // 
             // blanco10
             // 
@@ -289,6 +305,7 @@
             this.blanco10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco10.TabIndex = 18;
             this.blanco10.TabStop = false;
+            this.blanco10.Click += new System.EventHandler(this.blanco10_Click);
             // 
             // blanco9
             // 
@@ -300,6 +317,7 @@
             this.blanco9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco9.TabIndex = 17;
             this.blanco9.TabStop = false;
+            this.blanco9.Click += new System.EventHandler(this.blanco9_Click);
             // 
             // blanco4
             // 
@@ -311,6 +329,7 @@
             this.blanco4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco4.TabIndex = 16;
             this.blanco4.TabStop = false;
+            this.blanco4.Click += new System.EventHandler(this.blanco4_Click);
             // 
             // blanco3
             // 
@@ -322,6 +341,7 @@
             this.blanco3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco3.TabIndex = 15;
             this.blanco3.TabStop = false;
+            this.blanco3.Click += new System.EventHandler(this.blanco3_Click);
             // 
             // blanco30
             // 
@@ -333,6 +353,7 @@
             this.blanco30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco30.TabIndex = 34;
             this.blanco30.TabStop = false;
+            this.blanco30.Click += new System.EventHandler(this.blanco30_Click);
             // 
             // blanco29
             // 
@@ -344,6 +365,7 @@
             this.blanco29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco29.TabIndex = 33;
             this.blanco29.TabStop = false;
+            this.blanco29.Click += new System.EventHandler(this.blanco29_Click);
             // 
             // blanco24
             // 
@@ -355,6 +377,7 @@
             this.blanco24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco24.TabIndex = 32;
             this.blanco24.TabStop = false;
+            this.blanco24.Click += new System.EventHandler(this.blanco24_Click);
             // 
             // blanco23
             // 
@@ -366,6 +389,7 @@
             this.blanco23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco23.TabIndex = 31;
             this.blanco23.TabStop = false;
+            this.blanco23.Click += new System.EventHandler(this.blanco23_Click);
             // 
             // blanco18
             // 
@@ -377,6 +401,7 @@
             this.blanco18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco18.TabIndex = 30;
             this.blanco18.TabStop = false;
+            this.blanco18.Click += new System.EventHandler(this.blanco18_Click);
             // 
             // blanco17
             // 
@@ -388,6 +413,7 @@
             this.blanco17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco17.TabIndex = 29;
             this.blanco17.TabStop = false;
+            this.blanco17.Click += new System.EventHandler(this.blanco17_Click);
             // 
             // blanco12
             // 
@@ -399,6 +425,7 @@
             this.blanco12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco12.TabIndex = 28;
             this.blanco12.TabStop = false;
+            this.blanco12.Click += new System.EventHandler(this.blanco12_Click);
             // 
             // blanco11
             // 
@@ -410,6 +437,7 @@
             this.blanco11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco11.TabIndex = 27;
             this.blanco11.TabStop = false;
+            this.blanco11.Click += new System.EventHandler(this.blanco11_Click);
             // 
             // blanco6
             // 
@@ -421,6 +449,7 @@
             this.blanco6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco6.TabIndex = 26;
             this.blanco6.TabStop = false;
+            this.blanco6.Click += new System.EventHandler(this.blanco6_Click);
             // 
             // blanco5
             // 
@@ -432,6 +461,7 @@
             this.blanco5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco5.TabIndex = 25;
             this.blanco5.TabStop = false;
+            this.blanco5.Click += new System.EventHandler(this.blanco5_Click);
             // 
             // blanco31
             // 
@@ -455,6 +485,7 @@
             this.blanco32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco32.TabIndex = 36;
             this.blanco32.TabStop = false;
+            this.blanco32.Click += new System.EventHandler(this.blanco32_Click);
             // 
             // blanco33
             // 
@@ -466,6 +497,7 @@
             this.blanco33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco33.TabIndex = 37;
             this.blanco33.TabStop = false;
+            this.blanco33.Click += new System.EventHandler(this.blanco33_Click);
             // 
             // blanco34
             // 
@@ -477,6 +509,7 @@
             this.blanco34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco34.TabIndex = 38;
             this.blanco34.TabStop = false;
+            this.blanco34.Click += new System.EventHandler(this.blanco34_Click);
             // 
             // blanco35
             // 
@@ -488,16 +521,18 @@
             this.blanco35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco35.TabIndex = 39;
             this.blanco35.TabStop = false;
+            this.blanco35.Click += new System.EventHandler(this.blanco35_Click);
             // 
-            // btnpagar
+            // btnterminar
             // 
-            this.btnpagar.Location = new System.Drawing.Point(369, 220);
-            this.btnpagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnpagar.Name = "btnpagar";
-            this.btnpagar.Size = new System.Drawing.Size(82, 22);
-            this.btnpagar.TabIndex = 126;
-            this.btnpagar.Text = "PAGAR";
-            this.btnpagar.UseVisualStyleBackColor = true;
+            this.btnterminar.Location = new System.Drawing.Point(369, 220);
+            this.btnterminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnterminar.Name = "btnterminar";
+            this.btnterminar.Size = new System.Drawing.Size(82, 22);
+            this.btnterminar.TabIndex = 126;
+            this.btnterminar.Text = "PAGAR";
+            this.btnterminar.UseVisualStyleBackColor = true;
+            this.btnterminar.Click += new System.EventHandler(this.btnterminar_Click);
             // 
             // button2
             // 
@@ -516,7 +551,7 @@
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(498, 309);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnpagar);
+            this.Controls.Add(this.btnterminar);
             this.Controls.Add(this.blanco35);
             this.Controls.Add(this.blanco34);
             this.Controls.Add(this.blanco33);
@@ -633,5 +668,6 @@
         private PictureBox blanco35;
         private Button btnpagar;
         private Button button2;
+        private Button btnterminar;
     }
 }
