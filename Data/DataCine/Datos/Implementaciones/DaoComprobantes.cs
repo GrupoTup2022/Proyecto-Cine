@@ -101,5 +101,15 @@ namespace DataCine.Datos.Implementaciones
             }
             return promoList;
         }
+        Comprobante IDaoComprobantes.UltimoComprobante()
+        {
+            Comprobante comprobante = new Comprobante();
+            DataTable dt = HelperDAO.getinstancia().ConsultarDB("SP_ULTIMO_COMPROBANTE");
+            foreach (DataRow row in dt.Rows)
+            {
+                comprobante.Id = Convert.ToInt32(row["id_promo"]);
+            }
+            return comprobante;
+        }
     }
 }

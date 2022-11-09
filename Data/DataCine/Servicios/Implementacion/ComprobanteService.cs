@@ -44,6 +44,10 @@ namespace DataCine.Servicios.Implementacion
         {
             return dao.ConsultarPromos();
         }
+        Comprobante IComprobanteService.UltimoComprobante()
+        {
+            return dao.UltimoComprobante();
+        }
 
     }
 }
