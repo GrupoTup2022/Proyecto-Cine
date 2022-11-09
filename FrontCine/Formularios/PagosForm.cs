@@ -18,7 +18,8 @@ namespace FrontCine.Formularios
     {
         public List<Pagos> PagosList { get; set; }
         public double monto { get; set; }
-        double restante;
+        public double restante { get; set; }
+        public ComprobanteVenta comprobanteVenta { get; set; }
         public PagosForm(double monto, List<Pagos> PagosList)
         {
             this.monto = monto;
@@ -84,6 +85,7 @@ namespace FrontCine.Formularios
             Restante();
             if (restante == 0)
             {
+                this.comprobanteVenta.habilitarTerminar();
                 MessageBox.Show("Se completó correctamente el pago");
                 this.Close();
             }
