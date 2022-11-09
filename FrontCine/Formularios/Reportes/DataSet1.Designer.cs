@@ -1829,13 +1829,11 @@ namespace FrontCine.Formularios.Reportes {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class pagostotalDataTable : global::System.Data.TypedTableBase<pagostotalRow> {
             
-            private global::System.Data.DataColumn columnNRO;
+            private global::System.Data.DataColumn columnForma_Pago;
             
-            private global::System.Data.DataColumn columnFecha;
+            private global::System.Data.DataColumn columnCantidad_Comprobantes;
             
-            private global::System.Data.DataColumn columnNombre;
-            
-            private global::System.Data.DataColumn columnPrecio;
+            private global::System.Data.DataColumn columnImportes;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -1872,33 +1870,25 @@ namespace FrontCine.Formularios.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NROColumn {
+            public global::System.Data.DataColumn Forma_PagoColumn {
                 get {
-                    return this.columnNRO;
+                    return this.columnForma_Pago;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn FechaColumn {
+            public global::System.Data.DataColumn Cantidad_ComprobantesColumn {
                 get {
-                    return this.columnFecha;
+                    return this.columnCantidad_Comprobantes;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NombreColumn {
+            public global::System.Data.DataColumn ImportesColumn {
                 get {
-                    return this.columnNombre;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PrecioColumn {
-                get {
-                    return this.columnPrecio;
+                    return this.columnImportes;
                 }
             }
             
@@ -1939,13 +1929,12 @@ namespace FrontCine.Formularios.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public pagostotalRow AddpagostotalRow(string NRO, string Fecha, string Nombre, string Precio) {
+            public pagostotalRow AddpagostotalRow(string Forma_Pago, int Cantidad_Comprobantes, int Importes) {
                 pagostotalRow rowpagostotalRow = ((pagostotalRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        NRO,
-                        Fecha,
-                        Nombre,
-                        Precio};
+                        Forma_Pago,
+                        Cantidad_Comprobantes,
+                        Importes};
                 rowpagostotalRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowpagostotalRow);
                 return rowpagostotalRow;
@@ -1968,23 +1957,20 @@ namespace FrontCine.Formularios.Reportes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnNRO = base.Columns["NRO"];
-                this.columnFecha = base.Columns["Fecha"];
-                this.columnNombre = base.Columns["Nombre"];
-                this.columnPrecio = base.Columns["Precio"];
+                this.columnForma_Pago = base.Columns["Forma_Pago"];
+                this.columnCantidad_Comprobantes = base.Columns["Cantidad_Comprobantes"];
+                this.columnImportes = base.Columns["Importes"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnNRO = new global::System.Data.DataColumn("NRO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNRO);
-                this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFecha);
-                this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombre);
-                this.columnPrecio = new global::System.Data.DataColumn("Precio", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrecio);
+                this.columnForma_Pago = new global::System.Data.DataColumn("Forma_Pago", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnForma_Pago);
+                this.columnCantidad_Comprobantes = new global::System.Data.DataColumn("Cantidad_Comprobantes", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidad_Comprobantes);
+                this.columnImportes = new global::System.Data.DataColumn("Importes", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImportes);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2622,114 +2608,86 @@ namespace FrontCine.Formularios.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string NRO {
+            public string Forma_Pago {
                 get {
                     try {
-                        return ((string)(this[this.tablepagostotal.NROColumn]));
+                        return ((string)(this[this.tablepagostotal.Forma_PagoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NRO\' in table \'pagostotal\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Forma_Pago\' in table \'pagostotal\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablepagostotal.NROColumn] = value;
+                    this[this.tablepagostotal.Forma_PagoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Fecha {
+            public int Cantidad_Comprobantes {
                 get {
                     try {
-                        return ((string)(this[this.tablepagostotal.FechaColumn]));
+                        return ((int)(this[this.tablepagostotal.Cantidad_ComprobantesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Fecha\' in table \'pagostotal\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Cantidad_Comprobantes\' in table \'pagostotal\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablepagostotal.FechaColumn] = value;
+                    this[this.tablepagostotal.Cantidad_ComprobantesColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Nombre {
+            public int Importes {
                 get {
                     try {
-                        return ((string)(this[this.tablepagostotal.NombreColumn]));
+                        return ((int)(this[this.tablepagostotal.ImportesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Nombre\' in table \'pagostotal\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Importes\' in table \'pagostotal\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablepagostotal.NombreColumn] = value;
+                    this[this.tablepagostotal.ImportesColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Precio {
-                get {
-                    try {
-                        return ((string)(this[this.tablepagostotal.PrecioColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Precio\' in table \'pagostotal\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablepagostotal.PrecioColumn] = value;
-                }
+            public bool IsForma_PagoNull() {
+                return this.IsNull(this.tablepagostotal.Forma_PagoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNRONull() {
-                return this.IsNull(this.tablepagostotal.NROColumn);
+            public void SetForma_PagoNull() {
+                this[this.tablepagostotal.Forma_PagoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNRONull() {
-                this[this.tablepagostotal.NROColumn] = global::System.Convert.DBNull;
+            public bool IsCantidad_ComprobantesNull() {
+                return this.IsNull(this.tablepagostotal.Cantidad_ComprobantesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsFechaNull() {
-                return this.IsNull(this.tablepagostotal.FechaColumn);
+            public void SetCantidad_ComprobantesNull() {
+                this[this.tablepagostotal.Cantidad_ComprobantesColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetFechaNull() {
-                this[this.tablepagostotal.FechaColumn] = global::System.Convert.DBNull;
+            public bool IsImportesNull() {
+                return this.IsNull(this.tablepagostotal.ImportesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNombreNull() {
-                return this.IsNull(this.tablepagostotal.NombreColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNombreNull() {
-                this[this.tablepagostotal.NombreColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPrecioNull() {
-                return this.IsNull(this.tablepagostotal.PrecioColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPrecioNull() {
-                this[this.tablepagostotal.PrecioColumn] = global::System.Convert.DBNull;
+            public void SetImportesNull() {
+                this[this.tablepagostotal.ImportesColumn] = global::System.Convert.DBNull;
             }
         }
         
