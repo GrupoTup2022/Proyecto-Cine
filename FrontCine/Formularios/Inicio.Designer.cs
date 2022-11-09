@@ -39,11 +39,8 @@
             this.btnventa = new System.Windows.Forms.Button();
             this.panelestadisticas = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.btnreporteporsala = new System.Windows.Forms.Button();
-            this.btnultimafactura = new System.Windows.Forms.Button();
             this.btnfiltrobill = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panelmodificaciones = new System.Windows.Forms.Panel();
@@ -74,7 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.MenuVertical.SuspendLayout();
             this.panelestadisticas.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.panelmodificaciones.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelconsulta.SuspendLayout();
@@ -187,7 +183,7 @@
             this.btnventa.ForeColor = System.Drawing.Color.White;
             this.btnventa.Image = ((System.Drawing.Image)(resources.GetObject("btnventa.Image")));
             this.btnventa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnventa.Location = new System.Drawing.Point(0, 576);
+            this.btnventa.Location = new System.Drawing.Point(0, 536);
             this.btnventa.Name = "btnventa";
             this.btnventa.Size = new System.Drawing.Size(262, 45);
             this.btnventa.TabIndex = 25;
@@ -198,42 +194,23 @@
             // panelestadisticas
             // 
             this.panelestadisticas.Controls.Add(this.panel8);
-            this.panelestadisticas.Controls.Add(this.panel9);
             this.panelestadisticas.Controls.Add(this.panel12);
             this.panelestadisticas.Controls.Add(this.btnreporteporsala);
-            this.panelestadisticas.Controls.Add(this.btnultimafactura);
             this.panelestadisticas.Controls.Add(this.btnfiltrobill);
             this.panelestadisticas.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelestadisticas.Location = new System.Drawing.Point(0, 442);
             this.panelestadisticas.Name = "panelestadisticas";
-            this.panelestadisticas.Size = new System.Drawing.Size(262, 134);
+            this.panelestadisticas.Size = new System.Drawing.Size(262, 94);
             this.panelestadisticas.TabIndex = 24;
             this.panelestadisticas.Visible = false;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Maroon;
-            this.panel8.Location = new System.Drawing.Point(3, 85);
+            this.panel8.Location = new System.Drawing.Point(3, 48);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(5, 45);
             this.panel8.TabIndex = 11;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.Maroon;
-            this.panel9.Controls.Add(this.panel10);
-            this.panel9.Location = new System.Drawing.Point(3, 43);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(5, 45);
-            this.panel9.TabIndex = 15;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.Maroon;
-            this.panel10.Location = new System.Drawing.Point(0, 51);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(5, 45);
-            this.panel10.TabIndex = 11;
             // 
             // panel12
             // 
@@ -262,25 +239,6 @@
             this.btnreporteporsala.UseVisualStyleBackColor = true;
             this.btnreporteporsala.Click += new System.EventHandler(this.button6_Click);
             // 
-            // btnultimafactura
-            // 
-            this.btnultimafactura.FlatAppearance.BorderSize = 0;
-            this.btnultimafactura.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnultimafactura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btnultimafactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnultimafactura.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnultimafactura.ForeColor = System.Drawing.Color.White;
-            this.btnultimafactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnultimafactura.Location = new System.Drawing.Point(7, 46);
-            this.btnultimafactura.Name = "btnultimafactura";
-            this.btnultimafactura.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnultimafactura.Size = new System.Drawing.Size(247, 45);
-            this.btnultimafactura.TabIndex = 17;
-            this.btnultimafactura.Text = "ULTIMA FACTURA";
-            this.btnultimafactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnultimafactura.UseVisualStyleBackColor = true;
-            this.btnultimafactura.Click += new System.EventHandler(this.button7_Click);
-            // 
             // btnfiltrobill
             // 
             this.btnfiltrobill.FlatAppearance.BorderSize = 0;
@@ -290,7 +248,7 @@
             this.btnfiltrobill.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnfiltrobill.ForeColor = System.Drawing.Color.White;
             this.btnfiltrobill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnfiltrobill.Location = new System.Drawing.Point(9, 85);
+            this.btnfiltrobill.Location = new System.Drawing.Point(9, 48);
             this.btnfiltrobill.Name = "btnfiltrobill";
             this.btnfiltrobill.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnfiltrobill.Size = new System.Drawing.Size(245, 45);
@@ -605,7 +563,6 @@
             this.MenuVertical.ResumeLayout(false);
             this.MenuVertical.PerformLayout();
             this.panelestadisticas.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
             this.panelmodificaciones.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panelconsulta.ResumeLayout(false);
@@ -649,11 +606,8 @@
         private Button button4;
         private Button btnventa;
         private Panel panelestadisticas;
-        private Panel panel9;
-        private Panel panel10;
         private Panel panel12;
         private Button btnreporteporsala;
-        private Button btnultimafactura;
         private Button button8;
         private Button btninsertarfuncion;
     }
