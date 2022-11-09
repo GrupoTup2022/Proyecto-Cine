@@ -41,6 +41,7 @@ namespace ReportesCine.Formularios
         private void Login_Load(object sender, EventArgs e)
         {
             txtcontrase.PasswordChar = '*';
+            btnlogin.Focus();
         }
 
         private void picmostrar_Click(object sender, EventArgs e)

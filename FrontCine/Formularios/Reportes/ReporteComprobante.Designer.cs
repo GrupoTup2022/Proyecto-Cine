@@ -42,7 +42,7 @@
             this.reportViewercompro.Name = "ReportViewer";
             this.reportViewercompro.ServerReport.BearerToken = null;
             this.reportViewercompro.ShowZoomControl = false;
-            this.reportViewercompro.Size = new System.Drawing.Size(1029, 650);
+            this.reportViewercompro.Size = new System.Drawing.Size(1029, 750);
             this.reportViewercompro.TabIndex = 0;
             this.reportViewercompro.Load += new System.EventHandler(this.reportViewercompro_Load);
             // 
@@ -53,7 +53,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1029, 37);
+            this.panel1.Size = new System.Drawing.Size(1042, 37);
             this.panel1.TabIndex = 1;
             // 
             // btnCerrar
@@ -62,7 +62,7 @@
             this.btnCerrar.BackColor = System.Drawing.Color.Maroon;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(996, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(1009, 3);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(30, 29);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -75,7 +75,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1029, 714);
+            this.ClientSize = new System.Drawing.Size(1042, 751);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.reportViewercompro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

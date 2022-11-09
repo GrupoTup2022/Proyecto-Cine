@@ -108,14 +108,14 @@
             this.txtusuario.Location = new System.Drawing.Point(343, 185);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(230, 27);
-            this.txtusuario.TabIndex = 4;
+            this.txtusuario.TabIndex = 0;
             // 
             // txtcontrase
             // 
             this.txtcontrase.Location = new System.Drawing.Point(343, 273);
             this.txtcontrase.Name = "txtcontrase";
             this.txtcontrase.Size = new System.Drawing.Size(230, 27);
-            this.txtcontrase.TabIndex = 5;
+            this.txtcontrase.TabIndex = 1;
             // 
             // pictureBox2
             // 
@@ -130,6 +130,7 @@
             // 
             // btnlogin
             // 
+            this.btnlogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnlogin.Image = ((System.Drawing.Image)(resources.GetObject("btnlogin.Image")));
             this.btnlogin.Location = new System.Drawing.Point(397, 352);
             this.btnlogin.Name = "btnlogin";
