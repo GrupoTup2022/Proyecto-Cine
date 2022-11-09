@@ -15,7 +15,7 @@ namespace DataCine.Datos.Interfaces
         List<Genero> ObtenerGeneros();
         List<Director> ObtenerDirectores();
         List<Pelicula> ObtenerPeliculas(string Sp);
-        List<Pelicula> FiltrarPeliculas(DateTime desde, DateTime hasta, string titulo);       
+        List<Pelicula> FiltrarPeliculas(string titulo);       
         bool CargarPelicula(Pelicula oPelicula);
         bool Acciones(int id, int baja);
         bool ModificarPelicula(Pelicula oPelicula);
