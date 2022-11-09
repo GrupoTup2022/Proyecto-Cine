@@ -53,6 +53,8 @@
             this.btn_comprobante = new System.Windows.Forms.Button();
             this.btn_pagos = new System.Windows.Forms.Button();
             this.btn_butacas = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbo_fVenta = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tickets)).BeginInit();
             this.SuspendLayout();
             // 
@@ -249,6 +251,7 @@
             this.btn_comprobante.TabIndex = 41;
             this.btn_comprobante.Text = "Terminar Comprobante";
             this.btn_comprobante.UseVisualStyleBackColor = true;
+            this.btn_comprobante.Click += new System.EventHandler(this.btn_comprobante_Click);
             // 
             // btn_pagos
             // 
@@ -270,11 +273,32 @@
             this.btn_butacas.UseVisualStyleBackColor = true;
             this.btn_butacas.Click += new System.EventHandler(this.btn_butacas_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(247, 156);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 15);
+            this.label5.TabIndex = 45;
+            this.label5.Text = "Forma de Venta:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // cbo_fVenta
+            // 
+            this.cbo_fVenta.FormattingEnabled = true;
+            this.cbo_fVenta.Location = new System.Drawing.Point(358, 153);
+            this.cbo_fVenta.Name = "cbo_fVenta";
+            this.cbo_fVenta.Size = new System.Drawing.Size(121, 23);
+            this.cbo_fVenta.TabIndex = 44;
+            this.cbo_fVenta.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // ComprobanteVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cbo_fVenta);
             this.Controls.Add(this.btn_butacas);
             this.Controls.Add(this.btn_pagos);
             this.Controls.Add(this.btn_comprobante);
@@ -327,5 +351,7 @@
         private Button btn_comprobante;
         private Button btn_pagos;
         private Button btn_butacas;
+        private Label label5;
+        private ComboBox cbo_fVenta;
     }
 }

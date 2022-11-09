@@ -24,6 +24,7 @@ namespace FrontCine.Formularios
         List<Horario> horarios = new List<Horario>();
         List<Sala> salas = new List<Sala>();
         List<Promo> promos = new List<Promo>();
+        List<FormaVenta> fVentas = new List<FormaVenta>();
         Funcion funcion = new Funcion();
         double restante;
         Funcion f = new Funcion();
@@ -33,7 +34,7 @@ namespace FrontCine.Formularios
         {
             InitializeComponent();
             DeshabilitarTodo();
-            CargarComboPromosAsync();
+            CargarCombosAsync();
 
             PagosList = new List<Pagos>();
         }
@@ -65,13 +66,24 @@ namespace FrontCine.Formularios
             List<Promo> lst = JsonConvert.DeserializeObject<List<Promo>>(data);
             promos = lst;
         }
-        private async Task CargarComboPromosAsync()
+        public async Task recuperarFVentas()
+        {
+            string url = "https://localhost:7259/api/Comprobantes/FormasVenta";
+            var data = await ClienteSingleton.getinstancia().GetAsync(url);
+            List<FormaVenta> lst = JsonConvert.DeserializeObject<List<FormaVenta>>(data);
+            fVentas = lst;
+        }
+        private async Task CargarCombosAsync()
         {
             dtp_fecha.Enabled = false;
             await recuperarPromos();
+            await recuperarFVentas();
             cbo_promos.DataSource = promos;
             cbo_promos.DisplayMember = "Descripcion";
             cbo_promos.ValueMember = "Id";
+            cbo_fVenta.DataSource = fVentas;
+            cbo_fVenta.ValueMember = "Id";
+            cbo_fVenta.DisplayMember = "Nombre";
             dtp_fecha.Enabled = true;
         }
         private async void dtp_fecha_ValueChangedAsync(object sender, EventArgs e)
@@ -282,6 +294,39 @@ namespace FrontCine.Formularios
             ButacasForm pagos = new ButacasForm(tickets, funcion,promos[cbo_promos.SelectedIndex]);
             pagos.comprobanteVenta = this;
             pagos.Show();
+        }
+
+        private async void btn_comprobante_Click(object sender, EventArgs e)
+        {
+            Comprobante comprobante = new Comprobante
+            {
+                Fecha = DateTime.Now,
+                ListaPagos = PagosList,
+                FormaVenta = (FormaVenta)cbo_fVenta.SelectedItem,
+                ltickets = tickets,
+                Id = 0
+            };
+        if(await AltaComprobante(comprobante))
+            MessageBox.Show("Se dio de alta");
+        }
+        public async Task<bool> AltaComprobante(Comprobante c)
+        {
+            string url = "https://localhost:7259/api/Comprobantes";
+            string funcionJSON = JsonConvert.SerializeObject(c);
+            funcionJSON = funcionJSON.Replace("null", @"""""");
+            var data = await ClienteSingleton.getinstancia().PutAsync(url, funcionJSON);
+            return false;
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
