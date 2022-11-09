@@ -66,6 +66,9 @@
             this.blanco35 = new System.Windows.Forms.PictureBox();
             this.btnterminar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.blanco1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blanco2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blanco8)).BeginInit();
@@ -101,15 +104,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.blanco33)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blanco34)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blanco35)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // blanco1
             // 
             this.blanco1.Image = ((System.Drawing.Image)(resources.GetObject("blanco1.Image")));
-            this.blanco1.Location = new System.Drawing.Point(32, 28);
-            this.blanco1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco1.Location = new System.Drawing.Point(43, 96);
             this.blanco1.Name = "blanco1";
-            this.blanco1.Size = new System.Drawing.Size(38, 32);
+            this.blanco1.Size = new System.Drawing.Size(43, 43);
             this.blanco1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco1.TabIndex = 2;
             this.blanco1.TabStop = false;
@@ -118,10 +123,9 @@
             // blanco2
             // 
             this.blanco2.Image = ((System.Drawing.Image)(resources.GetObject("blanco2.Image")));
-            this.blanco2.Location = new System.Drawing.Point(76, 28);
-            this.blanco2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco2.Location = new System.Drawing.Point(93, 96);
             this.blanco2.Name = "blanco2";
-            this.blanco2.Size = new System.Drawing.Size(38, 32);
+            this.blanco2.Size = new System.Drawing.Size(43, 43);
             this.blanco2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco2.TabIndex = 3;
             this.blanco2.TabStop = false;
@@ -130,10 +134,9 @@
             // blanco8
             // 
             this.blanco8.Image = ((System.Drawing.Image)(resources.GetObject("blanco8.Image")));
-            this.blanco8.Location = new System.Drawing.Point(76, 64);
-            this.blanco8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco8.Location = new System.Drawing.Point(93, 144);
             this.blanco8.Name = "blanco8";
-            this.blanco8.Size = new System.Drawing.Size(38, 32);
+            this.blanco8.Size = new System.Drawing.Size(43, 43);
             this.blanco8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco8.TabIndex = 6;
             this.blanco8.TabStop = false;
@@ -142,10 +145,9 @@
             // blanco7
             // 
             this.blanco7.Image = ((System.Drawing.Image)(resources.GetObject("blanco7.Image")));
-            this.blanco7.Location = new System.Drawing.Point(32, 64);
-            this.blanco7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco7.Location = new System.Drawing.Point(43, 144);
             this.blanco7.Name = "blanco7";
-            this.blanco7.Size = new System.Drawing.Size(38, 32);
+            this.blanco7.Size = new System.Drawing.Size(43, 43);
             this.blanco7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco7.TabIndex = 5;
             this.blanco7.TabStop = false;
@@ -154,10 +156,9 @@
             // blanco14
             // 
             this.blanco14.Image = ((System.Drawing.Image)(resources.GetObject("blanco14.Image")));
-            this.blanco14.Location = new System.Drawing.Point(76, 100);
-            this.blanco14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco14.Location = new System.Drawing.Point(93, 192);
             this.blanco14.Name = "blanco14";
-            this.blanco14.Size = new System.Drawing.Size(38, 32);
+            this.blanco14.Size = new System.Drawing.Size(43, 43);
             this.blanco14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco14.TabIndex = 9;
             this.blanco14.TabStop = false;
@@ -166,10 +167,9 @@
             // blanco13
             // 
             this.blanco13.Image = ((System.Drawing.Image)(resources.GetObject("blanco13.Image")));
-            this.blanco13.Location = new System.Drawing.Point(32, 100);
-            this.blanco13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco13.Location = new System.Drawing.Point(43, 192);
             this.blanco13.Name = "blanco13";
-            this.blanco13.Size = new System.Drawing.Size(38, 32);
+            this.blanco13.Size = new System.Drawing.Size(43, 43);
             this.blanco13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco13.TabIndex = 8;
             this.blanco13.TabStop = false;
@@ -178,10 +178,9 @@
             // blanco26
             // 
             this.blanco26.Image = ((System.Drawing.Image)(resources.GetObject("blanco26.Image")));
-            this.blanco26.Location = new System.Drawing.Point(76, 172);
-            this.blanco26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco26.Location = new System.Drawing.Point(93, 288);
             this.blanco26.Name = "blanco26";
-            this.blanco26.Size = new System.Drawing.Size(38, 32);
+            this.blanco26.Size = new System.Drawing.Size(43, 43);
             this.blanco26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco26.TabIndex = 14;
             this.blanco26.TabStop = false;
@@ -190,10 +189,9 @@
             // blanco25
             // 
             this.blanco25.Image = ((System.Drawing.Image)(resources.GetObject("blanco25.Image")));
-            this.blanco25.Location = new System.Drawing.Point(32, 172);
-            this.blanco25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco25.Location = new System.Drawing.Point(43, 288);
             this.blanco25.Name = "blanco25";
-            this.blanco25.Size = new System.Drawing.Size(38, 32);
+            this.blanco25.Size = new System.Drawing.Size(43, 43);
             this.blanco25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco25.TabIndex = 13;
             this.blanco25.TabStop = false;
@@ -202,10 +200,9 @@
             // blanco20
             // 
             this.blanco20.Image = ((System.Drawing.Image)(resources.GetObject("blanco20.Image")));
-            this.blanco20.Location = new System.Drawing.Point(76, 136);
-            this.blanco20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco20.Location = new System.Drawing.Point(93, 240);
             this.blanco20.Name = "blanco20";
-            this.blanco20.Size = new System.Drawing.Size(38, 32);
+            this.blanco20.Size = new System.Drawing.Size(43, 43);
             this.blanco20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco20.TabIndex = 12;
             this.blanco20.TabStop = false;
@@ -214,10 +211,9 @@
             // blanco19
             // 
             this.blanco19.Image = ((System.Drawing.Image)(resources.GetObject("blanco19.Image")));
-            this.blanco19.Location = new System.Drawing.Point(32, 136);
-            this.blanco19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco19.Location = new System.Drawing.Point(43, 240);
             this.blanco19.Name = "blanco19";
-            this.blanco19.Size = new System.Drawing.Size(38, 32);
+            this.blanco19.Size = new System.Drawing.Size(43, 43);
             this.blanco19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco19.TabIndex = 11;
             this.blanco19.TabStop = false;
@@ -226,10 +222,9 @@
             // blanco28
             // 
             this.blanco28.Image = ((System.Drawing.Image)(resources.GetObject("blanco28.Image")));
-            this.blanco28.Location = new System.Drawing.Point(178, 172);
-            this.blanco28.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco28.Location = new System.Drawing.Point(209, 288);
             this.blanco28.Name = "blanco28";
-            this.blanco28.Size = new System.Drawing.Size(38, 32);
+            this.blanco28.Size = new System.Drawing.Size(43, 43);
             this.blanco28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco28.TabIndex = 24;
             this.blanco28.TabStop = false;
@@ -238,10 +233,9 @@
             // blanco27
             // 
             this.blanco27.Image = ((System.Drawing.Image)(resources.GetObject("blanco27.Image")));
-            this.blanco27.Location = new System.Drawing.Point(135, 172);
-            this.blanco27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco27.Location = new System.Drawing.Point(160, 288);
             this.blanco27.Name = "blanco27";
-            this.blanco27.Size = new System.Drawing.Size(38, 32);
+            this.blanco27.Size = new System.Drawing.Size(43, 43);
             this.blanco27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco27.TabIndex = 23;
             this.blanco27.TabStop = false;
@@ -250,10 +244,9 @@
             // blanco22
             // 
             this.blanco22.Image = ((System.Drawing.Image)(resources.GetObject("blanco22.Image")));
-            this.blanco22.Location = new System.Drawing.Point(178, 136);
-            this.blanco22.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco22.Location = new System.Drawing.Point(209, 240);
             this.blanco22.Name = "blanco22";
-            this.blanco22.Size = new System.Drawing.Size(38, 32);
+            this.blanco22.Size = new System.Drawing.Size(43, 43);
             this.blanco22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco22.TabIndex = 22;
             this.blanco22.TabStop = false;
@@ -262,10 +255,9 @@
             // blanco21
             // 
             this.blanco21.Image = ((System.Drawing.Image)(resources.GetObject("blanco21.Image")));
-            this.blanco21.Location = new System.Drawing.Point(135, 136);
-            this.blanco21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco21.Location = new System.Drawing.Point(160, 240);
             this.blanco21.Name = "blanco21";
-            this.blanco21.Size = new System.Drawing.Size(38, 32);
+            this.blanco21.Size = new System.Drawing.Size(43, 43);
             this.blanco21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco21.TabIndex = 21;
             this.blanco21.TabStop = false;
@@ -274,10 +266,9 @@
             // blanco16
             // 
             this.blanco16.Image = ((System.Drawing.Image)(resources.GetObject("blanco16.Image")));
-            this.blanco16.Location = new System.Drawing.Point(178, 100);
-            this.blanco16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco16.Location = new System.Drawing.Point(209, 192);
             this.blanco16.Name = "blanco16";
-            this.blanco16.Size = new System.Drawing.Size(38, 32);
+            this.blanco16.Size = new System.Drawing.Size(43, 43);
             this.blanco16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco16.TabIndex = 20;
             this.blanco16.TabStop = false;
@@ -286,10 +277,9 @@
             // blanco15
             // 
             this.blanco15.Image = ((System.Drawing.Image)(resources.GetObject("blanco15.Image")));
-            this.blanco15.Location = new System.Drawing.Point(135, 100);
-            this.blanco15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco15.Location = new System.Drawing.Point(160, 192);
             this.blanco15.Name = "blanco15";
-            this.blanco15.Size = new System.Drawing.Size(38, 32);
+            this.blanco15.Size = new System.Drawing.Size(43, 43);
             this.blanco15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco15.TabIndex = 19;
             this.blanco15.TabStop = false;
@@ -298,10 +288,9 @@
             // blanco10
             // 
             this.blanco10.Image = ((System.Drawing.Image)(resources.GetObject("blanco10.Image")));
-            this.blanco10.Location = new System.Drawing.Point(178, 64);
-            this.blanco10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco10.Location = new System.Drawing.Point(209, 144);
             this.blanco10.Name = "blanco10";
-            this.blanco10.Size = new System.Drawing.Size(38, 32);
+            this.blanco10.Size = new System.Drawing.Size(43, 43);
             this.blanco10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco10.TabIndex = 18;
             this.blanco10.TabStop = false;
@@ -310,10 +299,9 @@
             // blanco9
             // 
             this.blanco9.Image = ((System.Drawing.Image)(resources.GetObject("blanco9.Image")));
-            this.blanco9.Location = new System.Drawing.Point(135, 64);
-            this.blanco9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco9.Location = new System.Drawing.Point(160, 144);
             this.blanco9.Name = "blanco9";
-            this.blanco9.Size = new System.Drawing.Size(38, 32);
+            this.blanco9.Size = new System.Drawing.Size(43, 43);
             this.blanco9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco9.TabIndex = 17;
             this.blanco9.TabStop = false;
@@ -322,10 +310,9 @@
             // blanco4
             // 
             this.blanco4.Image = ((System.Drawing.Image)(resources.GetObject("blanco4.Image")));
-            this.blanco4.Location = new System.Drawing.Point(178, 28);
-            this.blanco4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco4.Location = new System.Drawing.Point(209, 96);
             this.blanco4.Name = "blanco4";
-            this.blanco4.Size = new System.Drawing.Size(38, 32);
+            this.blanco4.Size = new System.Drawing.Size(43, 43);
             this.blanco4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco4.TabIndex = 16;
             this.blanco4.TabStop = false;
@@ -334,10 +321,9 @@
             // blanco3
             // 
             this.blanco3.Image = ((System.Drawing.Image)(resources.GetObject("blanco3.Image")));
-            this.blanco3.Location = new System.Drawing.Point(135, 28);
-            this.blanco3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco3.Location = new System.Drawing.Point(160, 96);
             this.blanco3.Name = "blanco3";
-            this.blanco3.Size = new System.Drawing.Size(38, 32);
+            this.blanco3.Size = new System.Drawing.Size(43, 43);
             this.blanco3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco3.TabIndex = 15;
             this.blanco3.TabStop = false;
@@ -346,10 +332,9 @@
             // blanco30
             // 
             this.blanco30.Image = ((System.Drawing.Image)(resources.GetObject("blanco30.Image")));
-            this.blanco30.Location = new System.Drawing.Point(280, 172);
-            this.blanco30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco30.Location = new System.Drawing.Point(326, 288);
             this.blanco30.Name = "blanco30";
-            this.blanco30.Size = new System.Drawing.Size(38, 32);
+            this.blanco30.Size = new System.Drawing.Size(43, 43);
             this.blanco30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco30.TabIndex = 34;
             this.blanco30.TabStop = false;
@@ -358,10 +343,9 @@
             // blanco29
             // 
             this.blanco29.Image = ((System.Drawing.Image)(resources.GetObject("blanco29.Image")));
-            this.blanco29.Location = new System.Drawing.Point(236, 172);
-            this.blanco29.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco29.Location = new System.Drawing.Point(276, 288);
             this.blanco29.Name = "blanco29";
-            this.blanco29.Size = new System.Drawing.Size(38, 32);
+            this.blanco29.Size = new System.Drawing.Size(43, 43);
             this.blanco29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco29.TabIndex = 33;
             this.blanco29.TabStop = false;
@@ -370,10 +354,9 @@
             // blanco24
             // 
             this.blanco24.Image = ((System.Drawing.Image)(resources.GetObject("blanco24.Image")));
-            this.blanco24.Location = new System.Drawing.Point(280, 136);
-            this.blanco24.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco24.Location = new System.Drawing.Point(326, 240);
             this.blanco24.Name = "blanco24";
-            this.blanco24.Size = new System.Drawing.Size(38, 32);
+            this.blanco24.Size = new System.Drawing.Size(43, 43);
             this.blanco24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco24.TabIndex = 32;
             this.blanco24.TabStop = false;
@@ -382,10 +365,9 @@
             // blanco23
             // 
             this.blanco23.Image = ((System.Drawing.Image)(resources.GetObject("blanco23.Image")));
-            this.blanco23.Location = new System.Drawing.Point(236, 136);
-            this.blanco23.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco23.Location = new System.Drawing.Point(276, 240);
             this.blanco23.Name = "blanco23";
-            this.blanco23.Size = new System.Drawing.Size(38, 32);
+            this.blanco23.Size = new System.Drawing.Size(43, 43);
             this.blanco23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco23.TabIndex = 31;
             this.blanco23.TabStop = false;
@@ -394,10 +376,9 @@
             // blanco18
             // 
             this.blanco18.Image = ((System.Drawing.Image)(resources.GetObject("blanco18.Image")));
-            this.blanco18.Location = new System.Drawing.Point(280, 100);
-            this.blanco18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco18.Location = new System.Drawing.Point(326, 192);
             this.blanco18.Name = "blanco18";
-            this.blanco18.Size = new System.Drawing.Size(38, 32);
+            this.blanco18.Size = new System.Drawing.Size(43, 43);
             this.blanco18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco18.TabIndex = 30;
             this.blanco18.TabStop = false;
@@ -406,10 +387,9 @@
             // blanco17
             // 
             this.blanco17.Image = ((System.Drawing.Image)(resources.GetObject("blanco17.Image")));
-            this.blanco17.Location = new System.Drawing.Point(236, 100);
-            this.blanco17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco17.Location = new System.Drawing.Point(276, 192);
             this.blanco17.Name = "blanco17";
-            this.blanco17.Size = new System.Drawing.Size(38, 32);
+            this.blanco17.Size = new System.Drawing.Size(43, 43);
             this.blanco17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco17.TabIndex = 29;
             this.blanco17.TabStop = false;
@@ -418,10 +398,9 @@
             // blanco12
             // 
             this.blanco12.Image = ((System.Drawing.Image)(resources.GetObject("blanco12.Image")));
-            this.blanco12.Location = new System.Drawing.Point(280, 64);
-            this.blanco12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco12.Location = new System.Drawing.Point(326, 144);
             this.blanco12.Name = "blanco12";
-            this.blanco12.Size = new System.Drawing.Size(38, 32);
+            this.blanco12.Size = new System.Drawing.Size(43, 43);
             this.blanco12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco12.TabIndex = 28;
             this.blanco12.TabStop = false;
@@ -430,10 +409,9 @@
             // blanco11
             // 
             this.blanco11.Image = ((System.Drawing.Image)(resources.GetObject("blanco11.Image")));
-            this.blanco11.Location = new System.Drawing.Point(236, 64);
-            this.blanco11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco11.Location = new System.Drawing.Point(276, 144);
             this.blanco11.Name = "blanco11";
-            this.blanco11.Size = new System.Drawing.Size(38, 32);
+            this.blanco11.Size = new System.Drawing.Size(43, 43);
             this.blanco11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco11.TabIndex = 27;
             this.blanco11.TabStop = false;
@@ -442,10 +420,9 @@
             // blanco6
             // 
             this.blanco6.Image = global::FrontCine.Properties.Resources.asientoblanco;
-            this.blanco6.Location = new System.Drawing.Point(280, 28);
-            this.blanco6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco6.Location = new System.Drawing.Point(326, 96);
             this.blanco6.Name = "blanco6";
-            this.blanco6.Size = new System.Drawing.Size(38, 32);
+            this.blanco6.Size = new System.Drawing.Size(43, 43);
             this.blanco6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco6.TabIndex = 26;
             this.blanco6.TabStop = false;
@@ -454,10 +431,9 @@
             // blanco5
             // 
             this.blanco5.Image = ((System.Drawing.Image)(resources.GetObject("blanco5.Image")));
-            this.blanco5.Location = new System.Drawing.Point(236, 28);
-            this.blanco5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco5.Location = new System.Drawing.Point(276, 96);
             this.blanco5.Name = "blanco5";
-            this.blanco5.Size = new System.Drawing.Size(38, 32);
+            this.blanco5.Size = new System.Drawing.Size(43, 43);
             this.blanco5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco5.TabIndex = 25;
             this.blanco5.TabStop = false;
@@ -466,10 +442,9 @@
             // blanco31
             // 
             this.blanco31.Image = ((System.Drawing.Image)(resources.GetObject("blanco31.Image")));
-            this.blanco31.Location = new System.Drawing.Point(32, 208);
-            this.blanco31.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco31.Location = new System.Drawing.Point(43, 336);
             this.blanco31.Name = "blanco31";
-            this.blanco31.Size = new System.Drawing.Size(38, 32);
+            this.blanco31.Size = new System.Drawing.Size(43, 43);
             this.blanco31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco31.TabIndex = 35;
             this.blanco31.TabStop = false;
@@ -478,10 +453,9 @@
             // blanco32
             // 
             this.blanco32.Image = ((System.Drawing.Image)(resources.GetObject("blanco32.Image")));
-            this.blanco32.Location = new System.Drawing.Point(76, 208);
-            this.blanco32.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco32.Location = new System.Drawing.Point(93, 336);
             this.blanco32.Name = "blanco32";
-            this.blanco32.Size = new System.Drawing.Size(38, 32);
+            this.blanco32.Size = new System.Drawing.Size(43, 43);
             this.blanco32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco32.TabIndex = 36;
             this.blanco32.TabStop = false;
@@ -490,10 +464,9 @@
             // blanco33
             // 
             this.blanco33.Image = ((System.Drawing.Image)(resources.GetObject("blanco33.Image")));
-            this.blanco33.Location = new System.Drawing.Point(158, 208);
-            this.blanco33.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco33.Location = new System.Drawing.Point(187, 336);
             this.blanco33.Name = "blanco33";
-            this.blanco33.Size = new System.Drawing.Size(38, 32);
+            this.blanco33.Size = new System.Drawing.Size(43, 43);
             this.blanco33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco33.TabIndex = 37;
             this.blanco33.TabStop = false;
@@ -502,10 +475,9 @@
             // blanco34
             // 
             this.blanco34.Image = ((System.Drawing.Image)(resources.GetObject("blanco34.Image")));
-            this.blanco34.Location = new System.Drawing.Point(236, 208);
-            this.blanco34.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco34.Location = new System.Drawing.Point(276, 336);
             this.blanco34.Name = "blanco34";
-            this.blanco34.Size = new System.Drawing.Size(38, 32);
+            this.blanco34.Size = new System.Drawing.Size(43, 43);
             this.blanco34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco34.TabIndex = 38;
             this.blanco34.TabStop = false;
@@ -514,10 +486,9 @@
             // blanco35
             // 
             this.blanco35.Image = ((System.Drawing.Image)(resources.GetObject("blanco35.Image")));
-            this.blanco35.Location = new System.Drawing.Point(280, 208);
-            this.blanco35.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.blanco35.Location = new System.Drawing.Point(326, 336);
             this.blanco35.Name = "blanco35";
-            this.blanco35.Size = new System.Drawing.Size(38, 32);
+            this.blanco35.Size = new System.Drawing.Size(43, 43);
             this.blanco35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blanco35.TabIndex = 39;
             this.blanco35.TabStop = false;
@@ -525,10 +496,10 @@
             // 
             // btnterminar
             // 
-            this.btnterminar.Location = new System.Drawing.Point(369, 49);
-            this.btnterminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnterminar.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnterminar.Location = new System.Drawing.Point(412, 96);
             this.btnterminar.Name = "btnterminar";
-            this.btnterminar.Size = new System.Drawing.Size(82, 47);
+            this.btnterminar.Size = new System.Drawing.Size(154, 63);
             this.btnterminar.TabIndex = 126;
             this.btnterminar.Text = "Confirmar Butacas";
             this.btnterminar.UseVisualStyleBackColor = true;
@@ -536,21 +507,60 @@
             // 
             // btn_cancelar
             // 
-            this.btn_cancelar.Location = new System.Drawing.Point(369, 189);
-            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_cancelar.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_cancelar.Location = new System.Drawing.Point(412, 311);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(82, 32);
+            this.btn_cancelar.Size = new System.Drawing.Size(154, 68);
             this.btn_cancelar.TabIndex = 127;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.btnCerrar);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(593, 37);
+            this.panel1.TabIndex = 128;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.BackColor = System.Drawing.Color.Maroon;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(1389, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(30, 29);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 5;
+            this.btnCerrar.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Maroon;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(560, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // ButacasForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(497, 260);
+            this.ClientSize = new System.Drawing.Size(593, 421);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btnterminar);
             this.Controls.Add(this.blanco35);
@@ -588,8 +598,10 @@
             this.Controls.Add(this.blanco7);
             this.Controls.Add(this.blanco2);
             this.Controls.Add(this.blanco1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ButacasForm";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ButacasForm";
             ((System.ComponentModel.ISupportInitialize)(this.blanco1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blanco2)).EndInit();
@@ -626,6 +638,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.blanco33)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blanco34)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blanco35)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -670,5 +685,8 @@
         private Button btnpagar;
         private Button btn_cancelar;
         private Button btnterminar;
+        private Panel panel1;
+        private PictureBox btnCerrar;
+        private PictureBox pictureBox1;
     }
 }
