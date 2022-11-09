@@ -65,7 +65,7 @@
             this.blanco34 = new System.Windows.Forms.PictureBox();
             this.blanco35 = new System.Windows.Forms.PictureBox();
             this.btnterminar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.blanco1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blanco2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blanco8)).BeginInit();
@@ -106,7 +106,7 @@
             // blanco1
             // 
             this.blanco1.Image = ((System.Drawing.Image)(resources.GetObject("blanco1.Image")));
-            this.blanco1.Location = new System.Drawing.Point(47, 54);
+            this.blanco1.Location = new System.Drawing.Point(32, 28);
             this.blanco1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco1.Name = "blanco1";
             this.blanco1.Size = new System.Drawing.Size(38, 32);
@@ -118,7 +118,7 @@
             // blanco2
             // 
             this.blanco2.Image = ((System.Drawing.Image)(resources.GetObject("blanco2.Image")));
-            this.blanco2.Location = new System.Drawing.Point(91, 54);
+            this.blanco2.Location = new System.Drawing.Point(76, 28);
             this.blanco2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco2.Name = "blanco2";
             this.blanco2.Size = new System.Drawing.Size(38, 32);
@@ -130,7 +130,7 @@
             // blanco8
             // 
             this.blanco8.Image = ((System.Drawing.Image)(resources.GetObject("blanco8.Image")));
-            this.blanco8.Location = new System.Drawing.Point(91, 90);
+            this.blanco8.Location = new System.Drawing.Point(76, 64);
             this.blanco8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco8.Name = "blanco8";
             this.blanco8.Size = new System.Drawing.Size(38, 32);
@@ -142,7 +142,7 @@
             // blanco7
             // 
             this.blanco7.Image = ((System.Drawing.Image)(resources.GetObject("blanco7.Image")));
-            this.blanco7.Location = new System.Drawing.Point(47, 90);
+            this.blanco7.Location = new System.Drawing.Point(32, 64);
             this.blanco7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco7.Name = "blanco7";
             this.blanco7.Size = new System.Drawing.Size(38, 32);
@@ -154,7 +154,7 @@
             // blanco14
             // 
             this.blanco14.Image = ((System.Drawing.Image)(resources.GetObject("blanco14.Image")));
-            this.blanco14.Location = new System.Drawing.Point(91, 126);
+            this.blanco14.Location = new System.Drawing.Point(76, 100);
             this.blanco14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco14.Name = "blanco14";
             this.blanco14.Size = new System.Drawing.Size(38, 32);
@@ -166,7 +166,7 @@
             // blanco13
             // 
             this.blanco13.Image = ((System.Drawing.Image)(resources.GetObject("blanco13.Image")));
-            this.blanco13.Location = new System.Drawing.Point(47, 126);
+            this.blanco13.Location = new System.Drawing.Point(32, 100);
             this.blanco13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco13.Name = "blanco13";
             this.blanco13.Size = new System.Drawing.Size(38, 32);
@@ -178,7 +178,7 @@
             // blanco26
             // 
             this.blanco26.Image = ((System.Drawing.Image)(resources.GetObject("blanco26.Image")));
-            this.blanco26.Location = new System.Drawing.Point(91, 198);
+            this.blanco26.Location = new System.Drawing.Point(76, 172);
             this.blanco26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco26.Name = "blanco26";
             this.blanco26.Size = new System.Drawing.Size(38, 32);
@@ -190,7 +190,7 @@
             // blanco25
             // 
             this.blanco25.Image = ((System.Drawing.Image)(resources.GetObject("blanco25.Image")));
-            this.blanco25.Location = new System.Drawing.Point(47, 198);
+            this.blanco25.Location = new System.Drawing.Point(32, 172);
             this.blanco25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco25.Name = "blanco25";
             this.blanco25.Size = new System.Drawing.Size(38, 32);
@@ -202,7 +202,7 @@
             // blanco20
             // 
             this.blanco20.Image = ((System.Drawing.Image)(resources.GetObject("blanco20.Image")));
-            this.blanco20.Location = new System.Drawing.Point(91, 162);
+            this.blanco20.Location = new System.Drawing.Point(76, 136);
             this.blanco20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco20.Name = "blanco20";
             this.blanco20.Size = new System.Drawing.Size(38, 32);
@@ -214,7 +214,7 @@
             // blanco19
             // 
             this.blanco19.Image = ((System.Drawing.Image)(resources.GetObject("blanco19.Image")));
-            this.blanco19.Location = new System.Drawing.Point(47, 162);
+            this.blanco19.Location = new System.Drawing.Point(32, 136);
             this.blanco19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco19.Name = "blanco19";
             this.blanco19.Size = new System.Drawing.Size(38, 32);
@@ -226,7 +226,7 @@
             // blanco28
             // 
             this.blanco28.Image = ((System.Drawing.Image)(resources.GetObject("blanco28.Image")));
-            this.blanco28.Location = new System.Drawing.Point(193, 198);
+            this.blanco28.Location = new System.Drawing.Point(178, 172);
             this.blanco28.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco28.Name = "blanco28";
             this.blanco28.Size = new System.Drawing.Size(38, 32);
@@ -238,7 +238,7 @@
             // blanco27
             // 
             this.blanco27.Image = ((System.Drawing.Image)(resources.GetObject("blanco27.Image")));
-            this.blanco27.Location = new System.Drawing.Point(150, 198);
+            this.blanco27.Location = new System.Drawing.Point(135, 172);
             this.blanco27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco27.Name = "blanco27";
             this.blanco27.Size = new System.Drawing.Size(38, 32);
@@ -250,7 +250,7 @@
             // blanco22
             // 
             this.blanco22.Image = ((System.Drawing.Image)(resources.GetObject("blanco22.Image")));
-            this.blanco22.Location = new System.Drawing.Point(193, 162);
+            this.blanco22.Location = new System.Drawing.Point(178, 136);
             this.blanco22.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco22.Name = "blanco22";
             this.blanco22.Size = new System.Drawing.Size(38, 32);
@@ -262,7 +262,7 @@
             // blanco21
             // 
             this.blanco21.Image = ((System.Drawing.Image)(resources.GetObject("blanco21.Image")));
-            this.blanco21.Location = new System.Drawing.Point(150, 162);
+            this.blanco21.Location = new System.Drawing.Point(135, 136);
             this.blanco21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco21.Name = "blanco21";
             this.blanco21.Size = new System.Drawing.Size(38, 32);
@@ -274,7 +274,7 @@
             // blanco16
             // 
             this.blanco16.Image = ((System.Drawing.Image)(resources.GetObject("blanco16.Image")));
-            this.blanco16.Location = new System.Drawing.Point(193, 126);
+            this.blanco16.Location = new System.Drawing.Point(178, 100);
             this.blanco16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco16.Name = "blanco16";
             this.blanco16.Size = new System.Drawing.Size(38, 32);
@@ -286,7 +286,7 @@
             // blanco15
             // 
             this.blanco15.Image = ((System.Drawing.Image)(resources.GetObject("blanco15.Image")));
-            this.blanco15.Location = new System.Drawing.Point(150, 126);
+            this.blanco15.Location = new System.Drawing.Point(135, 100);
             this.blanco15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco15.Name = "blanco15";
             this.blanco15.Size = new System.Drawing.Size(38, 32);
@@ -298,7 +298,7 @@
             // blanco10
             // 
             this.blanco10.Image = ((System.Drawing.Image)(resources.GetObject("blanco10.Image")));
-            this.blanco10.Location = new System.Drawing.Point(193, 90);
+            this.blanco10.Location = new System.Drawing.Point(178, 64);
             this.blanco10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco10.Name = "blanco10";
             this.blanco10.Size = new System.Drawing.Size(38, 32);
@@ -310,7 +310,7 @@
             // blanco9
             // 
             this.blanco9.Image = ((System.Drawing.Image)(resources.GetObject("blanco9.Image")));
-            this.blanco9.Location = new System.Drawing.Point(150, 90);
+            this.blanco9.Location = new System.Drawing.Point(135, 64);
             this.blanco9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco9.Name = "blanco9";
             this.blanco9.Size = new System.Drawing.Size(38, 32);
@@ -322,7 +322,7 @@
             // blanco4
             // 
             this.blanco4.Image = ((System.Drawing.Image)(resources.GetObject("blanco4.Image")));
-            this.blanco4.Location = new System.Drawing.Point(193, 54);
+            this.blanco4.Location = new System.Drawing.Point(178, 28);
             this.blanco4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco4.Name = "blanco4";
             this.blanco4.Size = new System.Drawing.Size(38, 32);
@@ -334,7 +334,7 @@
             // blanco3
             // 
             this.blanco3.Image = ((System.Drawing.Image)(resources.GetObject("blanco3.Image")));
-            this.blanco3.Location = new System.Drawing.Point(150, 54);
+            this.blanco3.Location = new System.Drawing.Point(135, 28);
             this.blanco3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco3.Name = "blanco3";
             this.blanco3.Size = new System.Drawing.Size(38, 32);
@@ -346,7 +346,7 @@
             // blanco30
             // 
             this.blanco30.Image = ((System.Drawing.Image)(resources.GetObject("blanco30.Image")));
-            this.blanco30.Location = new System.Drawing.Point(295, 198);
+            this.blanco30.Location = new System.Drawing.Point(280, 172);
             this.blanco30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco30.Name = "blanco30";
             this.blanco30.Size = new System.Drawing.Size(38, 32);
@@ -358,7 +358,7 @@
             // blanco29
             // 
             this.blanco29.Image = ((System.Drawing.Image)(resources.GetObject("blanco29.Image")));
-            this.blanco29.Location = new System.Drawing.Point(251, 198);
+            this.blanco29.Location = new System.Drawing.Point(236, 172);
             this.blanco29.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco29.Name = "blanco29";
             this.blanco29.Size = new System.Drawing.Size(38, 32);
@@ -370,7 +370,7 @@
             // blanco24
             // 
             this.blanco24.Image = ((System.Drawing.Image)(resources.GetObject("blanco24.Image")));
-            this.blanco24.Location = new System.Drawing.Point(295, 162);
+            this.blanco24.Location = new System.Drawing.Point(280, 136);
             this.blanco24.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco24.Name = "blanco24";
             this.blanco24.Size = new System.Drawing.Size(38, 32);
@@ -382,7 +382,7 @@
             // blanco23
             // 
             this.blanco23.Image = ((System.Drawing.Image)(resources.GetObject("blanco23.Image")));
-            this.blanco23.Location = new System.Drawing.Point(251, 162);
+            this.blanco23.Location = new System.Drawing.Point(236, 136);
             this.blanco23.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco23.Name = "blanco23";
             this.blanco23.Size = new System.Drawing.Size(38, 32);
@@ -394,7 +394,7 @@
             // blanco18
             // 
             this.blanco18.Image = ((System.Drawing.Image)(resources.GetObject("blanco18.Image")));
-            this.blanco18.Location = new System.Drawing.Point(295, 126);
+            this.blanco18.Location = new System.Drawing.Point(280, 100);
             this.blanco18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco18.Name = "blanco18";
             this.blanco18.Size = new System.Drawing.Size(38, 32);
@@ -406,7 +406,7 @@
             // blanco17
             // 
             this.blanco17.Image = ((System.Drawing.Image)(resources.GetObject("blanco17.Image")));
-            this.blanco17.Location = new System.Drawing.Point(251, 126);
+            this.blanco17.Location = new System.Drawing.Point(236, 100);
             this.blanco17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco17.Name = "blanco17";
             this.blanco17.Size = new System.Drawing.Size(38, 32);
@@ -418,7 +418,7 @@
             // blanco12
             // 
             this.blanco12.Image = ((System.Drawing.Image)(resources.GetObject("blanco12.Image")));
-            this.blanco12.Location = new System.Drawing.Point(295, 90);
+            this.blanco12.Location = new System.Drawing.Point(280, 64);
             this.blanco12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco12.Name = "blanco12";
             this.blanco12.Size = new System.Drawing.Size(38, 32);
@@ -430,7 +430,7 @@
             // blanco11
             // 
             this.blanco11.Image = ((System.Drawing.Image)(resources.GetObject("blanco11.Image")));
-            this.blanco11.Location = new System.Drawing.Point(251, 90);
+            this.blanco11.Location = new System.Drawing.Point(236, 64);
             this.blanco11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco11.Name = "blanco11";
             this.blanco11.Size = new System.Drawing.Size(38, 32);
@@ -442,7 +442,7 @@
             // blanco6
             // 
             this.blanco6.Image = global::FrontCine.Properties.Resources.asientoblanco;
-            this.blanco6.Location = new System.Drawing.Point(295, 54);
+            this.blanco6.Location = new System.Drawing.Point(280, 28);
             this.blanco6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco6.Name = "blanco6";
             this.blanco6.Size = new System.Drawing.Size(38, 32);
@@ -454,7 +454,7 @@
             // blanco5
             // 
             this.blanco5.Image = ((System.Drawing.Image)(resources.GetObject("blanco5.Image")));
-            this.blanco5.Location = new System.Drawing.Point(251, 54);
+            this.blanco5.Location = new System.Drawing.Point(236, 28);
             this.blanco5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco5.Name = "blanco5";
             this.blanco5.Size = new System.Drawing.Size(38, 32);
@@ -466,7 +466,7 @@
             // blanco31
             // 
             this.blanco31.Image = ((System.Drawing.Image)(resources.GetObject("blanco31.Image")));
-            this.blanco31.Location = new System.Drawing.Point(47, 234);
+            this.blanco31.Location = new System.Drawing.Point(32, 208);
             this.blanco31.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco31.Name = "blanco31";
             this.blanco31.Size = new System.Drawing.Size(38, 32);
@@ -478,7 +478,7 @@
             // blanco32
             // 
             this.blanco32.Image = ((System.Drawing.Image)(resources.GetObject("blanco32.Image")));
-            this.blanco32.Location = new System.Drawing.Point(91, 234);
+            this.blanco32.Location = new System.Drawing.Point(76, 208);
             this.blanco32.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco32.Name = "blanco32";
             this.blanco32.Size = new System.Drawing.Size(38, 32);
@@ -490,7 +490,7 @@
             // blanco33
             // 
             this.blanco33.Image = ((System.Drawing.Image)(resources.GetObject("blanco33.Image")));
-            this.blanco33.Location = new System.Drawing.Point(173, 234);
+            this.blanco33.Location = new System.Drawing.Point(158, 208);
             this.blanco33.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco33.Name = "blanco33";
             this.blanco33.Size = new System.Drawing.Size(38, 32);
@@ -502,7 +502,7 @@
             // blanco34
             // 
             this.blanco34.Image = ((System.Drawing.Image)(resources.GetObject("blanco34.Image")));
-            this.blanco34.Location = new System.Drawing.Point(251, 234);
+            this.blanco34.Location = new System.Drawing.Point(236, 208);
             this.blanco34.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco34.Name = "blanco34";
             this.blanco34.Size = new System.Drawing.Size(38, 32);
@@ -514,7 +514,7 @@
             // blanco35
             // 
             this.blanco35.Image = ((System.Drawing.Image)(resources.GetObject("blanco35.Image")));
-            this.blanco35.Location = new System.Drawing.Point(295, 234);
+            this.blanco35.Location = new System.Drawing.Point(280, 208);
             this.blanco35.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.blanco35.Name = "blanco35";
             this.blanco35.Size = new System.Drawing.Size(38, 32);
@@ -525,32 +525,33 @@
             // 
             // btnterminar
             // 
-            this.btnterminar.Location = new System.Drawing.Point(369, 220);
+            this.btnterminar.Location = new System.Drawing.Point(369, 49);
             this.btnterminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnterminar.Name = "btnterminar";
-            this.btnterminar.Size = new System.Drawing.Size(82, 22);
+            this.btnterminar.Size = new System.Drawing.Size(82, 47);
             this.btnterminar.TabIndex = 126;
-            this.btnterminar.Text = "PAGAR";
+            this.btnterminar.Text = "Confirmar Butacas";
             this.btnterminar.UseVisualStyleBackColor = true;
             this.btnterminar.Click += new System.EventHandler(this.btnterminar_Click);
             // 
-            // button2
+            // btn_cancelar
             // 
-            this.button2.Location = new System.Drawing.Point(369, 244);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 22);
-            this.button2.TabIndex = 127;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Location = new System.Drawing.Point(369, 189);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(82, 32);
+            this.btn_cancelar.TabIndex = 127;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // ButacasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(498, 309);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(497, 260);
+            this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btnterminar);
             this.Controls.Add(this.blanco35);
             this.Controls.Add(this.blanco34);
@@ -667,7 +668,7 @@
         private PictureBox blanco34;
         private PictureBox blanco35;
         private Button btnpagar;
-        private Button button2;
+        private Button btn_cancelar;
         private Button btnterminar;
     }
 }
