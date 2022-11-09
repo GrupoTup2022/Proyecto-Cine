@@ -19,6 +19,7 @@ namespace FrontCine.Formularios
         List<PictureBox> butacasImagenes;
         Funcion funcion;
         List<Ticket> tickets;
+        List<Ticket> ticketstemp;
         public ComprobanteVenta comprobanteVenta { get; set; }
         Promo promo;
         public ButacasForm(List<Ticket> ticket, Funcion funcion, Promo promo)
@@ -27,6 +28,11 @@ namespace FrontCine.Formularios
             this.funcion = funcion;
             this.promo = promo;
             tickets = ticket;
+            ticketstemp = new List<Ticket>();
+            foreach (Ticket ticket1 in tickets)
+            {
+                ticketstemp.Add(ticket1);
+            }
             butacasImagenes = new List<PictureBox> { blanco1,blanco2, blanco3, blanco4, blanco5, blanco6, blanco7, blanco8, blanco9, blanco10, blanco11, blanco12, blanco13, blanco14
             , blanco15, blanco16, blanco17, blanco18, blanco19, blanco20, blanco21, blanco22, blanco23, blanco24, blanco25, blanco26, blanco27, blanco28, blanco29, blanco30, blanco31
             , blanco32, blanco33, blanco34, blanco35};
@@ -76,15 +82,15 @@ namespace FrontCine.Formularios
 
                 pictureBox.Image = Properties.Resources.asiento;
                 pictureBox.AccessibleName = "seleccionada";
-                tickets.Add(ticket);
+                ticketstemp.Add(ticket);
             }
             else if (pictureBox.AccessibleName=="seleccionada")
             {
-                foreach (Ticket t in tickets.ToList<Ticket>())
+                foreach (Ticket t in ticketstemp.ToList<Ticket>())
                 {
                     if (t.Funcion.Id == funcion.Id && t.Butaca.NroButaca == nro)
                     {
-                        tickets.Remove(t);
+                        ticketstemp.Remove(t);
                         pictureBox.Image = Properties.Resources.asientoblanco;
                         pictureBox.AccessibleName = null;
                     }
@@ -268,8 +274,23 @@ namespace FrontCine.Formularios
 
         private void btnterminar_Click(object sender, EventArgs e)
         {
+            tickets.Clear();
+            foreach (Ticket ticket1 in ticketstemp)
+            {
+                tickets.Add(ticket1);
+            }
             this.comprobanteVenta.recargarTickets();
             this.Close();
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea cancelar?", "",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }
