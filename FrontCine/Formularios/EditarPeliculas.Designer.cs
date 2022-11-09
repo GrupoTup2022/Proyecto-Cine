@@ -247,6 +247,7 @@
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditarPeliculas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarPeliculas";
             this.Load += new System.EventHandler(this.EditarPeliculas_Load);
             this.barrasuperior.ResumeLayout(false);
