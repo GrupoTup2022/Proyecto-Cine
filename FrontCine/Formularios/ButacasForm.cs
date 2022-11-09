@@ -71,7 +71,9 @@ namespace FrontCine.Formularios
                 ticket.Funcion = funcion;
                 ticket.Butaca.Id = Convert.ToInt32(butacaslista[nro - 1].ID);
                 ticket.Butaca.NroButaca = nro;
+                ticket.Butaca.Nombre = nro.ToString();
                 ticket.Promo = promo;
+
                 pictureBox.Image = Properties.Resources.asiento;
                 pictureBox.AccessibleName = "seleccionada";
                 tickets.Add(ticket);

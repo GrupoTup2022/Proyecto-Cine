@@ -62,7 +62,7 @@ namespace DataCine.Datos
                 //Agrego parametros
                 cmmMaster.Parameters.AddWithValue("@id_forma_venta",comprobante.FormaVenta.Id);
 
-                SqlParameter param = new SqlParameter("@nroComprobante", DbType.Int32);
+                SqlParameter param = new SqlParameter("@id_comprobante", DbType.Int32);
                 param.Direction = ParameterDirection.Output;
                 cmmMaster.Parameters.Add(param);
 
@@ -72,7 +72,7 @@ namespace DataCine.Datos
 
                 for (int i = 0; i < comprobante.ltickets.Count; i++)
                 {
-                    SqlCommand cmmTicket = new SqlCommand("SP_INSERTAR_TICKET", cnn, t);
+                    SqlCommand cmmTicket = new SqlCommand("SP_INSERTAR_TICKETS", cnn, t);
 
                     cmmTicket.CommandType = CommandType.StoredProcedure;
                     cmmTicket.Parameters.AddWithValue("@id_funcion", comprobante.ltickets[i].Funcion.Id);
@@ -94,12 +94,12 @@ namespace DataCine.Datos
                 
                 for (int i = 0; i < comprobante.ListaPagos.Count; i++)
                 {
-                    SqlCommand cmmFPagos = new SqlCommand("SP_INSERTAR_FPAGO", cnn, t);
+                    SqlCommand cmmFPagos = new SqlCommand("SP_INSERTAR_PAGOS", cnn, t);
 
                     cmmFPagos.CommandType = CommandType.StoredProcedure;
-                    cmmFPagos.Parameters.AddWithValue("@id_formaPago", comprobante.ListaPagos[i].FormaPago.Id);
+                    cmmFPagos.Parameters.AddWithValue("@id_forma_Pago", comprobante.ListaPagos[i].FormaPago.Id);
                     cmmFPagos.Parameters.AddWithValue("id_comprobante", idComp);
-                    cmmFPagos.Parameters.AddWithValue("@monto", comprobante.ListaPagos[i].Monto);
+                    cmmFPagos.Parameters.AddWithValue("@importe", comprobante.ListaPagos[i].Monto);
 
                     cmmFPagos.ExecuteNonQuery();
 

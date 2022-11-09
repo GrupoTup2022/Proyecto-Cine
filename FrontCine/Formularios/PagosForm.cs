@@ -69,6 +69,8 @@ namespace FrontCine.Formularios
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
+            if(Restante()- Convert.ToDouble(tb_monto.Text)>=0)
+            { 
             FormaPago fp = new FormaPago();
             fp.Id = Convert.ToInt32(cb_fp.SelectedValue);
             fp.Nombre = cb_fp.Text;
@@ -78,6 +80,9 @@ namespace FrontCine.Formularios
             dgv_lista.Rows.Add(fp.Nombre, pagos.Monto);
             PagosList.Add(pagos);
             Restante();
+            }
+            else
+                MessageBox.Show("No se puede insertar ese monto");
         }
 
         private void btn_terminar_Click(object sender, EventArgs e)

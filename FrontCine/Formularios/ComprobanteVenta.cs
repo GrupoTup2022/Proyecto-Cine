@@ -1,4 +1,5 @@
-﻿using LibreriaTp;
+﻿using FrontCine.Formularios.Reportes;
+using LibreriaTp;
 using Newtonsoft.Json;
 using ReportesCine.Cliente;
 using System;
@@ -290,7 +291,8 @@ namespace FrontCine.Formularios
                     break;
                 }
             }
-
+            funcion.Sala = salas[cbo_sala.SelectedIndex];
+            funcion.Pelicula = pelis[cbo_peli.SelectedIndex];
             ButacasForm pagos = new ButacasForm(tickets, funcion,promos[cbo_promos.SelectedIndex]);
             pagos.comprobanteVenta = this;
             pagos.Show();
@@ -307,15 +309,20 @@ namespace FrontCine.Formularios
                 Id = 0
             };
         if(await AltaComprobante(comprobante))
-            MessageBox.Show("Se dio de alta");
+            {
+                tickets = new List<Ticket>();
+                recargarTickets();
+                ReporteComprobante reporte = new ReporteComprobante(comprobante);
+                reporte.Show();
+            }
         }
         public async Task<bool> AltaComprobante(Comprobante c)
-        {
+        {            
             string url = "https://localhost:7259/api/Comprobantes";
-            string funcionJSON = JsonConvert.SerializeObject(c);
+            string funcionJSON = JsonConvert.SerializeObject(c);            
             funcionJSON = funcionJSON.Replace("null", @"""""");
             var data = await ClienteSingleton.getinstancia().PutAsync(url, funcionJSON);
-            return false;
+            return data == "true";
 
         }
 
