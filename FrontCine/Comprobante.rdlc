@@ -497,7 +497,7 @@
       <Line Name="Line1">
         <Top>1.44667in</Top>
         <Height>0in</Height>
-        <Width>8.34666in</Width>
+        <Width>8.6717in</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -551,19 +551,22 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.53834in</Width>
+              <Width>1.41333in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.53834in</Width>
+              <Width>1.41333in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.53834in</Width>
+              <Width>1.41333in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.53834in</Width>
+              <Width>1.41333in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.53834in</Width>
+              <Width>1.41333in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.87499in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -720,6 +723,36 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox5">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Total</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
@@ -824,7 +857,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Porcentaje.Value</Value>
+                              <Value>=100-(Fields!Porcentaje.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -862,6 +895,36 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Importe1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox8">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=(Fields!Importe.Value)-(Fields!Importe.Value)*CDbl(100-(Fields!Porcentaje.Value))/100</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -979,7 +1042,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>TOTAL A PAGAR</Value>
+                              <Value />
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1009,7 +1072,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!Importe.Value)</Value>
+                              <Value>TOTAL A PAGAR</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1017,6 +1080,36 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox22</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox13">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum((Fields!Importe.Value)-(Fields!Importe.Value)*CDbl(100-(Fields!Porcentaje.Value))/100)</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1041,6 +1134,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -1059,8 +1153,8 @@
         <DataSetName>DataSet3</DataSetName>
         <Top>1.855in</Top>
         <Left>0.405in</Left>
-        <Height>0.73055in</Height>
-        <Width>7.69168in</Width>
+        <Height>0.73056in</Height>
+        <Width>7.94166in</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -1126,7 +1220,7 @@
     <Height>5.51667in</Height>
     <Style />
   </Body>
-  <Width>8.34666in</Width>
+  <Width>8.6717in</Width>
   <Page>
     <PageHeight>11.69in</PageHeight>
     <PageWidth>8.78in</PageWidth>
