@@ -15,5 +15,6 @@ namespace DataCine.Datos.Interfaces
         List<FormaPago> ConsultarFormasPago();
         List<FormaVenta> ConsultarFormasVenta();
         List<Promo> ConsultarPromos();
+        Comprobante UltimoComprobante();
     }
 }

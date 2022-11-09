@@ -66,6 +66,11 @@ namespace ApiCine.Controllers
         {
             return cs.ConsultarPromos();
         }
-
+        [HttpGet]
+        [Route("UltimoComprobante")]
+        public Comprobante UltimoComprobante()
+        {
+            return cs.UltimoComprobante();
+        }
     }
 }
