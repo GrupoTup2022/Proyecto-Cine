@@ -10,13 +10,13 @@ namespace DataCine.Dominio
     {
         public string fechainicio { get; set; }
         public string fechafin { get; set; }
-        public string tipo { get; set; }
+  
 
-        public ParametroConsultaBill(string fechainicio, string fechafin, string tipo)
+        public ParametroConsultaBill(string fechainicio, string fechafin)
         {
             this.fechainicio = fechainicio;
             this.fechafin = fechafin;
-            this.tipo = tipo;
+            
         }
     }
 }

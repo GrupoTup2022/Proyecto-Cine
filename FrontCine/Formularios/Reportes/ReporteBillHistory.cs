@@ -46,7 +46,7 @@ namespace FrontCine.Formularios.Reportes
 
             //PRUEBA CON PARAMETROS EN UN OBJETO
 
-            ParametroConsultaBill paraPrueba = new ParametroConsultaBill(dtpinicio.Value.ToShortDateString(), dtpfin.Value.ToShortDateString(), "efectivo");
+            ParametroConsultaBill paraPrueba = new ParametroConsultaBill(dtpinicio.Value.ToShortDateString(), dtpfin.Value.ToShortDateString());
 
             List<facturabill> tablaBills = null;
 
@@ -58,13 +58,12 @@ namespace FrontCine.Formularios.Reportes
             tablaBills = JsonConvert.DeserializeObject<List<facturabill>>(resultado);
 
             DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("NRO", typeof(Int32));
-            dataTable.Columns.Add("Fecha", typeof(DateTime));
-            dataTable.Columns.Add("Nombre", typeof(string));
-            dataTable.Columns.Add("Precio", typeof(Int32));
+            dataTable.Columns.Add("Forma_Pago", typeof(String));
+            dataTable.Columns.Add("Cantidad_Comprobantes", typeof(Int32));
+            dataTable.Columns.Add("Importes", typeof(Int32));
             foreach(facturabill f in tablaBills)
             {
-                dataTable.Rows.Add(f.NRO,f.Fecha,f.Nombre,f.Precio);
+                dataTable.Rows.Add(f.Forma_Pago,f.Cantidad_Comprobantes,f.Importes);
             }
 
 

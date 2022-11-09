@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,9 @@ namespace FrontCine.Formularios
 
         private async void ConsultarPeliculas_Load(object sender, EventArgs e)
         {
+            this.Enabled = false;
             await CargarDGVAsync();
+            this.Enabled = true;
         }
 
         public async Task CargarDGVAsync()
@@ -49,11 +52,9 @@ namespace FrontCine.Formularios
         }
 
         public async Task CargarDGVFiltrada()
-        {
-            DateTime desde = dtpDesde.Value;
-            DateTime hasta = dtpHasta.Value;
+        {  
             string titulo = textBox1.Text;
-            string url = "https://localhost:7259/api/Peliculas/" + desde.ToString("dd-MM-yyyy") + "," + hasta.ToString("dd-MM-yyyy") + "," + titulo;
+            string url = "https://localhost:7259/api/Peliculas/" + titulo;
             var data = await ClienteSingleton.getinstancia().GetAsync(url);
             List<Pelicula> lst = JsonConvert.DeserializeObject<List<Pelicula>>(data);
 
@@ -87,7 +88,6 @@ namespace FrontCine.Formularios
             {
                 EditarPeliculas form = new EditarPeliculas(idPelicula());
                 form.Show();
-
                 form.FormClosed += F2_FormClosed;
             }
 
@@ -96,8 +96,8 @@ namespace FrontCine.Formularios
             if (dgvPeliculasActivas.CurrentCell.ColumnIndex == 9)
             {
                 if (MessageBox.Show("¿Estas seguro que quieres desabilitar esta pelicula?", "Desabilitar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-                {    
-
+                {
+                    this.Enabled = false;
                     if (await DesabilitarPeliculaAsync(idPelicula(), 1) != null)
                     {  
                         MessageBox.Show("Se desabilito correctamente");
@@ -107,7 +107,8 @@ namespace FrontCine.Formularios
                     else
                     {
                         MessageBox.Show("Ah ocurrido un error");
-                    }                                                   
+                    }
+                    this.Enabled = true;
                 }
             }
 
@@ -132,27 +133,30 @@ namespace FrontCine.Formularios
         {
             if ( checkBox1.Checked == true)
             {
-          
+                checkBox1.Enabled = false;
                 dgvPeliculasBajas.Visible = true;
                 dgvPeliculasActivas.Visible = false;
                 dgvPeliculasBajas.Rows.Clear();
                 await CargarDGVAsync();
-
+                checkBox1.Enabled = true;
             }
             else
             {
-             
+                checkBox1.Enabled = false;
                 dgvPeliculasBajas.Visible = false;
                 dgvPeliculasActivas.Visible = true;
                 dgvPeliculasActivas.Rows.Clear();
                 await CargarDGVAsync();
+                checkBox1.Enabled = true;
 
             }
         }
 
         private async void F2_FormClosed(object sender, FormClosedEventArgs e)
         {
+            this.Enabled = false;
             await CargarDGVAsync();
+            this.Enabled = true;
         }
 
         private async void dgvPeliculasBajas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -162,7 +166,7 @@ namespace FrontCine.Formularios
             {
                 if (MessageBox.Show("¿Estas seguro que quieres habilitar esta pelicula?", "Habilitar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
-
+                    this.Enabled = false;
                     if (await DesabilitarPeliculaAsync(idPeliculaDesavilitado(), 0) != null)
                     {
                         MessageBox.Show("Se habilito correctamente");
@@ -173,21 +177,37 @@ namespace FrontCine.Formularios
                     {
                         MessageBox.Show("Ah ocurrido un error");
                     }
+                    this.Enabled = true;
                 }
             }
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            await CargarDGVFiltrada();
-            textBox1.Text = "";
-            dtpDesde.Value = DateTime.Today;
-            dtpHasta.Value = DateTime.Today;
+            if (ValidarCampos())
+            {
+                button1.Enabled = false;
+                await CargarDGVFiltrada();
+                textBox1.Text = "";
+                button1.Enabled = true;
+            }
         }
 
         private async void button2_Click(object sender, EventArgs e)
         {
+            button2.Enabled = false;    
             await CargarDGVAsync();
+            button2.Enabled = true;
+        }
+
+        public bool ValidarCampos()
+        {
+            if(textBox1.Text == "")
+            {
+                MessageBox.Show("Debe consultar un titulo", "Advertencia");
+                return false;
+            }
+            return true;
         }
     }
 }

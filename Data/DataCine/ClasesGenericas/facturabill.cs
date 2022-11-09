@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibreriaTp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,24 +9,24 @@ namespace DataCine.ClasesGenericas
 {
     public class facturabill
     {
-        public int NRO { get; set; }
-        public DateTime Fecha { get; set; }
-        public string Nombre { get; set; }
-        public int Precio { get; set; }
+        public string Forma_Pago { get; set; }  
+        public int Cantidad_Comprobantes { get; set; }
+        public int Importes { get; set; }
 
-        public facturabill(int nRO, DateTime fecha, string nombre, int precio)
+        public facturabill(string forma_Pago, int cantidad_Comprobantes, int importes)
         {
-            NRO = nRO;
-            Fecha = fecha;
-            Nombre = nombre;
-            Precio = precio;
+            Forma_Pago = forma_Pago;
+            Cantidad_Comprobantes = cantidad_Comprobantes;
+            Importes = importes;
         }
         public facturabill()
         {
-            NRO = 0;
-            Fecha = DateTime.MinValue;
-            Nombre = "";
-            Precio = 0;
+            Forma_Pago = "";
+            Cantidad_Comprobantes = 0;
+            Importes = 0;
         }
+
+
+
     }
 }

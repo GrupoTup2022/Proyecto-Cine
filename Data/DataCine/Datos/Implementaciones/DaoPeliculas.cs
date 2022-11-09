@@ -76,11 +76,9 @@ namespace DataCine.Datos.Implementaciones
             return lPeliculas;
         }
 
-        public List<Pelicula> FiltrarPeliculas(DateTime desde, DateTime hasta, string titulo)
+        public List<Pelicula> FiltrarPeliculas(string titulo)
         {
-            List<Parametro> lParametros = new List<Parametro>();
-            lParametros.Add(new Parametro("@desde", desde));
-            lParametros.Add(new Parametro("@hasta", hasta));
+            List<Parametro> lParametros = new List<Parametro>();        
             lParametros.Add(new Parametro("@titulo", titulo));
 
             List<Pelicula> lPeliculas = new List<Pelicula>();

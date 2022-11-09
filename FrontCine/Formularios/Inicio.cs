@@ -76,16 +76,17 @@ namespace ReportesCine.Formularios
         
         private void ocultarpaneles()
         {
-            panelmenuestadisticas.Visible = false;
-            paneledicion.Visible = false;
+            panelestadisticas.Visible = false;
+            panelmodificaciones.Visible = false;
+            panelconsulta.Visible = false;
         }
 
         private void ocultarsubmenus()
         {
-            if(panelmenuestadisticas.Visible==true)
-                panelmenuestadisticas.Visible = false;
-            if(paneledicion.Visible==true)
-                paneledicion.Visible=false;
+            if(panelestadisticas.Visible==true)
+                panelestadisticas.Visible = false;
+            if(panelmodificaciones.Visible==true)
+                panelmodificaciones.Visible=false;
             if (panelconsulta.Visible == true)
                 panelconsulta.Visible = false;
         }
@@ -144,7 +145,7 @@ namespace ReportesCine.Formularios
 
         private void btnestadisticas_Click(object sender, EventArgs e)
         {
-            mostrarsubmenu(panelmenuestadisticas);
+            mostrarsubmenu(panelestadisticas);
         }
 
         private void btnreporteventa_Click(object sender, EventArgs e)
@@ -195,7 +196,7 @@ namespace ReportesCine.Formularios
 
         private void button2_Click(object sender, EventArgs e)
         {
-            mostrarsubmenu(paneledicion);
+            mostrarsubmenu(panelmodificaciones);
         }
 
         private DialogResult GetDialogResult()
@@ -276,6 +277,62 @@ namespace ReportesCine.Formularios
         private void btnconsulta_Click(object sender, EventArgs e)
         {
             mostrarsubmenu(panelconsulta);
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            ocultarsubmenus();
+            abrirformularios(new InsertarPeliculas());
+        }
+
+        private void button3_Click_2(object sender, EventArgs e)
+        {
+            ocultarsubmenus();
+            abrirformularios(new AgregarFuncion());
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            abrirformularios(new ComprobanteVenta());
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ocultarsubmenus();
+            abrirformularios(new ReporteForm());
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ocultarsubmenus();
+            //ReporteComprobante formcompro = new ReporteComprobante(new LibreriaTp.Comprobante());
+            //formcompro.Show();
+            Pagos pago = new Pagos();
+            pago.Monto = 50;
+            FormaPago formaPago = new FormaPago();
+            formaPago.Id = 1;
+            formaPago.Nombre = "Efectivo";
+            pago.FormaPago = formaPago;
+            FormaVenta formaven = new FormaVenta();
+            formaven.Id = 2;
+            formaven.Nombre = "TARJETA DE CREDITO";
+            Comprobante compro = new Comprobante();
+            compro.Id = 1;
+            compro.AgregarPago(pago);
+            compro.FormaVenta = formaven;
+            compro.Fecha = DateTime.Today;
+            Ticket ticket = new Ticket();
+            abrirformularios(new ReporteComprobante(compro));
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            mostrarsubmenu(panelmodificaciones);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            mostrarsubmenu(panelestadisticas);
         }
     }
 }

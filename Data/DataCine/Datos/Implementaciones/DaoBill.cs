@@ -26,24 +26,19 @@ namespace DataCine.Datos.Implementaciones
             fin.Name = "@fechafin";
             fin.Value = parame.fechafin;
 
-            Parametro nombreforma = new Parametro();
-            nombreforma.Name = "@nombreforma";
-            nombreforma.Value = parame.tipo;
-
             parametros.Add(inicio);
             parametros.Add(fin);
-            parametros.Add(nombreforma);
+           
 
             DataTable consulta = new DataTable();
-            consulta = HelperDAO.getinstancia().ConsultarDB("sp_consultarimportes", parametros);
+            consulta = HelperDAO.getinstancia().ConsultarDB("SP_MontosTotalesComprobantes", parametros);
 
             foreach (DataRow fila in consulta.Rows)
             {
                 facturabill factura = new facturabill();
-                factura.NRO = int.Parse(fila["NRO"].ToString());
-                factura.Fecha = Convert.ToDateTime(fila["Fecha"].ToString());
-                factura.Nombre = fila["Nombre"].ToString();
-                factura.Precio = int.Parse(fila["Precio"].ToString());
+                factura.Forma_Pago = fila["Forma_Pago"].ToString();
+                factura.Cantidad_Comprobantes = Convert.ToInt32(fila["Cantidad_Comprobantes"].ToString());
+                factura.Importes = Convert.ToInt32(fila["Importes"].ToString());
                 facturas.Add(factura);
             }
 
