@@ -32,10 +32,8 @@
             this.dtpfin = new System.Windows.Forms.DateTimePicker();
             this.dtpinicio = new System.Windows.Forms.DateTimePicker();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.cboformaspago = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnconsultar
@@ -79,14 +77,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(812, 418);
             this.reportViewer1.TabIndex = 0;
             // 
-            // cboformaspago
-            // 
-            this.cboformaspago.FormattingEnabled = true;
-            this.cboformaspago.Location = new System.Drawing.Point(387, 46);
-            this.cboformaspago.Name = "cboformaspago";
-            this.cboformaspago.Size = new System.Drawing.Size(151, 28);
-            this.cboformaspago.TabIndex = 3;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -105,25 +95,14 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Fecha Fin";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(387, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Tipo de pago";
-            // 
             // ReporteBillHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(812, 522);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cboformaspago);
             this.Controls.Add(this.dtpinicio);
             this.Controls.Add(this.dtpfin);
             this.Controls.Add(this.btnconsultar);
@@ -143,9 +122,7 @@
         private DateTimePicker dtpfin;
         private DateTimePicker dtpinicio;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private ComboBox cboformaspago;
         private Label label1;
         private Label label2;
-        private Label label3;
     }
 }

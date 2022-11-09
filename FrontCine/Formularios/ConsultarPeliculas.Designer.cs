@@ -61,6 +61,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.barrasuperior = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculasActivas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculasBajas)).BeginInit();
             this.barrasuperior.SuspendLayout();
@@ -398,12 +399,24 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "Consultar peliculas";
             // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(1123, 121);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(94, 29);
+            this.button2.TabIndex = 36;
+            this.button2.Text = "Recargar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // ConsultarPeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.barrasuperior);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -463,5 +476,6 @@
         private Button button1;
         private Panel barrasuperior;
         private Label label9;
+        private Button button2;
     }
 }

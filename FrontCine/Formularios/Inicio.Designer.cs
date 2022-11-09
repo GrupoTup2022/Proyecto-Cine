@@ -36,14 +36,17 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.paneledicion = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.panelconsulta = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnusuarios = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.btnfuncion = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btnconsulta = new System.Windows.Forms.Button();
+            this.paneledicion = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.btnagregfuncion = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnpeliculas = new System.Windows.Forms.Button();
             this.btnedicion = new System.Windows.Forms.Button();
@@ -69,8 +72,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.MenuVertical.SuspendLayout();
-            this.paneledicion.SuspendLayout();
+            this.panelconsulta.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.paneledicion.SuspendLayout();
+            this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelmenuestadisticas.SuspendLayout();
             this.panellogo.SuspendLayout();
@@ -152,6 +157,8 @@
             // 
             this.MenuVertical.AutoScroll = true;
             this.MenuVertical.BackColor = System.Drawing.Color.Black;
+            this.MenuVertical.Controls.Add(this.panelconsulta);
+            this.MenuVertical.Controls.Add(this.btnconsulta);
             this.MenuVertical.Controls.Add(this.paneledicion);
             this.MenuVertical.Controls.Add(this.btnedicion);
             this.MenuVertical.Controls.Add(this.lblfecha);
@@ -167,57 +174,61 @@
             this.MenuVertical.Size = new System.Drawing.Size(262, 1065);
             this.MenuVertical.TabIndex = 1;
             // 
-            // paneledicion
+            // panelconsulta
             // 
-            this.paneledicion.Controls.Add(this.panel4);
-            this.paneledicion.Controls.Add(this.panel3);
-            this.paneledicion.Controls.Add(this.button4);
-            this.paneledicion.Controls.Add(this.button5);
-            this.paneledicion.Controls.Add(this.panel2);
-            this.paneledicion.Controls.Add(this.btnusuarios);
-            this.paneledicion.Controls.Add(this.panel5);
-            this.paneledicion.Controls.Add(this.btnpeliculas);
-            this.paneledicion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.paneledicion.Location = new System.Drawing.Point(0, 353);
-            this.paneledicion.Name = "paneledicion";
-            this.paneledicion.Size = new System.Drawing.Size(262, 193);
-            this.paneledicion.TabIndex = 14;
-            this.paneledicion.Visible = false;
+            this.panelconsulta.Controls.Add(this.panel2);
+            this.panelconsulta.Controls.Add(this.panel14);
+            this.panelconsulta.Controls.Add(this.btnfuncion);
+            this.panelconsulta.Controls.Add(this.button5);
+            this.panelconsulta.Location = new System.Drawing.Point(11, 503);
+            this.panelconsulta.Name = "panelconsulta";
+            this.panelconsulta.Size = new System.Drawing.Size(265, 91);
+            this.panelconsulta.TabIndex = 20;
+            this.panelconsulta.Visible = false;
             // 
-            // panel4
+            // panel2
             // 
-            this.panel4.BackColor = System.Drawing.Color.Maroon;
-            this.panel4.Location = new System.Drawing.Point(3, 139);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 45);
-            this.panel4.TabIndex = 11;
+            this.panel2.BackColor = System.Drawing.Color.Maroon;
+            this.panel2.Controls.Add(this.panel13);
+            this.panel2.Location = new System.Drawing.Point(3, 43);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 45);
+            this.panel2.TabIndex = 15;
             // 
-            // panel3
+            // panel13
             // 
-            this.panel3.BackColor = System.Drawing.Color.Maroon;
-            this.panel3.Location = new System.Drawing.Point(3, 94);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 45);
-            this.panel3.TabIndex = 11;
+            this.panel13.BackColor = System.Drawing.Color.Maroon;
+            this.panel13.Location = new System.Drawing.Point(0, 51);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(5, 45);
+            this.panel13.TabIndex = 11;
             // 
-            // button4
+            // panel14
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(6, 139);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(247, 45);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "EDITAR PELICULAS";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.panel14.BackColor = System.Drawing.Color.Maroon;
+            this.panel14.Location = new System.Drawing.Point(3, 3);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(5, 45);
+            this.panel14.TabIndex = 9;
+            // 
+            // btnfuncion
+            // 
+            this.btnfuncion.FlatAppearance.BorderSize = 0;
+            this.btnfuncion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnfuncion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnfuncion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfuncion.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnfuncion.ForeColor = System.Drawing.Color.White;
+            this.btnfuncion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnfuncion.Location = new System.Drawing.Point(7, 3);
+            this.btnfuncion.Name = "btnfuncion";
+            this.btnfuncion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnfuncion.Size = new System.Drawing.Size(247, 45);
+            this.btnfuncion.TabIndex = 18;
+            this.btnfuncion.Text = "FUNCIONES";
+            this.btnfuncion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnfuncion.UseVisualStyleBackColor = true;
+            this.btnfuncion.Click += new System.EventHandler(this.btnfuncion_Click);
             // 
             // button5
             // 
@@ -228,7 +239,7 @@
             this.button5.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(6, 94);
+            this.button5.Location = new System.Drawing.Point(7, 46);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button5.Size = new System.Drawing.Size(247, 45);
@@ -238,41 +249,72 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // panel2
+            // btnconsulta
             // 
-            this.panel2.BackColor = System.Drawing.Color.Maroon;
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Location = new System.Drawing.Point(3, 49);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 45);
-            this.panel2.TabIndex = 10;
+            this.btnconsulta.FlatAppearance.BorderSize = 0;
+            this.btnconsulta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnconsulta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnconsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnconsulta.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnconsulta.ForeColor = System.Drawing.Color.White;
+            this.btnconsulta.Image = ((System.Drawing.Image)(resources.GetObject("btnconsulta.Image")));
+            this.btnconsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnconsulta.Location = new System.Drawing.Point(0, 447);
+            this.btnconsulta.Name = "btnconsulta";
+            this.btnconsulta.Size = new System.Drawing.Size(262, 45);
+            this.btnconsulta.TabIndex = 19;
+            this.btnconsulta.Text = "CONSULTA";
+            this.btnconsulta.UseVisualStyleBackColor = true;
+            this.btnconsulta.Click += new System.EventHandler(this.btnconsulta_Click);
             // 
-            // panel1
+            // paneledicion
             // 
-            this.panel1.BackColor = System.Drawing.Color.Maroon;
-            this.panel1.Location = new System.Drawing.Point(0, 51);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 45);
-            this.panel1.TabIndex = 11;
+            this.paneledicion.Controls.Add(this.panel9);
+            this.paneledicion.Controls.Add(this.btnagregfuncion);
+            this.paneledicion.Controls.Add(this.panel5);
+            this.paneledicion.Controls.Add(this.btnpeliculas);
+            this.paneledicion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.paneledicion.Location = new System.Drawing.Point(0, 353);
+            this.paneledicion.Name = "paneledicion";
+            this.paneledicion.Size = new System.Drawing.Size(276, 91);
+            this.paneledicion.TabIndex = 14;
+            this.paneledicion.Visible = false;
             // 
-            // btnusuarios
+            // panel9
             // 
-            this.btnusuarios.FlatAppearance.BorderSize = 0;
-            this.btnusuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnusuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btnusuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnusuarios.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnusuarios.ForeColor = System.Drawing.Color.White;
-            this.btnusuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnusuarios.Location = new System.Drawing.Point(6, 49);
-            this.btnusuarios.Name = "btnusuarios";
-            this.btnusuarios.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnusuarios.Size = new System.Drawing.Size(247, 45);
-            this.btnusuarios.TabIndex = 10;
-            this.btnusuarios.Text = "USUARIOS";
-            this.btnusuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnusuarios.UseVisualStyleBackColor = true;
-            this.btnusuarios.Click += new System.EventHandler(this.btnusuarios_Click);
+            this.panel9.BackColor = System.Drawing.Color.Maroon;
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Location = new System.Drawing.Point(3, 43);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(5, 45);
+            this.panel9.TabIndex = 15;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Maroon;
+            this.panel10.Location = new System.Drawing.Point(0, 51);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(5, 45);
+            this.panel10.TabIndex = 11;
+            // 
+            // btnagregfuncion
+            // 
+            this.btnagregfuncion.FlatAppearance.BorderSize = 0;
+            this.btnagregfuncion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnagregfuncion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnagregfuncion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnagregfuncion.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnagregfuncion.ForeColor = System.Drawing.Color.White;
+            this.btnagregfuncion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnagregfuncion.Location = new System.Drawing.Point(6, 43);
+            this.btnagregfuncion.Name = "btnagregfuncion";
+            this.btnagregfuncion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnagregfuncion.Size = new System.Drawing.Size(247, 45);
+            this.btnagregfuncion.TabIndex = 16;
+            this.btnagregfuncion.Text = "AGREGAR FUNCION";
+            this.btnagregfuncion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnagregfuncion.UseVisualStyleBackColor = true;
+            this.btnagregfuncion.Click += new System.EventHandler(this.btnagregfuncion_Click);
             // 
             // panel5
             // 
@@ -314,9 +356,9 @@
             this.btnedicion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnedicion.Location = new System.Drawing.Point(0, 308);
             this.btnedicion.Name = "btnedicion";
-            this.btnedicion.Size = new System.Drawing.Size(262, 45);
+            this.btnedicion.Size = new System.Drawing.Size(276, 45);
             this.btnedicion.TabIndex = 10;
-            this.btnedicion.Text = "EDICION";
+            this.btnedicion.Text = "MODIFICACIONES";
             this.btnedicion.UseVisualStyleBackColor = true;
             this.btnedicion.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -326,7 +368,7 @@
             this.lblfecha.AutoSize = true;
             this.lblfecha.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblfecha.ForeColor = System.Drawing.Color.White;
-            this.lblfecha.Location = new System.Drawing.Point(69, 1030);
+            this.lblfecha.Location = new System.Drawing.Point(69, 1009);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(50, 21);
             this.lblfecha.TabIndex = 1;
@@ -339,7 +381,7 @@
             this.lblhora.AutoSize = true;
             this.lblhora.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblhora.ForeColor = System.Drawing.Color.White;
-            this.lblhora.Location = new System.Drawing.Point(69, 992);
+            this.lblhora.Location = new System.Drawing.Point(69, 971);
             this.lblhora.Name = "lblhora";
             this.lblhora.Size = new System.Drawing.Size(73, 34);
             this.lblhora.TabIndex = 0;
@@ -349,7 +391,7 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(11, 1003);
+            this.pictureBox2.Location = new System.Drawing.Point(11, 982);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(41, 49);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -368,7 +410,7 @@
             this.panelmenuestadisticas.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelmenuestadisticas.Location = new System.Drawing.Point(0, 170);
             this.panelmenuestadisticas.Name = "panelmenuestadisticas";
-            this.panelmenuestadisticas.Size = new System.Drawing.Size(262, 138);
+            this.panelmenuestadisticas.Size = new System.Drawing.Size(276, 138);
             this.panelmenuestadisticas.TabIndex = 8;
             this.panelmenuestadisticas.Visible = false;
             // 
@@ -463,7 +505,7 @@
             this.btnventa.ForeColor = System.Drawing.Color.White;
             this.btnventa.Image = ((System.Drawing.Image)(resources.GetObject("btnventa.Image")));
             this.btnventa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnventa.Location = new System.Drawing.Point(0, 552);
+            this.btnventa.Location = new System.Drawing.Point(0, 648);
             this.btnventa.Name = "btnventa";
             this.btnventa.Size = new System.Drawing.Size(262, 45);
             this.btnventa.TabIndex = 3;
@@ -484,7 +526,7 @@
             this.btnestadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnestadisticas.Location = new System.Drawing.Point(0, 125);
             this.btnestadisticas.Name = "btnestadisticas";
-            this.btnestadisticas.Size = new System.Drawing.Size(262, 45);
+            this.btnestadisticas.Size = new System.Drawing.Size(276, 45);
             this.btnestadisticas.TabIndex = 2;
             this.btnestadisticas.Text = "ESTADISTICAS";
             this.btnestadisticas.UseVisualStyleBackColor = true;
@@ -497,7 +539,7 @@
             this.panellogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panellogo.Location = new System.Drawing.Point(0, 0);
             this.panellogo.Name = "panellogo";
-            this.panellogo.Size = new System.Drawing.Size(262, 125);
+            this.panellogo.Size = new System.Drawing.Size(276, 125);
             this.panellogo.TabIndex = 12;
             this.panellogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panellogo_Paint);
             // 
@@ -548,8 +590,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.MenuVertical.ResumeLayout(false);
             this.MenuVertical.PerformLayout();
-            this.paneledicion.ResumeLayout(false);
+            this.panelconsulta.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.paneledicion.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelmenuestadisticas.ResumeLayout(false);
             this.panellogo.ResumeLayout(false);
@@ -583,15 +627,18 @@
         private Button btnedicion;
         private Panel panellogo;
         private Panel paneledicion;
-        private Panel panel2;
-        private Button btnusuarios;
         private Panel panel5;
         private Button btnpeliculas;
         private Button button5;
-        private Button button4;
-        private Panel panel4;
-        private Panel panel3;
-        private Panel panel1;
         private Panel panel8;
+        private Button btnfuncion;
+        private Panel panel9;
+        private Panel panel10;
+        private Button btnagregfuncion;
+        private Panel panelconsulta;
+        private Panel panel2;
+        private Panel panel13;
+        private Panel panel14;
+        private Button btnconsulta;
     }
 }

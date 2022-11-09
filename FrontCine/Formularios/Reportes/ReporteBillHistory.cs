@@ -38,7 +38,7 @@ namespace FrontCine.Formularios.Reportes
 
             Parametro nombreforma = new Parametro();
             nombreforma.Name = "@nombreforma";
-            nombreforma.Value = cboformaspago.Text;
+            nombreforma.Value = "Efectivo";
 
             parametros.Add(inicio);
             parametros.Add(fin);
@@ -46,7 +46,7 @@ namespace FrontCine.Formularios.Reportes
 
             //PRUEBA CON PARAMETROS EN UN OBJETO
 
-            ParametroConsultaBill paraPrueba = new ParametroConsultaBill(dtpinicio.Value.ToShortDateString(), dtpfin.Value.ToShortDateString(), cboformaspago.Text);
+            ParametroConsultaBill paraPrueba = new ParametroConsultaBill(dtpinicio.Value.ToShortDateString(), dtpfin.Value.ToShortDateString(), "efectivo");
 
             List<facturabill> tablaBills = null;
 
@@ -77,18 +77,18 @@ namespace FrontCine.Formularios.Reportes
 
         private async void ReporteBillHistory_Load(object sender, EventArgs e)
         {
-            await CargarCBO(cboformaspago);
+            //await CargarCBO(cboformaspago);
         }
 
-        private async Task CargarCBO(ComboBox cbo)
-        {
-            string url = "https://localhost:7259/api/ReporteBill/formadepagos";
-            var data = await ClienteSingleton.getinstancia().GetAsync(url);
-            List<object> lst = JsonConvert.DeserializeObject<List<object>>(data);
+        //private async Task CargarCBO(ComboBox cbo)
+        //{
+        //    string url = "https://localhost:7259/api/ReporteBill/formadepagos";
+        //    var data = await ClienteSingleton.getinstancia().GetAsync(url);
+        //    List<object> lst = JsonConvert.DeserializeObject<List<object>>(data);
 
-            cbo.DataSource = lst;
-            cbo.ValueMember = "Id";
-            cbo.DisplayMember = "Nombre";
-        }
+        //    cbo.DataSource = lst;
+        //    cbo.ValueMember = "Id";
+        //    cbo.DisplayMember = "Nombre";
+        //}
     }
 }

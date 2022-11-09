@@ -86,6 +86,8 @@ namespace ReportesCine.Formularios
                 panelmenuestadisticas.Visible = false;
             if(paneledicion.Visible==true)
                 paneledicion.Visible=false;
+            if (panelconsulta.Visible == true)
+                panelconsulta.Visible = false;
         }
 
         private void mostrarsubmenu(Panel submenu)
@@ -252,6 +254,28 @@ namespace ReportesCine.Formularios
         {
             ocultarsubmenus();
             abrirformularios(new ConsultarPeliculas());
+        }
+
+        private void btnagregfuncion_Click(object sender, EventArgs e)
+        {
+            ocultarsubmenus();
+            abrirformularios(new AgregarFuncion());
+        }
+
+        private void btnfuncion_Click(object sender, EventArgs e)
+        {
+            ocultarsubmenus();
+            abrirformularios(new Funciones());
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnconsulta_Click(object sender, EventArgs e)
+        {
+            mostrarsubmenu(panelconsulta);
         }
     }
 }
