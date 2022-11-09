@@ -35,14 +35,15 @@ namespace DataCine.Datos
         public DataTable traertablacomun(string consulta)
         {
             DataTable tabla = new DataTable();
-
-            cnn.Open();
-            SqlCommand cmd = new SqlCommand(consulta);
-            cmd.Connection = cnn;
-            cmd.CommandType = CommandType.Text;
-            tabla.Load(cmd.ExecuteReader());
-            cnn.Close();
-
+            if (cnn.State != ConnectionState.Connecting && cnn.State != ConnectionState.Open)
+            {
+                cnn.Open();
+                SqlCommand cmd = new SqlCommand(consulta);
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.Text;
+                tabla.Load(cmd.ExecuteReader());
+                cnn.Close();
+            }
             return tabla;
         }
 
@@ -161,12 +162,15 @@ namespace DataCine.Datos
             DataTable tabla = new DataTable();
             try
             {
+                if(cnn.State!=ConnectionState.Connecting && cnn.State!=ConnectionState.Open)
+                { 
                 cnn.Open();
                 cmd.Connection = cnn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = SP;
                 tabla.Load(cmd.ExecuteReader());
                 cnn.Close();
+                }
                 return tabla;
             }
             catch (SqlException ex)
@@ -185,12 +189,14 @@ namespace DataCine.Datos
         public DataTable EjecutarSentencia(string comm)
         {
             DataTable tabla = new DataTable();
-            cnn.Open();
-            SqlCommand cmd = new SqlCommand(comm, cnn);
-            cmd.CommandType = CommandType.Text;
-            tabla.Load(cmd.ExecuteReader());
-            cnn.Close();
-
+            if (cnn.State != ConnectionState.Connecting && cnn.State != ConnectionState.Open)
+            {
+                cnn.Open();
+                SqlCommand cmd = new SqlCommand(comm, cnn);
+                cmd.CommandType = CommandType.Text;
+                tabla.Load(cmd.ExecuteReader());
+                cnn.Close();
+            }
             return tabla;
         }
 
@@ -200,17 +206,20 @@ namespace DataCine.Datos
             DataTable tabla = new DataTable();
             try
             {
-                cnn.Open();
-                cmd.Connection = cnn;
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = SP;
-                cmd.Parameters.Clear();
-                foreach (Parametro p in lParametros)
+                if (cnn.State != ConnectionState.Connecting && cnn.State != ConnectionState.Open)
                 {
-                    cmd.Parameters.AddWithValue(p.Name, p.Value);
+                    cnn.Open();
+                    cmd.Connection = cnn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = SP;
+                    cmd.Parameters.Clear();
+                    foreach (Parametro p in lParametros)
+                    {
+                        cmd.Parameters.AddWithValue(p.Name, p.Value);
+                    }
+                    tabla.Load(cmd.ExecuteReader());
+                    cnn.Close();
                 }
-                tabla.Load(cmd.ExecuteReader());
-                cnn.Close();
                 return tabla;
             }
             catch (SqlException ex)

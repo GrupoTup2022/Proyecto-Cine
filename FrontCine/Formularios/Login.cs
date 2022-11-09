@@ -57,7 +57,7 @@ namespace ReportesCine.Formularios
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            /*
+
             if (servicio.getUsers(txtusuario.Text, txtcontrase.Text))
             {
                 this.Hide();
@@ -65,10 +65,10 @@ namespace ReportesCine.Formularios
                 inicio.Show();
             }
             else MessageBox.Show("Usuario o contraseña incorrectos, por favor revise sus credenciales");
-            */
-            this.Hide();
-            Inicio inicio = new Inicio();
-            inicio.Show();
+
+            //this.Hide();
+            //Inicio inicio = new Inicio();
+            //inicio.Show();
 
         }
     }
