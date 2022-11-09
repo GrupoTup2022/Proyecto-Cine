@@ -241,7 +241,7 @@
             this.BTNcancelar.Name = "BTNcancelar";
             this.BTNcancelar.Size = new System.Drawing.Size(119, 50);
             this.BTNcancelar.TabIndex = 14;
-            this.BTNcancelar.Text = "Cancelar";
+            this.BTNcancelar.Text = "Cerrar";
             this.BTNcancelar.UseVisualStyleBackColor = true;
             this.BTNcancelar.Click += new System.EventHandler(this.BTNcancelar_Click);
             // 

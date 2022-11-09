@@ -100,6 +100,7 @@
             // 
             // dtp_fecha
             // 
+            this.dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_fecha.Location = new System.Drawing.Point(35, 130);
             this.dtp_fecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtp_fecha.Name = "dtp_fecha";
@@ -190,6 +191,7 @@
             this.dgv_tickets.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_tickets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_tickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_tickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
@@ -215,7 +217,6 @@
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // salaticket
             // 
@@ -223,7 +224,6 @@
             this.salaticket.MinimumWidth = 6;
             this.salaticket.Name = "salaticket";
             this.salaticket.ReadOnly = true;
-            this.salaticket.Width = 125;
             // 
             // horarioticket
             // 
@@ -231,7 +231,6 @@
             this.horarioticket.MinimumWidth = 6;
             this.horarioticket.Name = "horarioticket";
             this.horarioticket.ReadOnly = true;
-            this.horarioticket.Width = 125;
             // 
             // tituloTicket
             // 
@@ -239,7 +238,6 @@
             this.tituloTicket.MinimumWidth = 6;
             this.tituloTicket.Name = "tituloTicket";
             this.tituloTicket.ReadOnly = true;
-            this.tituloTicket.Width = 125;
             // 
             // PreciosinDescuento
             // 
@@ -247,7 +245,6 @@
             this.PreciosinDescuento.MinimumWidth = 6;
             this.PreciosinDescuento.Name = "PreciosinDescuento";
             this.PreciosinDescuento.ReadOnly = true;
-            this.PreciosinDescuento.Width = 125;
             // 
             // Descuentoticket
             // 
@@ -255,7 +252,6 @@
             this.Descuentoticket.MinimumWidth = 6;
             this.Descuentoticket.Name = "Descuentoticket";
             this.Descuentoticket.ReadOnly = true;
-            this.Descuentoticket.Width = 125;
             // 
             // NombrePromo
             // 
@@ -263,7 +259,6 @@
             this.NombrePromo.MinimumWidth = 6;
             this.NombrePromo.Name = "NombrePromo";
             this.NombrePromo.ReadOnly = true;
-            this.NombrePromo.Width = 125;
             // 
             // PrecioTicket
             // 
@@ -271,7 +266,6 @@
             this.PrecioTicket.MinimumWidth = 6;
             this.PrecioTicket.Name = "PrecioTicket";
             this.PrecioTicket.ReadOnly = true;
-            this.PrecioTicket.Width = 125;
             // 
             // btn_comprobante
             // 

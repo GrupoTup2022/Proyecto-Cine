@@ -87,7 +87,7 @@ namespace FrontCine.Formularios
             if(dgvPeliculasActivas.CurrentCell.ColumnIndex == 10)
             {
                 EditarPeliculas form = new EditarPeliculas(idPelicula());
-                form.Show();
+                form.ShowDialog();
                 form.FormClosed += F2_FormClosed;
             }
 

@@ -25,8 +25,9 @@ namespace FrontCine.Formularios
         }
 
         private async void EditarPeliculas_Load(object sender, EventArgs e)
-        {       
-            
+        {
+            this.Enabled = false;
+            txtTitulo.Enabled = false;
             await CargarCombos(cboDistribuidoras, "distribuidora");
             await CargarCombos(cboPaises, "paises");
             await CargarCombos(cboDirectores, "directores");
@@ -34,7 +35,7 @@ namespace FrontCine.Formularios
             await CargarCombos(cboGeneros, "generos");
 
             await CargarCampos();
-
+            this.Enabled = true;
         }
 
 
@@ -84,34 +85,37 @@ namespace FrontCine.Formularios
 
         public async Task ModificarPelicula()
         {
-            string url = "https://localhost:7259/api/Peliculas/Peliculas";
-            var data = await ClienteSingleton.getinstancia().GetAsync(url);
-            List<Pelicula> lst = JsonConvert.DeserializeObject<List<Pelicula>>(data);
-
-            foreach (Pelicula p in lst)
+            if (ValidarDatos())
             {
-                if (p.Id == id)
+                string url = "https://localhost:7259/api/Peliculas/Peliculas";
+                var data = await ClienteSingleton.getinstancia().GetAsync(url);
+                List<Pelicula> lst = JsonConvert.DeserializeObject<List<Pelicula>>(data);
+
+                foreach (Pelicula p in lst)
                 {
-                    p.clasificacion.Id = Convert.ToInt32( cboClasificaciones.SelectedValue);
-                    p.clasificacion.Nombre = cboClasificaciones.SelectedText;
-                    p.director.Id = Convert.ToInt32(cboDirectores.SelectedValue);
-                    p.director.Nombre = p.director.Nombre;
-                    p.pais.Id = Convert.ToInt32(cboPaises.SelectedValue);
-                    p.pais.Nombre = cboPaises.SelectedText;
-                    p.Titulo_local = txtTitulo.Text;
-                    p.Fecha_Estreno = dtpEstreno.Value;
-                    p.duracion = Convert.ToInt32(txtDuracion.Text);
-                    p.distribuidora.Id = Convert.ToInt32(cboDistribuidoras.SelectedValue);
-                    p.distribuidora.Nombre = cboDistribuidoras.SelectedText;
-                    p.genero.Nombre= cboGeneros.SelectedText;
-                    p.genero.Id = Convert.ToInt32(cboGeneros.SelectedValue);
-                    p.Titulo_local = txtTitulo.Text;
-                    p.Descripcion = "-";
+                    if (p.Id == id)
+                    {
+                        p.clasificacion.Id = Convert.ToInt32(cboClasificaciones.SelectedValue);
+                        p.clasificacion.Nombre = cboClasificaciones.SelectedText;
+                        p.director.Id = Convert.ToInt32(cboDirectores.SelectedValue);
+                        p.director.Nombre = p.director.Nombre;
+                        p.pais.Id = Convert.ToInt32(cboPaises.SelectedValue);
+                        p.pais.Nombre = cboPaises.SelectedText;
+                        p.Titulo_local = txtTitulo.Text;
+                        p.Fecha_Estreno = dtpEstreno.Value;
+                        p.duracion = Convert.ToInt32(txtDuracion.Text);
+                        p.distribuidora.Id = Convert.ToInt32(cboDistribuidoras.SelectedValue);
+                        p.distribuidora.Nombre = cboDistribuidoras.SelectedText;
+                        p.genero.Nombre = cboGeneros.SelectedText;
+                        p.genero.Id = Convert.ToInt32(cboGeneros.SelectedValue);
+                        p.Titulo_local = txtTitulo.Text;
+                        p.Descripcion = "-";
 
-                    string url2 = "https://localhost:7259/pelicula";
-                    string peliculaJason = JsonConvert.SerializeObject(p);
-                    var data2 = await ClienteSingleton.getinstancia().PutAsync(url2, peliculaJason);
+                        string url2 = "https://localhost:7259/pelicula";
+                        string peliculaJason = JsonConvert.SerializeObject(p);
+                        var data2 = await ClienteSingleton.getinstancia().PutAsync(url2, peliculaJason);
 
+                    }
                 }
             }
 
@@ -121,9 +125,11 @@ namespace FrontCine.Formularios
         {
             try
             {
+                this.Enabled = false;
                 await ModificarPelicula();
                 await form.CargarDGVAsync();
-                MessageBox.Show("Pelicula modificada con exito");        
+                MessageBox.Show("Pelicula modificada con exito");
+                this.Enabled = true;
                 this.Close();
             }
             catch (Exception ex)
@@ -132,5 +138,46 @@ namespace FrontCine.Formularios
             }
             
         }
+
+        public bool ValidarDatos()
+        {
+            if (txtTitulo.Text == "")
+            {
+                MessageBox.Show("Debe Insertar un titulo", "ADVERTENCIA");
+                return false;
+            }
+            if (txtDuracion.Text == "")
+            {
+                MessageBox.Show("Debe Insertar una duracion", "ADVERTENCIA");
+                return false;
+            }
+            if (cboClasificaciones.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe Insertar una clasificacion", "ADVERTENCIA");
+                return false;
+            }
+            if (cboDirectores.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe Insertar un direcror", "ADVERTENCIA");
+                return false;
+            }
+            if (cboDistribuidoras.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe Insertar una distribuidora", "ADVERTENCIA");
+                return false;
+            }
+            if (cboGeneros.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe Insertar un genero", "ADVERTENCIA");
+                return false;
+            }
+            if (cboPaises.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe Insertar un Pais", "ADVERTENCIA");
+                return false;
+            }
+            return true;
+        }
+
     }
 }

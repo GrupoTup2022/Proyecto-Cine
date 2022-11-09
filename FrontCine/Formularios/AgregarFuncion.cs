@@ -24,10 +24,16 @@ namespace FrontCine.Formularios
 
         private async void AgregarFuncion_Load(object sender, EventArgs e)
         {
+            this.Enabled = false;
             await cargarPeliculas();
             await cargarHorarios();
             await cargarAudios();
             await cargarSalas();
+            CBpeliculas.SelectedIndex = -1;
+            CBhorarios.SelectedIndex = -1;
+            CBaudios.SelectedIndex = -1;
+            CBsalas.SelectedIndex = -1;
+            this.Enabled = true;
         }
 
         private void CBpeliculas_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,17 +106,19 @@ namespace FrontCine.Formularios
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            if (!validarPrecio())
+            if (ValidarDatos())
             {
-                MessageBox.Show("Solo puede ingresar numeros en el precio");
+                if (!validarPrecio())
+                {
+                    MessageBox.Show("Solo puede ingresar numeros en el precio");
 
-            }
-            else
-            {
-                await CrearFuncion();
-
-
-
+                }
+                else
+                {
+                    this.Enabled = false;
+                    await CrearFuncion();
+                    this.Enabled = true;
+                }
             }
         }
      
@@ -191,6 +199,36 @@ namespace FrontCine.Formularios
                
 
             }
+        }
+
+        public bool ValidarDatos()
+        {
+            if(CBpeliculas.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar una pelicula","ADVERTENCIA");
+                return false;
+            }
+            if (CBhorarios.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un horario", "ADVERTENCIA");
+                return false;
+            }
+            if (CBaudios.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un audio", "ADVERTENCIA");
+                return false;
+            }
+            if (CBsalas.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar una sala", "ADVERTENCIA");
+                return false;
+            }
+            if (TXTprecio.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un precio", "ADVERTENCIA");
+                return false;
+            }
+            return true;
         }
     }
 }
