@@ -55,122 +55,131 @@
             this.btn_butacas = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.cbo_fVenta = new System.Windows.Forms.ComboBox();
+            this.barrasuperior = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tickets)).BeginInit();
+            this.barrasuperior.SuspendLayout();
             this.SuspendLayout();
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(293, 112);
+            this.label10.Location = new System.Drawing.Point(228, 218);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 15);
+            this.label10.Size = new System.Drawing.Size(56, 20);
             this.label10.TabIndex = 40;
             this.label10.Text = "Promo:";
             // 
             // cbo_promos
             // 
             this.cbo_promos.FormattingEnabled = true;
-            this.cbo_promos.Location = new System.Drawing.Point(358, 109);
+            this.cbo_promos.Location = new System.Drawing.Point(228, 240);
+            this.cbo_promos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbo_promos.Name = "cbo_promos";
-            this.cbo_promos.Size = new System.Drawing.Size(121, 23);
+            this.cbo_promos.Size = new System.Drawing.Size(138, 28);
             this.cbo_promos.TabIndex = 39;
             this.cbo_promos.SelectedIndexChanged += new System.EventHandler(this.cbo_promos_SelectedIndexChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 178);
+            this.label7.Location = new System.Drawing.Point(28, 320);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 15);
+            this.label7.Size = new System.Drawing.Size(57, 20);
             this.label7.TabIndex = 38;
             this.label7.Text = "Tickets:";
             // 
             // lbl_fecha
             // 
             this.lbl_fecha.AutoSize = true;
-            this.lbl_fecha.Location = new System.Drawing.Point(38, 34);
+            this.lbl_fecha.Location = new System.Drawing.Point(35, 106);
             this.lbl_fecha.Name = "lbl_fecha";
-            this.lbl_fecha.Size = new System.Drawing.Size(41, 15);
+            this.lbl_fecha.Size = new System.Drawing.Size(50, 20);
             this.lbl_fecha.TabIndex = 37;
             this.lbl_fecha.Text = "Fecha:";
             // 
             // dtp_fecha
             // 
-            this.dtp_fecha.Location = new System.Drawing.Point(97, 28);
+            this.dtp_fecha.Location = new System.Drawing.Point(35, 130);
+            this.dtp_fecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtp_fecha.Name = "dtp_fecha";
-            this.dtp_fecha.Size = new System.Drawing.Size(121, 23);
+            this.dtp_fecha.Size = new System.Drawing.Size(138, 27);
             this.dtp_fecha.TabIndex = 36;
             this.dtp_fecha.ValueChanged += new System.EventHandler(this.dtp_fecha_ValueChangedAsync);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(308, 71);
+            this.label4.Location = new System.Drawing.Point(228, 162);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 15);
+            this.label4.Size = new System.Drawing.Size(40, 20);
             this.label4.TabIndex = 35;
             this.label4.Text = "Sala:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(289, 29);
+            this.label3.Location = new System.Drawing.Point(228, 106);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 15);
+            this.label3.Size = new System.Drawing.Size(63, 20);
             this.label3.TabIndex = 34;
             this.label3.Text = "Horario:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 112);
+            this.label2.Location = new System.Drawing.Point(35, 214);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 15);
+            this.label2.Size = new System.Drawing.Size(52, 20);
             this.label2.TabIndex = 33;
             this.label2.Text = "Audio:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 71);
+            this.label1.Location = new System.Drawing.Point(35, 161);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 15);
+            this.label1.Size = new System.Drawing.Size(62, 20);
             this.label1.TabIndex = 32;
             this.label1.Text = "Pelicula:";
             // 
             // cbo_audio
             // 
             this.cbo_audio.FormattingEnabled = true;
-            this.cbo_audio.Location = new System.Drawing.Point(97, 109);
+            this.cbo_audio.Location = new System.Drawing.Point(35, 238);
+            this.cbo_audio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbo_audio.Name = "cbo_audio";
-            this.cbo_audio.Size = new System.Drawing.Size(121, 23);
+            this.cbo_audio.Size = new System.Drawing.Size(138, 28);
             this.cbo_audio.TabIndex = 31;
             this.cbo_audio.SelectedIndexChanged += new System.EventHandler(this.cbo_audio_SelectedIndexChanged_1);
             // 
             // cbo_horario
             // 
             this.cbo_horario.FormattingEnabled = true;
-            this.cbo_horario.Location = new System.Drawing.Point(358, 26);
+            this.cbo_horario.Location = new System.Drawing.Point(228, 130);
+            this.cbo_horario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbo_horario.Name = "cbo_horario";
-            this.cbo_horario.Size = new System.Drawing.Size(121, 23);
+            this.cbo_horario.Size = new System.Drawing.Size(138, 28);
             this.cbo_horario.TabIndex = 30;
             this.cbo_horario.SelectedIndexChanged += new System.EventHandler(this.cbo_horario_SelectedIndexChanged_1);
             // 
             // cbo_sala
             // 
             this.cbo_sala.FormattingEnabled = true;
-            this.cbo_sala.Location = new System.Drawing.Point(358, 68);
+            this.cbo_sala.Location = new System.Drawing.Point(228, 186);
+            this.cbo_sala.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbo_sala.Name = "cbo_sala";
-            this.cbo_sala.Size = new System.Drawing.Size(121, 23);
+            this.cbo_sala.Size = new System.Drawing.Size(138, 28);
             this.cbo_sala.TabIndex = 29;
             this.cbo_sala.SelectedIndexChanged += new System.EventHandler(this.cbo_sala_SelectedIndexChanged_1);
             // 
             // cbo_peli
             // 
             this.cbo_peli.FormattingEnabled = true;
-            this.cbo_peli.Location = new System.Drawing.Point(97, 68);
+            this.cbo_peli.Location = new System.Drawing.Point(35, 184);
+            this.cbo_peli.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbo_peli.Name = "cbo_peli";
-            this.cbo_peli.Size = new System.Drawing.Size(121, 23);
+            this.cbo_peli.Size = new System.Drawing.Size(138, 28);
             this.cbo_peli.TabIndex = 28;
             this.cbo_peli.SelectedIndexChanged += new System.EventHandler(this.cbo_peli_SelectedIndexChanged_1);
             // 
@@ -178,6 +187,9 @@
             // 
             this.dgv_tickets.AllowUserToAddRows = false;
             this.dgv_tickets.AllowUserToDeleteRows = false;
+            this.dgv_tickets.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_tickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_tickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
@@ -188,66 +200,87 @@
             this.Descuentoticket,
             this.NombrePromo,
             this.PrecioTicket});
-            this.dgv_tickets.Location = new System.Drawing.Point(28, 207);
+            this.dgv_tickets.Location = new System.Drawing.Point(28, 359);
+            this.dgv_tickets.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgv_tickets.Name = "dgv_tickets";
             this.dgv_tickets.ReadOnly = true;
+            this.dgv_tickets.RowHeadersWidth = 51;
             this.dgv_tickets.RowTemplate.Height = 25;
-            this.dgv_tickets.Size = new System.Drawing.Size(732, 197);
+            this.dgv_tickets.Size = new System.Drawing.Size(837, 263);
             this.dgv_tickets.TabIndex = 27;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.HeaderText = "Numero de Butaca";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // salaticket
             // 
             this.salaticket.HeaderText = "Sala";
+            this.salaticket.MinimumWidth = 6;
             this.salaticket.Name = "salaticket";
             this.salaticket.ReadOnly = true;
+            this.salaticket.Width = 125;
             // 
             // horarioticket
             // 
             this.horarioticket.HeaderText = "Horario";
+            this.horarioticket.MinimumWidth = 6;
             this.horarioticket.Name = "horarioticket";
             this.horarioticket.ReadOnly = true;
+            this.horarioticket.Width = 125;
             // 
             // tituloTicket
             // 
             this.tituloTicket.HeaderText = "Titulo";
+            this.tituloTicket.MinimumWidth = 6;
             this.tituloTicket.Name = "tituloTicket";
             this.tituloTicket.ReadOnly = true;
+            this.tituloTicket.Width = 125;
             // 
             // PreciosinDescuento
             // 
             this.PreciosinDescuento.HeaderText = "Precio sin descuento";
+            this.PreciosinDescuento.MinimumWidth = 6;
             this.PreciosinDescuento.Name = "PreciosinDescuento";
             this.PreciosinDescuento.ReadOnly = true;
+            this.PreciosinDescuento.Width = 125;
             // 
             // Descuentoticket
             // 
             this.Descuentoticket.HeaderText = "Descuento";
+            this.Descuentoticket.MinimumWidth = 6;
             this.Descuentoticket.Name = "Descuentoticket";
             this.Descuentoticket.ReadOnly = true;
+            this.Descuentoticket.Width = 125;
             // 
             // NombrePromo
             // 
             this.NombrePromo.HeaderText = "Promo";
+            this.NombrePromo.MinimumWidth = 6;
             this.NombrePromo.Name = "NombrePromo";
             this.NombrePromo.ReadOnly = true;
+            this.NombrePromo.Width = 125;
             // 
             // PrecioTicket
             // 
             this.PrecioTicket.HeaderText = "PrecioFinal";
+            this.PrecioTicket.MinimumWidth = 6;
             this.PrecioTicket.Name = "PrecioTicket";
             this.PrecioTicket.ReadOnly = true;
+            this.PrecioTicket.Width = 125;
             // 
             // btn_comprobante
             // 
-            this.btn_comprobante.Location = new System.Drawing.Point(671, 26);
+            this.btn_comprobante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_comprobante.Font = new System.Drawing.Font("Bahnschrift", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_comprobante.Location = new System.Drawing.Point(723, 118);
+            this.btn_comprobante.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_comprobante.Name = "btn_comprobante";
-            this.btn_comprobante.Size = new System.Drawing.Size(89, 41);
+            this.btn_comprobante.Size = new System.Drawing.Size(142, 55);
             this.btn_comprobante.TabIndex = 41;
             this.btn_comprobante.Text = "Terminar Comprobante";
             this.btn_comprobante.UseVisualStyleBackColor = true;
@@ -255,9 +288,12 @@
             // 
             // btn_pagos
             // 
-            this.btn_pagos.Location = new System.Drawing.Point(671, 122);
+            this.btn_pagos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_pagos.Font = new System.Drawing.Font("Bahnschrift", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_pagos.Location = new System.Drawing.Point(723, 246);
+            this.btn_pagos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_pagos.Name = "btn_pagos";
-            this.btn_pagos.Size = new System.Drawing.Size(85, 41);
+            this.btn_pagos.Size = new System.Drawing.Size(142, 55);
             this.btn_pagos.TabIndex = 42;
             this.btn_pagos.Text = "Agregar Pagos";
             this.btn_pagos.UseVisualStyleBackColor = true;
@@ -265,9 +301,12 @@
             // 
             // btn_butacas
             // 
-            this.btn_butacas.Location = new System.Drawing.Point(549, 71);
+            this.btn_butacas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_butacas.Font = new System.Drawing.Font("Bahnschrift", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_butacas.Location = new System.Drawing.Point(723, 183);
+            this.btn_butacas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_butacas.Name = "btn_butacas";
-            this.btn_butacas.Size = new System.Drawing.Size(85, 41);
+            this.btn_butacas.Size = new System.Drawing.Size(142, 55);
             this.btn_butacas.TabIndex = 43;
             this.btn_butacas.Text = "Elegir butacas";
             this.btn_butacas.UseVisualStyleBackColor = true;
@@ -276,9 +315,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(247, 156);
+            this.label5.Location = new System.Drawing.Point(228, 275);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 15);
+            this.label5.Size = new System.Drawing.Size(116, 20);
             this.label5.TabIndex = 45;
             this.label5.Text = "Forma de Venta:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -286,17 +325,41 @@
             // cbo_fVenta
             // 
             this.cbo_fVenta.FormattingEnabled = true;
-            this.cbo_fVenta.Location = new System.Drawing.Point(358, 153);
+            this.cbo_fVenta.Location = new System.Drawing.Point(228, 299);
+            this.cbo_fVenta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbo_fVenta.Name = "cbo_fVenta";
-            this.cbo_fVenta.Size = new System.Drawing.Size(121, 23);
+            this.cbo_fVenta.Size = new System.Drawing.Size(138, 28);
             this.cbo_fVenta.TabIndex = 44;
             this.cbo_fVenta.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // barrasuperior
+            // 
+            this.barrasuperior.BackColor = System.Drawing.Color.Maroon;
+            this.barrasuperior.Controls.Add(this.label9);
+            this.barrasuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barrasuperior.Location = new System.Drawing.Point(0, 0);
+            this.barrasuperior.Name = "barrasuperior";
+            this.barrasuperior.Size = new System.Drawing.Size(896, 76);
+            this.barrasuperior.TabIndex = 46;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(35, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(105, 36);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "VENTA";
+            // 
             // ComprobanteVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(896, 665);
+            this.Controls.Add(this.barrasuperior);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbo_fVenta);
             this.Controls.Add(this.btn_butacas);
@@ -316,9 +379,13 @@
             this.Controls.Add(this.cbo_sala);
             this.Controls.Add(this.cbo_peli);
             this.Controls.Add(this.dgv_tickets);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ComprobanteVenta";
             this.Text = "ComprobanteVenta";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tickets)).EndInit();
+            this.barrasuperior.ResumeLayout(false);
+            this.barrasuperior.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,5 +420,7 @@
         private Button btn_butacas;
         private Label label5;
         private ComboBox cbo_fVenta;
+        private Panel barrasuperior;
+        private Label label9;
     }
 }
