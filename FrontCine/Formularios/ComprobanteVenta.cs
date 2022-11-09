@@ -315,6 +315,7 @@ namespace FrontCine.Formularios
         if(await AltaComprobante(comprobante))
             {
                 tickets = new List<Ticket>();
+                PagosList = new List<Pagos>();
                 recargarTickets();
                 ReporteComprobante reporte = new ReporteComprobante(comprobante);
                 reporte.Show();

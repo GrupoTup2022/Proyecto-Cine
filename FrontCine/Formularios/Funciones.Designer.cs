@@ -34,7 +34,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.BTNconsultarFuncion = new System.Windows.Forms.Button();
             this.BTNsalir = new System.Windows.Forms.Button();
-            this.BTNagregarFuncion = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +52,7 @@
             // 
             // CBpeliculas
             // 
+            this.CBpeliculas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBpeliculas.FormattingEnabled = true;
             this.CBpeliculas.Location = new System.Drawing.Point(37, 186);
             this.CBpeliculas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -68,7 +68,7 @@
             this.DTPfecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DTPfecha.Name = "DTPfecha";
             this.DTPfecha.Size = new System.Drawing.Size(114, 27);
-            this.DTPfecha.TabIndex = 5;
+            this.DTPfecha.TabIndex = 1;
             // 
             // label1
             // 
@@ -96,7 +96,7 @@
             this.BTNconsultarFuncion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTNconsultarFuncion.Name = "BTNconsultarFuncion";
             this.BTNconsultarFuncion.Size = new System.Drawing.Size(145, 43);
-            this.BTNconsultarFuncion.TabIndex = 13;
+            this.BTNconsultarFuncion.TabIndex = 2;
             this.BTNconsultarFuncion.Text = "Consultar funcion";
             this.BTNconsultarFuncion.UseVisualStyleBackColor = true;
             this.BTNconsultarFuncion.Click += new System.EventHandler(this.BTNconsultarFuncion_Click);
@@ -113,19 +113,6 @@
             this.BTNsalir.Text = "Salir";
             this.BTNsalir.UseVisualStyleBackColor = true;
             this.BTNsalir.Click += new System.EventHandler(this.BTNsalir_Click);
-            // 
-            // BTNagregarFuncion
-            // 
-            this.BTNagregarFuncion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BTNagregarFuncion.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BTNagregarFuncion.Location = new System.Drawing.Point(1127, 97);
-            this.BTNagregarFuncion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BTNagregarFuncion.Name = "BTNagregarFuncion";
-            this.BTNagregarFuncion.Size = new System.Drawing.Size(196, 58);
-            this.BTNagregarFuncion.TabIndex = 15;
-            this.BTNagregarFuncion.Text = "Agregar Funcion";
-            this.BTNagregarFuncion.UseVisualStyleBackColor = true;
-            this.BTNagregarFuncion.Click += new System.EventHandler(this.BTNagregarFuncion_Click);
             // 
             // dataGridView1
             // 
@@ -218,7 +205,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(145, 63);
-            this.button1.TabIndex = 18;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Cargar todas las funciones";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -240,9 +227,9 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(35, 19);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(239, 36);
+            this.label9.Size = new System.Drawing.Size(263, 36);
             this.label9.TabIndex = 20;
-            this.label9.Text = "Insertar Funcion";
+            this.label9.Text = "Consultar Funcion";
             // 
             // Funciones
             // 
@@ -253,7 +240,6 @@
             this.Controls.Add(this.barrasuperior);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.BTNagregarFuncion);
             this.Controls.Add(this.BTNsalir);
             this.Controls.Add(this.BTNconsultarFuncion);
             this.Controls.Add(this.label5);
@@ -281,7 +267,6 @@
         private Label label5;
         private Button BTNconsultarFuncion;
         private Button BTNsalir;
-        private Button BTNagregarFuncion;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;

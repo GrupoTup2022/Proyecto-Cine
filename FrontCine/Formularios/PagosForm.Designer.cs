@@ -60,7 +60,7 @@
             this.btn_terminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_terminar.Name = "btn_terminar";
             this.btn_terminar.Size = new System.Drawing.Size(107, 43);
-            this.btn_terminar.TabIndex = 21;
+            this.btn_terminar.TabIndex = 3;
             this.btn_terminar.Text = "Terminar";
             this.btn_terminar.UseVisualStyleBackColor = true;
             this.btn_terminar.Click += new System.EventHandler(this.btn_terminar_Click);
@@ -72,7 +72,7 @@
             this.btn_agregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(112, 39);
-            this.btn_agregar.TabIndex = 20;
+            this.btn_agregar.TabIndex = 2;
             this.btn_agregar.Text = "Agregar";
             this.btn_agregar.UseVisualStyleBackColor = true;
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
@@ -168,7 +168,7 @@
             this.tb_monto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_monto.Name = "tb_monto";
             this.tb_monto.Size = new System.Drawing.Size(171, 27);
-            this.tb_monto.TabIndex = 14;
+            this.tb_monto.TabIndex = 1;
             // 
             // label2
             // 
@@ -190,12 +190,13 @@
             // 
             // cb_fp
             // 
+            this.cb_fp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_fp.FormattingEnabled = true;
             this.cb_fp.Location = new System.Drawing.Point(40, 129);
             this.cb_fp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cb_fp.Name = "cb_fp";
             this.cb_fp.Size = new System.Drawing.Size(171, 28);
-            this.cb_fp.TabIndex = 11;
+            this.cb_fp.TabIndex = 0;
             // 
             // barrasuperior
             // 
@@ -241,7 +242,7 @@
             this.btn_cancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(109, 43);
-            this.btn_cancelar.TabIndex = 38;
+            this.btn_cancelar.TabIndex = 4;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);

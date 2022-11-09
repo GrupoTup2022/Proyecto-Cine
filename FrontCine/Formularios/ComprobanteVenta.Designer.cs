@@ -72,12 +72,13 @@
             // 
             // cbo_promos
             // 
+            this.cbo_promos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_promos.FormattingEnabled = true;
             this.cbo_promos.Location = new System.Drawing.Point(228, 240);
             this.cbo_promos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbo_promos.Name = "cbo_promos";
             this.cbo_promos.Size = new System.Drawing.Size(138, 28);
-            this.cbo_promos.TabIndex = 39;
+            this.cbo_promos.TabIndex = 5;
             this.cbo_promos.SelectedIndexChanged += new System.EventHandler(this.cbo_promos_SelectedIndexChanged);
             // 
             // label7
@@ -105,7 +106,7 @@
             this.dtp_fecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtp_fecha.Name = "dtp_fecha";
             this.dtp_fecha.Size = new System.Drawing.Size(138, 27);
-            this.dtp_fecha.TabIndex = 36;
+            this.dtp_fecha.TabIndex = 0;
             this.dtp_fecha.ValueChanged += new System.EventHandler(this.dtp_fecha_ValueChangedAsync);
             // 
             // label4
@@ -146,42 +147,46 @@
             // 
             // cbo_audio
             // 
+            this.cbo_audio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_audio.FormattingEnabled = true;
             this.cbo_audio.Location = new System.Drawing.Point(35, 238);
             this.cbo_audio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbo_audio.Name = "cbo_audio";
             this.cbo_audio.Size = new System.Drawing.Size(138, 28);
-            this.cbo_audio.TabIndex = 31;
+            this.cbo_audio.TabIndex = 2;
             this.cbo_audio.SelectedIndexChanged += new System.EventHandler(this.cbo_audio_SelectedIndexChanged_1);
             // 
             // cbo_horario
             // 
+            this.cbo_horario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_horario.FormattingEnabled = true;
             this.cbo_horario.Location = new System.Drawing.Point(228, 130);
             this.cbo_horario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbo_horario.Name = "cbo_horario";
             this.cbo_horario.Size = new System.Drawing.Size(138, 28);
-            this.cbo_horario.TabIndex = 30;
+            this.cbo_horario.TabIndex = 3;
             this.cbo_horario.SelectedIndexChanged += new System.EventHandler(this.cbo_horario_SelectedIndexChanged_1);
             // 
             // cbo_sala
             // 
+            this.cbo_sala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_sala.FormattingEnabled = true;
             this.cbo_sala.Location = new System.Drawing.Point(228, 186);
             this.cbo_sala.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbo_sala.Name = "cbo_sala";
             this.cbo_sala.Size = new System.Drawing.Size(138, 28);
-            this.cbo_sala.TabIndex = 29;
+            this.cbo_sala.TabIndex = 4;
             this.cbo_sala.SelectedIndexChanged += new System.EventHandler(this.cbo_sala_SelectedIndexChanged_1);
             // 
             // cbo_peli
             // 
+            this.cbo_peli.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_peli.FormattingEnabled = true;
             this.cbo_peli.Location = new System.Drawing.Point(35, 184);
             this.cbo_peli.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbo_peli.Name = "cbo_peli";
             this.cbo_peli.Size = new System.Drawing.Size(138, 28);
-            this.cbo_peli.TabIndex = 28;
+            this.cbo_peli.TabIndex = 1;
             this.cbo_peli.SelectedIndexChanged += new System.EventHandler(this.cbo_peli_SelectedIndexChanged_1);
             // 
             // dgv_tickets
@@ -275,7 +280,7 @@
             this.btn_comprobante.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_comprobante.Name = "btn_comprobante";
             this.btn_comprobante.Size = new System.Drawing.Size(142, 55);
-            this.btn_comprobante.TabIndex = 41;
+            this.btn_comprobante.TabIndex = 9;
             this.btn_comprobante.Text = "Terminar Comprobante";
             this.btn_comprobante.UseVisualStyleBackColor = true;
             this.btn_comprobante.Click += new System.EventHandler(this.btn_comprobante_Click);
@@ -288,7 +293,7 @@
             this.btn_pagos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_pagos.Name = "btn_pagos";
             this.btn_pagos.Size = new System.Drawing.Size(142, 55);
-            this.btn_pagos.TabIndex = 42;
+            this.btn_pagos.TabIndex = 8;
             this.btn_pagos.Text = "Agregar Pagos";
             this.btn_pagos.UseVisualStyleBackColor = true;
             this.btn_pagos.Click += new System.EventHandler(this.btn_pagos_Click);
@@ -301,7 +306,7 @@
             this.btn_butacas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_butacas.Name = "btn_butacas";
             this.btn_butacas.Size = new System.Drawing.Size(142, 55);
-            this.btn_butacas.TabIndex = 43;
+            this.btn_butacas.TabIndex = 7;
             this.btn_butacas.Text = "Elegir butacas";
             this.btn_butacas.UseVisualStyleBackColor = true;
             this.btn_butacas.Click += new System.EventHandler(this.btn_butacas_Click);
@@ -318,12 +323,13 @@
             // 
             // cbo_fVenta
             // 
+            this.cbo_fVenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_fVenta.FormattingEnabled = true;
             this.cbo_fVenta.Location = new System.Drawing.Point(228, 299);
             this.cbo_fVenta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbo_fVenta.Name = "cbo_fVenta";
             this.cbo_fVenta.Size = new System.Drawing.Size(138, 28);
-            this.cbo_fVenta.TabIndex = 44;
+            this.cbo_fVenta.TabIndex = 6;
             this.cbo_fVenta.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // barrasuperior

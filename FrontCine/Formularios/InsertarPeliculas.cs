@@ -54,52 +54,60 @@ namespace FrontCine.Formularios
               
         public async Task ConfirmarPelicula()
         {
-            if (ValidarDatos())
+            try
             {
-                Pais p = new Pais();
-                p.Id = Convert.ToInt32(cboPaises.SelectedValue);
-                p.Nombre = cboPaises.SelectedText;
-                Clasificacion c = new Clasificacion();
-                c.Id = Convert.ToInt32(cboClasificaciones.SelectedValue);
-                c.Nombre = cboClasificaciones.SelectedText;
-                Genero g = new Genero();
-                g.Id = Convert.ToInt32(cboGeneros.SelectedValue);
-                g.Nombre = cboGeneros.SelectedText;
-                Distribuidora dis = new Distribuidora();
-                dis.Id = Convert.ToInt32(cboDistribuidoras.SelectedValue);
-                dis.Nombre = cboDistribuidoras.SelectedText;
-                Director dir = new Director();
-                dir.Id = Convert.ToInt32(cboDirectores.SelectedValue);
-                dir.Nombre = cboDirectores.SelectedText;
-
-                nueva.pais = p;
-                nueva.clasificacion = c;
-                nueva.genero = g;
-                nueva.distribuidora = dis;
-                nueva.director = dir;
-
-
-                nueva.Titulo_local = txtTitulo.Text;
-                nueva.Titulo_original = " ";
-                nueva.Descripcion = " ";
-
-                nueva.Fecha_Estreno = dtpEstreno.Value;
-                nueva.duracion = Convert.ToInt32(txtDuracion.Text);
-
-
-                if (await CargarPeliculaAsync(nueva))
+                if (ValidarDatos())
                 {
-                    MessageBox.Show("Se registro correctamente la pelicula");
-                    await CargarDGVAsync();
-                    Limpiar();
+                    Pais p = new Pais();
+                    p.Id = Convert.ToInt32(cboPaises.SelectedValue);
+                    p.Nombre = cboPaises.SelectedText;
+                    Clasificacion c = new Clasificacion();
+                    c.Id = Convert.ToInt32(cboClasificaciones.SelectedValue);
+                    c.Nombre = cboClasificaciones.SelectedText;
+                    Genero g = new Genero();
+                    g.Id = Convert.ToInt32(cboGeneros.SelectedValue);
+                    g.Nombre = cboGeneros.SelectedText;
+                    Distribuidora dis = new Distribuidora();
+                    dis.Id = Convert.ToInt32(cboDistribuidoras.SelectedValue);
+                    dis.Nombre = cboDistribuidoras.SelectedText;
+                    Director dir = new Director();
+                    dir.Id = Convert.ToInt32(cboDirectores.SelectedValue);
+                    dir.Nombre = cboDirectores.SelectedText;
+
+                    nueva.pais = p;
+                    nueva.clasificacion = c;
+                    nueva.genero = g;
+                    nueva.distribuidora = dis;
+                    nueva.director = dir;
+
+
+                    nueva.Titulo_local = txtTitulo.Text;
+                    nueva.Titulo_original = " ";
+                    nueva.Descripcion = " ";
+
+                    nueva.Fecha_Estreno = dtpEstreno.Value;
+                    nueva.duracion = Convert.ToInt32(txtDuracion.Text);
+
+
+                    if (await CargarPeliculaAsync(nueva))
+                    {
+                        MessageBox.Show("Se registro correctamente la pelicula");
+                        await CargarDGVAsync();
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ha ocrrido un error");
+                        Limpiar();
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Ha ocrrido un error");
-                    Limpiar();
-                }
+
             }
-
+            catch
+            {
+                MessageBox.Show("Datos invalidos");
+            }
+            
         }
 
         public async Task<bool> CargarPeliculaAsync(Pelicula pelicula)

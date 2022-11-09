@@ -62,7 +62,7 @@
             this.CBpeliculas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CBpeliculas.Name = "CBpeliculas";
             this.CBpeliculas.Size = new System.Drawing.Size(166, 28);
-            this.CBpeliculas.TabIndex = 1;
+            this.CBpeliculas.TabIndex = 0;
             this.CBpeliculas.SelectedIndexChanged += new System.EventHandler(this.CBpeliculas_SelectedIndexChanged);
             // 
             // CBhorarios
@@ -72,7 +72,7 @@
             this.CBhorarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CBhorarios.Name = "CBhorarios";
             this.CBhorarios.Size = new System.Drawing.Size(138, 28);
-            this.CBhorarios.TabIndex = 2;
+            this.CBhorarios.TabIndex = 1;
             // 
             // CBaudios
             // 
@@ -81,7 +81,7 @@
             this.CBaudios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CBaudios.Name = "CBaudios";
             this.CBaudios.Size = new System.Drawing.Size(138, 28);
-            this.CBaudios.TabIndex = 3;
+            this.CBaudios.TabIndex = 2;
             // 
             // CBsalas
             // 
@@ -90,7 +90,7 @@
             this.CBsalas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CBsalas.Name = "CBsalas";
             this.CBsalas.Size = new System.Drawing.Size(138, 28);
-            this.CBsalas.TabIndex = 4;
+            this.CBsalas.TabIndex = 3;
             // 
             // TXTprecio
             // 
@@ -98,7 +98,7 @@
             this.TXTprecio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TXTprecio.Name = "TXTprecio";
             this.TXTprecio.Size = new System.Drawing.Size(123, 27);
-            this.TXTprecio.TabIndex = 5;
+            this.TXTprecio.TabIndex = 4;
             // 
             // dateTimePicker1
             // 
@@ -108,7 +108,7 @@
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(118, 27);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dateTimePicker1.TabIndex = 5;
             // 
             // label2
             // 
@@ -240,7 +240,7 @@
             this.BTNcancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTNcancelar.Name = "BTNcancelar";
             this.BTNcancelar.Size = new System.Drawing.Size(119, 50);
-            this.BTNcancelar.TabIndex = 14;
+            this.BTNcancelar.TabIndex = 7;
             this.BTNcancelar.Text = "Cerrar";
             this.BTNcancelar.UseVisualStyleBackColor = true;
             this.BTNcancelar.Click += new System.EventHandler(this.BTNcancelar_Click);
@@ -253,7 +253,7 @@
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 63);
-            this.button2.TabIndex = 15;
+            this.button2.TabIndex = 6;
             this.button2.Text = "Agregar Funcion";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);

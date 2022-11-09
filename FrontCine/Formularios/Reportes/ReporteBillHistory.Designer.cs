@@ -44,7 +44,7 @@
             this.btnconsultar.Location = new System.Drawing.Point(589, 33);
             this.btnconsultar.Name = "btnconsultar";
             this.btnconsultar.Size = new System.Drawing.Size(143, 41);
-            this.btnconsultar.TabIndex = 0;
+            this.btnconsultar.TabIndex = 2;
             this.btnconsultar.Text = "CONSULTAR";
             this.btnconsultar.UseVisualStyleBackColor = true;
             this.btnconsultar.Click += new System.EventHandler(this.btnconsultar_Click);
@@ -63,7 +63,7 @@
             this.dtpinicio.Location = new System.Drawing.Point(26, 47);
             this.dtpinicio.Name = "dtpinicio";
             this.dtpinicio.Size = new System.Drawing.Size(109, 27);
-            this.dtpinicio.TabIndex = 2;
+            this.dtpinicio.TabIndex = 0;
             // 
             // reportViewer1
             // 

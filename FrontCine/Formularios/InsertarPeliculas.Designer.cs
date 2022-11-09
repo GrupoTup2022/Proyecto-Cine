@@ -180,7 +180,7 @@
             this.txtDuracion.Location = new System.Drawing.Point(35, 194);
             this.txtDuracion.Name = "txtDuracion";
             this.txtDuracion.Size = new System.Drawing.Size(80, 27);
-            this.txtDuracion.TabIndex = 8;
+            this.txtDuracion.TabIndex = 2;
             // 
             // label4
             // 
@@ -197,7 +197,7 @@
             this.dtpEstreno.Location = new System.Drawing.Point(35, 127);
             this.dtpEstreno.Name = "dtpEstreno";
             this.dtpEstreno.Size = new System.Drawing.Size(121, 27);
-            this.dtpEstreno.TabIndex = 6;
+            this.dtpEstreno.TabIndex = 1;
             // 
             // label5
             // 
@@ -213,7 +213,7 @@
             this.txtTitulo.Location = new System.Drawing.Point(35, 61);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(194, 27);
-            this.txtTitulo.TabIndex = 5;
+            this.txtTitulo.TabIndex = 0;
             // 
             // label6
             // 
@@ -230,7 +230,7 @@
             this.cboDirectores.Location = new System.Drawing.Point(35, 374);
             this.cboDirectores.Name = "cboDirectores";
             this.cboDirectores.Size = new System.Drawing.Size(151, 28);
-            this.cboDirectores.TabIndex = 4;
+            this.cboDirectores.TabIndex = 5;
             // 
             // label7
             // 
@@ -264,7 +264,7 @@
             this.cboPaises.Location = new System.Drawing.Point(35, 317);
             this.cboPaises.Name = "cboPaises";
             this.cboPaises.Size = new System.Drawing.Size(151, 28);
-            this.cboPaises.TabIndex = 1;
+            this.cboPaises.TabIndex = 4;
             // 
             // cboClasificaciones
             // 
@@ -272,7 +272,7 @@
             this.cboClasificaciones.Location = new System.Drawing.Point(35, 502);
             this.cboClasificaciones.Name = "cboClasificaciones";
             this.cboClasificaciones.Size = new System.Drawing.Size(151, 28);
-            this.cboClasificaciones.TabIndex = 2;
+            this.cboClasificaciones.TabIndex = 7;
             // 
             // cboGeneros
             // 
@@ -280,7 +280,7 @@
             this.cboGeneros.Location = new System.Drawing.Point(35, 437);
             this.cboGeneros.Name = "cboGeneros";
             this.cboGeneros.Size = new System.Drawing.Size(151, 28);
-            this.cboGeneros.TabIndex = 0;
+            this.cboGeneros.TabIndex = 6;
             // 
             // seleccion
             // 

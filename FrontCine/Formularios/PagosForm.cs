@@ -63,7 +63,7 @@ namespace FrontCine.Formularios
             {
                 resta = resta - pagos.Monto;
             }
-            lbl_restante.Text = resta.ToString();
+            lbl_restante.Text =  resta.ToString("0.##");
             restanteTemp = resta;
             return resta;
         }
@@ -87,20 +87,27 @@ namespace FrontCine.Formularios
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            if(RestanteTemp() - Convert.ToDouble(tb_monto.Text)>=0)
-            { 
-            FormaPago fp = new FormaPago();
-            fp.Id = Convert.ToInt32(cb_fp.SelectedValue);
-            fp.Nombre = cb_fp.Text;
-            Pagos pagos = new Pagos();
-            pagos.FormaPago = fp;
-            pagos.Monto = Convert.ToDouble(tb_monto.Text);
-            dgv_lista.Rows.Add(fp.Nombre, pagos.Monto,"X");
-            PagosTemp.Add(pagos);
-                RestanteTemp();
+            try
+            {
+                if (RestanteTemp() - Convert.ToDouble(tb_monto.Text) >= 0)
+                {
+                    FormaPago fp = new FormaPago();
+                    fp.Id = Convert.ToInt32(cb_fp.SelectedValue);
+                    fp.Nombre = cb_fp.Text;
+                    Pagos pagos = new Pagos();
+                    pagos.FormaPago = fp;
+                    pagos.Monto = Convert.ToDouble(tb_monto.Text);
+                    dgv_lista.Rows.Add(fp.Nombre, pagos.Monto, "X");
+                    PagosTemp.Add(pagos);
+                    RestanteTemp();
+                }
+                else
+                    MessageBox.Show("No se puede insertar ese monto");
             }
-            else
+            catch
+            {
                 MessageBox.Show("No se puede insertar ese monto");
+            }
         }
 
         private void btn_terminar_Click(object sender, EventArgs e)

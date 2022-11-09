@@ -309,7 +309,7 @@
             this.checkBox1.Location = new System.Drawing.Point(981, 161);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(236, 24);
-            this.checkBox1.TabIndex = 20;
+            this.checkBox1.TabIndex = 2;
             this.checkBox1.Text = "Mostrar Peliculas Desabilitadas";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -319,7 +319,7 @@
             this.textBox1.Location = new System.Drawing.Point(146, 132);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(319, 27);
-            this.textBox1.TabIndex = 23;
+            this.textBox1.TabIndex = 0;
             // 
             // label3
             // 
@@ -335,7 +335,7 @@
             this.button1.Location = new System.Drawing.Point(500, 132);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 27;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Consultar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -367,7 +367,7 @@
             this.button2.Location = new System.Drawing.Point(1123, 111);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 36;
+            this.button2.TabIndex = 3;
             this.button2.Text = "Recargar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
