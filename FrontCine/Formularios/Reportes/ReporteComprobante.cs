@@ -47,7 +47,7 @@ namespace FrontCine.Formularios.Reportes
             ticketstabla.Columns.Add("Pelicula");
             ticketstabla.Columns.Add("Horario");
             ticketstabla.Columns.Add("Promo");
-            ticketstabla.Columns.Add("Importe");
+            ticketstabla.Columns.Add("Importe",typeof(double));
             ticketstabla.Columns.Add("Porcentaje");
 
             foreach(Ticket t in comprobante.ltickets)
